@@ -1,0 +1,36 @@
+menus:
+	-
+		name: 首页
+		link: /
+	-
+		name: 分类
+		link: categories/
+	-
+		name: guitar
+		link: guitar/
+	-
+		name: 留言板
+		link: message/
+
+# Profile
+profile:
+	#location: ChengDu, China
+	github: bsyonline
+	#stackoverflow:
+		#title: yumemor
+		#href: http://stackoverflow.com/users/5662132/yumemor
+	organization: 月光林地/五晨寺
+
+#Github
+github:
+	username: bsyonline
+  popular_repos: [bsyonline.github.io,redis-doc,scala-samples]
+
+#Comments
+#duoshuo_username: yumemor # 多说配置
+#disqus_username: yumemor # disqus 配置
+
+# Search
+# google | local
+search:
+    use: local
