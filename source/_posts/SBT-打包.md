@@ -13,30 +13,32 @@ tags: spark
 sbt package
 ```
 即可完成打包，并且上传到 spark 集群中也能够正常运行。但是，仔细观察可以发现，上传的 jar 包只有 135 KB，显然打包只包含了编译后的文件，依赖 jar 包并没有打包，而依赖的 spark jar 在集群中都有，所以也可以正常执行。
-如果程序中引用了一些其他的 jar 这样就需要指定 jars 参数，不过集群环境中需要在每个 worker 节点都安装相同的 jar 依赖，操作还是比较繁琐，比较方便的方式是将所有的依赖 jar 都打包成一个 fat jar 。
+如果程序中引用了一些其他的 jar 这样就需要指定 --jars 参数，不过集群环境中需要在每个 worker 节点都安装相同的 jar 依赖，操作还是比较繁琐，比较方便的方式是将所有的依赖 jar 都打包成一个 **fat jar** 。
 
-### 1. sbt-assembly
+### sbt-assembly 使用
 
 SBT 的 sbt-assembly 插件可以帮助我们打包。
 插件文档参考：[https://github.com/sbt/sbt-assembly](https://github.com/sbt/sbt-assembly)
 
-按照文档，简单三步
-1. 修改 project/plugins.sbt
+按照文档，简单三步可完成打包。
+1. 修改 project/plugins.sbt ，加入
 ```
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.3")
 ```
 2. 在根目录下创建 assembly.sbt
-```
-import AssemblyKeys._
 
-assemblySettings
+  ```
+  import AssemblyKeys._
 
-name := "spark-data-engine-batch"
-version := "1.0"
-```
+  assemblySettings
+
+  name := "spark-data-engine-batch"
+  version := "1.0"
+  ```
+
 3. 执行 sbt assembly
 
-解决冲突
+### 解决冲突
 多数情况下，打包过程会出现异常，比如文件重复。
 ```
 [error] (*:assembly) deduplicate: different file contents found in the following:
