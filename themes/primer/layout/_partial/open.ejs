@@ -1,7 +1,7 @@
   <section class="container">
       <header class="text-center">
           <h1><%= page.title%></h1>
-          <p class="lead">I have <span id="repo-count">0</span> projects on Github</p>
+          <p class="lead"><span id="repo-count">0</span> projects on Github</p>
       </header>
       <div class="repo-list">
         <div class="blankslate"><h3>Loading...</h3></div>
@@ -18,7 +18,7 @@
                        <h3 class="card-title">
                           {%=name%}
                         </h3>
-       
+
                   </div>
               </div>
               <div class="caption">
@@ -46,7 +46,7 @@
   <div class="blankslate"><h3>加载失败</h3><p>请刷新或稍后再试...</p>></div>
 </script>
 <script type="text/javascript">
-    
+
   var open = function(){
 
     var baiduTpl = new Object();
@@ -70,10 +70,10 @@
               var repo = result[i];
               repo.updated_at = repo.updated_at.substring(0,repo.updated_at.lastIndexOf("T"));
               var html = baiduTpl.list(repo);
-              ul.append(html); 
+              ul.append(html);
             }
             repoContainer.append(ul);
-            $(".geopattern").each(function(){     
+            $(".geopattern").each(function(){
               $(this).geopattern($(this).data('pattern-id'));
             });
           }else{

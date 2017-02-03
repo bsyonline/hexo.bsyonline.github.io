@@ -1,0 +1,44 @@
+.guitar-title{
+  height: 30px;
+}
+.guitar-card-list {
+    padding-left: 0;
+    position: relative;
+    padding-top: 2em;
+}
+.guitar-card-image {
+    display: table;
+    height: 120px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.guitar-card-image .guitar-card-image-cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 1em;
+}
+
+.guitar-card-image h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+.guitar-card-image a {
+    color: #fff;
+}
+
+.guitar-card-description {
+    height: 2em;
+    overflow: hidden;
+}
+
+.card .thumbnail:hover .guitar-card-title a{
+    color:#000;
+    text-decoration:none;
+}
+
+.guitar-card-text .meta-info {
+    margin-right: 10px;
+}

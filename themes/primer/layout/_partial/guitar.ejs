@@ -1,0 +1,28 @@
+<section class="collection-head geopattern" style="background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNzgiIGhlaWdodD0iMjA1Ij48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZ2IoMTUwLDUwLDE1NykiPjwvcmVjdD48cmVjdCB4PSItMTguODMzMzMzMzMzMzMzMzMyIiB5PSItMTguODMzMzMzMzMzMzMzMzMyIiB3aWR0aD0iMzcuNjY2NjY2NjY2NjY2NjY0IiBoZWlnaHQ9IjM3LjY2NjY2NjY2NjY2NjY2NCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utb3BhY2l0eT0iMC4wMiIgZmlsbD0iI2RkZCIgZmlsbC1vcGFjaXR5PSIwLjE0MTMzMzMzMzMzMzMzMzM0IiBzdHJva2Utd2lkdGg9Ij...SIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InNjYWxlKDEsLTEpIHRyYW5zbGF0ZSgxOC44MzMzMzMzMzMzMzMzMzIsLTE4Ni45ODExNjA4MzY4NTUzNykgcm90YXRlKC0zMCwwLDApIj48L3JlY3Q+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjM3LjY2NjY2NjY2NjY2NjY2NCIgaGVpZ2h0PSIzNy42NjY2NjY2NjY2NjY2NjQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMDIiIGZpbGw9IiNkZGQiIGZpbGwtb3BhY2l0eT0iMC4wMiIgc3Ryb2tlLXdpZHRoPSIxIiB0cmFuc2Zvcm09InNjYWxlKC0xLC0xKSB0cmFuc2xhdGUoLTE1OS40MDcyNDcwODUwOTQzNSwtMTg2Ljk4MTE2MDgzNjg1NTM3KSByb3RhdGUoLTMwLDAsMCkiPjwvcmVjdD48L3N2Zz4=");">
+<div style="height:30px;"><h1>&nbsp;</h1></div></section>
+<section class="container">
+    <div class="search" >
+      <%- partial('_widget/guitar-search') %>
+    </div>
+    <div class="guitar-card-list">
+      <% site.categories.each(function(category){ %>
+        <% if(category.name == 'guitar'){ %>
+          <% category.posts.each(function(post){ %>
+            <li class="collection-card">
+              <a href="{%=clone_url%}" class="card text-center" target="_blank">
+                  <div class="thumbnail" style="margin-bottom:0px">
+                      <div class="guitar-card-image geopattern" data-pattern-id="<%=category.name%>">
+                          <div class="guitar-card-image-cell">
+                              <h3 class="guitar-card-title">
+                                <%- partial('post/title',{class_name:'posts-list-name',post:post,index:true}) %>
+                              </h3>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+            </li>
+          <% }) %>
+        <%}%>
+      <% }) %>
+    </div>
+</section>

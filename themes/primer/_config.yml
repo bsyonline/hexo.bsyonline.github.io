@@ -6,11 +6,11 @@ menus:
 		name: 分类
 		link: categories/
 	-
-		name: guitar
+		name: 翡翠梦境
 		link: guitar/
 	-
-		name: 留言板
-		link: message/
+		name: 五晨寺
+		link: projects/
 
 # Profile
 profile:
