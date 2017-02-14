@@ -12,6 +12,7 @@ Linux 的命令有很多，常用的有 100 个？，所以也没有什么顺序
 
 useradd 命令的作用是创建新用户或更新默认用户。
 
+useradd 命令格式：
 ```
 Usage: useradd [options] LOGIN
   -b, --base-dir BASE_DIR       base directory for the home directory of the new account
@@ -48,7 +49,7 @@ useradd -g hadoop -G ops rolex
 指定的组必须是存在的，所以这个命令通常和 groupadd 和 passwd 一起使用。
 ### groupadd
 
-groupadd 命令用法如下：
+groupadd 命令格式：
 ```
 Usage: groupadd [options] GROUP
 -f, --force                   exit successfully if the group already exists, and cancel -g if the GID is already used
@@ -64,7 +65,7 @@ Usage: groupadd [options] GROUP
 ```
 ### passwd
 
-passwd 命令用法如下：
+passwd 命令格式：
 ```
 Usage: passwd [options] [LOGIN]
 
