@@ -5,6 +5,9 @@ tags: Linux
 categories: How-To
 ---
 
+cp 是 linux 中复制文件和目录的常用命令。
+
+<!-- more -->
 
 cp 命令格式：
 
