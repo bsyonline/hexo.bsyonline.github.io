@@ -1,6 +1,6 @@
 ---
 title: 每天一个 Linux 命令（2）： grep
-date: 2017-02-08 16:51:00
+date: 2017-02-09 16:51:00
 tags: Linux
 categories: How-To
 ---
@@ -12,6 +12,7 @@ grep 命令格式：
 ```shell
 Usage: grep [OPTION]... PATTERN [FILE]...
 
+Options:
   --help                    Print a usage message briefly summarizing these command-line options and the bug-reporting address, then exit.
   -i, --ignore-case         Ignore  case  distinctions  in  both  the PATTERN and the input files.  (-i is specified by POSIX.)
   -c, --count               Suppress normal output; instead print a count of matching lines for each input file.

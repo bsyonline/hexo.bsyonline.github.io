@@ -14,6 +14,7 @@ ln 命令格式：
 ```
 Usage: ln [OPTION]... [-T] TARGET LINK_NAME
 
+Options:
   -s, --symbolic              make symbolic links instead of hard links
 ```
 

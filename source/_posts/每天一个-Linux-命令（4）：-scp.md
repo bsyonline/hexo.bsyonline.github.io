@@ -1,6 +1,6 @@
 ---
 title: 每天一个 Linux 命令（3）： scp
-date: 2017-02-14 10:06:17
+date: 2017-02-11 10:06:17
 tags: Linux
 categories: How-To
 ---
@@ -15,6 +15,7 @@ Usage: scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
            [-l limit] [-o ssh_option] [-P port] [-S program]
            [[user@]host1:]file1 ... [[user@]host2:]file2
 
+Options:
   -1  强制scp命令使用协议ssh1  
   -2  强制scp命令使用协议ssh2  
   -4  强制scp命令只使用IPv4寻址  

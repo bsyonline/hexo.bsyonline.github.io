@@ -1,6 +1,6 @@
 ---
 title: 每天一个 Linux 命令（3）： tar
-date: 2017-02-09 10:29:14
+date: 2017-02-10 10:29:14
 tags: Linux
 categories: How-To
 ---
@@ -11,6 +11,8 @@ categories: How-To
 tar 命令格式：
 ```shell
 Usage: tar [OPTION...] [FILE]...
+
+Options:
 -z, --gzip, --gunzip, --ungzip    filter the archive through gzip
 -j, --bzip2                       filter the archive through bzip2
 -v, --verbose                     verbosely list files processed

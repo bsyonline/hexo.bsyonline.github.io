@@ -1,6 +1,6 @@
 ---
 title: 每天一个 Linux 命令（9）： chmod
-date: 2017-02-14 10:10:38
+date: 2017-02-16 10:10:38
 tags: Linux
 categories: How-To
 ---
@@ -21,6 +21,7 @@ Usage: chmod [OPTION]... MODE[,MODE]... FILE...
   or:  chmod [OPTION]... OCTAL-MODE FILE...
   or:  chmod [OPTION]... --reference=RFILE FILE...
 
+Options:
   -R, --recursive        change files and directories recursively
 ```
 

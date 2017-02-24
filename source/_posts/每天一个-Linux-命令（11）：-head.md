@@ -1,6 +1,6 @@
 ---
 title: 每天一个 Linux 命令（11）： head
-date: 2017-02-20 10:07:20
+date: 2017-02-18 10:07:20
 tags: Linux
 categories: How-To
 ---
@@ -13,6 +13,8 @@ head 命令格式：
 
 ```
 Usage: head [OPTION]... [FILE]...
+
+Options:
   -n, --lines=[-]NUM       print the first NUM lines instead of the first 10;
                                with the leading '-', print all but the last
                                NUM lines of each file

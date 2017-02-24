@@ -15,6 +15,8 @@ useradd 命令的作用是创建新用户或更新默认用户。
 useradd 命令格式：
 ```
 Usage: useradd [options] LOGIN
+
+Options:
   -b, --base-dir BASE_DIR       base directory for the home directory of the new account
   -c, --comment COMMENT         GECOS field of the new account
   -d, --home-dir HOME_DIR       home directory of the new account

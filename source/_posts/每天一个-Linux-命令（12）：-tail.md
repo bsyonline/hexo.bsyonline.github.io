@@ -1,6 +1,6 @@
 ---
 title: 每天一个 Linux 命令（12）： tail
-date: 2017-02-20 10:07:32
+date: 2017-02-19 10:07:32
 tags: Linux
 categories: How-To
 ---
@@ -13,6 +13,8 @@ tail 命令的格式：
 
 ```
 Usage: tail [OPTION]... [FILE]...
+
+Options:
   -f, --follow[={name|descriptor}]
                            循环输出文件增加的内容；
   -n, --lines=[+]NUM       输出最后的 NUM 行;
