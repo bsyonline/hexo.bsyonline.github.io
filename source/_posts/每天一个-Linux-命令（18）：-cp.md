@@ -4,3 +4,39 @@ date: 2017-02-25 10:10:13
 tags: Linux
 categories: How-To
 ---
+
+
+cp 命令格式：
+
+```
+cp [OPTION]... [-T] SOURCE DEST
+
+Options:
+-R, -r, --recursive
+              递归拷贝目录
+-p     same as --preserve=mode,ownership,timestamps
+--preserve[=ATTR_LIST]
+       保持文件指定的属性 (default: mode,ownership,timestamps), if possible additional attributes: context, links, xattr, all
+
+
+
+```
+
+复制一个文件
+
+```
+cp -a a.txt b.txt
+```
+使用选项 -a 两个文件的创建时间是一致的。
+
+复制文件到目录
+
+```
+cp a.txt books/
+```
+
+复制目录
+
+```
+cp -r books book
+```
