@@ -12,14 +12,13 @@ cp 命令格式：
 cp [OPTION]... [-T] SOURCE DEST
 
 Options:
--R, -r, --recursive
-              递归拷贝目录
--p     same as --preserve=mode,ownership,timestamps
---preserve[=ATTR_LIST]
-       保持文件指定的属性 (default: mode,ownership,timestamps), if possible additional attributes: context, links, xattr, all
-
-
-
+  -a, --archive
+                same as -dR --preserve=all
+  -R, -r, --recursive
+                递归拷贝目录
+  -p     same as --preserve=mode,ownership,timestamps
+  --preserve[=ATTR_LIST]
+         保持文件指定的属性 (default: mode,ownership,timestamps), if possible additional attributes: context, links, xattr, all
 ```
 
 复制一个文件
