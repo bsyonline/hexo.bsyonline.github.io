@@ -135,6 +135,10 @@ Error codes:
 
 ```
 
+以上是常用的一些状态码，更多见 [http://www.restapitutorial.com/httpstatuscodes.html](http://www.restapitutorial.com/httpstatuscodes.html) 。
+
+
+
 **10. 属性过滤**
 ```
 GET /api/v2/users?fields=id,firstName

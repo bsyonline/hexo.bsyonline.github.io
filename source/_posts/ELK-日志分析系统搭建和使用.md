@@ -3,9 +3,10 @@ title: ELK 日志分析系统搭建和使用
 toc: true
 date: 2016-07-15 22:25:09
 tags: ELK
-categories: 编程
+categories: How-To
 ---
 
+ELK xi
 <!--more-->
 
 ### 1. 下载 logstash

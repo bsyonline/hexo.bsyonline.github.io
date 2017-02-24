@@ -1,5 +1,5 @@
 ---
-title: 每天一个 Linux 命令（5）：history
+title: 每天一个 Linux 命令（5）： history
 date: 2017-02-14 10:07:55
 tags: Linux
 categories: How-To

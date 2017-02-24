@@ -1,5 +1,5 @@
 ---
-title: 每天一个 Linux 命令（9）：chmod
+title: 每天一个 Linux 命令（9）： chmod
 date: 2017-02-14 10:10:38
 tags: Linux
 categories: How-To

@@ -1,5 +1,5 @@
 ---
-title: 每天一个 Linux 命令（1）： 用户管理的三驾马车
+title: 每天一个 Linux 命令（1）： useradd
 date: 2017-02-08 11:46:53
 tags: Linux
 categories: How-To

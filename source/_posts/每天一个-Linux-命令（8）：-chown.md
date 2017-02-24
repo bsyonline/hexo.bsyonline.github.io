@@ -1,5 +1,5 @@
 ---
-title: 每天一个 Linux 命令（8）：chown
+title: 每天一个 Linux 命令（8）： chown
 date: 2017-02-14 10:10:26
 tags: Linux
 categories: How-To

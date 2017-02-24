@@ -1,5 +1,5 @@
 ---
-title: 每天一个 Linux 命令（3）：scp
+title: 每天一个 Linux 命令（3）： scp
 date: 2017-02-14 10:06:17
 tags: Linux
 categories: How-To
