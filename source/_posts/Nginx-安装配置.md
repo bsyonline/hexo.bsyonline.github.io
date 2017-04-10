@@ -11,13 +11,23 @@ Nginx 是一款高性能的 HTTP 和反向代理服务器。
 
 安装配置过程如下：
 
+### 下载
+```shell
+wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
+wget https://nginx.org/download/nginx-1.10.3.tar.gz
+```
+
 ### 安装编译工具和库
+CentOS 
 
 ```shell
 yum group install Development Tools
 yum install openssl openssl-devel zlib zlib-devel
-wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
-wget https://nginx.org/download/nginx-1.10.3.tar.gz
+```
+ubuntu
+
+```shell
+apt-get install openssl libssl-dev
 ```
 
 安装 PCRE
@@ -48,7 +58,7 @@ make && make install
 
 ### 配置
 
-nginx 的配置文件为 /opt/nginx/nginx-1.10.3/conf/nginx.conf
+nginx 的配置文件为 /usr/local/webserver/nginx/conf/nginx.conf
 
 ```
 user root;
@@ -128,7 +138,7 @@ server {
     charset utf-8;
     access_log logs/host.access.log main;
     location /{
-        proxy_pass http://192.168.201.76:18002;
+        proxy_pass http://cn.bing.com/;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
