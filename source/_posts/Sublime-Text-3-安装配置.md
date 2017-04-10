@@ -7,6 +7,8 @@ categories: Tools
 
 Windows 上之前一直用 notepad++ ，后来在 linux 上用了一段时间 atom ，git 的插件用起来很顺手，但是由于长期不关机，导致 atom 经常卡死，所以换 Sublime 试试。
 
+<!-- more -->
+
 ### 安装
 没用过 Sublime ，所以选择了 Sublime Text 3 。下载安装很简单。[https://www.sublimetext.com/3](https://www.sublimetext.com/3)
 

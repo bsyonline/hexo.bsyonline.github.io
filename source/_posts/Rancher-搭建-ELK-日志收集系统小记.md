@@ -31,24 +31,49 @@ redis           v3.0
 
 ### 搭建步骤
 
-#### redis
+#### 准备镜像
+
+下载镜像
+```shell
+docker pull logstash:2.3
+docker pull elasticsearch:2.3
+docker pull kibana:4.5
+docker pull redis:3.0
+```
+打标签
+```shell
+docker tag logstash:2.3 reg.dockcloud.cn/riskbell/logstash:2.3
+docker tag kibana:4.5 reg.dockcloud.cn/riskbell/kibana:4.5
+docker tag redis:3.0 reg.dockcloud.cn/riskbell/redis:3.0
+docker tag elasticsearch:2.3 reg.dockcloud.cn/riskbell/elasticsearch:2.3
+```
+上传本地仓库
+```shell
+docker push reg.dockcloud.cn/riskbell/logstash:2.3
+docker push reg.dockcloud.cn/riskbell/kibana:4.5
+docker push reg.dockcloud.cn/riskbell/redis:3.0
+docker push reg.dockcloud.cn/riskbell/elasticsearch:2.3
+```
+
+#### rancher 配置
+##### redis
 
 redis 需要向外暴露端口给应用程序。
 
 ![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-42-34.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-42-34.png)
-#### elasticsearch
+##### elasticsearch
 
 elasticsearch 也不需要使用别的服务，为了能从浏览器查看数据，也向外暴露端口。
 
 ![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-46-54.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-46-54.png)
 
-### kibana
+##### kibana
 
 kibana 需要 link elasticsearch 的服务，也要向外暴露端口。
 
 ![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-49-08.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-49-08.png)
 
-### logstash
+##### logstash
 
 logstash 的 input 是 redis ， output 是 elasticsearch ，需要在配置文件中指定。
 
@@ -94,6 +119,7 @@ output {
 
 ![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-58-56.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-58-56.png)
 
+### compose
 docker-compose.yml
 
 ```

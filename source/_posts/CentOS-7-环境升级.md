@@ -2,8 +2,8 @@
 title: CentOS 7 环境升级
 toc: true
 date: 2016-10-21 10:51:34
-tags:
-categories:
+tags: How-To
+categories: How-To
 ---
 
 docker 1.12 版本要求 CentOS 7 ，生产环境系统升级到 CentOS 7 后安装 docker 环境步骤简单记录备忘。
@@ -182,6 +182,9 @@ vi /etc/selinux/config
 SELINUX=disabled
 ```
 ### 文件共享
+
+有 p75 和 p76 两台机器，需要将两台机器的 /u01/data/ 目录共享。
+
 **1. 安装**
 
 ```
@@ -208,20 +211,29 @@ a0c173b4-341a-4f47-9eea-5e2ca9713665	localhost	Connected
 **4. 创建数据目录**
 
 ```
-mkdir -p /opt/riskbell/
-gluster volume create riskbell_vol replica 2 transport tcp p75:/u01/riskbell/ p76:/u01/riskbell/ force
+mkdir -p /opt/data/
+gluster volume create gv3 replica 2 transport tcp p75:/u01/data/ p76:/u01/data/ force
 gluster volume info
 ```
 **5. 启动**
 ```
-gluster volume start riskbell_vol
+gluster volume start gv3
 ```
+
 **6. 安装 glusterfs 客户端**
+
+将 p76 设置为客户端。
+
 ```
-yum -y installglusterfs glusterfs-fuse
+yum -y install glusterfs glusterfs-fuse
 ```
 **7. 挂载目录**
 ```
-mkdir -p /opt/riskbell
-mount -t glusterfs -o rw p75:riskbell_vol /opt/riskbell/
+mkdir -p /opt/data
+mount -t glusterfs -o rw p75:gv3 /opt/data/
 ```
+
+至此，配置完成。在 p76 的 /opt/data 目录放置的配置文件，在 p75 和 p76 的 /u01/data/ 目录都能读取到。
+
+问题：
+上面解决的配置文件共享的问题，但是想用共享目录收集两台机器上的日志还有问题。 docker 在 p75 和 p76 上部署的时候，日志路径是一样， p76 的 /opt/data/ 挂载到共享目录后， p75 的 /opt/data/ 就无法挂载了。换一个目录可以挂载，但是 docker 的配置就要单独配置了。
