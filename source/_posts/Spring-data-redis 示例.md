@@ -6,7 +6,7 @@ tags: Redis
 categories: 编程
 ---
 
-####1. POM
+###1. POM
 ```xml
 <dependency>
     <groupId>org.springframework.data</groupId>
@@ -20,9 +20,9 @@ categories: 编程
 </dependency>
 ```
 
-####2. 配置文件
+###2. 配置文件
 
-#####2.1 redis.xml
+####2.1 redis.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -62,7 +62,7 @@ categories: 编程
 
 </beans>
 ```
-#####2.2 properties文件
+####2.2 properties文件
 
 #redis配置
 
@@ -76,8 +76,8 @@ redis.cache.port=6379
 redis.cache.usePool=true
 ```
 
-####3. 类
-#####3.1 实体类
+###3. 类
+####3.1 实体类
 
 ```java
 /*
@@ -117,7 +117,7 @@ public class QueryCache implements Serializable{
 }
 ```
 
-#####3.2 查询类
+####3.2 查询类
 ```java
 /*
  * @(#)QueryCacheRepository.java	1.0 2016/3/8
@@ -152,7 +152,7 @@ public class QueryCacheRepository {
 }
 ```
 
-#####3.3 测试类
+####3.3 测试类
 ```java
 /*
  * @(#)DataBusinessTest.java	1.0 2016/3/4
