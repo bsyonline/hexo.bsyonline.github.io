@@ -101,7 +101,7 @@ output {
 
     elasticsearch {
         hosts => ["elasticsearch"]    #host:port
-        index => "logstash"
+        index => "logstash-%{+YYYY.MM.dd}"
         document_type => "log"
         workers => 1
         flush_size => 20000
