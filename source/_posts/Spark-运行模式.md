@@ -28,6 +28,21 @@ Spark 提供的一种简单部署模式，通常用来进行测试。
 
 通过 YARN 来调度 Spark 程序所需要的资源。YARN 模式有两种模式来启动 Spark 程序：YARN Cluster 和 YARN Client 。在 Cluster 模式中，Driver 程序运行在 master 进程中，程序初始化完成后 Client 可以结束。在 Client 模式中，Driver 程序运行在 client 进程中，master 只负责向 YARN 请求资源。
 
+![](http://7xqgix.com1.z0.glb.clouddn.com/spark-on-yarn.png)
+
+YARN cluster：
+
+1. Client 通过 YARN Client 向 Resource Manager 提交 Spark 程序，Resource Manager 在集群中启动一个 Spark Application Master ，注册到 Resource Manager 并初始化 SparkContext 。
+2.  Spark Application Master 通过 Resource Manager 在分配的 YARN 节点中启动 Container 。
+3.  在 Container 中运行 Task 。
+
+YARN client：
+
+1.  Client 在本地初始化 SparkContext 。
+2.  通过 YARN Client 在随机一个 YARN 节点上启动 Spark Application Master 。
+3.  Spark Application Master 通过 Resource Manager 在分配的 YARN 节点中启动 Container 。
+4. 在 Container 中运行 Task 。
+
 ### 几种模式比较
 
 #### 环境变量传递
@@ -38,8 +53,9 @@ SparkContext 在初始化过程中需要将环境变量传递给 Executor ，如
 * Spark Standalone 模式中，环境变量被封装在 org.apache.spark.deploy.Command 类中，由 Spark Master 通过 Actor 转发给合适的 Worker ，Worker 通过 ExecutorRunner 构建 java.lang.Process ，再传递给 java.lang.ProcessBuilder.environment 。
 * YARN 模式中，环境变量首先通过 YARN client 设置到 Spark Application Manager 的运行环境中，在通过 ExecutorRunnable 设置到运行 Executor 的 ContainerLaunchContext 中。
 
-#### Jar 包分发
+#### 包分发
 
+* Local 和 Standalone 模式是单机或整个环境部署多个节点，所以不需要分发。
 
 
 * YARN 模式中，运行库和程序运行依赖的文件首先通过 HDFS 客户端 API 上传到作业 .sparkStaging 目录下，然后将对应的文件和 URL 映射关系通知 YARN ，YARN 的 Node Manager 在启动 Container 的时候会从指定的 URL 下载文件。Spark Application Manager 在创建 Executor 的 Container 的时候通过 setLocalResources 设置 Executor 的环境变量。
