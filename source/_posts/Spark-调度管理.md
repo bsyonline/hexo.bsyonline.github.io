@@ -33,9 +33,15 @@ Spark 程序可在等待被调度的任务被挂起的时候动态请求额外�
 
 **调度逻辑**
 
-Spark 是按照 DAG 图来进行的任务调度的。调度可分为两部分： DAGScheduler 和 TaskScheduler 。DAGScheduler 负责任务的逻辑调度， TaskScheduler 负责任务的物理调度。
+Spark 是按照 DAG 图来进行的任务调度的。调度可分为两部分： DAGScheduler 和 TaskScheduler 。DAGScheduler 负责 stage 级别的调度， TaskScheduler 负责 task 级别的调度。
 
-DAGScheduler 首先需要逆向遍历 RDD 依赖链，划分调度 stage ，确定 stage 之间的依赖关系。Spark 通过 ShuffleDependency 来划分 stage，对应 ShuffleDependency 的 RDD 叫做 ShuffleRDD，stage 的边界是从 ShuffleRDD 的父 RDD 计算的。
+Spark 程序每一个 action 都会提交给 DAGScheduler 一个 job，DAGScheduler 首先需要逆向遍历 RDD 依赖链，划分出 stage 并确定 stage 之间的依赖关系。Spark 有两种类型的 stage ： ShuffleMapStage 和 ResultStage 。Wide Dependency 会产生 shuffle 操作，shuffle 操作的结果是生成 ShuffleRDD ，其依赖关系是 ShuffleDependency 。Spark 通过 ShuffleDependency 来划分 stage，stage 的边界是从 ShuffleRDD 的父 RDD 开始计算的。
+
+> Narrow Dependency 指子 RDD 只依赖父 RDD 的一个或几个 partition 。
+>
+> Wide Dependency 指子 RDD 只依赖父 RDD 的所有的 partition 。
+
+划分好 stage ，Spark 会生成 FinalStage 并提交。根据依赖关系，判断 FinalStage 的父 stage 结果是否可用，如果父 stage 的结果不可用，则尝试迭代提交父 stage 。如果所有的父 stage 结果都可用，则提交 FinalStage 。stage 按 partition 数量拆分出 task 放入 TaskSet 提交给 TaskScheduler ，至此 DAGScheduler 调度结束。TaskScheduler 和 TaskSetManager 根据资源情况将 task 调度到最佳的 Executor 上进行计算。DAGScheduler 和 TaskScheduler 通过回调函数获取 Task 和 TaskSet 的状态，以及 Executor 的状态。当 Task 执行完成后，DAGScheduler 会获取 Task 执行结果。对于非 FinalStage 的 Task ，返回的是 MapStatus 对象，存储的是计算结果的位置信息，而对于 ResultTask 类型的 Task 返回的是结果本身，如果结果比较小，则直接放在 DirectTaskResult 中，如果结果很大，则将结果存储在 BlockManager 中，然后将 BlockId 返回给 DAGScheduler 。 
 
 **调度策略**
 
