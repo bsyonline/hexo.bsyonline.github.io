@@ -1,6 +1,6 @@
 ---
-title: 每天一个 Linux 命令（21）： df
-date: 2017-02-28 10:10:45
+title: 每天一个 Linux 命令（22）： du
+date: 2017-03-01 10:10:45
 tags: Linux
 categories: How-To
 ---
@@ -10,7 +10,7 @@ Linux du 命令也是查看使用空间的，但是与 df 命令不同的是 du
 
 <!-- more -->
 
-find 命令格式：
+du 命令格式：
 
 ```shell
 Usage: du [OPTION]... [FILE]...

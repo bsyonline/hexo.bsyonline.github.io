@@ -10,7 +10,7 @@ linux 中 df 命令的功能是用来检查 linux 服务器的文件系统的磁
 
 <!-- more -->
 
-find 命令格式：
+df 命令格式：
 
 ```shell
 Usage: df [OPTION]... [FILE]...
