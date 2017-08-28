@@ -9,7 +9,7 @@ top 命令是 Linux 下常用的性能分析工具，能够实时显示系统中
 
 <!-- more -->
 
-diff 命令格式：
+top 命令格式：
 
 ```shell
 Usage:  top -hv | -abcHimMsS -d delay -n iterations [-u user | -U user] -p pid [,pid ...]
