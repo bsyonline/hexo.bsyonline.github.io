@@ -1,5 +1,5 @@
 ---
-title: Elasticsearch REST API Practice
+title: Elasticsearch 5 REST API Practice
 toc: true
 date: 2016-10-28 13:58:36
 tags: Elasticsearch
@@ -94,7 +94,21 @@ curl localhost:9200/twitter/_mget -d '{
 ```
 curl -XDELETE 'http://localhost:9200/twitter/tweet/1'
 ```
+#### 按条件删除
+
+```
+curl -XPOST 'http://localhost:9200/twitter/_delete_by_query' -d'
+{
+  "query": { 
+    "match": {
+      "message": "some message"
+    }
+  }
+}'
+```
+
 #### 更新索引
+
 ```
 curl -XPOST 'http://localhost:9200/twitter/tweet/1/_update' -d '{
     "doc" : {
@@ -102,16 +116,28 @@ curl -XPOST 'http://localhost:9200/twitter/tweet/1/_update' -d '{
     }
 }'
 ```
-#### 批量操作
+#### 按条件更新（没搞懂）
+
+```
+curl -XPOST 'http://localhost:9200/twitter/_update_by_query?conflicts=proceed' -d'
+{
+  "query": { 
+    "term": {
+      "user": "kimchy"
+    }
+  }
+}' 
+```
+
+#### 批量操作（没搞懂）
+
 ```
 curl -s -XPOST localhost:9200/_bulk -d '
-{ "index" : { "_index" : "test", "_type" : "type1", "_id" : "1" } }
-{ "field1" : "value1" }
-{ "delete" : { "_index" : "test", "_type" : "type1", "_id" : "2" } }
-{ "create" : { "_index" : "test", "_type" : "type1", "_id" : "3" } }
-{ "field1" : "value3" }
-{ "update" : {"_id" : "1", "_type" : "type1", "_index" : "index1"} }
-{ "doc" : {"field2" : "value2"} }'
+{ "index" : { "_index" : "test", "_type" : "type1", "_id" : "1" } }\n{ "field1" : "value1" }\n
+{ "delete" : { "_index" : "test", "_type" : "type1", "_id" : "2" } }\n{ "create" : { "_index" : "test", "_type" : "type1", "_id" : "3" } }\n{ "field1" : "value3" }\n{ "update" : {"_id" : "1", "_type" : "type1", "_index" : "index1"} }\n{ "doc" : {"field2" : "value2"} }'
+
+curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/_bulk --data-binary "@requests"; echo
+{"took":7, "errors": false, "items":[{"index":{"_index":"test","_type":"type1","_id":"1","_version":1,"result":"created","forced_refresh":false}}]}
 ```
 #### 重建索引
 ```
@@ -131,9 +157,10 @@ curl localhost:9200/_reindex -d '
 {
   "source":{
     "index":"twitter",
+    "type": "tweet",
     "query":{
       "term":{
-        "user":"kimchy"
+        "user":"kim"
       }
     }
   },
@@ -147,7 +174,8 @@ curl localhost:9200/_reindex -d '
 curl localhost:9200/_reindex -d '
 {
   "source":{
-    "index":["twitter","test"]
+    "index":["twitter","new_twitter1"]，
+    "type": ["tweet", "tweet"]
   },
   "dest":{
     "index":"new_twitter2"
@@ -160,9 +188,9 @@ curl localhost:9200/_reindex -d '
 ```
 curl localhost:9200/_reindex -d '
 {
-  "size":1,
+  "size":1, // 只会创建一条索引
   "source":{
-    "index":"twitter"
+    "index":"new_twitter2"
   },
   "dest":{
     "index":"new_twitter4"
