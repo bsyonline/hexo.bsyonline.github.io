@@ -183,7 +183,7 @@ SELINUX=disabled
 ```
 ### 文件共享
 
-有 p75 和 p76 两台机器，需要将两台机器的 /u01/data/ 目录共享。
+有 p75 和 p76 两台机器，需要将两台机器的 /u01/data/conf 目录共享。
 
 **1. 安装**
 
@@ -211,8 +211,8 @@ a0c173b4-341a-4f47-9eea-5e2ca9713665	localhost	Connected
 **4. 创建数据目录**
 
 ```
-mkdir -p /opt/data/
-gluster volume create gv3 replica 2 transport tcp p75:/u01/data/ p76:/u01/data/ force
+mkdir -p /opt/data/conf
+gluster volume create gv3 replica 2 transport tcp p75:/u01/data/conf p76:/u01/data/conf force
 gluster volume info
 ```
 **5. 启动**
@@ -229,11 +229,11 @@ yum -y install glusterfs glusterfs-fuse
 ```
 **7. 挂载目录**
 ```
-mkdir -p /opt/data
-mount -t glusterfs -o rw p75:gv3 /opt/data/
+mkdir -p /opt/data/conf
+mount -t glusterfs -o rw p75:gv3 /opt/data/conf
 ```
 
-至此，配置完成。在 p76 的 /opt/data 目录放置的配置文件，在 p75 和 p76 的 /u01/data/ 目录都能读取到。
+至此，配置完成。在 p76 的 /opt/data/conf 目录放置的配置文件，在 p75 和 p76 的 /u01/data/conf 目录都能读取到。
 
-问题：
-上面解决的配置文件共享的问题，但是想用共享目录收集两台机器上的日志还有问题。 docker 在 p75 和 p76 上部署的时候，日志路径是一样， p76 的 /opt/data/ 挂载到共享目录后， p75 的 /opt/data/ 就无法挂载了。换一个目录可以挂载，但是 docker 的配置就要单独配置了。
+
+>共享目录解决的是配置文件共享的问题，统一日志收集用ELK。
