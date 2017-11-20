@@ -1,5 +1,5 @@
 ---
-title: idea内存溢出解决办法
+title: IDEA 内存溢出解决办法
 toc: true
 date: 2014-01-13 15:49:52
 tags: IDEA

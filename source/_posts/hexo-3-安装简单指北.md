@@ -1,7 +1,8 @@
 ---
-title: hexo 3 安装简单指北
+title: Hexo 3 安装简单指北
 date: 2017-01-16 20:05:36
-tags: hexo
+tags: Hexo
+categories: Hexo
 ---
 
 之前装过一次 hexo ，用了一段时间，后来重做系统之后，安装出现了一些问题，花了一些时间重新整理一下。

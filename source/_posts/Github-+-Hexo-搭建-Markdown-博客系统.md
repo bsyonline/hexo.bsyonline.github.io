@@ -2,7 +2,7 @@
 title: Github + Hexo 搭建 Markdown 博客系统
 date: 2016-07-14 19:20:12
 tags: hexo
-categories: 
+categories: Hexo
 ---
 
 <!-- toc -->

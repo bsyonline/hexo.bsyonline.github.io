@@ -1,5 +1,5 @@
 ---
-title: ubuntu 16.04 软件安装及配置
+title: Ubuntu 16.04 软件安装及配置
 toc: true
 date: 2016-07-15 22:25:09
 tags: docker

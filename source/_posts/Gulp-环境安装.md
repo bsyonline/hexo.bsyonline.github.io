@@ -1,5 +1,5 @@
 ---
-title: gulp 环境安装
+title: Gulp 环境安装
 toc: true
 date: 2016-07-20 11:13:51
 tags: gulp

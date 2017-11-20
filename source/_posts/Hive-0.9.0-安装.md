@@ -1,5 +1,5 @@
 ---
-title: hive-0.9.0 安装
+title: Hive-0.9.0 安装
 toc: true
 date: 2015-11-12 15:49:47
 tags: Hive

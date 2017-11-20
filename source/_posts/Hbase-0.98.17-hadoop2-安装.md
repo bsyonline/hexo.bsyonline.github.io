@@ -1,5 +1,5 @@
 ---
-title: hbase-0.98.17-hadoop2 安装
+title: Hbase-0.98.17-hadoop2 安装
 toc: true
 date: 2015-11-01 15:45:50
 tags: Hbase
