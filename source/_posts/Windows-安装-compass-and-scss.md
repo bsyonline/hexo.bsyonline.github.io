@@ -3,7 +3,7 @@ title: Windows 安装 compass and scss
 toc: true
 date: 2016-07-15 22:25:09
 tags: Docker
-categories: 编程
+categories: 前端
 ---
 ### 1. 安装ruby
 

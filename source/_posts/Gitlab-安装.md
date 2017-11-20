@@ -3,7 +3,7 @@ title: gitlab安装
 toc: true
 date: 2016-05-16 15:45:21
 tags: Git
-categories: 编程
+categories: Git
 ---
 
 

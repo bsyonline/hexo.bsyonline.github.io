@@ -1,7 +1,8 @@
 ---
 title: Nginx 代理静态网页
 date: 2017-10-17 14:16:13
-tags: How-To
+tags: 
+categories: Nginx
 ---
 
 

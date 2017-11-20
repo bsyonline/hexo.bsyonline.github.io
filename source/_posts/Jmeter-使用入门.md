@@ -3,7 +3,7 @@ title: Jmeter 使用入门
 toc: true
 date: 2016-09-07 10:54:11
 tags: Jmeter
-categories: 编程
+categories: Jmeter
 ---
 
 Jmeter 是一款开源的压力测试工具，虽功能不及 Loadrunner 强大，但是对于一些简单的如接口api的测试完全够用。

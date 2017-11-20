@@ -3,7 +3,7 @@ title: Hadoop 2.6.2 安装
 toc: true
 date: 2015-10-20 15:45:55
 tags: Hadoop
-categories: 编程
+categories: 大数据
 ---
 
 

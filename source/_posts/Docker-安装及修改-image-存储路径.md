@@ -3,7 +3,7 @@ title: Docker 安装及修改 image 存储路径
 toc: true
 date: 2017-07-15 22:25:09
 tags: Docker
-categories: 编程
+categories: Docker
 ---
 
 ###安装 docker

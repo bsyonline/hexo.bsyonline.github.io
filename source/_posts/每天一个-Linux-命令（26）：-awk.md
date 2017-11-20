@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（26）： awk
 date: 2017-03-05 10:10:45
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 free 命令可以显示 Linux 系统中空闲的、已用的物理内存及 swap 内存,及被内核使用的 buffer，是最经常使用的系统监控工具之一。

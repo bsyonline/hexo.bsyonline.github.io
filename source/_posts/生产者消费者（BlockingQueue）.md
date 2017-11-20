@@ -3,7 +3,7 @@ title: 生产者消费者（BlockingQueue）
 toc: false
 date: 2015-02-16 15:53:17
 tags: Java
-categories: 编程
+categories: Java 编程
 ---
 
 <!--more-->

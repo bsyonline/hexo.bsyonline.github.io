@@ -2,7 +2,7 @@
 title: Spark 入门
 date: 2017-01-10 09:37:43
 tags: Spark
-categories: 编程
+categories: 大数据
 ---
 
 

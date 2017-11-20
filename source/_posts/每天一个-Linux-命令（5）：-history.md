@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（5）： history
 date: 2017-02-12 10:07:55
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 history 命令能够列出在终端执行的命令的列表，并且能够快速执行某条历史命令。

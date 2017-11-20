@@ -3,7 +3,7 @@ title: Java 中的回调函数
 toc: false
 date: 2016-08-08 17:23:33
 tags: Java
-categories: 编程
+categories: Java 编程
 ---
 
 在 Spring 和 Hibernate 中有很多回调函数的用法，感觉使用起来非常方便，那么回调函数是如何实现的呢？

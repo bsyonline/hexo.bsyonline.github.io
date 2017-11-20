@@ -3,7 +3,7 @@ title: HashMap 的工作原理
 toc: true
 date: 2016-08-09 11:37:57
 tags: Java
-categories: 编程
+categories: Java 编程
 ---
 
 HashMap 是最常用的集合类之一，在面试中也出镜率颇高。

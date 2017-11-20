@@ -2,7 +2,7 @@
 title: Spark ExecutorLostFailure 错误简单分析
 date: 2017-02-03 10:03:50
 tags: Spark
-categories: 编程
+categories: 大数据
 ---
 
 用 Spark 读 HBase 的 4400 万数据的表时，出现了 ExecutorLostFailure 错误，如果读一个 100 万的数据表则正常执行。[网上资料](https://www.zybuluo.com/xtccc/note/254078)说它常常出现在数据量很大，特别是shuffle的数据量很大，或者 executor 内存比较小的时候。

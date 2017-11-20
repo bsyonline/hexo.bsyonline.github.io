@@ -3,7 +3,7 @@ title: hbase 0.94.26 伪分布模式安装
 toc: true
 date: 2015-10-27 15:49:41
 tags: Hbase
-categories: 编程
+categories: 大数据
 ---
 
 

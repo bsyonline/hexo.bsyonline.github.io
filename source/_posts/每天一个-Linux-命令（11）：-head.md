@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（11）： head
 date: 2017-02-18 10:07:20
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 head 和 cat 一样是链接文件和标准输出的命令，不同的是 head 只输出文件的头部（默认前 10 行）。

@@ -3,7 +3,7 @@ title: spring boot cache （redis）使用
 toc: true
 date: 2016-05-26 16:00:24
 tags: spring-boot
-categories: technology
+categories: Java 编程
 ---
 
 

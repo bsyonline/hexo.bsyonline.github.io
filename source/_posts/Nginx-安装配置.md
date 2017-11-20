@@ -1,8 +1,8 @@
 ---
 title: Nginx 安装配置
 date: 2017-04-01 15:05:51
-tags: How-To
-categories: How-To
+tags: Nginx
+categories: Nginx
 ---
 
 Nginx 是一款高性能的 HTTP 和反向代理服务器。

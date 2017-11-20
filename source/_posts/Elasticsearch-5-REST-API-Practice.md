@@ -3,7 +3,7 @@ title: Elasticsearch 5 REST API Practice
 toc: true
 date: 2016-10-28 13:58:36
 tags: Elasticsearch
-categories: 编程
+categories: Elasticsearch
 ---
 
 [TOC]
@@ -197,7 +197,34 @@ curl localhost:9200/_reindex -d '
   }
 }'
 ```
+#### 远程重建索引
+
+```
+curl -XPOST localhost:9200/_reindex -d '
+{
+  "source": {
+    "remote": {
+      "host": "http://otherhost:9200",
+      "username": "user",
+      "password": "pass"
+    },
+    "index": "source",
+    "query": {
+      "match": {
+        "test": "data"
+      }
+    }
+  },
+  "dest": {
+    "index": "dest"
+  }
+}'
+```
+
+
+
 ## II. 检索
+
 **初始化数据**
 ```
 curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{

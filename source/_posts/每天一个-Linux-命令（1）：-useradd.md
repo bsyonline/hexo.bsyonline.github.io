@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（1）： useradd
 date: 2017-02-08 11:46:53
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 在伯乐在线上看到一个《每天一个 Linux 命令》的系列文章，觉得有必要对自己用过的和没有用过得命令做一个归纳，只是简单的 How-To 类的说明，算是对有些很久不用的知识做个备忘。

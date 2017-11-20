@@ -3,7 +3,7 @@ title: jQuery常用操作操作
 toc: true
 date: 2016-04-16 16:00:33
 tags: jQuery
-categories: 编程
+categories: 前端
 ---
 
 jQuery 的常用操作整理一下，备忘。

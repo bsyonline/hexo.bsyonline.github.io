@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（13）： more
 date: 2017-02-20 10:04:46
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 more 是另一个和 cat 功能类似的命令，不同的是 more 可以分页显示文件内容。

@@ -3,7 +3,7 @@ title: Blackberry 开发：自定义图片背景的button
 toc: false
 date: 2011-09-23 22:25:09
 tags: Blackberry
-categories: 编程
+categories: Blackberry 开发
 ---
 
 <!--more-->

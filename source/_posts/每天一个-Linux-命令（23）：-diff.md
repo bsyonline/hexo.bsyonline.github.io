@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（23）： diff
 date: 2017-03-02 10:10:45
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 

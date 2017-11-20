@@ -2,7 +2,7 @@
 title: Spark 类型转换异常的处理
 date: 2017-02-03 10:16:52
 tags: Spark
-categories: 编程
+categories: 大数据
 ---
 
 在调试 Spark 程序的时候报了一个类型转换异常，信息如下：

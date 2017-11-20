@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（8）： chown
 date: 2017-02-15 10:10:26
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 chown 用于修改文件的所有者和组。

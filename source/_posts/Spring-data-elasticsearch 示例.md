@@ -3,7 +3,7 @@ title: spring-data-elasticsearch 示例说明
 toc: true
 date: 2016-07-15 22:25:09
 tags: spring-data
-categories: 编程
+categories: Java 编程
 ---
 ### POM依赖
 ```

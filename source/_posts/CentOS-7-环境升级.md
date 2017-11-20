@@ -3,7 +3,7 @@ title: CentOS 7 环境升级
 toc: true
 date: 2016-10-21 10:51:34
 tags: How-To
-categories: How-To
+categories: Linux
 ---
 
 docker 1.12 版本要求 CentOS 7 ，生产环境系统升级到 CentOS 7 后安装 docker 环境步骤简单记录备忘。

@@ -3,7 +3,7 @@ title: Scala 学习资料汇总
 toc: false
 date: 2016-09-05 22:39:19
 tags: Scala
-categories: 编程
+categories: Scala 编程
 ---
 
 收集了一些，准备。

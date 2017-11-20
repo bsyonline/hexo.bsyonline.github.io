@@ -3,7 +3,7 @@ title: Hbase Shell 操作
 toc: true
 date: 2015-11-05 15:49:44
 tags: Hbase
-categories: 编程
+categories: 大数据
 ---
 
 

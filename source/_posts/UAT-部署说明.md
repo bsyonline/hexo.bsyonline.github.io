@@ -3,7 +3,7 @@ title: UAT 部署说明
 toc: true
 date: 2016-07-15 22:25:09
 tags: chinadaas
-categories: 编程
+categories: chinadaas
 ---
 
 

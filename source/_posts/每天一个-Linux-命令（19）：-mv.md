@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（19）： mv
 date: 2017-02-26 10:10:28
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 mv 的作用是移动文件和目录，也可以用来重命名文件。

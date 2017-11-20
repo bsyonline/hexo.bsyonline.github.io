@@ -2,6 +2,7 @@
 title: SBT 打包
 date: 2017-01-17 15:48:32
 tags: spark
+categories: 大数据
 ---
 
 紧接上一篇（[Spark 入门](../../../../2017/01/10/Spark-入门/)），本节讨论一下 SBT 打包。

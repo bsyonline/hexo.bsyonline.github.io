@@ -3,7 +3,7 @@ title: Blackberry 开发：XML 解析
 toc: true
 date: 2012-05-14 15:53:17
 tags: Blackberry
-categories: 编程
+categories: Blackberry 开发
 ---
 
 <!--more-->

@@ -3,7 +3,7 @@ title: Java NIO 详解
 toc: true
 date: 2016-09-21 11:12:01
 tags:
-categories: 编程
+categories: Java 编程
 ---
 
 Java NIO 库是在JDK 1.4中引入的。Java NIO 弥补了原来的 I/O 的不足，它在标准 Java 代码中提供了高速的、面向块的 I/O。Java I/O 库与 Java NIO 最重要的区别是数据打包和传输的方式的不同，Java I/O 以**流**的方式处理数据，而 Java NIO 以**块**的方式处理数据。

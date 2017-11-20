@@ -3,7 +3,7 @@ title: 'Jmeter : Java Request 的测试方法'
 toc: true
 date: 2016-10-17 14:28:17
 tags: Jmeter
-categories: 编程
+categories: Jmeter
 ---
 Jmeter 是一款简单的性能测试工具，以前都是用来测试 API 接口，没试过测试 Java 程序，这是一个例子。
 

@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（12）： tail
 date: 2017-02-19 10:07:32
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 tail 是查看 log 的最常用的命令，没有之一。

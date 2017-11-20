@@ -3,7 +3,7 @@ title: Google地图求两点之间距离
 toc: true
 date: 2014-12-16 15:45:38
 tags: gis
-categories: 编程
+categories: Java 编程
 
 ---
 

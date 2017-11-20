@@ -3,7 +3,7 @@ title: Elasticsearch REST API Practice
 toc: true
 date: 2016-10-28 13:58:36
 tags: Elasticsearch
-categories: 编程
+categories: Elasticsearch
 ---
 
 [TOC]

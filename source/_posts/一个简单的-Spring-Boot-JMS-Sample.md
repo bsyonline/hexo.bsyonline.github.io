@@ -3,7 +3,7 @@ title: 一个简单的 Spring Boot + JMS Sample
 toc: true
 date: 2016-10-26 15:40:04
 tags: JMS
-categories: 编程
+categories: Java 编程
 ---
 
 学习 spring boot 集成 JMS 时写的一个小程序。

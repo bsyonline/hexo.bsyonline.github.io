@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（16）： which
 date: 2017-02-23 10:09:09
 tags: Linux
-categories: How-To
+categories: Linux
 ---
 
 which 命令的作用是在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。换句话说，可以用 which 查看一个命令是否存在。

@@ -3,7 +3,7 @@ title: shell:autobak.sh
 toc: false
 date: 2016-07-16 15:53:17
 tags: Java
-categories: 编程
+categories: Linux
 ---
 
 

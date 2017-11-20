@@ -5,7 +5,7 @@ date: 2016-02-20 15:49:59
 tags:
 	Jaxb
 	Java
-categories: 编程
+categories: Java 编程
 ---
 
 

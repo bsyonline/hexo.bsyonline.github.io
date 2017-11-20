@@ -3,7 +3,7 @@ title: 'Docker : 删除所有为 none 的镜像'
 toc: true
 date: 2016-10-12 13:29:34
 tags:
-categories:
+categories: Docker
 ---
 
 在使用 Docker 时，如果创建镜像出错，会产生 REPOSITORY 和 TAG 为空的镜像，要删除这些镜像，可以使用

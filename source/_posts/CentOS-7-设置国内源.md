@@ -2,7 +2,7 @@
 title: CentOS 7 设置国内源
 date: 2017-04-01 15:05:26
 tags: How-To
-categories: How-To
+categories: Linux
 ---
 
 网易源设置帮助 [http://mirrors.163.com/.help/centos.html](http://mirrors.163.com/.help/centos.html)。

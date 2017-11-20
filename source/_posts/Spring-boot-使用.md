@@ -3,7 +3,7 @@ title: spring boot 使用
 toc: true
 date: 2016-01-11 16:00:27
 tags: spring-boot
-categories: 编程
+categories: Java 编程
 ---
 
 
