@@ -1,0 +1,44 @@
+# Header Menu
+menu:
+  Home: /
+  Projects: /projects/
+  #Blog: /archives/ # can set archive-dir in root config to custom value
+  Contact: /contact/
+  About: /about/
+   
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true # whether or not to load the fancybox library
+
+# Integrations
+disqus_shortname: 
+google_analytics:
+swiftype_install_key: 
+
+# Social
+social:
+  github: https://github.com/bsyonline
+  twitter: #
+  facebook: #
+  rss: #
+  linkedin: #
+  stackoverflow: #
+
+# Miscellaneous
+color_scheme: red   # options: blue, gray, green, orange, red, turquoise
+favicon: /favicon.ico # path from root of hexo site
+twitter_widget_id: "678830341331820544" # as a string, from https://twitter.com/settings/widgets
+twitter_username: computerlab_ # twitter username without the @
+default_author: "bsyonline"
+
+about: Computer Lab is a software development and marketing company based in Brooklyn, New York. <br><br> Computer Lab was founded in 2015, and is focused on so on and so forth.
+phone: ""
+email: zengronghui@gmail.com
+address_1: ""
+address_2: ""
+address_3: ""
+skype: 
+lat:  
+long: 

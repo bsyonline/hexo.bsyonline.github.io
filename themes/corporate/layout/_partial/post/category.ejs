@@ -1,0 +1,5 @@
+<% if (post.categories && post.categories.length){ %>
+  <% post.categories.forEach(function(category, i){ %>
+    <%- link_to(category.path, category.name) %><% if (i != post.categories.length - 1){ %>,<% } %>
+  <% }); %>
+<% } %>
