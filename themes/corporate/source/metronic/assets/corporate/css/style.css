@@ -732,7 +732,7 @@ body.page-header-fixed {
 	width: 1140px;
 	margin-top: 0;
 	z-index: 22;
-	max-height: 700px;
+	max-height: 550px;
 }
 .header-navigation .search-box:after { 
 	top: -8px;
