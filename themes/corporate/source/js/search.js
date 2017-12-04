@@ -5,13 +5,31 @@
 // Edited by MOxFIVE <http://github.com/MOxFIVE>
 var inputArea = document.querySelector("#local-search-input");
 var getSearchFile = function(){
-    var path = "/public/search.xml";
+    var path = "/search.xml";
     searchFunc(path, 'local-search-input', 'local-search-result');
 }
 
-function doSearch(){ getSearchFile() }
+inputArea.onfocus = function(){ getSearchFile() }
+var inputArea = document.querySelector("#local-search-input");
+var getSearchFile = function(){
+    var path = "/public/search.xml";
+    searchFunc(path, 'local-search-input', 'local-search-result');
+}
+function doSearch(){ 
+    getSearchFile() 
+}
 
- function searchFunc(path, search_id, content_id) {
+var $resetButton = $("#search-form .fa-times");
+var $resultArea = $("#local-search-result");
+
+inputArea.oninput = function(){ $resetButton.show(); }
+resetSearch = function(){
+    $resultArea.html("");
+    document.querySelector("#search-form").reset();
+    $resetButton.hide();
+    $(".no-result").hide();
+}
+function searchFunc(path, search_id, content_id) {
     'use strict';
     $.ajax({
         url: path,
@@ -62,9 +80,8 @@ function doSearch(){ getSearchFile() }
                         });
                     }
                     // show search results
-                    alert(isMatch);
                     if (isMatch) {
-                        str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ "> " + data_title +"</a>";
+                        str += "<li style='margin: 5px 0;'><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ data_title +"</a>";
                         var content = data.content.trim().replace(/<[^>]+>/g,"");
                         if (first_occur >= 0) {
                             // cut out characters

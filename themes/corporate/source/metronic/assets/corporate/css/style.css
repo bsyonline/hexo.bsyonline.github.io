@@ -729,9 +729,10 @@ body.page-header-fixed {
 	position: absolute;
 	border-top: solid 2px #ea4c1d;
 	box-shadow: 5px 5px rgba(91, 91, 91, 0.2);
-	width: 274px;
+	width: 1140px;
 	margin-top: 0;
 	z-index: 22;
+	max-height: 700px;
 }
 .header-navigation .search-box:after { 
 	top: -8px;
