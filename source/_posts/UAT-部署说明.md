@@ -2,8 +2,13 @@
 title: UAT 部署说明
 toc: true
 date: 2016-07-15 22:25:09
-tags: chinadaas
-categories: chinadaas
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 
@@ -73,8 +78,8 @@ fab -f fabfile_uat.py install_web_service
 fab -f fabfile_uat.py start:nginx,roles=web
 ```
 5. 执行脚本
-登录192.168.11.20
-ops/daas@2015
+   登录192.168.11.20
+   ops/daas@2015
 ```
 cd risk-bell  
 ./deploy2uat.sh

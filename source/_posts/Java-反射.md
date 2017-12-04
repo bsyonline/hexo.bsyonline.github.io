@@ -2,8 +2,13 @@
 title: Java 反射
 toc: false
 date: 2016-08-19 15:20:47
-tags: Java
-categories: Java 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 Java 反射是 jdk 1.5 加入新特性。Java 反射机制可以让我们在编译期 (Compile Time) 之外的运行期 (Runtime) 检查类，接口，变量以及方法的信息。反射还可以让我们在运行期实例化对象，调用方法，通过调用 get/set 方法获取变量的值。

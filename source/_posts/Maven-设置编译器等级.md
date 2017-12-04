@@ -1,9 +1,14 @@
 ---
-title: IDEA 使用 maven 每次更新 pom 不重置 LanguageLevel 和 JavaCompiler 的办法
+title: Maven 设置编译器等级
 toc: true
 date: 2014-01-10 15:49:54
-tags: IDEA
-categories: 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "解决 IDEA 使用 maven 每次更新 pom 重置 LanguageLevel 和 JavaCompiler 问题的办法"
 ---
 
 

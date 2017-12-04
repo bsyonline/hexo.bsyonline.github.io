@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（21）： df
 date: 2017-02-28 10:10:45
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

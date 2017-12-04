@@ -2,8 +2,13 @@
 title: 字符界面安装 vmware tools
 toc: true
 date: 2015-08-04 15:53:17
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ### 1. 挂载cdrom

@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（22）： du
 date: 2017-03-01 10:10:45
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

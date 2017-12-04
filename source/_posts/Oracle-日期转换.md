@@ -2,8 +2,13 @@
 title: Oracle 日期转换
 toc: false
 date: 2016-03-24 15:53:51
-tags: Oracle
-categories: 数据库
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 Oracle 日期转换示例。
@@ -18,9 +23,9 @@ SELECT
 FROM dual
 ```
 
-d1|d2|d3
--|-|-
-2016-01-29 00:00:00 | 01-JUL-16|01-7月 -16
+| d1                  | d2        | d3        |
+| ------------------- | --------- | --------- |
+| 2016-01-29 00:00:00 | 01-JUL-16 | 01-7月 -16 |
 
 ### 2. 将字符串转成date
 ```sql

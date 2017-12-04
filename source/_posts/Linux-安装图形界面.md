@@ -2,8 +2,13 @@
 title: Linux 安装图形界面
 toc: false
 date: 2015-08-01 15:53:23
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ```shell

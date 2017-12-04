@@ -2,8 +2,13 @@
 title: spring-data-redis示例说明
 toc: true
 date: 2016-07-15 22:25:09
-tags: Redis
-categories: Java 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ###1. POM

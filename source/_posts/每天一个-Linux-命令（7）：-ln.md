@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（7）： ln
 date: 2017-02-14 10:09:37
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ln 命令是在 linux 系统中建立一个文件连接。

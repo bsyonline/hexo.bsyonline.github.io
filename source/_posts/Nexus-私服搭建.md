@@ -2,8 +2,13 @@
 title: Nexus 私服搭建
 toc: true
 date: 2016-02-22 15:53:46
-tags: Nexus
-categories: 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

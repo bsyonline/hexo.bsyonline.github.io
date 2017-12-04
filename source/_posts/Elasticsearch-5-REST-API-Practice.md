@@ -1,9 +1,13 @@
 ---
 title: Elasticsearch 5 REST API Practice
-toc: true
 date: 2016-10-28 13:58:36
-tags: Elasticsearch
-categories: Elasticsearch
+tags:
+ - Elastcsearch
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 [TOC]

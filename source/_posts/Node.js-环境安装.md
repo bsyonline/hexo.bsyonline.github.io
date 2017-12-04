@@ -2,8 +2,13 @@
 title: Node.js 环境安装
 toc: false
 date: 2016-06-18 15:53:39
-tags: node.js
-categories: 前端
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ### 1. 下载最新版本源代码

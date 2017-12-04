@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（9）： chmod
 date: 2017-02-16 10:10:38
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 chmod 命令用于改变 linux 系统文件或目录的访问权限。

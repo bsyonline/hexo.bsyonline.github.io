@@ -2,8 +2,14 @@
 title: Jade 语法实践
 toc: true
 date: 2016-07-18 14:29:39
-tags: Jade
-categories: 前端
+tags:
+ - Jade
+ - Hexo
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 jade 是一个模板引擎，可以通过 node.js 来使用。本来对前端技术了解不多，接触 jade 源于搭建 hexo 博客系统。maupassant 主题模板是基于 jade 的，所以想按自己的想法来定制 maupassant 主题简单了解了一下 jade 。
@@ -84,3 +90,5 @@ i.fa.fa-paperclip
 i.fa i.fa-paperclip
 ```
 等等写法，均不能达到效果，只好去看 jade 的文档。在[http://jade-lang.com/reference/attributes/](http://jade-lang.com/reference/attributes/)中 **Class Attributes** 找到了多个 class 的语法说明，问题至此得以解决。
+
+```

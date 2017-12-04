@@ -2,11 +2,16 @@
 title: Blackberry 开发：自定义输入框
 toc: false
 date: 2012-04-05 15:53:17
-tags: Blackberry
-categories: Blackberry 开发
+tags:
+ - BlackBerry
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
-<!--more-->
+
 ```JAVA
 public InputBoxField(int boxWigth,int boxHeight,String boxText){
     super(Manager.NO_VERTICAL_SCROLL);//禁用垂直滚动

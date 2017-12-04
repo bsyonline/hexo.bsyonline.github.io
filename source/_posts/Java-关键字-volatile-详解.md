@@ -2,8 +2,13 @@
 title: Java 关键字 volatile 详解
 toc: false
 date: 2016-08-08 11:39:01
-tags: Java
-categories: Java 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 volatile 是 Java 语言的关键字，用来修饰变量。Java 的每个线程都拥有自己的内存，在某个时间点，多个线程中间的同一个变量的值可能是不同的，volatile 的作用就是让变量对所有线程都是一致的，每次获得的都是该变量的最新值。

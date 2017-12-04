@@ -1,8 +1,13 @@
 ---
 title: Spark ExecutorLostFailure 错误简单分析
 date: 2017-02-03 10:03:50
-tags: Spark
-categories: 大数据
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 用 Spark 读 HBase 的 4400 万数据的表时，出现了 ExecutorLostFailure 错误，如果读一个 100 万的数据表则正常执行。[网上资料](https://www.zybuluo.com/xtccc/note/254078)说它常常出现在数据量很大，特别是shuffle的数据量很大，或者 executor 内存比较小的时候。
@@ -10,8 +15,8 @@ categories: 大数据
 
 在寻找解决办法时，发现[网络资料](https://my.oschina.net/tearsky/blog/629201)有如下说明：
 >由于我们在执行 Spark 任务是，读取所需要的原数据，数据量太大，导致在 Worker 上面分配的任务执行数据时所需要的内存不够，直接导致内存溢出了，所以我们有必要增加 Worker 上面的内存来满足程序运行需要。
-在 Spark Streaming 或者其他 Spark 任务中，会遇到在 Spark 中常见的问题，典型如 Executor Lost 相关的问题 ( shuffle fetch 失败，Task 失败重试等 )。这就意味着发生了内存不足或者数据倾斜的问题。
-这个目前需要考虑如下几个点以获得解决方案：
+>在 Spark Streaming 或者其他 Spark 任务中，会遇到在 Spark 中常见的问题，典型如 Executor Lost 相关的问题 ( shuffle fetch 失败，Task 失败重试等 )。这就意味着发生了内存不足或者数据倾斜的问题。
+>这个目前需要考虑如下几个点以获得解决方案：
 
 >A、相同资源下，增加 partition 数可以减少内存问题。 原因如下：通过增加 partition 数，每个 task 要处理的数据少了，同一时间内，所有正在运行的 task 要处理的数量少了很多，所有 Executor 占用的内存也变小了。这可以缓解数据倾斜以及内存不足的压力。
 

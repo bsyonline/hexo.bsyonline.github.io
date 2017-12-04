@@ -2,8 +2,13 @@
 title: shell:autobak.sh
 toc: false
 date: 2016-07-16 15:53:17
-tags: Java
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

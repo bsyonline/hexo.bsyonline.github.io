@@ -1,11 +1,16 @@
 ---
 title: Github + Hexo 搭建 Markdown 博客系统
 date: 2016-07-14 19:20:12
-tags: hexo
-categories: Hexo
+tags:
+ - Hexo
+category: 
+ - 知识库
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
-<!-- toc -->
+
 
 为了更好的积累和保存学习笔记，需要满足以下要求：
 

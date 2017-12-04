@@ -2,8 +2,13 @@
 title: 添加sudo权限
 toc: false
 date: 2015-08-09 15:53:17
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 错误消息：xxx is not in the sudoers file

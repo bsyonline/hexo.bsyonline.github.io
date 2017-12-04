@@ -2,8 +2,13 @@
 title: Linux ftp 问题汇总
 toc: true
 date: 2014-07-16 15:49:44
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ####虚拟机ftp配置
@@ -31,7 +36,7 @@ google说可能是端口没开或占用
 
 
 >响应: 553 Could not create file.  
-错误: 严重文件传输错误
+>错误: 严重文件传输错误
 
 执行命令
 

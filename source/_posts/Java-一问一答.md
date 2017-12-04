@@ -2,7 +2,12 @@
 title: Java 一问一答
 date: 2017-07-05 17:24:43
 tags:
-categories: Java 编程
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 #### Q： Spring Data 的 repository 只定义了接口，没有实现，是如何完成数据访问操作的？

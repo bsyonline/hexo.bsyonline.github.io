@@ -2,8 +2,13 @@
 title: Java Stream 详解
 toc: true
 date: 2016-08-20 15:20:47
-tags: Java
-categories: Java 编程
+tags:
+ - Java 8
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 Java Stream 是 jdk 1.8 加入的新 API ，目的是用来支持函数式编程，位于 java.util.stream 包下。
@@ -66,18 +71,18 @@ Stream 语法由源，中间操作和最终操作组成。
 
 **转换**
 1. distinct:
-对于 Stream 中包含的元素进行去重操作（去重逻辑依赖元素的 equals 方法），新生成的 Stream 中没有重复的元素。
-![](http://7xqgix.com1.z0.glb.clouddn.com/distinct.jpg)
+   对于 Stream 中包含的元素进行去重操作（去重逻辑依赖元素的 equals 方法），新生成的 Stream 中没有重复的元素。
+   ![](http://7xqgix.com1.z0.glb.clouddn.com/distinct.jpg)
 2. filter:
-对于 Stream 中包含的元素使用给定的过滤函数进行过滤操作，新生成的 Stream 只包含符合条件的元素。
-![](http://7xqgix.com1.z0.glb.clouddn.com/filter.jpg)
+   对于 Stream 中包含的元素使用给定的过滤函数进行过滤操作，新生成的 Stream 只包含符合条件的元素。
+   ![](http://7xqgix.com1.z0.glb.clouddn.com/filter.jpg)
 3. map:
-对于 Stream 中包含的元素使用给定的转换函数进行转换操作，新生成的 Stream 只包含转换生成的元素。这个方法有三个对于原始类型的变种方法，分别是：mapToInt，mapToLong 和mapToDouble 。这三个方法也比较好理解，比如 mapToInt 就是把原始 Stream 转换成一个新的 Stream ，这个新生成的 Stream 中的元素都是 int 类型。之所以会有这样三个变种方法，可以免除自动装箱/拆箱的额外消耗。
-![](http://7xqgix.com1.z0.glb.clouddn.com/map.jpg)
+   对于 Stream 中包含的元素使用给定的转换函数进行转换操作，新生成的 Stream 只包含转换生成的元素。这个方法有三个对于原始类型的变种方法，分别是：mapToInt，mapToLong 和mapToDouble 。这三个方法也比较好理解，比如 mapToInt 就是把原始 Stream 转换成一个新的 Stream ，这个新生成的 Stream 中的元素都是 int 类型。之所以会有这样三个变种方法，可以免除自动装箱/拆箱的额外消耗。
+   ![](http://7xqgix.com1.z0.glb.clouddn.com/map.jpg)
 4. flatMap:
-和 map 类似，不同的是其每个元素转换得到的是 Stream 对象，会把子 Stream 中的元素压缩到父集合中。
-![](http://7xqgix.com1.z0.glb.clouddn.com/flatMap.jpg)
-光从文字描述，感觉 flatMap 还是很难理解，通过程序帮助理解。
+   和 map 类似，不同的是其每个元素转换得到的是 Stream 对象，会把子 Stream 中的元素压缩到父集合中。
+   ![](http://7xqgix.com1.z0.glb.clouddn.com/flatMap.jpg)
+   光从文字描述，感觉 flatMap 还是很难理解，通过程序帮助理解。
 ```java
 Stream<List<Integer>> nums = Stream.of(
         Arrays.asList(1),
@@ -93,8 +98,8 @@ nums.flatMap(e -> e.stream()).collect(Collectors.toList()).forEach(e -> System.o
 ```
   可以看出 flatMap 的作用是将源 Stream 中的 List 结构去掉，用 List 中的元素构成新的 List 。
 5. peek:
-生成一个包含原 Stream 的所有元素的新 Stream ，同时会提供一个消费函数（ Consumer 实例）。新 Stream 每个元素被消费的时候都会执行给定的消费函数。
-![](http://7xqgix.com1.z0.glb.clouddn.com/peek.jpg)
+   生成一个包含原 Stream 的所有元素的新 Stream ，同时会提供一个消费函数（ Consumer 实例）。新 Stream 每个元素被消费的时候都会执行给定的消费函数。
+   ![](http://7xqgix.com1.z0.glb.clouddn.com/peek.jpg)
 
     文字描述还是没有程序直观
 ```java
@@ -111,11 +116,11 @@ nums.peek(e -> System.out.println(e.size())) // 查看每个元素(list)的 size
 ```
     peek 字面意思是窥视，通常也多用在 debug 中查看 Stream 的元素内容。
 6. limit:
-对一个 Stream 进行截断操作，获取其前 N 个元素，如果原 Stream 中包含的元素个数小于 N ，那就获取其所有的元素。
-![](http://7xqgix.com1.z0.glb.clouddn.com/limit.jpg)
+   对一个 Stream 进行截断操作，获取其前 N 个元素，如果原 Stream 中包含的元素个数小于 N ，那就获取其所有的元素。
+   ![](http://7xqgix.com1.z0.glb.clouddn.com/limit.jpg)
 7. skip:
-返回一个丢弃原 Stream 的前 N 个元素后剩下元素组成的新 Stream ，如果原 Stream 中包含的元素个数小于 N ，那么返回空 Stream。
-![](http://7xqgix.com1.z0.glb.clouddn.com/skip.jpg)
+   返回一个丢弃原 Stream 的前 N 个元素后剩下元素组成的新 Stream ，如果原 Stream 中包含的元素个数小于 N ，那么返回空 Stream。
+   ![](http://7xqgix.com1.z0.glb.clouddn.com/skip.jpg)
 
 **聚合**
 聚合也叫 fold ，是通过重复的组合操作将一个元素序列合并成单独的结果，比如求 sum 或找到一个数字集合的最大值。Stream 类有多种形式的通用聚合操作，如 reduce() 和 collect() ，还有很多特殊的聚合操作，如 sum() 和 count() ，这些只有 IntStream 、DoubleStream 和 LongSteam 类才有。

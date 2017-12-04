@@ -1,10 +1,14 @@
 ---
 title: AspectJ 和 Spring AOP 科普
 date: 2017-04-01 14:29:56
-tags: 
+tags:
  - AOP
  - AspectJ
-categories: Java 编程
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

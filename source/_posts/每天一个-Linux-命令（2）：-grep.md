@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（2）： grep
 date: 2017-02-09 16:51:00
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 grep 是比较常用的一个命令，用来搜索文件或标准输出中的匹配模式的内容，默认打印出匹配的行。

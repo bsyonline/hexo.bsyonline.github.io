@@ -2,8 +2,13 @@
 title: Ubuntu 16.04 安装 oracle instant client
 toc: true
 date: 2016-04-19 15:53:12
-tags: Ubuntu
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

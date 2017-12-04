@@ -2,8 +2,13 @@
 title: spring boot 使用
 toc: true
 date: 2016-01-11 16:00:27
-tags: spring-boot
-categories: Java 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 
@@ -40,17 +45,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Created with IntelliJ IDEA.
- * User: rolex
- * Date: 2016/05/06
- * Version: 1.0
- */
-@SpringBootApplication
-public class Main {
+*  Created with IntelliJ IDEA.
+*  User: rolex
+*  Date: 2016/05/06
+*  Version: 1.0
+    */
+   @SpringBootApplication
+   public class Main {
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
-}
+   }
 ```
 Main是程序的入口类，程序启动时会扫描Main所在目录子目录的所有文件进行spring注入（对声明了spring注解的类有效）。
 
@@ -60,7 +65,7 @@ Main是程序的入口类，程序启动时会扫描Main所在目录子目录的
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+    
     ...     
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -82,7 +87,7 @@ Main是程序的入口类，程序启动时会扫描Main所在目录子目录的
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
     </dependencies>
-
+    
     <repositories>
         <repository>
             <id>spring-snapshots</id>
@@ -100,3 +105,5 @@ Main是程序的入口类，程序启动时会扫描Main所在目录子目录的
 
 执行命令
 >java -jar app.jar --spring.config.name=app
+
+```

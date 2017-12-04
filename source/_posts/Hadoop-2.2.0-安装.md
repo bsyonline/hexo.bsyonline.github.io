@@ -2,9 +2,13 @@
 title: Hadoop 2.2.0 安装
 toc: true
 date: 2015-10-13 15:45:30
-tags: Hadoop
-categories: 大数据
-
+tags:
+ - Hadoop
+category: 
+ - 大数据
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ### 1. 下载

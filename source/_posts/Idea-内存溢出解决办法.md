@@ -2,8 +2,13 @@
 title: IDEA 内存溢出解决办法
 toc: true
 date: 2014-01-13 15:49:52
-tags: IDEA
-categories: 编程
+tags:
+ - IDEA
+category: 
+ - 知识库
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

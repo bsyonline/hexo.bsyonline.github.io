@@ -2,8 +2,13 @@
 title: Sqlplus 执行文件
 toc: false
 date: 2016-02-13 16:00:30
-tags: Oracle
-categories: 数据库
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 使用客户端工具导入数据量大时会卡死，所以改用命令行执行。

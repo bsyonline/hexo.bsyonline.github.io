@@ -1,13 +1,16 @@
 ---
 title: Hexo 3 安装简单指北
 date: 2017-01-16 20:05:36
-tags: Hexo
-categories: Hexo
+tags:
+ - Hexo
+category: 
+ - 知识库
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 之前装过一次 hexo ，用了一段时间，后来重做系统之后，安装出现了一些问题，花了一些时间重新整理一下。
-
-<!-- more -->
 
 node.js 和 git 安装好后，开始安装 hexo 。
 
@@ -51,7 +54,7 @@ hexo deploy
 
 ### primer 主题安装
 1. primer 是一款 github 风格的主题，项目地址 [https://github.com/yumemor/hexo-theme-primer](https://github.com/yumemor/hexo-theme-primer) 。
-我使用的是 primer 2.0 ，按照说明文档配置即可 [https://github.com/yumemor/hexo-theme-primer/tree/2.0](https://github.com/yumemor/hexo-theme-primer/tree/2.0) 。
+   我使用的是 primer 2.0 ，按照说明文档配置即可 [https://github.com/yumemor/hexo-theme-primer/tree/2.0](https://github.com/yumemor/hexo-theme-primer/tree/2.0) 。
 
 2. 添加 guitar 菜单
 

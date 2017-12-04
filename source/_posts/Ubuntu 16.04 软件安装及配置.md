@@ -2,8 +2,13 @@
 title: Ubuntu 16.04 软件安装及配置
 toc: true
 date: 2016-07-15 22:25:09
-tags: docker
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

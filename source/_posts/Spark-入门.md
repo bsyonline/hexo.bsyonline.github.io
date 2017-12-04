@@ -1,8 +1,13 @@
 ---
 title: Spark 入门
 date: 2017-01-10 09:37:43
-tags: Spark
-categories: 大数据
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

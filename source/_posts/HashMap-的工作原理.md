@@ -2,8 +2,13 @@
 title: HashMap 的工作原理
 toc: true
 date: 2016-08-09 11:37:57
-tags: Java
-categories: Java 编程
+tags:
+ - 数据结构
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 HashMap 是最常用的集合类之一，在面试中也出镜率颇高。
@@ -30,9 +35,9 @@ public V put(K key, V value) {
 HashMap 在 put 一个 key-value 对时，首先对 key 做 hash 操作，然后将 key 分配到 table[i] 的位置。如果两个 key 的 hash(key) 结果相同，那么这两个 key 就都会分配到 table[i] 的位置，这两个 key 就会在 table[i] 的位置以链表的形式存储，这种现象称为 **碰撞**。
 可以用一张图来说明，我们假设将取模作为 `hash(key)` 的话，put 如下一组数据：
 
-key|7|17|23|33|39|49|55|73|87|103|
--|-|-
-value|a|b|c|d|e|f|g|h|i|j
+| key   | 7    | 17   | 23   | 33   | 39   | 49   | 55   | 73   | 87   | 103  |      |
+| ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| value | a    | b    | c    | d    | e    | f    | g    | h    | i    | j    |      |
 
 将形成下图的结构
 
@@ -98,13 +103,13 @@ Hashtable 和 concurrentHashMap 的性能差异的关键是写锁的数量。Has
 concurrentHashMap 则是将锁分散到每个 bucket 。bucket 的锁的数量是 32 ，也就意味着可以有 32 个线程同时操作 Map ，其性能自然比 Hashtable 要好很多。
 ### 如何优化 HashMap 的性能
 1. **初始化容量**
-通常情况下 HashMap 的性能还是比较稳定的，算是在 ArrayList 和 LinkedList 之间取了平衡。
+   通常情况下 HashMap 的性能还是比较稳定的，算是在 ArrayList 和 LinkedList 之间取了平衡。
 
-|获取 |	查找 |	添加/删除 |	空间 	
--|-|-
-ArrayList |	O(1) |	O(1) |	O(N) |	O(N)
-LinkedList |	O(N) |	O(N) |	O(1) |	O(N)
-HashMap |	O(N/Bucket_size) |	O(N/Bucket_size) |	O(N/Bucket_size) |	O(N)
+   |获取 |查找 |	添加/删除 |	空间 	
+   -|-|-
+   ArrayList |O(1) |	O(1) |	O(N) |	O(N)
+   LinkedList |O(N) |	O(N) |	O(1) |	O(N)
+   HashMap |O(N/Bucket_size) |	O(N/Bucket_size) |	O(N/Bucket_size) |	O(N)
 
 N 为元素的个数，Bucket_size 是桶的数量，在碰撞很少的情况下，复杂度趋近于 O(1) 。如果想进一步提高 HashMap 的性能，则需要在设计时有更多考虑。HashMap 的初始容量为 16 ，容量超过 75% 就会 resizing 。虽然 HashMap 的 resizing 性能再不断提升，但是如果能预估 HashMap 的大小，就能够避免不必要的 resizing 。
 如果有 1000 个元素， 下面的写法必定会触发 resizing 。
@@ -129,6 +134,6 @@ Map map = new HashMap(size);
 Map map = Maps.newHashMapWithExpectedSize(1000);
 ```
 2. **Key 的设计建议**
-我们知道 Map 获取元素是通过 Key 来比较的，Integer 的数值型的 Key 可以使用 == 来比较，而 String 需要用 equals ，一个一个字符比较还是比较慢的，好在 String 是 final 的，hashcode 可以缓存，但还是建议在只能使用 equals 的情况下，将 Key 设计的短一些。
+   我们知道 Map 获取元素是通过 Key 来比较的，Integer 的数值型的 Key 可以使用 == 来比较，而 String 需要用 equals ，一个一个字符比较还是比较慢的，好在 String 是 final 的，hashcode 可以缓存，但还是建议在只能使用 equals 的情况下，将 Key 设计的短一些。
 3. **使用替代数据结构**
-在极端情况下，如果 HashMap 的可以使用支持 int 、 long 等原生类型作为 Key 的数据结构来代替。
+   在极端情况下，如果 HashMap 的可以使用支持 int 、 long 等原生类型作为 Key 的数据结构来代替。

@@ -2,7 +2,12 @@
 title: Spark 序列化
 date: 2017-05-31 11:50:28
 tags:
-categories: 大数据
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 序列化对任何分布式系统的性能来说都至关重要。序列化对象慢或占用大量的字节将大大降低计算的性能。通常在 Spark 程序中，我们需要首先将序列化调整到最优。Spark 提供了两个序列化类库，以便在易用性和效率之间达到平衡。

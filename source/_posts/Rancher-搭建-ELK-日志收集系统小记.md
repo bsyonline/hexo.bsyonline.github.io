@@ -1,8 +1,13 @@
 ---
 title: Rancher 搭建 ELK 日志收集系统小记
 date: 2017-02-17 16:05:40
-tags: Rancher
-categories: Docker
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ELK 是 elastic 公司提供的一套开源的实时日志分析系统。经过一段时间的学习，在 Rancher 上搭建了一套，在此将整个搭建过程做一个总结。

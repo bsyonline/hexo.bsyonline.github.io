@@ -1,8 +1,13 @@
 ---
 title: Nginx 代理静态网页
 date: 2017-10-17 14:16:13
-tags: 
-categories: Nginx
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

@@ -3,12 +3,16 @@ title: Firewalld 试用
 toc: true
 date: 2016-10-21 15:04:59
 tags:
-categories: Linux
+ - CentOS
+category: 
+ - Linux
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 CentOs 7 filewall 简单命令。
 
-<!--more-->
 ### 启动
 ```
 systemctl start firewalld

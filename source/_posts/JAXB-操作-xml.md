@@ -3,9 +3,12 @@ title: JAXB 操作 xml
 toc: true
 date: 2016-02-20 15:49:59
 tags:
-	Jaxb
-	Java
-categories: Java 编程
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

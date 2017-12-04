@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（14）： less
 date: 2017-02-21 10:07:49
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 less 的作用和 more 相同，选项更多，比 more 更复杂功能更强。

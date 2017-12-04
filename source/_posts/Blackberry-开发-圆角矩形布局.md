@@ -2,11 +2,16 @@
 title: Blackberry 开发：圆角矩形布局
 toc: false
 date: 2012-04-07 15:53:17
-tags: Blackberry
-categories: Blackberry 开发
+tags:
+ - BlackBerry
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
-<!--more-->
+
 ```JAVA
 /**
  * 圆角的布局，内部元素遵守垂直布局的规则，可设置标题和图片,传空则不设置

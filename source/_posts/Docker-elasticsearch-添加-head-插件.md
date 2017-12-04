@@ -2,11 +2,16 @@
 title: Docker ： elasticsearch 添加 head 插件
 toc: true
 date: 2016-07-15 22:25:09
-tags: Docker
-categories: Docker
+tags:
+ - Docker
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
-<!--more-->
+
 ### 1. 准备工作
 
 ```

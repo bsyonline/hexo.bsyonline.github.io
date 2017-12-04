@@ -2,7 +2,13 @@
 title: Docker 搭建 Nginx 环境
 date: 2017-04-11 15:13:19
 tags:
-categories: Docker
+ - Docker
+ - Nginx
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 官方提供了 Nginx 的 docker 镜像，就不用自己打镜像了。首先下载 nginx 镜像 [https://hub.docker.com/_/nginx/](https://hub.docker.com/_/nginx/) 。

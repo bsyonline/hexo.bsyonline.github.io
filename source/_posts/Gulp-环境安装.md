@@ -2,8 +2,13 @@
 title: Gulp 环境安装
 toc: true
 date: 2016-07-20 11:13:51
-tags: gulp
-categories: 前端
+tags:
+ - Gulp
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 gulp是一个前端代码构建工具。安装gulp需要node.js环境，node.js环境安装参考 [node.js 环境安装](../../../../2016/07/16/node.js 环境安装/) 。

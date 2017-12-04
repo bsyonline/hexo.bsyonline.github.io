@@ -2,8 +2,13 @@
 title: Hive-0.9.0 安装
 toc: true
 date: 2015-11-12 15:49:47
-tags: Hive
-categories: 大数据
+tags:
+ - Hive
+category: 
+ - 大数据
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

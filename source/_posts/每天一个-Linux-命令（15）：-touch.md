@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（15）： touch
 date: 2017-02-22 10:08:29
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 touch 可以刷新文件的访问和修改时间，但是在印象中用途就是创建一个空文件。

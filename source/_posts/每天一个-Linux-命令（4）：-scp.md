@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（3）： scp
 date: 2017-02-11 10:06:17
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 scp 是 secure copy 的简写，用于在Linux下进行远程拷贝文件的命令，而且 scp 传输是加密的。

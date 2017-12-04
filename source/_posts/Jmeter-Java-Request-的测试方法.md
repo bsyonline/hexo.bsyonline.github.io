@@ -2,8 +2,13 @@
 title: 'Jmeter : Java Request 的测试方法'
 toc: true
 date: 2016-10-17 14:28:17
-tags: Jmeter
-categories: Jmeter
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 Jmeter 是一款简单的性能测试工具，以前都是用来测试 API 接口，没试过测试 Java 程序，这是一个例子。
 
@@ -14,7 +19,7 @@ Jmeter 使用，可参考 [Jmeter 使用入门](../../../../2016/09/07/Jmeter-�
 ### java request 测试
 使用 jmeter 测试 java 程序，需要结合 jemter_java 编写测试代码。
 1. 创建 maven 工程
-pmx.xml
+   pmx.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"

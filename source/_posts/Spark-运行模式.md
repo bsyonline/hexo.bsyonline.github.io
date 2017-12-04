@@ -2,7 +2,12 @@
 title: Spark 运行模式
 date: 2017-05-31 11:50:28
 tags:
-categories: 大数据
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 <!-- toc -->
 Spark 程序是一组运行在集群上的独立进程，进程之间通过 SparkContext 协调。Spark 程序包含两部分：Driver 程序（SparkContext）和 Executor 。SparkContext 能连接多种类型的 Cluster Manager （spark standalone cluster、Mesos、YARN），虽然 cluster manager 的类型多样，但是 Spark 运行机制基本相同。<!--more-->Driver 程序由用户启动，通过资源调度模块和 Executor 通信。在连接到 Cluster Manager 后，Spark 获得集群 Worker 节点上的 Executor （负责计算和存储数据的进程），将需要运行的代码发送到 Executor ，然后 SparkContext 发送 Task 到 Executor 去执行。示意如图：
@@ -34,15 +39,15 @@ Spark 提供的一种简单部署模式，通常用来进行测试。
 YARN cluster：
 
 1. Client 通过 YARN Client 向 Resource Manager 提交 Spark 程序，Resource Manager 在集群中启动一个 Spark Application Master ，注册到 Resource Manager 并初始化 SparkContext 。
-2.  Spark Application Master 通过 Resource Manager 在分配的 YARN 节点中启动 Container 。
-3.  在 Container 中运行 Task 。
+2. Spark Application Master 通过 Resource Manager 在分配的 YARN 节点中启动 Container 。
+3. 在 Container 中运行 Task 。
 
 YARN client：
 
 1.  Client 在本地初始化 SparkContext 。
 2.  通过 YARN Client 在随机一个 YARN 节点上启动 Spark Application Master 。
 3.  Spark Application Master 通过 Resource Manager 在分配的 YARN 节点中启动 Container 。
-4. 在 Container 中运行 Task 。
+4.  在 Container 中运行 Task 。
 
 ### 几种模式比较
 

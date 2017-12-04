@@ -2,8 +2,13 @@
 title: Oracle Clob 格式处理
 toc: false
 date: 2016-04-11 15:53:49
-tags: Oracle
-categories: 数据库
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 <!--more-->

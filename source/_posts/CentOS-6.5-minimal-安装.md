@@ -2,8 +2,13 @@
 title: CentOS 6.5 minimal安装
 toc: true
 date: 2015-07-26 15:53:37
-tags: Linux
-categories: Linux
+tags:
+ - CentOS
+category: 
+ - Linux
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ### 1. 安装eth0

@@ -1,8 +1,13 @@
 ---
 title: Elasticsearch-2.2.0 安装
 date: 2016-07-14 19:20:12
-tags: Elasticsearch
-categories: Elasticsearch
+tags:
+ - Elasticsearch
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

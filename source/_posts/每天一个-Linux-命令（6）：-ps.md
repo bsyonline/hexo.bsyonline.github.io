@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（6）： ps
 date: 2017-02-13 10:08:57
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ps 是 Process Status 的缩写，ps 命令用来列出 linux 系统中当前运行的进程。

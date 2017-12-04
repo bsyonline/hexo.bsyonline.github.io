@@ -2,8 +2,13 @@
 title: 我的 hexo 我做主
 toc: true
 date: 2016-07-19 14:27:28
-tags: hexo
-categories: hexo
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 Maupassant 主题有一些细节对于强迫症晚期患者来说，不改实在是浑身难受，遂记录一下修改项和修改方案。

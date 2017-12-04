@@ -2,8 +2,13 @@
 title: spring boot cache （redis）使用
 toc: true
 date: 2016-05-26 16:00:24
-tags: spring-boot
-categories: Java 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 
@@ -64,7 +69,7 @@ public EntMultipleInfo findEntInfo(String entName) {
 }
 ```
 >在调用方法前会先去查询是否有缓存。
-对象需要能够序列化
+>对象需要能够序列化
 
 ### 4. application.properties
 ```

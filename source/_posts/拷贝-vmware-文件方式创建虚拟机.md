@@ -2,8 +2,13 @@
 title: 拷贝 vmware 文件方式创建虚拟机
 toc: false
 date: 2015-08-29 15:53:17
-tags: vmware
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 ### vmware打开文件

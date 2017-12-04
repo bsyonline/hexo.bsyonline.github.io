@@ -2,8 +2,13 @@
 title: Fabric安装
 toc: true
 date: 2016-05-17 15:45:09
-tags: fabric
-categories: Linux
+tags:
+ - Fabric
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

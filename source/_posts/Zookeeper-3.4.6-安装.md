@@ -2,8 +2,13 @@
 title: Zookeeper-3.4.6 安装
 toc: true
 date: 2016-07-14 16:00:38
-tags: Zookeeper
-categories: 大数据
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 zookeeper 是分布式的开源协调服务程序，官方网站 [http://zookeeper.apache.org/](http://zookeeper.apache.org/) 。

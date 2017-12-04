@@ -2,8 +2,13 @@
 title: 生产者消费者（BlockingQueue）
 toc: false
 date: 2015-02-16 15:53:17
-tags: Java
-categories: Java 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 <!--more-->

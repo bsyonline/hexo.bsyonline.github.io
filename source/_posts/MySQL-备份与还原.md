@@ -2,8 +2,13 @@
 title: MySQL 备份与还原
 toc: false
 date: 2016-09-08 14:34:13
-tags: MySQL
-categories: 数据库
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 使用 mysqldump 命令

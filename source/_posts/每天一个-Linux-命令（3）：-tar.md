@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（3）： tar
 date: 2017-02-10 10:29:14
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 今天来看看 linux 的打包命令 tar 。在 linux 中打包指将多个文件或目录合成一个文件，这个过程可以用 tar 来完成，生成的文件通常以 .tar 结尾。和打包相关还有一个压缩，linux 只能针对一个文件进行压缩，所以通常我们要将多个文件或目录打成一个包，再进行压缩。

@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（8）： chown
 date: 2017-02-15 10:10:26
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 chown 用于修改文件的所有者和组。

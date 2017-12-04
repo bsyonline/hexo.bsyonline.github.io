@@ -1,8 +1,13 @@
 ---
 title: 每天一个 Linux 命令（10）： cat
 date: 2017-02-17 10:08:08
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 当我们想查看一个文件中的内容的时候， cat 是一种方法。cat 命令的作用就是连接文件到标准输出。

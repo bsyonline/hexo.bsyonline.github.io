@@ -2,8 +2,13 @@
 title: 一个shell脚本示例
 toc: false
 date: 2016-07-16 16:00:19
-tags: Linux
-categories: Linux
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 一个通过shell执行java程序的示例。

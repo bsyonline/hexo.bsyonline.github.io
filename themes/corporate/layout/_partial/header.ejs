@@ -22,14 +22,20 @@
 	  <span class="sep"></span>
 	  <i class="fa fa-search search-btn"></i>
 	  <div class="search-box">
-	    <form action="#">
+	    <form action="#"  id="search-form">
 	      <div class="input-group">
-		<input type="text" placeholder="Search" class="form-control st-default-search-input">
+		<input id="local-search-input"  type="text" placeholder="Search" class="form-control st-default-search-input">
 		<span class="input-group-btn">
-		  <button class="btn btn-primary" type="submit">Search</button>
+		  <button class="btn btn-primary" type="submit" onclick="doSearch()">Search</button>
 		</span>
 	      </div>
 	    </form>
+	    <form id="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+    <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+</form>
+	    <div id="local-search-result"></div> <!-- 搜索结果区 -->
+	    <p class='no-result'>No results found </p>
 	  </div> 
 	</li>
 	<!-- END TOP SEARCH -->

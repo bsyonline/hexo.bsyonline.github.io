@@ -2,10 +2,15 @@
 title: Blackberry 开发：监听浏览器
 toc: false
 date: 2012-04-17 15:53:17
-tags: Blackberry
-categories: Blackberry 开发
+tags:
+ - BlackBerry
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
-<!--more-->
+
 ```JAVA
 public final class PackageManager
 {

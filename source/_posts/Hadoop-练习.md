@@ -2,12 +2,16 @@
 title: Hadoop 练习
 toc: true
 date: 2015-10-22 15:45:26
-tags: Hadoop
-categories: 大数据
-
+tags:
+ - Hadoop
+category: 
+ - 大数据
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
- 1. 根据lac_id和start_time知道用户当时的位置，根据staytime知道用户各个基站的逗留时长。根据轨迹合并连续基站的staytime。最终得到每一个用户按时间排序在每一个基站驻留时长。
+1.  根据lac_id和start_time知道用户当时的位置，根据staytime知道用户各个基站的逗留时长。根据轨迹合并连续基站的staytime。最终得到每一个用户按时间排序在每一个基站驻留时长。
 
     13429100031 22554 8 2013-03-11 08:55:19.151754088 571 571 282 571  
     13429100082 22540 8 2013-03-11 08:58:20.152622488 571 571 270 571  
@@ -23,28 +27,28 @@ categories: 大数据
 
 	product_no lac_id moment start_time user_id county_id staytime city_id
 
- 2. 计算第四列每个元素出现的个数
+2.  计算第四列每个元素出现的个数
 
-	a,b,c,d
-	b,b,f,e
-	a,a,c,f
-	b,b,f,a
-	b,b,f,e
+    a,b,c,d
+    b,b,f,e
+    a,a,c,f
+    b,b,f,a
+    b,b,f,e
 
- 3. 计算高峰时间段（如上午10点-11点）哪张表被访问的最频繁，以及这段时间访问这张表最多的用户，以及这个用户的总时间开销。
+3.  计算高峰时间段（如上午10点-11点）哪张表被访问的最频繁，以及这段时间访问这张表最多的用户，以及这个用户的总时间开销。
 
-	TableName(表名)，Time(时间)，User(用户)，TimeSpan(时间开销)
-	t1 09:59:20 u1 1
-	t2 10:02:20 u4 2
-	t1 10:12:20 u3 3
-	t2 10:22:20 u3 2
-	t2 10:32:20 u2 5
-	t3 10:42:20 u1 2
-	t3 10:52:20 u2 7
-	t4 10:22:20 u1 9
-	t1 10:32:20 u4 2
+     TableName(表名)，Time(时间)，User(用户)，TimeSpan(时间开销)
+     t1 09:59:20 u1 1
+     t2 10:02:20 u4 2
+     t1 10:12:20 u3 3
+     t2 10:22:20 u3 2
+     t2 10:32:20 u2 5
+     t3 10:42:20 u1 2
+     t3 10:52:20 u2 7
+     t4 10:22:20 u1 9
+     t1 10:32:20 u4 2
 
- 4. 输出不在Order的customer
+4.  输出不在Order的customer
 
 
  5. 输入2天股价波动

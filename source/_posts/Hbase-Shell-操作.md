@@ -2,8 +2,13 @@
 title: Hbase Shell 操作
 toc: true
 date: 2015-11-05 15:49:44
-tags: Hbase
-categories: 大数据
+tags:
+ - Hbase
+category: 
+ - 编程
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

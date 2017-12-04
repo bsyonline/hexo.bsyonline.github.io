@@ -2,8 +2,13 @@
 title: Windows 安装 compass and scss
 toc: true
 date: 2016-07-15 22:25:09
-tags: Docker
-categories: 前端
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 ### 1. 安装ruby
 
@@ -13,7 +18,7 @@ compass 是 ruby 的插件，需要先安装 ruby 环境。
 [http://rubyinstaller.org/](http://rubyinstaller.org/)
 
 2. 添加环境变量
-安装完成后添加环境变量
+   安装完成后添加环境变量
 ```
 RUBY_HOME=D:\Ruby23-x64
 path=$path;%RUBY_HOME%\bin

@@ -1,8 +1,13 @@
 ---
 title: MySQL 安装服务及 Windows CMD 中使用 MySQL 命令
 date: 2017-11-01 15:20:53
-tags: MySQL
-categories: 数据库
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

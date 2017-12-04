@@ -2,8 +2,13 @@
 title: Maven 打包专题
 toc: true
 date: 2016-01-29 15:53:42
-tags: Maven
-categories: 编程
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 

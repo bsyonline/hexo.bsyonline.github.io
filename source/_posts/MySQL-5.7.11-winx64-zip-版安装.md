@@ -2,8 +2,13 @@
 title: MySQL-5.7.11-winx64 zip版安装
 toc: true
 date: 2016-06-22 22:25:09
-tags: MySQL
-categories: 数据库
+tags:
+ - untag
+category: 
+ - uncategory
+thumbnail: 
+author: bsyonline
+lede: "没有留下前言"
 ---
 
 OS : Windows 10 x64
