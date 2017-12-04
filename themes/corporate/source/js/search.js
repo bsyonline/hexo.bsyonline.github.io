@@ -78,6 +78,8 @@ function searchFunc(path, search_id, content_id) {
                                 }
                             }
                         });
+                    }else{
+                        isMatch=false
                     }
                     // show search results
                     if (isMatch) {
@@ -97,6 +99,9 @@ function searchFunc(path, search_id, content_id) {
                                 end = content.length;
                             }
                             var match_content = content.substr(start, end); 
+                            if(match_content.length>200){
+                                match_content=match_content.substr(0,150)
+                            }
                             // highlight all keywords
                             keywords.forEach(function(keyword){
                                 var regS = new RegExp(keyword, "gi");

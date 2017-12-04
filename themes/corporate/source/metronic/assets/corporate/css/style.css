@@ -731,7 +731,8 @@ body.page-header-fixed {
 	padding: 5px
 }
 .search-keyword{
-	overflow: auto
+	overflow: auto;
+	color:#e45000;
 }
 .header-navigation .search-box {
 	right: -7px;
