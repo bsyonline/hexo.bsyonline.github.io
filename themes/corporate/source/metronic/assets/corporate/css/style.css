@@ -720,15 +720,27 @@ body.page-header-fixed {
 /*.header-navigation .fa-search:before {
 	content: none;
 }*/
+.inner-search-box{
+	padding: 15px;
+	background: #fcfafb;
+}
+.search-result-title{
+	padding: 5px
+}
+.search-result{
+	padding: 5px
+}
+.search-keyword{
+	overflow: auto
+}
 .header-navigation .search-box {
 	right: -7px;
 	top: 100%;
-	padding: 15px;
+	padding: 0px 5px 5px 5px;
 	display: none;
-	background: #fcfafb;
+	background: rgba(91, 91, 91, 0.2);
 	position: absolute;
 	border-top: solid 2px #ea4c1d;
-	box-shadow: 5px 5px rgba(91, 91, 91, 0.2);
 	width: 1150px;
 	margin-top: 0;
 	z-index: 22;

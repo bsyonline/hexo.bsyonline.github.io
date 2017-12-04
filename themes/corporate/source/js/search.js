@@ -81,7 +81,7 @@ function searchFunc(path, search_id, content_id) {
                     }
                     // show search results
                     if (isMatch) {
-                        str += "<li style='margin: 5px 0;'><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ data_title +"</a>";
+                        str += "<li style='padding: 5px 0;border-bottom:solid 1px #e5e5e5;max-height:90px;min-height:90px'><a href='"+ data_url +"' class='search-result-title' target='_blank'>"+ data_title +"</a>";
                         var content = data.content.trim().replace(/<[^>]+>/g,"");
                         if (first_occur >= 0) {
                             // cut out characters
