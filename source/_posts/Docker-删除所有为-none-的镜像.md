@@ -7,7 +7,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 在使用 Docker 时，如果创建镜像出错，会产生 REPOSITORY 和 TAG 为空的镜像，要删除这些镜像，可以使用

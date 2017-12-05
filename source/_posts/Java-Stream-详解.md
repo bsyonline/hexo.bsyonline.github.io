@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 Java Stream 是 jdk 1.8 加入的新 API ，目的是用来支持函数式编程，位于 java.util.stream 包下。

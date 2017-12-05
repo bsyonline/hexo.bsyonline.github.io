@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 Windows 上之前一直用 notepad++ ，后来在 linux 上用了一段时间 atom ，git 的插件用起来很顺手，但是由于长期不关机，导致 atom 经常卡死，所以换 Sublime 试试。

@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 chown 用于修改文件的所有者和组。

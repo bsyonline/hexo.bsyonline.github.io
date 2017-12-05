@@ -8,7 +8,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 Jmeter 是一款简单的性能测试工具，以前都是用来测试 API 接口，没试过测试 Java 程序，这是一个例子。
 

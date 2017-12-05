@@ -8,7 +8,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 有时我们不想在自己机器上安装redis环境又想快速开始redis-cli实践，如果安装了docker环境，那么redis的环境将非常容易搭建。

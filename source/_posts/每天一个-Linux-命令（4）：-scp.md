@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 scp 是 secure copy 的简写，用于在Linux下进行远程拷贝文件的命令，而且 scp 传输是加密的。

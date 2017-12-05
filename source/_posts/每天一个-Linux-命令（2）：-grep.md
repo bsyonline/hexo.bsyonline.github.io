@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 grep 是比较常用的一个命令，用来搜索文件或标准输出中的匹配模式的内容，默认打印出匹配的行。

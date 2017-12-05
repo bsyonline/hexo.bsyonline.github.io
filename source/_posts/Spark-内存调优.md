@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 Spark 是基于内存的，所以合理地管理内存会提高程序的性能。想要有效地管理内存，就要知道对象占用了多少内存，访问对象的开销以及 GC 的执行情况。

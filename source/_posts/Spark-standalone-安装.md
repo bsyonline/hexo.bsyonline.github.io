@@ -8,7 +8,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 spark standalone 即伪分布式部署,即在单击部署 spark ,部署方式比较简单。

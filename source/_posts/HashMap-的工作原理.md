@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 HashMap 是最常用的集合类之一，在面试中也出镜率颇高。

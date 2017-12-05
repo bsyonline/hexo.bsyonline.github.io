@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 ps 是 Process Status 的缩写，ps 命令用来列出 linux 系统中当前运行的进程。

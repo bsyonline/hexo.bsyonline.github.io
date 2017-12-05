@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 touch 可以刷新文件的访问和修改时间，但是在印象中用途就是创建一个空文件。

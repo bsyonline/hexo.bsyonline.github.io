@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 官方提供了 Nginx 的 docker 镜像，就不用自己打镜像了。首先下载 nginx 镜像 [https://hub.docker.com/_/nginx/](https://hub.docker.com/_/nginx/) 。

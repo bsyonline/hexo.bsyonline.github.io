@@ -8,7 +8,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 zookeeper 是分布式的开源协调服务程序，官方网站 [http://zookeeper.apache.org/](http://zookeeper.apache.org/) 。

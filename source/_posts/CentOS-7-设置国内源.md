@@ -7,7 +7,7 @@ category:
  - Linux
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 网易源设置帮助 [http://mirrors.163.com/.help/centos.html](http://mirrors.163.com/.help/centos.html)。

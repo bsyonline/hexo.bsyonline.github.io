@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 当我们想查看一个文件中的内容的时候， cat 是一种方法。cat 命令的作用就是连接文件到标准输出。

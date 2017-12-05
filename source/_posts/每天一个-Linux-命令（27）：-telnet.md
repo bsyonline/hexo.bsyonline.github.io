@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 free 命令可以显示 Linux 系统中空闲的、已用的物理内存及 swap 内存,及被内核使用的 buffer，是最经常使用的系统监控工具之一。

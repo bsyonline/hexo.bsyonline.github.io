@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 history 命令能够列出在终端执行的命令的列表，并且能够快速执行某条历史命令。

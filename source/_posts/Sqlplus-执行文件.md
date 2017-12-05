@@ -8,7 +8,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 使用客户端工具导入数据量大时会卡死，所以改用命令行执行。

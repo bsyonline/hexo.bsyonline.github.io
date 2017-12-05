@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 Restful 原则是由 Roy Fielding 提出的，现在已经成为了普遍遵守的规范。随着 Restful API 的使用也越来越多，如何设计一套优秀的 API 是每一个服务首先需要考虑的事情。

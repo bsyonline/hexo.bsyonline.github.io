@@ -8,7 +8,7 @@ category:
  - Linux
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 CentOs 7 filewall 简单命令。

@@ -7,7 +7,7 @@ category:
  - 知识库
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 之前装过一次 hexo ，用了一段时间，后来重做系统之后，安装出现了一些问题，花了一些时间重新整理一下。

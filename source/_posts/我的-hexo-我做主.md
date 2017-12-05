@@ -8,7 +8,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 Maupassant 主题有一些细节对于强迫症晚期患者来说，不改实在是浑身难受，遂记录一下修改项和修改方案。

@@ -8,7 +8,7 @@ category:
  - 大数据
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 1.  根据lac_id和start_time知道用户当时的位置，根据staytime知道用户各个基站的逗留时长。根据轨迹合并连续基站的staytime。最终得到每一个用户按时间排序在每一个基站驻留时长。

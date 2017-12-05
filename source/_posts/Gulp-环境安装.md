@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 gulp是一个前端代码构建工具。安装gulp需要node.js环境，node.js环境安装参考 [node.js 环境安装](../../../../2016/07/16/node.js 环境安装/) 。

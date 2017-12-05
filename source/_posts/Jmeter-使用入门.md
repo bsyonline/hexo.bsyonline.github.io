@@ -8,7 +8,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 Jmeter 是一款开源的压力测试工具，虽功能不及 Loadrunner 强大，但是对于一些简单的如接口api的测试完全够用。

@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 head 和 cat 一样是链接文件和标准输出的命令，不同的是 head 只输出文件的头部（默认前 10 行）。

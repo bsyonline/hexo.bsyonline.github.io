@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 more 是另一个和 cat 功能类似的命令，不同的是 more 可以分页显示文件内容。

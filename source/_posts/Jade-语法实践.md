@@ -9,7 +9,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 jade 是一个模板引擎，可以通过 node.js 来使用。本来对前端技术了解不多，接触 jade 源于搭建 hexo 博客系统。maupassant 主题模板是基于 jade 的，所以想按自己的想法来定制 maupassant 主题简单了解了一下 jade 。

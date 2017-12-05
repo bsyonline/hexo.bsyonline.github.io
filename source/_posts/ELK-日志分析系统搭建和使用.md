@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 elk是开源日志分析平台，由 [elastic](http://www.elastic.co) 公司的三款开源产品组成。
 

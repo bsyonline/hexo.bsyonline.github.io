@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 #### Q： Spring Data 的 repository 只定义了接口，没有实现，是如何完成数据访问操作的？

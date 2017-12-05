@@ -7,7 +7,7 @@ category:
  - uncategory
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 紧接上一篇（[Spark 入门](../../../../2017/01/10/Spark-入门/)），本节讨论一下 SBT 打包。
