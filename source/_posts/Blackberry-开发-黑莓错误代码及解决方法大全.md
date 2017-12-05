@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：黑莓错误代码及解决方法大全
+title: BlackBerry 开发：黑莓错误代码及解决方法大全
 toc: true
 date: 2012-03-30 15:53:17
 tags:
@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 首先，了解几个名词解释以方便对下文的理解。  

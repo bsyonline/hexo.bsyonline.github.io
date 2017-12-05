@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：自定义图片背景的button
+title: BlackBerry 开发：自定义图片背景的 button
 toc: false
 date: 2011-09-23 22:25:09
 tags:
@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 

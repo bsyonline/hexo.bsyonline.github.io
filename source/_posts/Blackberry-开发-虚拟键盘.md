@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：虚拟键盘
+title: BlackBerry 开发：虚拟键盘
 toc: false
 date: 2012-05-02 15:53:17
 tags:
@@ -8,7 +8,7 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有留下前言"
+lede: "没有摘要"
 ---
 
 
