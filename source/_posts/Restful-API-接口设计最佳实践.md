@@ -2,9 +2,9 @@
 title: Restful API 接口设计最佳实践
 date: 2017-02-16 10:27:07
 tags:
- - untag
+ - RESTful
 category: 
- - uncategory
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -3,9 +3,10 @@ title: spring-data-redis示例说明
 toc: true
 date: 2016-07-15 22:25:09
 tags:
- - untag
+ - Spring Data
+ - Redis
 category: 
- - uncategory
+ - 编程
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

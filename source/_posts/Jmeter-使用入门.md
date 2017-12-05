@@ -3,9 +3,10 @@ title: Jmeter 使用入门
 toc: true
 date: 2016-09-07 10:54:11
 tags:
- - untag
+ - Jmeter
+ - 自动化测试
 category: 
- - uncategory
+ - 编程
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

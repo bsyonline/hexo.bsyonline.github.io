@@ -2,9 +2,9 @@
 title: SBT 打包
 date: 2017-01-17 15:48:32
 tags:
- - untag
+ - SBT
 category: 
- - uncategory
+ - 编程
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

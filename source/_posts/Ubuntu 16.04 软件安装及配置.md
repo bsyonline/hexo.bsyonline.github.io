@@ -3,9 +3,9 @@ title: Ubuntu 16.04 软件安装及配置
 toc: true
 date: 2016-07-15 22:25:09
 tags:
- - untag
+ - Ubuntu
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

@@ -3,9 +3,9 @@ title: Ubuntu 16.04 修复 grub
 toc: true
 date: 2016-10-24 18:31:44
 tags:
- - untag
+ - Ubuntu
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

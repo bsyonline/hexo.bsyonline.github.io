@@ -3,9 +3,9 @@ title: Java 中的回调函数
 toc: false
 date: 2016-08-08 17:23:33
 tags:
- - untag
+ - Java
 category: 
- - uncategory
+ - 编程
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

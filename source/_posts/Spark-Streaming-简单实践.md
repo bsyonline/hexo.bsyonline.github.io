@@ -2,9 +2,9 @@
 title: Spark Streaming 简单实践
 date: 2017-05-31 11:52:16
 tags:
- - untag
+ - Spark
 category: 
- - uncategory
+ - 大数据
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

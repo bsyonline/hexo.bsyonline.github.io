@@ -3,9 +3,9 @@ title: /etc/profile和/etc/profile.d的区别
 toc: true
 date: 2016-03-30 15:53:25
 tags:
- - untag
+ - Linux
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

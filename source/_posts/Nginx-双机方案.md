@@ -2,9 +2,9 @@
 title: Nginx 双机方案
 date: 2017-08-29 08:12:11
 tags:
- - untag
+ - Nginx
 category: 
- - uncategory
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
