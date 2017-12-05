@@ -3,9 +3,9 @@ title: Sqlplus 执行文件
 toc: false
 date: 2016-02-13 16:00:30
 tags:
- - untag
+ - Oracle
 category: 
- - uncategory
+ - 数据库
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

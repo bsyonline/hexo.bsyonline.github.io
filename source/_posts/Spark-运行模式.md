@@ -2,9 +2,9 @@
 title: Spark 运行模式
 date: 2017-05-31 11:50:28
 tags:
- - untag
+ - Spark
 category: 
- - uncategory
+ - 大数据
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

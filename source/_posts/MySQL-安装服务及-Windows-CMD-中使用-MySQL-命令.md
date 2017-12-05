@@ -2,9 +2,9 @@
 title: MySQL 安装服务及 Windows CMD 中使用 MySQL 命令
 date: 2017-11-01 15:20:53
 tags:
- - untag
+ - MySQL
 category: 
- - uncategory
+ - 数据库
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

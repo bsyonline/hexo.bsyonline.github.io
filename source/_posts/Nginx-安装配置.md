@@ -2,9 +2,9 @@
 title: Nginx 安装配置
 date: 2017-04-01 15:05:51
 tags:
- - untag
+ - Nginx
 category: 
- - uncategory
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

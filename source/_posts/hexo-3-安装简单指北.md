@@ -4,7 +4,7 @@ date: 2017-01-16 20:05:36
 tags:
  - Hexo
 category: 
- - 知识库
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -3,9 +3,9 @@ title: spark standalone 安装
 toc: true
 date: 2016-05-04 16:00:22
 tags:
- - untag
+ - Spark
 category: 
- - uncategory
+ - 大数据
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

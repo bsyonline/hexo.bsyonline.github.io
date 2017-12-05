@@ -2,9 +2,9 @@
 title: Spark ExecutorLostFailure 错误简单分析
 date: 2017-02-03 10:03:50
 tags:
- - untag
+ - Spark
 category: 
- - uncategory
+ - 大数据
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

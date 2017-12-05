@@ -2,9 +2,9 @@
 title: Sublime Text 3 安装配置
 date: 2017-03-28 19:32:34
 tags:
- - untag
+ - Sublime
 category: 
- - uncategory
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

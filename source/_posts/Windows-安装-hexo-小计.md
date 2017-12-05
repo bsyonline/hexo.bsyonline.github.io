@@ -2,9 +2,9 @@
 title: Windows 安装 hexo 小计
 date: 2017-03-24 18:22:49
 tags:
- - untag
+ - Hexo
 category: 
- - uncategory
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -3,7 +3,8 @@ title: Java Stream 详解
 toc: true
 date: 2016-08-20 15:20:47
 tags:
- - Java 8
+ - Java Stream
+ - Java
 category: 
  - 编程
 thumbnail: 

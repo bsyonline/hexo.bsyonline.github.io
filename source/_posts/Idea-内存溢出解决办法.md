@@ -5,7 +5,7 @@ date: 2014-01-13 15:49:52
 tags:
  - IDEA
 category: 
- - 知识库
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
