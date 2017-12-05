@@ -8,13 +8,13 @@ category:
  - 编程
 thumbnail: 
 author: bsyonline
-lede: "没有摘要"
+lede: "AOP （面向方面编程） 是一种编程思想，是对 OOP 的有力补充。AspectJ 是对 Java 在 AOP 编程上的扩展。Spring AOP 是 Spring 提供的 AOP 编程框架。"
 ---
 
 
 AOP （面向方面编程） 是一种编程思想，是对 OOP 的有力补充。AspectJ 是对 Java 在 AOP 编程上的扩展。Spring AOP 是 Spring 提供的 AOP 编程框架。
 
-<!-- more -->
+
 
 在接触到 AOP 的时候用的就是 Spring AOP ， Spring 也提供了 AspectJ 的支持，可以在 Spring AOP 中使用 AspectJ 的语法，但 Spring AOP 和 AspectJ 还是有区别的。
 

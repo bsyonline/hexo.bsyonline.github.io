@@ -2,9 +2,9 @@
 title: 每天一个 Linux 命令（9）： chmod
 date: 2017-02-16 10:10:38
 tags:
- - untag
+ - Linux 命令
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -2,9 +2,9 @@
 title: 每天一个 Linux 命令（3）： tar
 date: 2017-02-10 10:29:14
 tags:
- - untag
+ - Linux 命令
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

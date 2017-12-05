@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：文件操作
+title: BlackBerry 开发：文件操作
 toc: false
 date: 2012-04-12 15:53:17
 tags:
@@ -11,7 +11,7 @@ author: bsyonline
 lede: "没有摘要"
 ---
 
-<!--more-->
+
 ```JAVA
 /**
  * 文件操作

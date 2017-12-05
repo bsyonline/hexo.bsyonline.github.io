@@ -3,9 +3,9 @@ title: 查找文件中 abc 出现的次数
 toc: false
 date: 2015-09-16 15:53:20
 tags:
- - untag
+ - Linux 命令
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

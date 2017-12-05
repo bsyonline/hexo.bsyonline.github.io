@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：监听浏览器
+title: BlackBerry 开发：监听浏览器
 toc: false
 date: 2012-04-17 15:53:17
 tags:

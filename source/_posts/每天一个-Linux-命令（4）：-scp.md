@@ -2,9 +2,9 @@
 title: 每天一个 Linux 命令（3）： scp
 date: 2017-02-11 10:06:17
 tags:
- - untag
+ - Linux 命令
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

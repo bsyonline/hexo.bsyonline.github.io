@@ -2,9 +2,9 @@
 title: 每天一个 Linux 命令（12）： tail
 date: 2017-02-19 10:07:32
 tags:
- - untag
+ - Linux 命令
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

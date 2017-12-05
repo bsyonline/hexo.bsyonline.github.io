@@ -2,9 +2,9 @@
 title: 每天一个 Linux 命令（15）： touch
 date: 2017-02-22 10:08:29
 tags:
- - untag
+ - Linux 命令
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：自定义输入框
+title: BlackBerry 开发：自定义输入框
 toc: false
 date: 2012-04-05 15:53:17
 tags:

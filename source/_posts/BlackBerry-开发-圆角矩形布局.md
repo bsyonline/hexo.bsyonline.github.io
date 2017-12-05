@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：圆角矩形布局
+title: BlackBerry 开发：圆角矩形布局
 toc: false
 date: 2012-04-07 15:53:17
 tags:

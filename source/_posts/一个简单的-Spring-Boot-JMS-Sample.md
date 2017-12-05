@@ -3,10 +3,11 @@ title: 一个简单的 Spring Boot + JMS Sample
 toc: true
 date: 2016-10-26 15:40:04
 tags:
- - untag
+ - Spring Boot
+ - JMS
 category: 
- - uncategory
-thumbnail: 
+ - 编程
+thumbnail: http://7xqgix.com1.z0.glb.clouddn.com/jms_2.png
 author: bsyonline
 lede: "没有摘要"
 ---

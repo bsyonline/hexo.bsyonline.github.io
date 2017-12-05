@@ -2,9 +2,9 @@
 title: 每天一个 Linux 命令（7）： ln
 date: 2017-02-14 10:09:37
 tags:
- - untag
+ - Linux 命令
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
