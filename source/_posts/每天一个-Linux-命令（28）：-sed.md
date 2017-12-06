@@ -22,7 +22,7 @@ Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
   -e script, --expression=script
                  add the script to the commands to be executed
   -f script-file, --file=script-file
-                 add the contents of script-file to the commands to be executed
+                 将替换的内容放到文件
   --follow-symlinks
                  follow symlinks when processing in place
   -i[SUFFIX], --in-place[=SUFFIX]
