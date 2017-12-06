@@ -45,17 +45,17 @@ Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
                  separate lines by NUL characters
       --help     display this help and exit
       --version  output version information and exit
-Commands which accept address ranges
-       {      Begin a block of commands (end with a }).
+```
 
-       b label
-              Branch to label; if label is omitted, branch to end of script.
-
+可接受的命令：
+```shell
+       i	  之前插入
+       a	  追加
        c \
 
        text   Replace the selected lines with text, which has each embedded newline preceded by a backslash.
 
-       d      Delete pattern space.  Start next cycle.
+       d      删除.
 
        D      If pattern space contains no newline, start a normal new cycle as if the d command was issued.  Otherwise, delete text in the pattern space up to the first newline, and restart cycle with the resultant  pattern  space,
               without reading a new line of input.
@@ -76,8 +76,7 @@ Commands which accept address ranges
        P      Print up to the first embedded newline of the current pattern space.
 
        s/regexp/replacement/
-              Attempt to match regexp against the pattern space.  If successful, replace that portion matched with replacement.  The replacement may contain the special character & to refer to that portion of the pattern space which
-              matched, and the special escapes \1 through \9 to refer to the corresponding matching sub-expressions in the regexp.
+              替换.
 
        t label
               If a s/// has done a successful substitution since the last input line was read and since the last t or T command, then branch to label; if label is omitted, branch to end of script.
@@ -94,7 +93,7 @@ Commands which accept address ranges
        x      Exchange the contents of the hold and pattern spaces.
 
        y/source/dest/
-              Transliterate the characters in the pattern space which appear in source to the corresponding character in dest.
+              转换.
 ```
 
 
@@ -126,7 +125,7 @@ sed '/^$/d' a.txt
 
 ```shell
 echo this is a test | sed 's/\w\+/[&]/g'
-
+--
 [this] [is] [a] [test]
 ```
 
@@ -144,5 +143,29 @@ cat test.txt | sed 's/linux/LINUX/;s/sed/SED/'
 
 ```shell
 echo "te/st1 te/st2 te/st3 te/st4 " | sed "s/te\/st/TEST/g"
+```
+
+在包含 java 的行前插入：
+
+```shell
+sed -i '/java/i\learning ' a.txt
+--
+learning
+java
+```
+
+在包含 java 的行后追加：
+
+```shell
+sed -i '/java/a\scala' a.txt
+--
+java
+scala
+```
+
+删除包含 java 的行：
+
+```shell
+sed -i '/java/d' a.txt
 ```
 
