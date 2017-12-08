@@ -9,7 +9,9 @@ body {
 	font: 400 13px 'Open Sans', Arial, sans-serif;
 	background: #fff;
 }
-
+.article-entry p, .article-entry li{
+	max-width: 402em !important;
+}
 /***
 General typography 
 ***/
