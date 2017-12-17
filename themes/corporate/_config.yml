@@ -2,7 +2,7 @@
 menu:
   Home: /
   Projects: /projects/
-  #Blog: /archives/ # can set archive-dir in root config to custom value
+  Archives: /archives/ # can set archive-dir in root config to custom value
   #Contact: /contact/
   About: /about/
    
@@ -27,7 +27,7 @@ social:
   stackoverflow: #
 
 # Miscellaneous
-color_scheme: red   # options: blue, gray, green, orange, red, turquoise
+color_scheme: gray   # options: blue, gray, green, orange, red, turquoise
 favicon: /favicon.ico # path from root of hexo site
 twitter_widget_id: "678830341331820544" # as a string, from https://twitter.com/settings/widgets
 twitter_username: computerlab_ # twitter username without the @

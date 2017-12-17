@@ -290,7 +290,10 @@ a:hover {
 .content-search input:focus {
   border: solid 1px #798b97;
 }
-
+.btn-primary {
+  color: white !important;
+  border: 1px solid #798b97 !important;
+}
 .btn-primary {
   background: #798b97;
 }

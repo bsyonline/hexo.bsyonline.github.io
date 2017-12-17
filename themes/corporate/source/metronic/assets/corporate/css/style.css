@@ -65,7 +65,19 @@ Misc tools
 .no-text-shadow {
   text-shadow: none !important;
 }
-
+.article-entry p, .article-entry li{
+   font-size: 14px !important;
+}
+.article-entry pre, .article-entry .highlight{
+	border: 1px solid #ededed !important;
+	font-family: Consolas, Monaco, Lucida Console, monospace !important;
+color: #666 !important;
+background: #fff !important;
+padding: 24px  !important;
+font-size: 12px !important;
+margin: 24px 0 !important;
+line-height: 20px !important;
+}
 .padding-top-5 {
 	padding-top: 5px !important;
 }

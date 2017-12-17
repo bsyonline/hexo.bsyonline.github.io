@@ -1,0 +1,22 @@
+<div class="row">
+<% if(index == true){ %>
+<div class="col-xs-12 blog-posts">
+<% } else { %>
+<div class="col-md-9 col-sm-9 blog-posts">
+<% } %>
+
+  <section class="archives-wrap">
+    <div class="archives">
+      <% page.posts.each(function(post, i){ %>
+	<%- partial('category-list', {post: post, even: i % 2 == 0, index: index}) %>
+      <% }) %>
+    </div>
+  </section>
+
+</div>
+<% if(index == false){ %>
+<div class="col-md-3 col-sm-3 blog-sidebar">
+  <%- partial('sidebar') %>
+</div>
+<% } %>
+</div>
