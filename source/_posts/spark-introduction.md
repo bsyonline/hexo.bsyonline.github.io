@@ -1,6 +1,6 @@
 ---
 title: Spark 入门
-date: 2017-01-10 09:37:43
+date: 2016-05-05 09:37:43
 tags:
  - Spark
 category: 
@@ -12,7 +12,7 @@ lede: "没有摘要"
 
 
 spark 环境搭建完成后，就可以搭建 spark 的开发环境进一步学习 spark 了。
-<!-- more -->
+
 ### 几种构建方式差异
 搭建 spark 的开发环境有多种方式，各有利弊。
 * 使用 maven 构建

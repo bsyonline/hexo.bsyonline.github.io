@@ -1,5 +1,5 @@
 ---
-title: spark standalone 安装
+title: Spark standalone 安装
 toc: true
 date: 2016-05-04 16:00:22
 tags:
@@ -8,13 +8,12 @@ category:
  - 大数据
 thumbnail: 
 author: bsyonline
-lede: "没有摘要"
+lede: "spark standalone 即伪分布式部署,即在单节点部署 spark 。"
 ---
 
-spark standalone 即伪分布式部署,即在单击部署 spark ,部署方式比较简单。
+spark standalone 即伪分布式部署,即在单节点部署 spark ,部署方式比较简单。
 
-<!-- more -->
-### 1. 下载spark安装包
+### 1. 下载 spark 安装包
 
 [http://www.apache.org/dyn/closer.lua/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.6.tgz](http://www.apache.org/dyn/closer.lua/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.6.tgz)
 
