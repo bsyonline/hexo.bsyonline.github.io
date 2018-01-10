@@ -17,281 +17,13 @@ thumbnail:
 <table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.driver.extraClassPath</code></td><td>(none)</td><td>启动程序 classpath 的预加载扩展 classpath 路径。<br>注意：在 client 模式下，不能通过<code>SparkConf</code>设置，应使用<code>--driver-class-path</code>命令行选项或默认配置文件设置。</td></tr><tr><td><code>spark.driver.extraJavaOptions</code></td><td>(none)</td><td>额外的 JVM 选项，比如 GC 或日志。<br>注意：最大堆大内存（-Xmx） 不能通过该项设置。集群模式下，最大堆内存使用<code>spark.driver.memory</code>设置，client 模式下使用<code>--driver-memory</code>命令行选项设置。<br/>注意：在 client 模式下，该项不能在<code>SparkConf</code>设置，应通过<code>--driver-java-options</code>命令行选项或默认配置文件设置。</td></tr><tr><td><code>spark.driver.extraLibraryPath</code></td><td>(none)</td><td>启动驱动程序 JVM 时设置一个特殊的库路径。<br/>注意：在 client 模式下，该项不能在<code>SparkConf</code>设置，应通过<code>--driver-library-path</code>命令行选项或默认配置文件设置。</td></tr><tr><td><code>spark.driver.userClassPathFirst</code></td><td>false</td><td>（实验）是否设置用户的 jar 优先于 Spark 的 jar 。该特性用于解决 Spark 依赖和用户依赖之间的冲突。这个特性还在实验中，只在集群模式下生效。</td></tr><tr><td><code>spark.executor.extraClassPath</code></td><td>(none)</td><td>预设额外的类路径条目，这个属性主要是为了先后兼容老的 Spark 版本，用户通常不需要设置。</td></tr><tr><td><code>spark.executor.extraJavaOptions</code></td><td>(none)</td><td>向 executor 传递一个额外的 JVM 选项，比如 GC 或日志。<br>注意：该项不能设置 Spark Properties 或最大堆大小（-Xmx）。Spark properties 应使用 SparkConf 对象或 spark-defaults.conf 来设置。最大堆内存应通过 <code> spark.executor.memory</code>设置。</td></tr><tr><td><code>spark.executor.extraLibraryPath</code></td><td>(none)</td><td>executor JVM 启动时设置一个特殊库路径。</td></tr><tr><td><code>spark.executor.logs.rolling.maxRetainedFiles</code></td><td>(none)</td><td>设置系统保存的最新日志滚动数量，老的日志文件将被删除。默认禁用。</td></tr><tr><td><code>spark.executor.logs.rolling.enableCompression</code></td><td>false</td><td>启用日志压缩。如果启动，滚动的日志将被压缩。默认禁用。</td></tr><tr><td><code>spark.executor.logs.rolling.maxSize</code></td><td>(none)</td><td>设置日志文件滚动的字节数组最大长度。默认禁用。参考 <code>spark.executor.logs.rolling.maxRetainedFiles</code> 清除旧日志文件。</td></tr><tr><td><code>spark.executor.logs.rolling.strategy</code></td><td>(none)</td><td>设置日志滚动策略。默认禁用，可以基于“时间”滚动或按照“大小”滚动。基于“时间”，使用<code>spark.executor.logs.rolling.time.interval</code>设置滚动频率。按照“大小”，使用<code>spark.executor.logs.rolling.maxSize</code>设置最大滚动文件大小。</td></tr><tr><td><code>spark.executor.logs.rolling.time.interval</code></td><td>daily</td><td>设置日志滚动的时间间隔。默认不滚动。可以设置的值包括<code>daily</code>, <code>hourly</code>, <code>minutely</code> 或任意秒数。参考<code>spark.executor.logs.rolling.maxRetainedFiles</code>自动清除旧的日志。</td></tr><tr><td><code>spark.executor.userClassPathFirst</code></td><td>false</td><td>（实验）和<code>spark.driver.userClassPathFirst</code>功能相同，但是是作用在 executor 实例。</td></tr><tr><td><code>spark.executorEnv.[EnvironmentVariableName]</code></td><td>(none)</td><td>通过指定<code>EnvironmentVariableName</code>添加 executor 的环境变量，可以设置多个值。</td></tr><tr><td><code>spark.python.profile</code></td><td>false</td><td>在 python 的 worker 节点上启动 profile 。profile 的结果通过<code>sc.show_profiles()</code>显示或在启动程序退出前显示。通过<code>sc.dump_profiles(path)</code>设置磁盘的路径。如果 profile 结果被手动隐藏，那么在驱动程序退出时不显示。默认<code>pyspark.profiler.BasicProfiler</code> 启用，但是可以给 SparkContext 构造函数传一个 profiler 类参数覆盖该值。</td></tr><tr><td><code>spark.files</code></td><td></td><td>每个 executor 的工作目录列表，用逗号分隔。</td></tr><tr><td><code>spark.jars</code></td><td></td><td>设置驱动程序和 executor 类路径包含的本地 jar，用逗号分隔。 </td></tr><tr><td><code>spark.jars.packages</code></td><td></td><td>驱动程序和 executor 类路径包含的 jar 包的 maven 坐标。按照本地 maven 仓库，maven 中心库和<code>spark.jars.ivy</code>指定的附加远程仓库顺序查找。格式为：groupId:artifactId:version</td></tr><tr><td><code>spark.jars.excludes</code></td><td></td><td>排除<code>spark.jars.packages</code>提供的 jar 以避免冲突。</td></tr><tr><td><code>spark.jars.ivy</code></td><td></td><td>查找附加远程仓库<code>spark.jars.packages</code>指定的坐标，用逗号分隔。</td></tr></table>
 
 ### Shuffle Behavior
+<table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.reducer.maxSizeInFlight</code></td><td>48m</td><td>同时从每个 reduce 任务获取的 map 最大值。每个输出都需要创建缓冲区来接收，所以每个 reduce 任务都有固定的内存开销，因此应设置一个较小的值。</td></tr><tr><td><code>spark.reducer.maxReqsInFlight</code></td><td>Int.MaxValue</td><td>该选项限制任意给定的点接收远程请求的数量。但集群主机的数量增加，可能会有大量的请求连接到一个或多个节点，导致 worker 节点负载过大而出错。限制请求的数量可以避免出现此种问题。</td></tr><tr><td><code>spark.shuffle.compress</code></td><td>true</td><td>是否压缩 map 的输出文件。一般来说使用压缩是的好办法。压缩将使用<code>spark.io.compression.codec</code>属性。</td></tr><tr><td><code>spark.shuffle.file.buffer</code></td><td>32k</td><td>每个 shuffle 文件流的缓冲区大小。缓冲区会降低创建中间 shuffle 文件时的磁盘寻址和系统调用次数。</td></tr><tr><td><code>spark.shuffle.io.maxRetries</code></td><td>3</td><td>（Netty only）抓取到 IO 相关异常错误自动重试。重试使 shuffle 在遇到长时间 GC 暂停或短时间的网络异常更稳定。</td></tr><tr><td><code>spark.shuffle.io.numConnectionsPerPeer</code></td><td>1</td><td>（Netty only）在大规模集群中为了减少连接创建，主机之间的连接被重用。对于集群中有大量的硬盘少量的主机导致并发不足时，用户可以调大该值。</td></tr><tr><td><code>spark.shuffle.io.preferDirectBufs</code></td><td>true</td><td>（Netty only）在 shuffle 和缓存交换过程中，使用堆缓冲区来减少 GC 。对于堆缓冲区内存有限的环境，用户可能希望关闭这个功能，使所有分配都从 Netty 移到堆中。</td></tr><tr><td><code>spark.shuffle.io.retryWait</code></td><td>5s</td><td>（Netty only）每次抓取重试等待时间。默认最大延迟 15 秒<code>maxRetries * retryWait</code>。</td></tr><tr><td><code>spark.shuffle.service.enabled</code></td><td>false</td><td>应用额外的 shuffle 服务。该服务保存 executor 生成的 shuffle 文件，以保证 executor 被安全删除。如果<code>spark.dynamicAllocation.enabled</code>为 true，则该值必须设置为 true 。</td></tr><tr><td><code>spark.shuffle.service.port</code></td><td>7337</td><td>运行额外 shuffle 服务的端口号。</td></tr><tr><td><code>spark.shuffle.service.index.cache.entries</code></td><td>1024</td><td>shuffle 服务的缓存索引中保存的最大条目数量。</td></tr><tr><td><code>spark.shuffle.sort.bypassMergeThreshold</code></td><td>200</td><td>（高级）在基于排序的 shuffle 管理器中，如果没有 map 端的聚合，应避免合并排序数据并减少分区数量。</td></tr><tr><td><code>spark.shuffle.spill.compress</code></td><td>true</td><td>是否压缩 shuffle 过程中的溢出数据。压缩使用<code>spark.io.compression.codec</code>属性。</td></tr><tr><td><code>spark.io.encryption.enabled</code></td><td>false</td><td>使用 IO 加密。除 Mesos 外，其他模式都支持。使用该特性使建议使用 RPC 加密。</td></tr><tr><td><code>spark.io.encryption.keySizeBits</code></td><td>128</td><td>IO 加密的密钥大小。128，192，256 可选。</td></tr><tr><td><code>spark.io.encryption.keygen.algorithm</code></td><td>HmacSHA1</td><td>生成 IO 加密密钥的算法。支持的算法见Java密码体系结构标准算法名称文档的 KeyGenerator 部分。</td></tr></table>
+
+### Spark UI
+<table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.eventLog.compress</code></td><td>false</td><td>如果<code>spark.eventLog.enabled</code>为 true ，是否使用压缩。</td></tr><tr><td><code>spark.eventLog.dir</code></td><td>file:///tmp/spark-events</td><td>如果<code>spark.eventLog.enabled</code>为 true ，设置路径为 Spark 事件日志的根目录。在这个目录下，Spark 为每个应用程序创建一个子路径，记录特殊的事件。用户可以将其设置为一个统一的路径，如 HDFS 上的路径，以便历史可读。</td></tr><tr><td><code>spark.eventLog.enabled</code></td><td>false</td><td>是否记录 Spark 事件日志，程序结束后重现 Web UI 很有用。</td></tr><tr><td><code>spark.ui.enabled</code></td><td>true</td><td>是否运行 web UI 程序。</td></tr><tr><td><code>spark.ui.killEnabled</code></td><td>true</td><td>允许通过 UI 杀掉任务。</td></tr><tr><td><code>spark.ui.port</code></td><td>4040</td><td>应用程序面板端口号。</td></tr><tr><td><code>spark.ui.retainedJobs</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少作业。</td></tr><tr><td><code>spark.ui.retainedStages</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少阶段。</td></tr><tr><td><code>spark.ui.retainedTasks</code></td><td>100000</td><td>GC 之前 Spark UI 和状态 api 能记录多少任务。</td></tr><tr><td><code>spark.ui.reverseProxy</code></td><td>false</td><td> Spark 主节点作为 worker 节点和 UI 的反向代理。Spark 主节点不需要访问主机就可以反向代理 worker 节点和 UI 。需要注意的是，worker 节点和 UI 不需要访问路径，只能通过主节点或代理访问。该设置影像所有的 wroker 节点和 UI ，必须在所有的 worker 节点，驱动程序和主节点上设置。</td></tr><tr><td><code>spark.ui.reverseProxyUrl</code></td><td></td><td>代理的 URL 。应包括 （http/https）和端口。</td></tr><tr><td><code>spark.worker.ui.retainedExecutors</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的 executor 。</td></tr><tr><td><code>spark.worker.ui.retainedDrivers</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的驱动程序。</td></tr><tr><td><code>spark.sql.ui.retainedExecutions</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的 execution 。</td></tr><tr><td><code>spark.streaming.ui.retainedBatches</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的 batch 。</td></tr><tr><td><code>spark.ui.retainedDeadExecutors</code></td><td>100</td><td>GC 之前 Spark UI 和状态 api 能记录多少死亡的 executor 。</td></tr></table>
+
+### Compression and Serialization
 <table class="table table-bordered table-striped table-condensed">
-<tr>
-<th>Property Name</th>
-<th>Default</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><code>spark.reducer.maxSizeInFlight</code></td>
-<td>48m</td>
-<td>
-Maximum size of map outputs to fetch simultaneously from each reduce task. Since each output requires us to
-create a buffer to receive it, this represents a fixed memory overhead per reduce task, so keep it small
-unless you have a large amount of memory.
-</td>
-</tr>
-<tr>
-<td><code>spark.reducer.maxReqsInFlight</code></td>
-<td>Int.MaxValue</td>
-<td>
-This configuration limits the number of remote requests to fetch blocks at any given point. When the number
-of hosts in the cluster increase, it might lead to very large number of in-bound connections to one or more
-nodes, causing the workers to fail under load. By allowing it to limit the number of fetch requests, this
-scenario can be mitigated.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.compress</code></td>
-<td>true</td>
-<td>
-Whether to compress map output files. Generally a good idea. Compression will use <code>spark.io.compression.codec</code>.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.file.buffer</code></td>
-<td>32k</td>
-<td>
-Size of the in-memory buffer for each shuffle file output stream. These buffers reduce the number of disk
-seeks and system calls made in creating intermediate shuffle files.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.io.maxRetries</code></td>
-<td>3</td>
-<td>
-(Netty only) Fetches that fail due to IO-related exceptions are automatically retried if this is set to a
-non-zero value. This retry logic helps stabilize large shuffles in the face of long GC pauses or transient
-network connectivity issues.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.io.numConnectionsPerPeer</code></td>
-<td>1</td>
-<td>
-(Netty only) Connections between hosts are reused in order to reduce connection buildup for large clusters.
-For clusters with many hard disks and few hosts, this may result in insufficient concurrency to saturate all
-disks, and so users may consider increasing this value.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.io.preferDirectBufs</code></td>
-<td>true</td>
-<td>
-(Netty only) Off-heap buffers are used to reduce garbage collection during shuffle and cache block transfer.
-For environments where off-heap memory is tightly limited, users may wish to turn this off to force all
-allocations from Netty to be on-heap.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.io.retryWait</code></td>
-<td>5s</td>
-<td>
-(Netty only) How long to wait between retries of fetches. The maximum delay caused by retrying is 15 seconds
-by default, calculated as <code>maxRetries * retryWait</code>.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.service.enabled</code></td>
-<td>false</td>
-<td>
-Enables the external shuffle service. This service preserves the shuffle files written by executors so the
-executors can be safely removed. This must be enabled if <code>spark.dynamicAllocation.enabled</code> is
-"true". The external shuffle service
-must be set up in order to enable it. See <a href="job-scheduling.html#configuration-and-setup">dynamic
-allocation configuration and setup documentation</a> for more information.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.service.port</code></td>
-<td>7337</td>
-<td>
-Port on which the external shuffle service will run.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.service.index.cache.entries</code></td>
-<td>1024</td>
-<td>
-Max number of entries to keep in the index cache of the shuffle service.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.sort.bypassMergeThreshold</code></td>
-<td>200</td>
-<td>
-(Advanced) In the sort-based shuffle manager, avoid merge-sorting data if there is no map-side aggregation
-and there are at most this many reduce partitions.
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.spill.compress</code></td>
-<td>true</td>
-<td>
-Whether to compress data spilled during shuffles. Compression will use
-<code>spark.io.compression.codec</code>.
-</td>
-</tr>
-<tr>
-<td><code>spark.io.encryption.enabled</code></td>
-<td>false</td>
-<td>
-Enable IO encryption. Currently supported by all modes except Mesos. It's recommended that RPC encryption be
-enabled when using this feature.
-</td>
-</tr>
-<tr>
-<td><code>spark.io.encryption.keySizeBits</code></td>
-<td>128</td>
-<td>
-IO encryption key size in bits. Supported values are 128, 192 and 256.
-</td>
-</tr>
-<tr>
-<td><code>spark.io.encryption.keygen.algorithm</code></td>
-<td>HmacSHA1</td>
-<td>
-The algorithm to use when generating the IO encryption key. The supported algorithms are described in the
-KeyGenerator section of the Java Cryptography Architecture Standard Algorithm Name Documentation.
-</td>
-</tr>
-</table>
-
-<h3 id="spark-ui">Spark UI</h3>
-
-<table class="table">
-<tr>
-<th>Property Name</th>
-<th>Default</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><code>spark.eventLog.compress</code></td>
-<td>false</td>
-<td>
-Whether to compress logged events, if <code>spark.eventLog.enabled</code> is true.
-</td>
-</tr>
-<tr>
-<td><code>spark.eventLog.dir</code></td>
-<td>file:///tmp/spark-events</td>
-<td>
-Base directory in which Spark events are logged, if <code>spark.eventLog.enabled</code> is true. Within this
-base directory, Spark creates a sub-directory for each application, and logs the events specific to the
-application in this directory. Users may want to set this to a unified location like an HDFS directory so
-history files can be read by the history server.
-</td>
-</tr>
-<tr>
-<td><code>spark.eventLog.enabled</code></td>
-<td>false</td>
-<td>
-Whether to log Spark events, useful for reconstructing the Web UI after the application has finished.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.enabled</code></td>
-<td>true</td>
-<td>
-Whether to run the web UI for the Spark application.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.killEnabled</code></td>
-<td>true</td>
-<td>
-Allows jobs and stages to be killed from the web UI.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.port</code></td>
-<td>4040</td>
-<td>
-Port for your application's dashboard, which shows memory and workload data.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.retainedJobs</code></td>
-<td>1000</td>
-<td>
-How many jobs the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.retainedStages</code></td>
-<td>1000</td>
-<td>
-How many stages the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.retainedTasks</code></td>
-<td>100000</td>
-<td>
-How many tasks the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.reverseProxy</code></td>
-<td>false</td>
-<td>
-Enable running Spark Master as reverse proxy for worker and application UIs. In this mode, Spark master will
-reverse proxy the worker and application UIs to enable access without requiring direct access to their
-hosts. Use it with caution, as worker and application UI will not be accessible directly, you will only be
-able to access them through spark master/proxy public URL. This setting affects all the workers and
-application UIs running in the cluster and must be set on all the workers, drivers and masters.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.reverseProxyUrl</code></td>
-<td></td>
-<td>
-This is the URL where your proxy is running. This URL is for proxy which is running in front of Spark
-Master. This is useful when running proxy for authentication e.g. OAuth proxy. Make sure this is a complete
-URL including scheme (http/https) and port to reach your proxy.
-</td>
-</tr>
-<tr>
-<td><code>spark.worker.ui.retainedExecutors</code></td>
-<td>1000</td>
-<td>
-How many finished executors the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-<tr>
-<td><code>spark.worker.ui.retainedDrivers</code></td>
-<td>1000</td>
-<td>
-How many finished drivers the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-<tr>
-<td><code>spark.sql.ui.retainedExecutions</code></td>
-<td>1000</td>
-<td>
-How many finished executions the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-<tr>
-<td><code>spark.streaming.ui.retainedBatches</code></td>
-<td>1000</td>
-<td>
-How many finished batches the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-<tr>
-<td><code>spark.ui.retainedDeadExecutors</code></td>
-<td>100</td>
-<td>
-How many dead executors the Spark UI and status APIs remember before garbage collecting.
-</td>
-</tr>
-</table>
-
-<h3 id="compression-and-serialization">Compression and Serialization</h3>
-
-<table class="table">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
@@ -429,9 +161,8 @@ to -1. By default it will reset the serializer every 100 objects.
 </tr>
 </table>
 
-<h3 id="memory-management">Memory Management</h3>
-
-<table class="table">
+### Memory Management
+<table class="table table-bordered table-striped table-condensed">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
@@ -518,9 +249,8 @@ is not enough free storage space to unroll the new block in its entirety.
 </tr>
 </table>
 
-<h3 id="execution-behavior">Execution Behavior</h3>
-
-<table class="table">
+### Execution Behavior
+<table class="table table-bordered table-striped table-condensed">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
@@ -646,9 +376,8 @@ the page size of the operating system.
 </tr>
 </table>
 
-<h3 id="networking">Networking</h3>
-
-<table class="table">
+### Networking
+<table class="table table-bordered table-striped table-condensed">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
@@ -753,9 +482,8 @@ Duration for an RPC remote endpoint lookup operation to wait before timing out.
 </tr>
 </table>
 
-<h3 id="scheduling">Scheduling</h3>
-
-<table class="table">
+### Scheduling
+<table class="table table-bordered table-striped table-condensed">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
@@ -968,9 +696,8 @@ safety-net to prevent runaway uncancellable tasks from rendering an executor unu
 </tr>
 </table>
 
-<h3 id="dynamic-allocation">Dynamic Allocation</h3>
-
-<table class="table">
+### Dynamic Allocation
+<table class="table table-bordered table-striped table-condensed">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
@@ -1046,9 +773,8 @@ requests. For more detail, see this <a href="job-scheduling.html#resource-alloca
 </tr>
 </table>
 
-<h3 id="security">Security</h3>
-
-<table class="table">
+### Security
+<table class="table table-bordered table-striped table-condensed">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
@@ -1197,9 +923,8 @@ Check the entry <code>spark.user.groups.mapping</code> for more details.
 </tr>
 </table>
 
-<h3 id="encryption">Encryption</h3>
-
-<table class="table">
+### Encryption
+<table class="table table-bordered table-striped table-condensed">
 <tr>
 <th>Property Name</th>
 <th>Default</th>
