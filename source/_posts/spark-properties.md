@@ -23,638 +23,84 @@ thumbnail:
 <table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.eventLog.compress</code></td><td>false</td><td>如果<code>spark.eventLog.enabled</code>为 true ，是否使用压缩。</td></tr><tr><td><code>spark.eventLog.dir</code></td><td>file:///tmp/spark-events</td><td>如果<code>spark.eventLog.enabled</code>为 true ，设置路径为 Spark 事件日志的根目录。在这个目录下，Spark 为每个应用程序创建一个子路径，记录特殊的事件。用户可以将其设置为一个统一的路径，如 HDFS 上的路径，以便历史可读。</td></tr><tr><td><code>spark.eventLog.enabled</code></td><td>false</td><td>是否记录 Spark 事件日志，程序结束后重现 Web UI 很有用。</td></tr><tr><td><code>spark.ui.enabled</code></td><td>true</td><td>是否运行 web UI 程序。</td></tr><tr><td><code>spark.ui.killEnabled</code></td><td>true</td><td>允许通过 UI 杀掉任务。</td></tr><tr><td><code>spark.ui.port</code></td><td>4040</td><td>应用程序面板端口号。</td></tr><tr><td><code>spark.ui.retainedJobs</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少作业。</td></tr><tr><td><code>spark.ui.retainedStages</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少阶段。</td></tr><tr><td><code>spark.ui.retainedTasks</code></td><td>100000</td><td>GC 之前 Spark UI 和状态 api 能记录多少任务。</td></tr><tr><td><code>spark.ui.reverseProxy</code></td><td>false</td><td> Spark 主节点作为 worker 节点和 UI 的反向代理。Spark 主节点不需要访问主机就可以反向代理 worker 节点和 UI 。需要注意的是，worker 节点和 UI 不需要访问路径，只能通过主节点或代理访问。该设置影像所有的 wroker 节点和 UI ，必须在所有的 worker 节点，驱动程序和主节点上设置。</td></tr><tr><td><code>spark.ui.reverseProxyUrl</code></td><td></td><td>代理的 URL 。应包括 （http/https）和端口。</td></tr><tr><td><code>spark.worker.ui.retainedExecutors</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的 executor 。</td></tr><tr><td><code>spark.worker.ui.retainedDrivers</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的驱动程序。</td></tr><tr><td><code>spark.sql.ui.retainedExecutions</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的 execution 。</td></tr><tr><td><code>spark.streaming.ui.retainedBatches</code></td><td>1000</td><td>GC 之前 Spark UI 和状态 api 能记录多少完成的 batch 。</td></tr><tr><td><code>spark.ui.retainedDeadExecutors</code></td><td>100</td><td>GC 之前 Spark UI 和状态 api 能记录多少死亡的 executor 。</td></tr></table>
 
 ### Compression and Serialization
-<table class="table table-bordered table-striped table-condensed">
-<tr>
-<th>Property Name</th>
-<th>Default</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><code>spark.broadcast.compress</code></td>
-<td>true</td>
-<td>
-Whether to compress broadcast variables before sending them. Generally a good idea.
-</td>
-</tr>
-<tr>
-<td><code>spark.io.compression.codec</code></td>
-<td>lz4</td>
-<td>
-The codec used to compress internal data such as RDD partitions, broadcast variables and shuffle outputs. By
-default, Spark provides three codecs: <code>lz4</code>, <code>lzf</code>, and <code>snappy</code>. You can
-also use fully qualified class names to specify the codec, e.g. <code>org.apache.spark.io.LZ4CompressionCodec</code>,
-<code>org.apache.spark.io.LZFCompressionCodec</code>, and
-<code>org.apache.spark.io.SnappyCompressionCodec</code>.
-</td>
-</tr>
-<tr>
-<td><code>spark.io.compression.lz4.blockSize</code></td>
-<td>32k</td>
-<td>
-Block size used in LZ4 compression, in the case when LZ4 compression codec is used. Lowering this block size
-will also lower shuffle memory usage when LZ4 is used.
-</td>
-</tr>
-<tr>
-<td><code>spark.io.compression.snappy.blockSize</code></td>
-<td>32k</td>
-<td>
-Block size used in Snappy compression, in the case when Snappy compression codec is used. Lowering this
-block size will also lower shuffle memory usage when Snappy is used.
-</td>
-</tr>
-<tr>
-<td><code>spark.kryo.classesToRegister</code></td>
-<td>(none)</td>
-<td>
-If you use Kryo serialization, give a comma-separated list of custom class names to register with Kryo. See
-the <a href="tuning.html#data-serialization">tuning guide</a> for more details.
-</td>
-</tr>
-<tr>
-<td><code>spark.kryo.referenceTracking</code></td>
-<td>true</td>
-<td>
-Whether to track references to the same object when serializing data with Kryo, which is necessary if your
-object graphs have loops and useful for efficiency if they contain multiple copies of the same object. Can
-be disabled to improve performance if you know this is not the case.
-</td>
-</tr>
-<tr>
-<td><code>spark.kryo.registrationRequired</code></td>
-<td>false</td>
-<td>
-Whether to require registration with Kryo. If set to 'true', Kryo will throw an exception if an unregistered
-class is serialized. If set to false (the default), Kryo will write unregistered class names along with each
-object. Writing class names can cause significant performance overhead, so enabling this option can enforce
-strictly that a user has not omitted classes from registration.
-</td>
-</tr>
-<tr>
-<td><code>spark.kryo.registrator</code></td>
-<td>(none)</td>
-<td>
-If you use Kryo serialization, give a comma-separated list of classes that register your custom classes with
-Kryo. This
-property is useful if you need to register your classes in a custom way, e.g. to specify a custom field
-serializer. Otherwise <code>spark.kryo.classesToRegister</code> is simpler. It should be set to classes that
-extend <a href="api/scala/index.html#org.apache.spark.serializer.KryoRegistrator">
-<code>KryoRegistrator</code></a>. See the <a href="tuning.html#data-serialization">tuning guide</a> for more
-details.
-</td>
-</tr>
-<tr>
-<td><code>spark.kryo.unsafe</code></td>
-<td>false</td>
-<td>
-Whether to use unsafe based Kryo serializer. Can be substantially faster by using Unsafe Based IO.
-</td>
-</tr>
-<tr>
-<td><code>spark.kryoserializer.buffer.max</code></td>
-<td>64m</td>
-<td>
-Maximum allowable size of Kryo serialization buffer. This must be larger than any object you attempt to
-serialize. Increase this if you get a "buffer limit exceeded" exception inside Kryo.
-</td>
-</tr>
-<tr>
-<td><code>spark.kryoserializer.buffer</code></td>
-<td>64k</td>
-<td>
-Initial size of Kryo's serialization buffer. Note that there will be one buffer <i>per core</i> on each
-worker. This buffer will grow up to <code>spark.kryoserializer.buffer.max</code> if needed.
-</td>
-</tr>
-<tr>
-<td><code>spark.rdd.compress</code></td>
-<td>false</td>
-<td>
-Whether to compress serialized RDD partitions (e.g. for <code>StorageLevel.MEMORY_ONLY_SER</code> in Java
-and Scala or <code>StorageLevel.MEMORY_ONLY</code> in Python). Can save substantial space at the cost of
-some extra CPU time.
-</td>
-</tr>
-<tr>
-<td><code>spark.serializer</code></td>
-<td>
-org.apache.spark.serializer.<br/>JavaSerializer
-</td>
-<td>
-Class to use for serializing objects that will be sent over the network or need to be cached in serialized
-form. The default of Java serialization works with any Serializable Java object but is quite slow, so we
-recommend <a href="tuning.html">using <code>org.apache.spark.serializer.KryoSerializer</code> and
-configuring Kryo serialization</a> when speed is
-necessary. Can be any subclass of <a href="api/scala/index.html#org.apache.spark.serializer.Serializer">
-<code>org.apache.spark.Serializer</code></a>.
-</td>
-</tr>
-<tr>
-<td><code>spark.serializer.objectStreamReset</code></td>
-<td>100</td>
-<td>
-When serializing using org.apache.spark.serializer.JavaSerializer, the serializer caches objects to prevent
-writing redundant data, however that stops garbage collection of those objects. By calling 'reset' you flush
-that info from the serializer, and allow old objects to be collected. To turn off this periodic reset set it
-to -1. By default it will reset the serializer every 100 objects.
-</td>
-</tr>
-</table>
+<table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.broadcast.compress</code></td><td>true</td><td>是否在发送广播变量之前压缩</td></tr><tr><td><code>spark.io.compression.codec</code></td><td>lz4</td><td>用来压缩 RDD 分区、广播变量、shuffle 输出等内部数据的解码器。Spark 默认提供三种解码器：<code>lz4</code>, <code>lzf</code>, <code>snappy</code>。也可以使用完全类名来指定解码器，比如<code>org.apache.spark.io.LZ4CompressionCodec</code>,<code>org.apache.spark.io.LZFCompressionCodec</code>, <code>org.apache.spark.io.SnappyCompressionCodec</code>。</td></tr><tr><td><code>spark.io.compression.lz4.blockSize</code></td><td>32k</td><td>LZ4 压缩的块大小。块大小越小，shuffle 使用的内存越小。</td></tr><tr><td><code>spark.io.compression.snappy.blockSize</code></td><td>32k</td><td>Snappy 压缩的块大小。块大小越小，shuffle 使用的内存越小。</td></tr><tr><td><code>spark.kryo.classesToRegister</code></td><td>(none)</td><td>通过逗号分隔列表指定在 Kryo 中注册的类的名字。</td></tr><tr><td><code>spark.kryo.referenceTracking</code></td><td>true</td><td>在使用 Kryo 序列化数据时，是否跟踪相同对象的引用。如果对象图包含循环的话，这是必要的。如果没有，可以禁用来提高性能。</td></tr><tr><td><code>spark.kryo.registrationRequired</code></td><td>false</td><td>是否需要在 Kryo 注册。如果设置为 'true'，未注册的类在序列化时，Kryo 会抛出异常。如果设置为 'false' ，Kryo 会将未注册的类名写到每一个对象，这个会造成巨大的性能开销，所以应保证序列化的类在 Kryo 中注册。</td></tr><tr><td><code>spark.kryo.registrator</code></td><td>(none)</td><td>通过逗号分隔的列表指定在 Kryo 中注册的类名。这在通过自定义方式注册类时很有用，否则使用<code>spark.kryo.classesToRegister</code>更简单。</td></tr><tr><td><code>spark.kryo.unsafe</code></td><td>false</td><td>是否使用不安全的 Kryo 序列化器。使用不安全的 IO 能极大提高性能。</td></tr><tr><td><code>spark.kryoserializer.buffer.max</code></td><td>64m</td><td>Kryo 序列化缓冲区允许的最大值。这个大小应大于任何想序列化的对象的大小。如果出现 "buffer limit exceeded" 异常，则调大该值。</td></tr><tr><td><code>spark.kryoserializer.buffer</code></td><td>64k</td><td>Kryo 序列化缓冲区的初始大小。注意：每个 worker 节点的每一个 core 都有一个缓冲区。<code>spark.kryoserializer.buffer.max</code>可以修改缓冲区的大小。</td></tr><tr><td><code>spark.rdd.compress</code></td><td>false</td><td>是否压缩 RDD 分区。可以节约大量的空间和额外的 CPU 时间。</td></tr><tr><td><code>spark.serializer</code></td><td>org.apache.spark.serializer.JavaSerializer</td><td>用来序列化对象的序列化器。默认的 Java 序列化器可以用于任何 Java 序列化对象，但是性能不高。对性能有要求时推荐使用<code>org.apache.spark.serializer.KryoSerializer</code>。</td></tr><tr><td><code>spark.serializer.objectStreamReset</code></td><td>100</td><td>使用 <code>org.apache.spark.serializer.JavaSerializer</code>时, 序列化器缓存对象会防止多余数据写入会导致这些对象不会被 GC 。通过调用 'reset' 可以刷新序列化器信息，允许旧对象被回收。 默认情况下，每序列化 100 个对象会刷新一次，设置 -1  可以关闭刷新。</td></tr></table>
 
 ### Memory Management
-<table class="table table-bordered table-striped table-condensed">
-<tr>
-<th>Property Name</th>
-<th>Default</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><code>spark.memory.fraction</code></td>
-<td>0.6</td>
-<td>
-Fraction of (heap space - 300MB) used for execution and storage. The lower this is, the more frequently
-spills and cached data eviction occur. The purpose of this config is to set aside memory for internal
-metadata, user data structures, and imprecise size estimation in the case of sparse, unusually large
-records. Leaving this at the default value is recommended. For more detail, including important information
-about correctly tuning JVM garbage collection when increasing this value, see <a
-    href="tuning.html#memory-management-overview">this description</a>.
-</td>
-</tr>
-<tr>
-<td><code>spark.memory.storageFraction</code></td>
-<td>0.5</td>
-<td>
-Amount of storage memory immune to eviction, expressed as a fraction of the size of the region set aside by
-<code>s​park.memory.fraction</code>. The higher this is, the less working memory may be available to
-execution and tasks may spill to disk more often. Leaving this at the default value is recommended. For more
-detail, see <a href="tuning.html#memory-management-overview">this description</a>.
-</td>
-</tr>
-<tr>
-<td><code>spark.memory.offHeap.enabled</code></td>
-<td>false</td>
-<td>
-If true, Spark will attempt to use off-heap memory for certain operations. If off-heap memory use is
-enabled, then <code>spark.memory.offHeap.size</code> must be positive.
-</td>
-</tr>
-<tr>
-<td><code>spark.memory.offHeap.size</code></td>
-<td>0</td>
-<td>
-The absolute amount of memory in bytes which can be used for off-heap allocation. This setting has no impact
-on heap memory usage, so if your executors' total memory consumption must fit within some hard limit then be
-sure to shrink your JVM heap size accordingly. This must be set to a positive value when <code>spark.memory.offHeap.enabled=true</code>.
-</td>
-</tr>
-<tr>
-<td><code>spark.memory.useLegacyMode</code></td>
-<td>false</td>
-<td>
-​Whether to enable the legacy memory management mode used in Spark 1.5 and before. The legacy mode rigidly
-partitions the heap space into fixed-size regions, potentially leading to excessive spilling if the
-application was not tuned. The following deprecated memory fraction configurations are not read unless this
-is enabled: <code>spark.shuffle.memoryFraction</code><br/> <code>spark.storage.memoryFraction</code><br/>
-<code>spark.storage.unrollFraction</code>
-</td>
-</tr>
-<tr>
-<td><code>spark.shuffle.memoryFraction</code></td>
-<td>0.2</td>
-<td>
-(deprecated) This is read only if <code>spark.memory.useLegacyMode</code> is enabled. Fraction of Java heap
-to use for aggregation and cogroups during shuffles. At any given time, the collective size of all in-memory
-maps used for shuffles is bounded by this limit, beyond which the contents will begin to spill to disk. If
-spills are often, consider increasing this value at the expense of <code>spark.storage.memoryFraction</code>.
-</td>
-</tr>
-<tr>
-<td><code>spark.storage.memoryFraction</code></td>
-<td>0.6</td>
-<td>
-(deprecated) This is read only if <code>spark.memory.useLegacyMode</code> is enabled. Fraction of Java heap
-to use for Spark's memory cache. This should not be larger than the "old" generation of objects in the JVM,
-which by default is given 0.6 of the heap, but you can increase it if you configure your own old generation
-size.
-</td>
-</tr>
-<tr>
-<td><code>spark.storage.unrollFraction</code></td>
-<td>0.2</td>
-<td>
-(deprecated) This is read only if <code>spark.memory.useLegacyMode</code> is enabled. Fraction of <code>spark.storage.memoryFraction</code>
-to use for unrolling blocks in memory. This is dynamically allocated by dropping existing blocks when there
-is not enough free storage space to unroll the new block in its entirety.
-</td>
-</tr>
-</table>
+<table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.memory.fraction</code></td><td>0.6</td><td>执行和存储的内存比例（堆内存-300M）。比例越小，缓存数据回收和泄露越频繁。建议使用默认值。</td></tr><tr><td><code>spark.memory.storageFraction</code></td><td>0.5</td><td>存储内存的比例。值越高，执行可用的内存越少，数据写到磁盘的频率越高。建议使用默认值。</td></tr><tr><td><code>spark.memory.offHeap.enabled</code></td><td>false</td><td>是否使用非堆内存。</td></tr><tr><td><code>spark.memory.offHeap.size</code></td><td>0</td><td>用于分配非堆内存的内存绝对值。该值对对内存的使用没有影响，如果想将执行的内存消耗限制在一定范围，应减小 JVM 的对内存大小。<code>spark.memory.offHeap.enabled=true</code>时，该值必须设置。</td></tr><tr><td><code>spark.memory.useLegacyMode</code></td><td>false</td><td>是否使用 spark 1.5 及以前的 legacy memory management 模式。​legacy 模式将对内存分为固定大小的分区，如果没有调优，可能会导致大量的泄露。</td></tr><tr><td><code>spark.shuffle.memoryFraction</code></td><td>0.2</td><td>废弃的。This is read only if <code>spark.memory.useLegacyMode</code> is enabled. Fraction of Java heap to use for aggregation and cogroups during shuffles. At any given time, the collective size of all in-memory maps used for shuffles is bounded by this limit, beyond which the contents will begin to spill to disk. If spills are often, consider increasing this value at the expense of <code>spark.storage.memoryFraction</code>.</td></tr><tr><td><code>spark.storage.memoryFraction</code></td><td>0.6</td><td>废弃的。This is read only if <code>spark.memory.useLegacyMode</code> is enabled. Fraction of Java heap to use for Spark's memory cache. This should not be larger than the "old" generation of objects in the JVM,which by default is given 0.6 of the heap, but you can increase it if you configure your own old generation size.</td></tr><tr><td><code>spark.storage.unrollFraction</code></td><td>0.2</td><td>(deprecated) This is read only if <code>spark.memory.useLegacyMode</code> is enabled. Fraction of <code>spark.storage.memoryFraction</code>to use for unrolling blocks in memory. This is dynamically allocated by dropping existing blocks when there is not enough free storage space to unroll the new block in its entirety.</td></tr></table>
 
 ### Execution Behavior
-<table class="table table-bordered table-striped table-condensed">
-<tr>
-<th>Property Name</th>
-<th>Default</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><code>spark.broadcast.blockSize</code></td>
-<td>4m</td>
-<td>
-Size of each piece of a block for <code>TorrentBroadcastFactory</code>. Too large a value decreases
-parallelism during broadcast (makes it slower); however, if it is too small, <code>BlockManager</code> might
-take a performance hit.
-</td>
-</tr>
-<tr>
-<td><code>spark.executor.cores</code></td>
-<td>
-1 in YARN mode, all the available cores on the worker in standalone and Mesos coarse-grained modes.
-</td>
-<td>
-The number of cores to use on each executor. In standalone and Mesos coarse-grained modes, setting this
-parameter allows an application to run multiple executors on the same worker, provided that there are enough
-cores on that worker. Otherwise, only one executor per application will run on each worker.
-</td>
-</tr>
-<tr>
-<td><code>spark.default.parallelism</code></td>
-<td>
-For distributed shuffle operations like <code>reduceByKey</code> and <code>join</code>, the largest number
-of partitions in a parent RDD. For operations like <code>parallelize</code> with no parent RDDs, it depends
-on the cluster manager:
-<ul>
-    <li>Local mode: number of cores on the local machine</li>
-    <li>Mesos fine grained mode: 8</li>
-    <li>Others: total number of cores on all executor nodes or 2, whichever is larger</li>
-</ul>
-</td>
-<td>
-Default number of partitions in RDDs returned by transformations like <code>join</code>,
-<code>reduceByKey</code>, and <code>parallelize</code> when not set by user.
-</td>
-</tr>
-<tr>
-<td><code>spark.executor.heartbeatInterval</code></td>
-<td>10s</td>
-<td>Interval between each executor's heartbeats to the driver. Heartbeats let the driver know that the executor
-is still alive and update it with metrics for in-progress tasks. spark.executor.heartbeatInterval should be
-significantly less than spark.network.timeout
-</td>
-</tr>
-<tr>
-<td><code>spark.files.fetchTimeout</code></td>
-<td>60s</td>
-<td>
-Communication timeout to use when fetching files added through SparkContext.addFile() from the driver.
-</td>
-</tr>
-<tr>
-<td><code>spark.files.useFetchCache</code></td>
-<td>true</td>
-<td>
-If set to true (default), file fetching will use a local cache that is shared by executors that belong to
-the same application, which can improve task launching performance when running many executors on the same
-host. If set to false, these caching optimizations will be disabled and all executors will fetch their own
-copies of files. This optimization may be disabled in order to use Spark local directories that reside on
-NFS filesystems (see <a href="https://issues.apache.org/jira/browse/SPARK-6313">SPARK-6313</a> for more
-details).
-</td>
-</tr>
-<tr>
-<td><code>spark.files.overwrite</code></td>
-<td>false</td>
-<td>
-Whether to overwrite files added through SparkContext.addFile() when the target file exists and its contents
-do not match those of the source.
-</td>
-</tr>
-<tr>
-<td><code>spark.files.maxPartitionBytes</code></td>
-<td>134217728 (128 MB)</td>
-<td>
-The maximum number of bytes to pack into a single partition when reading files.
-</td>
-</tr>
-<tr>
-<td><code>spark.files.openCostInBytes</code></td>
-<td>4194304 (4 MB)</td>
-<td>
-The estimated cost to open a file, measured by the number of bytes could be scanned in the same time. This
-is used when putting multiple files into a partition. It is better to over estimate, then the partitions
-with small files will be faster than partitions with bigger files.
-</td>
-</tr>
-<tr>
-<td><code>spark.hadoop.cloneConf</code></td>
-<td>false</td>
-<td>If set to true, clones a new Hadoop <code>Configuration</code> object for each task. This option should be
-enabled to work around <code>Configuration</code> thread-safety issues (see <a
-        href="https://issues.apache.org/jira/browse/SPARK-2546">SPARK-2546</a> for more details). This is
-disabled by default in order to avoid unexpected performance regressions for jobs that are not affected by
-these issues.
-</td>
-</tr>
-<tr>
-<td><code>spark.hadoop.validateOutputSpecs</code></td>
-<td>true</td>
-<td>If set to true, validates the output specification (e.g. checking if the output directory already exists)
-used in saveAsHadoopFile and other variants. This can be disabled to silence exceptions due to pre-existing
-output directories. We recommend that users do not disable this except if trying to achieve compatibility
-with previous versions of Spark. Simply use Hadoop's FileSystem API to delete output directories by hand.
-This setting is ignored for jobs generated through Spark Streaming's StreamingContext, since data may need
-to be rewritten to pre-existing output directories during checkpoint recovery.
-</td>
-</tr>
-<tr>
-<td><code>spark.storage.memoryMapThreshold</code></td>
-<td>2m</td>
-<td>
-Size of a block above which Spark memory maps when reading a block from disk. This prevents Spark from
-memory mapping very small blocks. In general, memory mapping has high overhead for blocks close to or below
-the page size of the operating system.
-</td>
-</tr>
-</table>
+<table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.broadcast.blockSize</code></td><td>4m</td><td><code>TorrentBroadcastFactory</code>每个块的大小。太大会降低并行度，使程序执行变慢。太小会影响<code>BlockManager</code>的性能。</td></tr><tr><td><code>spark.executor.cores</code></td><td>YARN 模式下是 1 ,standalone 和 Mesos 模式下为所有可用核心数量。</td><td>每个 executor 可以使用的核心数量。如果 worker 节点有充足的核心， 在 standalone 和 Mesos 模式下允许应用在同一个 worker 节点运行多个 executor 。否则一个 worker 节点只能运行一个 executor 。</td></tr><tr><td><code>spark.default.parallelism</code></td><td>父 RDD 最大分区数量，比如 <code>reduceByKey</code> and <code>join</code> 这样的分布式 shuffle 操作。没有父 RDD 的并且操作，依赖于集群管理器：<ul><li>Local mode: 本地集器的核心数</li><li>Mesos fine grained mode: 8</li><li>Others: executor 所有核心数和 2 的较大值</li></ul></td><td>转换操作返回的 RDD 分区数量，比如 <code>join</code>，<code>reduceByKey</code> 和 <code>parallelize</code>。</td></tr><tr><td><code>spark.executor.heartbeatInterval</code></td><td>10s</td><td>executor 和驱动程序之间心跳时间间隔。心跳可以让驱动程序知道哪些 executor 活着，更新正在执行的任务信息。<code>spark.executor.heartbeatInterval</code>应小于<code>spark.network.timeout</code>。</td></tr><tr><td><code>spark.files.fetchTimeout</code></td><td>60s</td><td>使用<code>SparkContext.addFile()</code>从驱动程序获取文件的超时时间。</td></tr><tr><td><code>spark.files.useFetchCache</code></td><td>true</td><td>如果设置为 true ，获取文件将使用本地缓存。本地缓存和同一个程序的 executor 是共享的，这样可以在相同主机同时运行多个 executor 时，任务启动更快。如果设置为 false，executor 会获取各自的文件副本。为了使用 NFS 文件系统的 Spark 本地目录，可以禁用该项。</td></tr><tr><td><code>spark.files.overwrite</code></td><td>false</td><td>通过<code>SparkContext.addFile()</code>获取文件，如果文件存在并且内容不一致时是否覆盖。</td></tr><tr><td><code>spark.files.maxPartitionBytes</code></td><td>134217728 (128 MB)</td><td>读文件时单个分区打包的最大字节数。</td></tr><tr><td><code>spark.files.openCostInBytes</code></td><td>4194304 (4 MB)</td><td>预估打开文件的成本，同时读取文件的字节数量。一个分区放置多个文件时使用。超过 4MB ，小文件的分区会比大文件的快。</td></tr><tr><td><code>spark.hadoop.cloneConf</code></td><td>false</td><td>如果设置为 true ，会为每一个任务克隆新的 Hadoop <code>Configuration</code> 对象。</td></tr><tr><td><code>spark.hadoop.validateOutputSpecs</code></td><td>true</td><td>如果设置为 true ，校验在使用 saveAsHadoopFile 或其他动作时的输出规范，如校验目录是否存在。除非要兼容 Spark 以前的版本，否则不推荐禁用该项。对于使用 spark streming 的 StreamingContext 创建作业，在检查恢复时，数据需要被重写到已存在的目录，该项会被忽略。</td></tr><tr><td><code>spark.storage.memoryMapThreshold</code></td><td>2m</td><td>从磁盘读取块时映射到 Spark 内存的块的大小。这可以防止映射到很小的块。通常，在操作系统关闭块和降低页大小时内存映射开销很大。</td></tr></table>
 
 ### Networking
-<table class="table table-bordered table-striped table-condensed">
-<tr>
-<th>Property Name</th>
-<th>Default</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><code>spark.rpc.message.maxSize</code></td>
-<td>128</td>
-<td>
-Maximum message size (in MB) to allow in "control plane" communication; generally only applies to map output
-size information sent between executors and the driver. Increase this if you are running jobs with many
-thousands of map and reduce tasks and see messages about the RPC message size.
-</td>
-</tr>
-<tr>
-<td><code>spark.blockManager.port</code></td>
-<td>(random)</td>
-<td>
-Port for all block managers to listen on. These exist on both the driver and the executors.
-</td>
-</tr>
-<tr>
-<td><code>spark.driver.blockManager.port</code></td>
-<td>(value of spark.blockManager.port)</td>
-<td>
-Driver-specific port for the block manager to listen on, for cases where it cannot use the same
-configuration as executors.
-</td>
-</tr>
-<tr>
-<td><code>spark.driver.bindAddress</code></td>
-<td>(value of spark.driver.host)</td>
-<td>
-Hostname or IP address where to bind listening sockets. This config overrides the SPARK_LOCAL_IP environment
-variable (see below). <br/>It also allows a different address from the local one to be advertised to
-executors or external systems. This is useful, for example, when running containers with bridged networking.
-For this to properly work, the different ports used by the driver (RPC, block manager and UI) need to be
-forwarded from the container's host.
-</td>
-</tr>
-<tr>
-<td><code>spark.driver.host</code></td>
-<td>(local hostname)</td>
-<td>
-Hostname or IP address for the driver. This is used for communicating with the executors and the standalone
-Master.
-</td>
-</tr>
-<tr>
-<td><code>spark.driver.port</code></td>
-<td>(random)</td>
-<td>
-Port for the driver to listen on. This is used for communicating with the executors and the standalone
-Master.
-</td>
-</tr>
-<tr>
-<td><code>spark.network.timeout</code></td>
-<td>120s</td>
-<td>
-Default timeout for all network interactions. This config will be used in place of <code>spark.core.connection.ack.wait.timeout</code>,
-<code>spark.storage.blockManagerSlaveTimeoutMs</code>, <code>spark.shuffle.io.connectionTimeout</code>,
-<code>spark.rpc.askTimeout</code> or <code>spark.rpc.lookupTimeout</code> if they are not configured.
-</td>
-</tr>
-<tr>
-<td><code>spark.port.maxRetries</code></td>
-<td>16</td>
-<td>
-Maximum number of retries when binding to a port before giving up. When a port is given a specific value
-(non 0), each subsequent retry will increment the port used in the previous attempt by 1 before retrying.
-This essentially allows it to try a range of ports from the start port specified to port + maxRetries.
-</td>
-</tr>
-<tr>
-<td><code>spark.rpc.numRetries</code></td>
-<td>3</td>
-<td>
-Number of times to retry before an RPC task gives up. An RPC task will run at most times of this number.
-</td>
-</tr>
-<tr>
-<td><code>spark.rpc.retry.wait</code></td>
-<td>3s</td>
-<td>
-Duration for an RPC ask operation to wait before retrying.
-</td>
-</tr>
-<tr>
-<td><code>spark.rpc.askTimeout</code></td>
-<td><code>spark.network.timeout</code></td>
-<td>
-Duration for an RPC ask operation to wait before timing out.
-</td>
-</tr>
-<tr>
-<td><code>spark.rpc.lookupTimeout</code></td>
-<td>120s</td>
-<td>
-Duration for an RPC remote endpoint lookup operation to wait before timing out.
-</td>
-</tr>
-</table>
+<table class="table table-bordered table-striped table-condensed"><tr><th>Property Name</th><th>Default</th><th>Meaning</th></tr><tr><td><code>spark.rpc.message.maxSize</code></td><td>128</td><td>executor 和驱动程序之间发送消息的最大大小。如果运行的作业包含几千个 map 和 reduce 任务，可以调大该值。</td></tr><tr><td><code>spark.blockManager.port</code></td><td>(random)</td><td>executor 和驱动程序上所有块管理器被监听的接口。</td></tr><tr><td><code>spark.driver.blockManager.port</code></td><td>(value of spark.blockManager.port)</td><td>块管理器的指定驱动程序监听端口，不能使用和 executor 相同的配置。</td></tr><tr><td><code>spark.driver.bindAddress</code></td><td>(value of spark.driver.host)</td><td>主机名或 IP 地址用于绑定 socket 。该配置会覆盖环境变量<code>SPARK_LOCAL_IP</code>。允许设置不同的地址从本地到 executor 或 外部系统。为了能够正常工作，驱动程序使用的不同的接口需要从容器主机转发。</td></tr><tr><td><code>spark.driver.host</code></td><td>(local hostname)</td><td>驱动程序的主机名或 IP 地址。用于 executor 和 standalone 主节点之间的通信。</td></tr><tr><td><code>spark.driver.port</code></td><td>(random)</td><td>驱动程序的端口。用于 executor 和 standalone 主节点之间的通信。</td></tr><tr><td><code>spark.network.timeout</code></td><td>120s</td><td>网络默认超时时间。如果<code>spark.core.connection.ack.wait.timeout</code>,<code>spark.storage.blockManagerSlaveTimeoutMs</code>, <code>spark.shuffle.io.connectionTimeout</code>,<code>spark.rpc.askTimeout</code> or <code>spark.rpc.lookupTimeout</code>没有配置，可以用该项代替。</td></tr><tr><td><code>spark.port.maxRetries</code></td><td>16</td><td>放弃端口前最大重试次数。给一个端口指定一个非 0 值，每次重试会将原来的值 +1 。从开始端口到从端口号加最大重试次数范围的端口号都会尝试。</td></tr><tr><td><code>spark.rpc.numRetries</code></td><td>3</td><td>RPC 任务放弃前重试次数。</td></tr><tr><td><code>spark.rpc.retry.wait</code></td><td>3s</td><td>RPC 询问重试的间隔时间。</td></tr><tr><td><code>spark.rpc.askTimeout</code></td><td><code>spark.network.timeout</code></td><td>RPC 询问超时时间。</td></tr><tr><td><code>spark.rpc.lookupTimeout</code></td><td>120s</td><td>RPC 寻找远程断点的超时时间。</td></tr></table>
 
 ### Scheduling
 <table class="table table-bordered table-striped table-condensed">
-<tr>
-<th>Property Name</th>
-<th>Default</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><code>spark.cores.max</code></td>
-<td>(not set)</td>
-<td>
-When running on a <a href="spark-standalone.html">standalone deploy cluster</a> or a <a
-    href="running-on-mesos.html#mesos-run-modes">Mesos cluster in "coarse-grained" sharing mode</a>, the
-maximum amount of CPU cores to request for the application from across the cluster (not from each machine).
-If not set, the default will be <code>spark.deploy.defaultCores</code> on Spark's standalone cluster
-manager, or infinite (all available cores) on Mesos.
-</td>
-</tr>
-<tr>
-<td><code>spark.locality.wait</code></td>
-<td>3s</td>
-<td>
-How long to wait to launch a data-local task before giving up and launching it on a less-local node. The
-same wait will be used to step through multiple locality levels (process-local, node-local, rack-local and
-then any). It is also possible to customize the waiting time for each level by setting <code>spark.locality.wait.node</code>,
-etc. You should increase this setting if your tasks are long and see poor locality, but the default usually
-works well.
-</td>
-</tr>
-<tr>
-<td><code>spark.locality.wait.node</code></td>
-<td>spark.locality.wait</td>
-<td>
-Customize the locality wait for node locality. For example, you can set this to 0 to skip node locality and
-search immediately for rack locality (if your cluster has rack information).
-</td>
-</tr>
-<tr>
-<td><code>spark.locality.wait.process</code></td>
-<td>spark.locality.wait</td>
-<td>
-Customize the locality wait for process locality. This affects tasks that attempt to access cached data in a
-particular executor process.
-</td>
-</tr>
-<tr>
-<td><code>spark.locality.wait.rack</code></td>
-<td>spark.locality.wait</td>
-<td>
-Customize the locality wait for rack locality.
-</td>
-</tr>
-<tr>
-<td><code>spark.scheduler.maxRegisteredResourcesWaitingTime</code></td>
-<td>30s</td>
-<td>
-Maximum amount of time to wait for resources to register before scheduling begins.
-</td>
-</tr>
-<tr>
+<tr><th>Property Name</th><th>Default</th><th>Meaning</th>
+</tr><tr><td><code>spark.cores.max</code></td><td>(not set)</td>
+<td>在 standalone 模式和 Mesos 粗粒度模式下，程序请求的 CPU 最大核心总数（不是每个机器的核心数量）。不设置该值，standalone 模式默认为<code>spark.deploy.defaultCores</code>的值，Mesos 默认是所有可用核心数。
+</td></tr><tr><td><code>spark.locality.wait</code></td><td>3s</td>
+<td>放弃启动数据在本地的任务并启动一个非本地节点任务的等待时间。这和跳过多个本地级别（process-local, node-local, rack-local 等）的是相同的。
+通过设置<code>spark.locality.wait.node</code>可以自定义每个级别的等待时间。默认时间通常可以正常工作，如果你的任务很长且不在本地执行，可以增大该值。
+</td></tr><tr><td><code>spark.locality.wait.node</code></td><td>spark.locality.wait</td>
+<td>自定义本地节点的位置。例如，设置 0 以跳过本地节点并立刻搜索机架位置。</td></tr><tr><td><code>spark.locality.wait.process</code></td><td>spark.locality.wait</td>
+<td>自定义本地进程的位置。会影响特殊的 executor 进程中试图访问缓存数据的任务。
+</td></tr><tr><td><code>spark.locality.wait.rack</code></td><td>spark.locality.wait</td>
+<td>自定义本地机架的位置。</td></tr><tr><td><code>spark.scheduler.maxRegisteredResourcesWaitingTime</code></td>
+<td>30s</td><td>调度开始前等待资源注册的最大时间。</td></tr><tr>
 <td><code>spark.scheduler.minRegisteredResourcesRatio</code></td>
-<td>0.8 for YARN mode; 0.0 for standalone mode and Mesos coarse-grained mode</td>
-<td>
-The minimum ratio of registered resources (registered resources / total expected resources) (resources are
-executors in yarn mode, CPU cores in standalone mode and Mesos coarsed-grained mode ['spark.cores.max' value
-is total expected resources for Mesos coarse-grained mode] ) to wait for before scheduling begins. Specified
-as a double between 0.0 and 1.0. Regardless of whether the minimum ratio of resources has been reached, the
-maximum amount of time it will wait before scheduling begins is controlled by config <code>spark.scheduler.maxRegisteredResourcesWaitingTime</code>.
-</td>
-</tr>
-<tr>
-<td><code>spark.scheduler.mode</code></td>
-<td>FIFO</td>
-<td>
-The <a href="job-scheduling.html#scheduling-within-an-application">scheduling mode</a> between jobs
-submitted to the same SparkContext. Can be set to <code>FAIR</code> to use fair sharing instead of queueing
-jobs one after another. Useful for multi-user services.
-</td>
-</tr>
-<tr>
-<td><code>spark.scheduler.revive.interval</code></td>
-<td>1s</td>
-<td>
-The interval length for the scheduler to revive the worker resource offers to run tasks.
-</td>
-</tr>
-<tr>
-<td><code>spark.blacklist.enabled</code></td>
-<td>
-false
-</td>
-<td>
-If set to "true", prevent Spark from scheduling tasks on executors that have been blacklisted due to too
-many task failures. The blacklisting algorithm can be further controlled by the other "spark.blacklist"
-configuration options.
-</td>
-</tr>
-<tr>
-<td><code>spark.blacklist.task.maxTaskAttemptsPerExecutor</code></td>
-<td>1</td>
-<td>
-(Experimental) For a given task, how many times it can be retried on one executor before the executor is
-blacklisted for that task.
-</td>
-</tr>
-<tr>
-<td><code>spark.blacklist.task.maxTaskAttemptsPerNode</code></td>
+<td>YARN 模式为 0.8，standalone 模式和 Mesos 粗粒度模式为 0.0</td>
+<td>调度开始前等待资源注册最小比例（注册的资源/期望注册的所有资源）。指定 0.0 到 1.0 之间的浮点数。不管是否到达设定值，最大等待时间是通过<code>spark.scheduler.maxRegisteredResourcesWaitingTime</code>控制的。
+</td></tr><tr><td><code>spark.scheduler.mode</code></td>
+<td>FIFO</td><td>任务提交到相同的 SparkContext 的模式。多用户使用时可以设置<code>FAIR</code>来公平共享模式来代替 FIFO 。
+</td></tr><tr><td><code>spark.scheduler.revive.interval</code></td>
+<td>1s</td><td>调度器恢复 worker 节点资源用来运行任务的时间。
+</td></tr><tr><td><code>spark.blacklist.enabled</code></td><td>false</td>
+<td>如果设置为 true ，防止 Spark 从任务失败次数过多被加入黑名单的 executor 上调度任务。黑名单算法通过<code>spark.blacklist</code>配置项决定。
+</td></tr><tr><td><code>spark.blacklist.task.maxTaskAttemptsPerExecutor</code></td><td>1</td>
+<td>（实验性）对于一个任务，executor 被加入黑名单前 executor 上的重试次数。
+</td></tr><tr><td><code>spark.blacklist.task.maxTaskAttemptsPerNode</code></td><td>2</td>
+<td>（实验性）对于一个任务，节点被加入黑名单前节点上的重试次数。
+</td></tr><tr><td><code>spark.blacklist.stage.maxFailedTasksPerExecutor</code></td>
 <td>2</td>
-<td>
-(Experimental) For a given task, how many times it can be retried on one node, before the entire node is
-blacklisted for that task.
-</td>
-</tr>
-<tr>
-<td><code>spark.blacklist.stage.maxFailedTasksPerExecutor</code></td>
+<td>（实验性）被加入黑名单前有多少个不同的任务在同一个阶段同一个 executor 上失败。
+</td></tr><tr><td><code>spark.blacklist.stage.maxFailedExecutorsPerNode</code></td>
 <td>2</td>
-<td>
-(Experimental) How many different tasks must fail on one executor, within one stage, before the executor is
-blacklisted for that stage.
-</td>
-</tr>
-<tr>
-<td><code>spark.blacklist.stage.maxFailedExecutorsPerNode</code></td>
-<td>2</td>
-<td>
-(Experimental) How many different executors are marked as blacklisted for a given stage, before the entire
-node is marked as failed for the stage.
-</td>
-</tr>
-<tr>
-<td><code>spark.speculation</code></td>
+<td>（实验性）在整个节点被标记为失败前有多少个不同的 executor 被加入黑名单。
+</td></tr>
+<tr><td><code>spark.speculation</code></td>
 <td>false</td>
-<td>
-If set to "true", performs speculative execution of tasks. This means if one or more tasks are running
-slowly in a stage, they will be re-launched.
+<td>如果设置为 true ，执行任务执行情况推测。意味着如果一个阶段的一个或多个任务运行过慢，被重新启动。
 </td>
 </tr>
 <tr>
 <td><code>spark.speculation.interval</code></td>
 <td>100ms</td>
-<td>
-How often Spark will check for tasks to speculate.
+<td>多久检查一次任务执行预估。
 </td>
 </tr>
 <tr>
 <td><code>spark.speculation.multiplier</code></td>
 <td>1.5</td>
-<td>
-How many times slower a task is than the median to be considered for speculation.
+<td>任务执行速度比预估的中位数慢多少倍。
 </td>
 </tr>
 <tr>
 <td><code>spark.speculation.quantile</code></td>
 <td>0.75</td>
-<td>
-Fraction of tasks which must be complete before speculation is enabled for a particular stage.
+<td>执行任务预估前必须完成的任务比例。
 </td>
 </tr>
 <tr>
 <td><code>spark.task.cpus</code></td>
 <td>1</td>
-<td>
-Number of cores to allocate for each task.
+<td>每个任务分配的核心数。
 </td>
 </tr>
 <tr>
 <td><code>spark.task.maxFailures</code></td>
 <td>4</td>
-<td>
-Number of failures of any particular task before giving up on the job. The total number of failures spread
-across different tasks will not cause the job to fail; a particular task has to fail this number of
-attempts. Should be greater than or equal to 1. Number of allowed retries = this value - 1.
-</td>
+<td>一个具体的任务允许失败的次数。不同任务的失败总数不会导致作业失败。应该设置大于等于 1 ，允许重试次数比该值少 1 。</td>
 </tr>
 <tr>
 <td><code>spark.task.reaper.enabled</code></td>
