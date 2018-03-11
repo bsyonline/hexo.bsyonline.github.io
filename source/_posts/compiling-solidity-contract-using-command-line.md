@@ -1,5 +1,5 @@
 ---
-title: compiling solidity contract using command line
+title: Compiling Colidity Contract using Command Line
 tags:
   - blockchain
 category:

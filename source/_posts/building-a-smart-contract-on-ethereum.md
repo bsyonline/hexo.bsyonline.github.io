@@ -1,5 +1,5 @@
 ---
-title: building a smart contract on ethereum
+title: Building a Smart Contract on Ethereum
 tags:
   - blockchain
 category:

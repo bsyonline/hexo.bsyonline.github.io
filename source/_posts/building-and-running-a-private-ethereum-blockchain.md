@@ -1,5 +1,5 @@
 ---
-title: building and running a private ethereum blockchain
+title: Building and Running a Private Ethereum Blockchain
 tags:
   - blockchain
 category:

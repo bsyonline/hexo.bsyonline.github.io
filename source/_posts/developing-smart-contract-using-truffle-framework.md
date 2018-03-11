@@ -1,5 +1,5 @@
 ---
-title: developing smart contract using truffle framework
+title: Developing Smart Contract using Truffle Framework
 tags:
   - blockchain
 category:
