@@ -124,13 +124,34 @@ nohup geth --rpc --ws --port $PORT --rpcport $RPCPORT --networkid $NETWORKID --d
 
 #### **创建账户**
 
-进入 geth 命令行
+先创建个启动命令行的脚本方便以后使用：
 
 ```
-geth --datadir "/home/$USER/blockchain-samples/node0/data" --port=30303 --nodiscover console 2>> console.log
+cd ~/blockchain-samples/node0/scripts
+touch start_console.sh
+chmod +x start_console.sh
 ```
 
-执行命令查看账户信息：
+脚本内容如下：
+
+```
+#!/bin/sh
+
+PORT=30303
+RPCPORT=8545
+NETWORKID=42
+IDENTITY="PrivateChainNode0"
+DATADIR=/home/$USER/blockchain-samples/node0/data
+LOGDIR=/home/$USER/blockchain-samples/node0/log
+NAT=none
+RPCADDR="0.0.0.0"
+
+geth --rpc --rpccorsdomain "*" --rpcapi "db,eth,net,web3" --ws --port $PORT --rpcport $RPCPORT --networkid $NETWORKID --datadir $DATADIR --nat $NAT --identity $IDENTITY --rpcaddr $RPCADDR --wsaddr $RPCADDR console 2>> $LOGDIR/console.log
+
+```
+
+
+进入 geth 命令行，执行命令查看账户信息：
 
 ```
 > eth.accounts
