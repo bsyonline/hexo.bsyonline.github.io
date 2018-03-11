@@ -28,14 +28,17 @@ sudo apt-get install ethereum
 cd ~
 mkdir blockchain-samples
 cd blockchain-samples
+mkdir node0
+cd node0
 mkdir config
 mkdir data
 mkdir scripts
+mkdir log
 ```
 
 #### **定义创世区块**
 ```
-cd ~/blockchain-samples/config
+cd ~/blockchain-samples/node0/config
 touch genesis-block.json
 ```
 在 genesis-block.json 中写入以下内容：
@@ -71,7 +74,7 @@ touch genesis-block.json
 我们可以使用一段 shell 脚本来执行初始化工作。
 
 ```
-cd ~/blockchain-samples/scripts
+cd ~/blockchain-samples/node0/scripts
 touch init_private_chain.sh
 chmod +x init_private_chain.sh
 ```
@@ -81,10 +84,10 @@ chmod +x init_private_chain.sh
 ```
 #!/bin/sh
 
-DATADIR=/home/$USER/blockchain-samples/data
-GENESIS=/home/$USER/blockchain-samples/config/genesis-block.json
+DATADIR=/home/$USER/blockchain-samples/node0/data
+GENESIS=/home/$USER/blockchain-samples/node0/config/genesis-block.json
 NETWORKID=42
-IDENTITY="MyPrivateChain"
+IDENTITY="PrivateChainNode0"
 PORT=30303
 RPCPORT=8000
 
@@ -97,9 +100,9 @@ geth --networkid $NETWORKID --datadir=$DATADIR --identity $IDENTITY --port $PORT
 #### **启动节点**
 初始化成功后，我们使用另外一段脚本来启动节点。
 ```
-cd ~/blockchain-samples/scripts
-touch start_chain_daemon.sh
-chmod +x start_chain_daemon.sh
+cd ~/blockchain-samples/node0/scripts
+touch start_node_daemon.sh
+chmod +x start_node_daemon.sh
 ```
 
 脚本内容如下：
@@ -109,8 +112,8 @@ chmod +x start_chain_daemon.sh
 PORT=30303
 RPCPORT=8000
 NETWORKID=42
-IDENTITY="MyPrivateChain"
-DATADIR=/home/$USER/blockchain-samples/data
+IDENTITY="PrivateChainNode0"
+DATADIR=/home/$USER/blockchain-samples/node0/data
 NAT=none
 RPCADDR="0.0.0.0"
 
@@ -124,7 +127,7 @@ nohup geth --rpc --ws --port $PORT --rpcport $RPCPORT --networkid $NETWORKID --d
 进入 geth 命令行
 
 ```
-geth --datadir "/home/$USER/blockchain-samples/data" --nodiscover console 2>> console.log
+geth --datadir "/home/$USER/blockchain-samples/node0/data" --port=30303 --nodiscover console 2>> console.log
 ```
 
 执行命令查看账户信息：
@@ -212,5 +215,5 @@ true
 >
 ```
 
-如果我们没有启动挖矿，那么当交易完成时，我们查看两个账户的余额时会发现没有余额没有变化。这是因为区块链的交易信息需要由矿工挖矿来确认，从而加入到区块链的大账本中。因此，我们只要再次启动```miner.start()```后在查看账户余额，就可以看到余额的变化了。
+如果我们没有启动挖矿，那么当交易完成时，我们查看两个账户的余额时会发现没有余额没有变化。这是因为区块链的交易信息需要由矿工挖矿来确认，从而加入到区块链的大账本中。因此，我们只要再次启动 ```miner.start()``` 后在查看账户余额，就可以看到余额的变化了。
 
