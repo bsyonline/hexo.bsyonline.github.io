@@ -23,5 +23,6 @@ thumbnail:
 
 需要搞清楚如何实现的点：
 * 如何将企业数据放到 blockchain 中
+    STATUS into blockchain and data into IPFS
 * 用户如何查询到企业数据（不能随意查，即要有相应的控制措施）
 * 如何订正数据
