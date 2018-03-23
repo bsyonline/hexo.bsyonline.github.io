@@ -18,26 +18,17 @@ lede: "没有摘要"
 
 ### 持久化数据集
 
-使用 persist() 或 cache() 方法可以持久化数据集。Spark 会在第一次计算时将数据集保存在节点的内存中。如果任何一个数据集分区丢失，Spark 会自动使用创建改数据集的转换重新计算。
+使用 ```persist()``` 或 ```cache()``` 方法可以持久化数据集。Spark 会在第一次计算时将数据集保存在节点的内存中。如果任何一个数据集分区丢失，Spark 会自动使用创建改数据集的转换重新计算。
 
-不同的数据集可以使用不同存储级别，可以自行选择。persist() 可以使用 StorgaeLevel 对象设置存储级别，cache() 就是使用的默认的存储级别，StorageLevel.MEMORY_ONLY（将序列化对象保存在内存中）。
-
-| Storage Level                          | Meaning                                  |
-| -------------------------------------- | ---------------------------------------- |
-| MEMORY_ONLY                            | 默认的存储级别，数据集以非序列化 Java 对象保存在 JVM 中。如果数据集不能放到内存里，则一写分区不会被缓存，而是在每次使用时重新计算。 |
-| MEMORY_AND_DISK                        | 数据集以非序列化 Java 对象保存在 JVM 中。如果分区不能放到内存中则放到磁盘上，每次使用时从磁盘读取。 |
-| MEMORY_ONLY_SER  (Java and Scala)      | 数据集以序列化 Java 对象（字节数组）方式保存。这种方式相对于非序列化对象来说更节省空间，但同时反序列化也更耗 CPU 。 |
-| MEMORY_AND_DISK_SER  (Java and Scala)  | 和 MEMORY_ONLY_SER 类似，但是会将无法放到内存中的分区保存到磁盘而不是重新计算。 |
-| DISK_ONLY                              | 保存数据集到磁盘。                                |
-| MEMORY_ONLY_2, MEMORY_AND_DISK_2, etc. | 和上边类似，但是会在两个集群节点之间复制分区，保证有 2 份拷贝。        |
-| OFF_HEAP (experimental)                | 和 MEMORY_ONLY_SER 类似，但是会将数据保存在 [off-heap memory](https://spark.apache.org/docs/2.1.1/configuration.html#memory-management)。 |
+不同的数据集可以使用不同存储级别，可以自行选择。```persist()``` 可以使用 StorgaeLevel 对象设置存储级别，```cache()``` 就是使用的默认的存储级别，```StorageLevel.MEMORY_ONLY```（将序列化对象保存在内存中）。
+<table class="table table-bordered table-striped table-condensed"><tr><th>Storage Level</th><th>Meaning</th></tr><tr><td>MEMORY_ONLY</td><td>默认的存储级别，数据集以非序列化 Java 对象保存在 JVM 中。如果数据集不能放到内存里，则一写分区不会被缓存，而是在每次使用时重新计算。</td></tr><tr><td>MEMORY_AND_DISK</td><td>数据集以非序列化 Java 对象保存在 JVM 中。如果分区不能放到内存中则放到磁盘上，每次使用时从磁盘读取。</td></tr><tr><td>MEMORY_ONLY_SER  (Java and Scala)</td><td>数据集以序列化 Java 对象（字节数组）方式保存。这种方式相对于非序列化对象来说更节省空间，但同时反序列化也更耗 CPU 。</td></tr><tr><td>MEMORY_AND_DISK_SER  (Java and Scala)</td><td>和 MEMORY_ONLY_SER 类似，但是会将无法放到内存中的分区保存到磁盘而不是重新计算。</td></tr><tr><td>DISK_ONLY</td><td>保存数据集到磁盘。</td></tr><tr><td>MEMORY_ONLY_2, MEMORY_AND_DISK_2, etc. </td><td>和上边类似，但是会在两个集群节点之间复制分区，保证有 2 份拷贝。</td></tr><tr><td>OFF_HEAP (experimental)</td><td>和 MEMORY_ONLY_SER 类似，但是会将数据保存在 [off-heap memory](https://spark.apache.org/docs/2.1.1/configuration.html#memory-management)。 </td></tr></table>
 
 那如何选择存储级别呢？
 
 Spark 的存储级别是为了在内存使用和 CPU 效率之间达到平衡。可以通过以下步骤来选择：
 
 * 数据集可以全部缓存到内存中，使用默认存储级别会获得最佳性能
-* 否则，使用 MEMORY_ONLY_SER 并选择一个高效的序列化库
+* 否则，使用 ```MEMORY_ONLY_SER``` 并选择一个高效的序列化库
 * 通常不要将数据集持久化到磁盘上，除非重新计算数据集开销大于从磁盘读取数据
 * 使用复制的存储级别可以在出错时快速恢复而不用等待计算丢失的分区
 
