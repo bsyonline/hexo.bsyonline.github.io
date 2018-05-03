@@ -1,5 +1,5 @@
 ---
-title: Elasticsearch 5 REST API Practice
+title: Elasticsearch 6 REST API Practice
 date: 2016-10-28 13:58:36
 tags:
  - Elastcsearch
@@ -12,16 +12,97 @@ lede: "没有摘要"
 
 [TOC]
 
-学习 Elasticsearch 2.4 REST API 时，使用过的实验例子。
+学习 Elasticsearch 6.2 REST API 时，使用过的实验例子。
 
-<!--more-->
+## I. Mapping
+#### 创建 Mapping
+```
+curl -XPUT 'http://localhost:9200/change' -d '{
+  "mappings": {
+    "change": {
+      "properties": {
+        "date": {
+          "format": "yyyyMMdd",
+          "type": "date"
+        },
+        "new_value": {
+          "type": "keyword"
+        },
+        "node": {
+          "type": "integer"
+        },
+        "pripid": {
+          "type": "keyword"
+        },
+        "column": {
+          "type": "keyword"
+        },
+        "id": {
+          "type": "keyword"
+        },
+        "old_value": {
+          "type": "keyword"
+        },
+        "type": {
+          "type": "keyword"
+        },
+        "apprDate": {
+          "format": "yyyy-MM-dd",
+          "type": "date"
+        }
+      }
+    }
+  }
+}'
+```
+#### Get Mapping
+```
+curl -XGET 'http://localhost:9200/change/_mapping/_doc' 
+```
+
+#### Delete Mapping
+不提供删除 Mapping 的操作，可以删除 Index ，再重建 Mapping 。
+
+#### Update Mapping
+```
+
+```
+
 ## I. 索引
 #### 创建索引
 ```
-curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{
-    "user" : "kimchy",
-    "post_date" : "2009-11-15T14:12:12",
-    "message" : "trying out Elasticsearch"
+curl -XPUT 'http://localhost:9200/change/change/1' -d '{
+    "properties": {
+        "date": {
+            "format": "yyyyMMdd",
+            "type": "date"
+        },
+        "new_value": {
+            "type": "keyword"
+        },
+        "node": {
+            "type": "integer"
+        },
+        "pripid": {
+            "type": "keyword"
+        },
+        "column": {
+            "type": "keyword"
+        },
+        "id": {
+            "type": "keyword"
+        },
+        "old_value": {
+            "type": "keyword"
+        },
+        "type": {
+            "type": "keyword"
+        },
+        "apprDate": {
+            "format": "yyyy-MM-dd",
+            "type": "date"
+        }
+    }
 }'
 ```
 #### 获取索引

@@ -140,7 +140,7 @@ sudo echo "export HIVE_HOME PATH">>/etc/profile.d/hive.sh
 cd apache-hive-1.2.2-bin/conf
 cp hive-default.xml.template hive-default.xml
 cp hive-env.sh.template hive-env.sh
-cp hive-log4j.properties.template hive-log4j.properties
+cp hive-log4j.properties.template hive-log4j.propertiesn
 cp hive-exec-log4j.properties.template hive-exec-log4j.properties
 ```
 4. 配置 MySQL
