@@ -48,6 +48,8 @@ sudo dpkg -i sublime-text_build-3126_amd64.deb
     "tabs_small": true,
 }
 ```
+关于细节调整，可以在 ```Afterglow-green.sublime-theme``` 中修改。
+
 ### 插件
 网上推荐的很多，选了一些先用着。
 
