@@ -1,6 +1,6 @@
 ---
-title: Elasticsearch REST API Practice
-date: 2016-10-28 13:58:36
+title: Elasticsearch 6 REST API Practice II - Document
+date: 2017-12-29 13:58:36
 tags:
  - Elasticsearch
 category: 
@@ -10,179 +10,232 @@ author: bsyonline
 lede: "没有摘要"
 ---
 
-[TOC]
-
-学习 Elasticsearch 2.4 REST API 时，使用过的实验例子。
-
-<!--more-->
-## I. 索引
-#### 创建索引
+## II. Document
+#### Write
 ```
-curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{
-    "user" : "kimchy",
-    "post_date" : "2009-11-15T14:12:12",
-    "message" : "trying out Elasticsearch"
+curl -X PUT -H 'Content-Type: application/json' 'http://localhost:9200/change/change/c6673e3c3c29af5c' -d '
+{
+    "id": "c6673e3c3c29af5c",
+    "node": 140000,
+    "pripid": "560E8C402E5914FAE0531ECDA8C0CF0D",
+    "date": 20180418,
+    "column": "E_ENT_BASEINFO.OPTO",
+    "new_value": "2027-08-01",
+    "old_value": "",
+    "type": "UPDATE"
 }'
 ```
-#### 获取索引
+#### Get
 ```
-curl -XGET 'http://localhost:9200/twitter/tweet/1'
+curl -X GET 'http://localhost:9200/change/change/c6673e3c3c29af5c'
 ```
 不显示索引内容
 ```
-curl -XGET 'http://localhost:9200/twitter/tweet/1?_source=false'
+curl -X GET 'http://localhost:9200/change/change/c6673e3c3c29af5c?_source=false'
 ```
 只显示索引内容
 ```
-curl -XGET 'http://localhost:9200/twitter/tweet/1/_source'
+curl -X GET 'http://localhost:9200/change/change/c6673e3c3c29af5c/_source'
 ```
-一次查多个
+#### Multi Get
 ```
-curl 'http://localhost:9200/_mget' -d '{
+curl -X GET "localhost:9200/_mget" -H 'Content-Type: application/json' -d'
+{
     "docs" : [
         {
-            "_index" : "twitter",
-            "_type" : "tweet",
-            "_id" : "1"
+            "_index" : "change",
+            "_type" : "change",
+            "_id" : "c6673e3c3c29af5c"
         },
         {
-            "_index" : "twitter",
-            "_type" : "tweet",
-            "_id" : "2"
+            "_index" : "change",
+            "_type" : "change",
+            "_id" : "3750ab2377453d13"
         }
     ]
-}'
+}
+'
+```
 
-curl 'http://localhost:9200/twitter/_mget' -d '{
+```
+curl -X GET "localhost:9200/change/_mget" -H 'Content-Type: application/json' -d'
+{
     "docs" : [
         {
-            "_type" : "tweet",
-            "_id" : "1"
+            "_type" : "change",
+            "_id" : "c6673e3c3c29af5c"
         },
         {
-            "_type" : "tweet",
-            "_id" : "2"
+            "_type" : "change",
+            "_id" : "3750ab2377453d13"
         }
     ]
-}'
+}
+'
+```
 
-curl 'http://localhost:9200/twitter/tweet/_mget' -d '{
+```
+curl -X GET "localhost:9200/change/change/_mget" -H 'Content-Type: application/json' -d'
+{
     "docs" : [
         {
-            "_id" : "1"
+            "_id" : "c6673e3c3c29af5c"
         },
         {
-            "_id" : "2"
+            "_id" : "3750ab2377453d13"
         }
     ]
+}
+'
+```
+```
+curl -X GET "localhost:9200/change/change/_mget" -H 'Content-Type: application/json' -d'
+{
+  "ids": ["c6673e3c3c29af5c","3750ab2377453d13"]
 }'
-
-curl localhost:9200/twitter/tweet/_mget -d '{"ids":["1","2"]}'
-
-curl localhost:9200/twitter/_mget -d '{
+```
+```
+curl -X GET "localhost:9200/change/change/_mget" -H 'Content-Type: application/json' -d'
+{
   "docs":[
       {
-        "_type":"tweet",
-        "_id":"1",
-        "fields":["user","message"]
+        "_id":"c6673e3c3c29af5c",
+        "_source":["old_value","date"]
       },
       {
-        "_type":"tweet1",
-        "_id":"2",
-        "fields":["year"]
+        "_id":"3750ab2377453d13",
+        "_source":["new_value"]
       }
   ]
 }'
 ```
 #### 删除索引
 ```
-curl -XDELETE 'http://localhost:9200/twitter/tweet/1'
+curl -X DELETE 'http://localhost:9200/change/change/5c0d81efc98b8954'
 ```
-#### 更新索引
+#### 按条件删除
+
 ```
-curl -XPOST 'http://localhost:9200/twitter/tweet/1/_update' -d '{
-    "doc" : {
-        "name" : "new_name"
+curl -X POST 'http://localhost:9200/change/change/_delete_by_query' -H 'Content-Type: application/json' -d'
+{
+  "query": { 
+    "match": {
+      "pripid": "560E8C402E5914FAE0531ECDA8C0CF0D"
     }
+  }
 }'
 ```
+
+#### 更新索引
+
+```
+curl -X POST 'http://localhost:9200/change/change/c6673e3c3c29af5c/_update' -H 'Content-Type: application/json' -d'
+{
+  "doc": {
+      "node": 110000
+  }
+}'
+```
+
+
 #### 批量操作
+
 ```
-curl -s -XPOST localhost:9200/_bulk -d '
-{ "index" : { "_index" : "test", "_type" : "type1", "_id" : "1" } }
-{ "field1" : "value1" }
-{ "delete" : { "_index" : "test", "_type" : "type1", "_id" : "2" } }
-{ "create" : { "_index" : "test", "_type" : "type1", "_id" : "3" } }
-{ "field1" : "value3" }
-{ "update" : {"_id" : "1", "_type" : "type1", "_index" : "index1"} }
-{ "doc" : {"field2" : "value2"} }'
+curl -X POST 'http://localhost:9200/_bulk' -H 'Content-Type: application/json' -d'
+{ "index" : { "_index" : "change", "_type" : "change", "_id" : "c6673e3c3c29af5c" } }
+{"id":"c6673e3c3c29af5c","node":140000,"pripid":"560E8C402E5914FAE0531ECDA8C0CF0D","date":20180418,"column":"E_ENT_BASEINFO.OPTO","new_value":"2027-08-01","old_value":"","type":"UPDATE"}
+{ "index" : { "_index" : "change", "_type" : "change", "_id" : "5c0d81efc98b8954" } }
+{"id":"5c0d81efc98b8954","node":500000,"pripid":"500107010100010395","date":20180418,"column":"E_ENT_BASEINFO.OPTO","new_value":"2099-12-31","old_value":"","type":"UPDATE"}
+{ "index" : { "_index" : "change", "_type" : "change", "_id" : "3750ab2377453d13" } }
+{"id":"3750ab2377453d13","node":500000,"pripid":"5001071201403190469324","date":20180418,"column":"E_ENT_BASEINFO.OPTO","new_value":"2099-12-31","old_value":"","type":"UPDATE"}
+'
 ```
+每行数据都要指定 index， type 和 id 。
+
 #### 重建索引
 ```
-curl localhost:9200/_reindex -d '
+curl -X POST 'http://localhost:9200/_reindex' -H 'Content-Type: application/json' -d'
 {
-  "source":{
-    "index":"twitter"
+  "source": {
+    "index": "change"
   },
-  "dest":{
-    "index":"new_twitter"
+  "dest": {
+    "index": "new_change"
   }
 }'
 ```
 对部分索引重建
 ```
-curl localhost:9200/_reindex -d '
+curl 'http://localhost:9200/_reindex' -H 'Content-Type: application/json'  -d '
 {
   "source":{
-    "index":"twitter",
+    "index":"change",
+    "type": "change",
     "query":{
       "term":{
-        "user":"kimchy"
+        "node": 650000
       }
     }
   },
   "dest":{
-    "index":"new_twitter1"
+    "index":"change_650000"
   }
 }'
 ```
 合并为新索引
 ```
-curl localhost:9200/_reindex -d '
+curl 'http://localhost:9200/_reindex' -H 'Content-Type: application/json' -d '
 {
   "source":{
-    "index":["twitter","test"]
+    "index":["change_650000", "change_410000"],
+    "type": ["change", "change"]
   },
   "dest":{
-    "index":"new_twitter2"
+    "index":"change_410000_650000"
   }
 }'
 ```
-限制重建索引的数量
->注意 size 的位置，如果放在 source 内，表示 **batch size** ，默认为 1000 。
+index 可以使用通配符。
+
+#### 远程重建索引
 
 ```
-curl localhost:9200/_reindex -d '
+curl -X POST 'http://localhost:9200/_reindex' -d '
 {
-  "size":1,
-  "source":{
-    "index":"twitter"
+  "source": {
+    "remote": {
+      "host": "http://otherhost:9200",
+      "username": "user",
+      "password": "pass"
+    },
+    "index": "source",
+    "query": {
+      "match": {
+        "test": "data"
+      }
+    }
   },
-  "dest":{
-    "index":"new_twitter4"
+  "dest": {
+    "index": "dest"
   }
 }'
 ```
-## II. 检索
+
+
+
+## III. 检索
+
 **初始化数据**
 ```
-curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{
+curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
+{
     "user" : "kimchy",
     "postDate" : "2009-11-15T14:12:12",
     "message" : "trying out Elasticsearch"
 }'
 
-curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '{
+curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
+{
     "user" : "allen",
     "postDate" : "2010-01-25T11:02:10",
     "message" : "using Elasticsearch"
@@ -191,7 +244,8 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '{
 ####  分页
 分页使用的参数 from 和 size ，from 表示从第一个文档开始，默认从 0 开始，size 表示一页几条记录，默认是 10 条。
 ```
-curl '192.168.207.14:29200/change/_search' -d '{
+curl '192.168.207.14:29200/change/_search' -d '
+{
     "from":0,
     "size":10,
     "query":{
@@ -204,7 +258,8 @@ curl '192.168.207.14:29200/change/_search' -d '{
 #### 查询得分
 每个查询到的文档都有一个得分，查询结果可以通过得分来过滤，不过这个不常用，因为无法知道每个文档在每次查询中的具体得分。
 ```
-curl 'localhost:9200/twitter/_search' -d '{
+curl 'localhost:9200/twitter/_search' -d '
+{
     "min_score":0.5,
     "query":{
         "term" : {"user" : "kimchy"}
@@ -214,14 +269,16 @@ curl 'localhost:9200/twitter/_search' -d '{
 
 #### 指定返回的字段
 ```
-curl 'localhost:9200/twitter/_search' -d '{
+curl 'localhost:9200/twitter/_search' -d '
+{
     "fields":["user","message"],
     "query":{
         "term" : {"user" : "kimchy"}
     }
 }'
 
-curl 'localhost:9200/twitter/_search' -d '{
+curl 'localhost:9200/twitter/_search' -d '
+{
     "query":{
         "term" : {"user" : "kimchy"}
     }
