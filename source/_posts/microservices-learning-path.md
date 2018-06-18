@@ -1,9 +1,10 @@
 ---
-title: microservices learning path
+title: Microservices Learning Path
 tags:
-  - untag
+  - Microservices
+  - Spring Cloud
 category:
-  - uncategory
+  - Microservices
 author: bsyonline
 lede: 没有摘要
 date: 2018-06-16 06:59:13
@@ -14,6 +15,7 @@ thumbnail:
 
 #### Spring Cloud
 * **[Service Registration and Discovery](../../../../2018/06/16/service-registration-and-discovery/)**
+* **[Proxying Routing and Filtering using Zuul](../../../../2018/06/17/proxying-routing-and-filtering-using-zuul/)**
 * **[About RPC](../../../../2018/05/18/about-rpc/)**
 * **[Getting Started with gRPC](../../../../2018/06/09/getting-started-with-grpc/)**
 * **[Spring Cloud with gRPC](../../../../2018/06/09/spring-cloud-with-grpc/)**
