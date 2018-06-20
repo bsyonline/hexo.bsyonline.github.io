@@ -3,6 +3,7 @@ title: Service Registration and Discovery
 tags:
   - Microservices
   - Spring Cloud
+  - Eureka
 category:
   - Microservices
 author: bsyonline
