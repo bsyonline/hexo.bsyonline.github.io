@@ -34,7 +34,7 @@ public class UserController {
 }
 ```
 这就是一个普通的服务。那么如何在 api-gateway 中使用 feign 来进行通信呢？
-1. 在的 api-gateway 中添加 maven 配置
+##### 1. 在的 api-gateway 中添加 maven 配置
 ```
 <dependency>
     <groupId>org.springframework.cloud</groupId>
@@ -42,52 +42,64 @@ public class UserController {
 </dependency>
 ```
 
-2. 创建一个 feign 客户端
+##### 2. 创建一个 feign 客户端
 ```
 @FeignClient(name="user-center")
 @Service
 public interface UserService {
+
     @GetMapping(value = "/find_user_by_client_id")
     User findUserByClientId(@RequestParam("clientId")String clientId);
+
 }
 ```
 请求的路径和服务端一致。
-3. 在启动类添加注解 ```@EnableFeignClients```
+
+##### 3. 在启动类添加注解 ```@EnableFeignClients```
 ```
 @EnableFeignClients
 @EnableZuulProxy
 @EnableDiscoveryClient
 @SpringBootApplication
 public class ApiGatewayApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(ApiGatewayApplication.class, args);
     }
+
 }
 ```
-4. 在过滤器中调用 feign 客户端
+##### 4. 在过滤器中调用 feign 客户端
 ```
 @Component
 public class AccessFilter extends ZuulFilter {
+
     private static Logger logger = LoggerFactory.getLogger(AccessFilter.class);
+
     @Override
     public String filterType() {
         return "pre";
     }
+
     @Override
     public int filterOrder() {
         return 0;
     }
+
     @Override
     public boolean shouldFilter() {
         return true;
     }
+
     @Autowired
     UserService userService;
+
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         logger.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
+
         String clientId = request.getParameter("clientId");
         if(isEmpty(clientId)){
             logger.warn("client id is required");
@@ -99,6 +111,7 @@ public class AccessFilter extends ZuulFilter {
             }
             return null;
         }
+        
         if (userService.findUserByClientId(clientId) == null) {
             logger.warn("user is not existed");
             ctx.setSendZuulResponse(false);
@@ -117,4 +130,10 @@ public class AccessFilter extends ZuulFilter {
 可以看到，比我们使用 httpclient 等方式要简洁很多。
 
 #### **Feign 的其他用法**
-如果想定制 Feign 的功能，可以使用 FeignClientsConfiguration 。FeignClientsConfiguration 可以复写 ```feign.Decoder```、```feign.Encoder``` 和 ```feign.Contract``` 。
+如果想定制 Feign 的功能，可以使用 FeignClientsConfiguration 。FeignClientsConfiguration 可以复写 ```feign.Decoder```、```feign.Encoder``` 和 ```feign.Contract``` ，并在 ```@FeignClient``` 中添加属性。
+```
+@FeignClient(name = "stores", configuration = FooConfiguration.class)
+public interface StoreClient {
+    //..
+}
+```

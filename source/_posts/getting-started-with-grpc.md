@@ -1,9 +1,10 @@
 ---
-title: getting started with grpc
+title: Getting Started with gRPC
 tags:
-  - untag
+  - RPC
+  - gRPC
 category:
-  - uncategory
+  - Microservices
 author: bsyonline
 lede: 没有摘要
 date: 2018-06-09 16:10:45
@@ -153,12 +154,9 @@ proto 定义好以后，就可以生成代码了。 生成 Java 版的代码有�
 ```
 使用 ``os-maven-plugin`` 插件，不用关心系统要使用的编译器版本和路径。
 
-写好 pom 后使用命令 ``mvn clean compile`` 即可生成相关代码，代码路径为 target/generated-sources 。生成后将源码拷贝到 src 下。
+写好 pom 后使用命令 ``mvn clean compile`` 即可生成相关代码。
 
->注：使用 idea 时，拷贝源码回报编译错误，原因是在生成的客户端和服务器端代码中有相同名字（但参数不同）的方法，在拷贝时 idea 对 import 做了合并。建议使用 move 来移动代码。
-
-编写测试程序：
-服务端代码：
+编写测试程序，服务端代码：
 ```
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
