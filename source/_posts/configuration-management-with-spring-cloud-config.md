@@ -139,3 +139,4 @@ management:
         include: '*'
 ```
 这样在启动服务的时候可以看到日志中有 ```Mapped "{[/actuator/refresh],methods=[POST]``` 信息。更新配置文件并提交到 git 后，使用 ```curl -XPOST 'http://localhost:3333/actuator/refresh'``` 来刷新配置，完成后再请求应用就会发现获取的配置已经更新了。
+
