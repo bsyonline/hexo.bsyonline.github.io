@@ -22,7 +22,7 @@ Eureka Client 启动之后首先会向 Eureka Server 进行注册，注册流程
 
 ![mark](http://7xqgix.com1.z0.glb.clouddn.com/blog/20180902/213336520.png)
 
-1. Client 通過 ```POST /eureka/v2/apps/{appID}``` 向 Server 发起注册请求；
+1. Client 通过 ```POST /eureka/v2/apps/{appID}``` 向 Server 发起注册请求；
 
    ![mark](http://7xqgix.com1.z0.glb.clouddn.com/blog/20180902/194055677.png)
 
@@ -62,4 +62,29 @@ Eureka Client 启动之后首先会向 Eureka Server 进行注册，注册流程
 8. 向相邻节点复制信息。
 
 ### 续约
+
+Eureka Client 注册到 Eureka Server 后，需要定期（每30s）发送心跳来维持通信。如果超时未收到心跳，服务器会认为服务不可用，从而将 Eureka Client 的注册信息从服务器删除。Renew 的流程如下：
+
+1. Eureka Client 通过定时任务向服务器发起 renew 请求
+2. Eureka Server 收到请求后会更新该 Client 的更新时间
+3. Eureka Server 向相邻节点同步信息
+
+### 剔除
+
+在 Eureka Server 上未正常推出和超时未收到心跳的 Client 注册信息会被剔除。Evict 的流程如下：
+
+1. 判断是否过期
+2. 计算剔除的数量
+3. 剔除
+4. 更新缓存
+
+### 退出
+
+退出是 Eureka Client 主动向服务通知服务关闭的操作，流程如下：
+
+1. Eureka Client 向服务器发送 cancel 请求
+2. Eureka Server 收到请求后，将实例从服务列表中删除
+3. 将实例信息放到 recentlyChangedQueue 中
+4. 清空 guava 缓存
+5. 向相邻节点同步信息
 
