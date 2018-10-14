@@ -101,7 +101,7 @@ $$
 
   准确率和召回率是负相关的，通常被一起组成聚合或者平均度量，PR曲线下方面积为平均准确率。PR曲线越往右上效果越好。
 
-  ![mark](http://7xqgix.com1.z0.glb.clouddn.com/blog/20170530/164219609.jpg)
+  ![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20170530/164219609.jpg)
 
 
 
@@ -111,7 +111,7 @@ $$
 
 
 
-![mark](http://7xqgix.com1.z0.glb.clouddn.com/blog/20170530/203047480.png)
+![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20170530/203047480.png)
 
 * ROC曲线下的面积
 
@@ -180,7 +180,7 @@ jsc.close();
 
 ### 欠拟合和过拟合
 
-![mark](http://7xqgix.com1.z0.glb.clouddn.com/blog/20170530/230758020.png)
+![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20170530/230758020.png)
 
 ### 如何确定训练数据足够？算法需要多少数据？
 

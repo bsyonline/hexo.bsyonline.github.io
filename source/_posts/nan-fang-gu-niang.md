@@ -42,8 +42,8 @@ lede: "没有摘要"
 南........方............
 
 
-![http://7xqgix.com1.z0.glb.clouddn.com/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_1.png](http://7xqgix.com1.z0.glb.clouddn.com/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_1.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_1.png](https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_1.png)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_2.png](http://7xqgix.com1.z0.glb.clouddn.com/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_2.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_2.png](https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_2.png)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_3.png](http://7xqgix.com1.z0.glb.clouddn.com/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_3.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_3.png](https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_3.png)

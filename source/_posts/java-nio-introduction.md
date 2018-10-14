@@ -72,15 +72,15 @@ Channel 提供了从源读取数据的渠道，而数据的操作都是由 Buffe
   临时的 position 。
 
 以上边代码为例。当 new 一个 ByteBuffer 时，首先将 capacity 和 limit 的大小都设置为 8 ，mark 为 -1， position 为 0 ，初始化完成 capacity 的大小就不变了。
-![](http://7xqgix.com1.z0.glb.clouddn.com/buffer init_12.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/buffer init_12.png)
 有了 Buffer 就可以开始写数据了。从 Chanel 读 5 个字节到 Buffer 中，position 变为 5 。
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/buffer_write_1.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/buffer_write_1.png)
 现在要从 Buffer 中将数据写到 Chanel 中，需要执行 flip() 方法。执行 flip() 方法后，position 变为 0， limit 变为 5 。
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/buffer_flip_1.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/buffer_flip_1.png)
 如果 Buffer 中写了 3 个字节到 Chanel 中，如果执行 clear() 方法，剩余的 2 个字节将被丢弃，Buffer 可重新读入数据。如果想保留 2 个字节后续处理，可执行 compact() ，Buffer 将拷贝 2 个字节到起始位置，将 position 置为 2 ，limit 置为 8 。
-![](http://7xqgix.com1.z0.glb.clouddn.com/buffer_compact.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/buffer_compact.png)
 
 ### 大文件处理
 >关于 NIO MappedByteBuffer 的例子，我在测试的时候并没有得到和网上资料相同的结果，还不知道原因

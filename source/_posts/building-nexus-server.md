@@ -44,7 +44,7 @@ service nexus start
 ### 访问
 
 在浏览器中输入[http://192.168.1.201:8081/nexus/](http://192.168.1.201:8081/nexus/)
-![img](http://7xqgix.com1.z0.glb.clouddn.com/9.png)
+![img](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/9.png)
 
 ### 配置
 
@@ -53,9 +53,9 @@ service nexus start
 ### 添加代理仓库
 
 点击左侧的Repositories，然后再点击右侧的Add，会弹出下拉菜单，选择Proxy Repository，如下配置。
-![http://7xqgix.com1.z0.glb.clouddn.com/10.png](http://7xqgix.com1.z0.glb.clouddn.com/10.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/10.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/10.png)
 选中Public Repositories，将新建的Proxy Repository加入到Public Repositories组，并Update Index。
-![http://7xqgix.com1.z0.glb.clouddn.com/11.png](http://7xqgix.com1.z0.glb.clouddn.com/11.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/11.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/11.png)
 
 ### 配置maven
 

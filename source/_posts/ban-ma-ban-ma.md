@@ -43,8 +43,8 @@ lede: "没有摘要"
 浪迹天涯
 
 
-![http://7xqgix.com1.z0.glb.clouddn.com/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_1.gif](http://7xqgix.com1.z0.glb.clouddn.com/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_1.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_1.gif](https://raw.githubusercontent.com/bsyonline/pic/master/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_1.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_2.gif](http://7xqgix.com1.z0.glb.clouddn.com/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_2.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_2.gif](https://raw.githubusercontent.com/bsyonline/pic/master/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_2.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_3.gif](http://7xqgix.com1.z0.glb.clouddn.com/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_3.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_3.gif](https://raw.githubusercontent.com/bsyonline/pic/master/b%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC_3.gif)

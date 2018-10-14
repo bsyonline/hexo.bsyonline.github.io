@@ -14,7 +14,7 @@ lede: "没有摘要"
 
 #### 1. 生成rsa密钥对。
 
-![1](http://7xqgix.com1.z0.glb.clouddn.com/1.png)
+![1](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/1.png)
 
 #### 2. 将公钥上传到github。
 

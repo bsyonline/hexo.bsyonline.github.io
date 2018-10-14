@@ -32,7 +32,7 @@ redis           v3.0
 
 应用程序通过 log 将日志写到 redis ，logstash 从 redis 收集日志，写到 elasticsearch ，kibana 从 elasticsearch 中获取数据展现。
 
-![http://7xqgix.com1.z0.glb.clouddn.com/elk.png](http://7xqgix.com1.z0.glb.clouddn.com/elk.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/20181014/elk.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/elk.png)
 
 ### 搭建步骤
 
@@ -65,18 +65,18 @@ docker push reg.dockcloud.cn/riskbell/elasticsearch:2.3
 
 redis 需要向外暴露端口给应用程序。
 
-![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-42-34.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-42-34.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-42-34.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-42-34.png)
 ##### elasticsearch
 
 elasticsearch 也不需要使用别的服务，为了能从浏览器查看数据，也向外暴露端口。
 
-![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-46-54.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-46-54.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-46-54.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-46-54.png)
 
 ##### kibana
 
 kibana 需要 link elasticsearch 的服务，也要向外暴露端口。
 
-![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-49-08.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-49-08.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-49-08.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-49-08.png)
 
 ##### logstash
 
@@ -118,11 +118,11 @@ output {
 
 应为使用 rancher ，所以这份配置文件的 host 位置没有写 ip ，而是 rancher 中的服务名字。由于 link 服务走的是 overlay 网络，所以，端口号也是内部的，配置文件在启动命令中指定。
 
-![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-58-18.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-58-18.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-58-18.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-58-18.png)
 
 这样就完成了 ELK 系统的搭建。
 
-![http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-58-56.png](http://7xqgix.com1.z0.glb.clouddn.com/Screenshot%20from%202017-02-17%2016-58-56.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-58-56.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-58-56.png)
 
 ### compose
 docker-compose.yml

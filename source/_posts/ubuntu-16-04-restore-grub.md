@@ -18,7 +18,7 @@ lede: "没有摘要"
 ```
 sudo fdisk -l
 ```
-![](http://7xqgix.com1.z0.glb.clouddn.com/fdisk.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/fdisk.png)
 我的系统装在 /dev/sda5 , /dev/sda6, /dev/sda7 上，/boot 是单独在 /dev/sda5 的分区上。
 **2. 挂载目录**
 ```

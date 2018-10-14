@@ -11,7 +11,7 @@ thumbnail:
 ---
 
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/blog/20180520/174555154.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20180520/174555154.png)
 
 ### Elasticsearch
 [**Elasticsearch Installation I - Single Node**]()

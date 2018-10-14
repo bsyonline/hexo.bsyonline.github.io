@@ -10,7 +10,7 @@ date: 2018-05-05 14:00:50
 thumbnail:
 ---
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/blog/20180520/174447525.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20180520/174447525.png)
 
 ### 区块链的基本概念
 

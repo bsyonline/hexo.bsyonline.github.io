@@ -53,8 +53,8 @@ lede: "没有摘要"
 所以 你好 再见
 
 
-![http://7xqgix.com1.z0.glb.clouddn.com/a%E5%AE%89%E6%B2%B3%E6%A1%A5_1.gif](http://7xqgix.com1.z0.glb.clouddn.com/a%E5%AE%89%E6%B2%B3%E6%A1%A5_1.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/a%E5%AE%89%E6%B2%B3%E6%A1%A5_1.gif](https://raw.githubusercontent.com/bsyonline/pic/master/a%E5%AE%89%E6%B2%B3%E6%A1%A5_1.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/a%E5%AE%89%E6%B2%B3%E6%A1%A5_2.gif](http://7xqgix.com1.z0.glb.clouddn.com/a%E5%AE%89%E6%B2%B3%E6%A1%A5_2.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/a%E5%AE%89%E6%B2%B3%E6%A1%A5_2.gif](https://raw.githubusercontent.com/bsyonline/pic/master/a%E5%AE%89%E6%B2%B3%E6%A1%A5_2.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/a%E5%AE%89%E6%B2%B3%E6%A1%A5_3.gif](http://7xqgix.com1.z0.glb.clouddn.com/a%E5%AE%89%E6%B2%B3%E6%A1%A5_3.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/a%E5%AE%89%E6%B2%B3%E6%A1%A5_3.gif](https://raw.githubusercontent.com/bsyonline/pic/master/a%E5%AE%89%E6%B2%B3%E6%A1%A5_3.gif)

@@ -15,7 +15,7 @@ Jmeter 是一款简单的性能测试工具，以前都是用来测试 API 接�
 
 <!--more-->
 Jmeter 使用，可参考 [Jmeter 使用入门](../../../../2016/09/07/Jmeter-使用入门/)。
-![](http://7xqgix.com1.z0.glb.clouddn.com/jmeter.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/jmeter.png)
 
 ### java request 测试
 使用 jmeter 测试 java 程序，需要结合 jemter_java 编写测试代码。
@@ -151,4 +151,4 @@ public class JavaRequest extends AbstractJavaSamplerClient {
 
 }
 ```
-![](http://7xqgix.com1.z0.glb.clouddn.com/javaRequest.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/javaRequest.png)

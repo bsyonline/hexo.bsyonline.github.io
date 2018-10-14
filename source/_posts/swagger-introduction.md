@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 访问 `http://localhost:8080/` 可看到效果。
-![](http://7xqgix.com1.z0.glb.clouddn.com/swagger-editor.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/swagger-editor.png)
 
 swagger 使用 yaml 语法规范，简单的可参考官方示例，语法详细见 [https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) 。
 
@@ -484,14 +484,14 @@ npm run serve
 sudo docker build -t swagger-ui .
 sudo docker run -d -p 5000:8080 --name swagger-ui wagger-ui
 ```
-![](http://7xqgix.com1.z0.glb.clouddn.com/swagger-ui-index.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/swagger-ui-index.png)
 
 
 将自己写好的接口文件从 Editor 中导出，保存到 dist/ 下任意位置。
-![](http://7xqgix.com1.z0.glb.clouddn.com/swagger-editor-export.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/swagger-editor-export.png)
 
 在浏览器中输入路径即可看到自己的接口列表。
-![](http://7xqgix.com1.z0.glb.clouddn.com/swagger-ui-customiz.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/swagger-ui-customiz.png)
 
 在浏览器中可以直接进行调试，并可直观看到相关信息。
-![](http://7xqgix.com1.z0.glb.clouddn.com/swagger-ui-post.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/swagger-ui-post.png)

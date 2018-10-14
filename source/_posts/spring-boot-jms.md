@@ -7,14 +7,14 @@ tags:
  - JMS
 category: 
  - 编程
-thumbnail: http://7xqgix.com1.z0.glb.clouddn.com/jms_2.png
+thumbnail: https://raw.githubusercontent.com/bsyonline/pic/master/jms_2.png
 author: bsyonline
 lede: "没有摘要"
 ---
 
 学习 spring boot 集成 JMS 时写的一个小程序。
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/jms_2.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/jms_2.png)
 
 <!--more-->
 

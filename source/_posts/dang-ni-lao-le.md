@@ -44,10 +44,10 @@ lede: "没有摘要"
 这首歌是唱给你的
 
 
-![http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_1.gif](http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_1.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_1.gif](https://raw.githubusercontent.com/bsyonline/pic/master/guitar/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_1.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_2.gif](http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_2.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_2.gif](https://raw.githubusercontent.com/bsyonline/pic/master/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_2.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_3.gif](http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_3.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_3.gif](https://raw.githubusercontent.com/bsyonline/pic/master/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_3.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_4.gif](http://7xqgix.com1.z0.glb.clouddn.com/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_4.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_4.gif](https://raw.githubusercontent.com/bsyonline/pic/master/d%E5%BD%93%E4%BD%A0%E8%80%81%E4%BA%86_4.gif)

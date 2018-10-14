@@ -41,12 +41,12 @@ HashMap 在 put 一个 key-value 对时，首先对 key 做 hash 操作，然后
 
 将形成下图的结构
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/hashmap_01.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/hashmap_01.png)
 
 可以看到对 hash(key) 操作后，数据通过链表的形式分别存储在索引1和7的位置， 17,33,49 都存储在位置1，就是上文提到的碰撞。如果要从 HashMap 中取到33的值，首先需要定位到位置1，再遍历链表。理想情况下，如果在一个 HashMap 中数据都分散在数组中，没有出现碰撞，那么 get 的速度最快，时间复杂度为 O(1) , 如果出现碰撞，get 的性能将有所下降。极端情况下，如果所有数据都存储在相同位置，那 HashMap 就变成了 Linked Table ，时间复杂度为 O(n) 。
 针对这样的情况，JDK 1.8 对 HashMap 的实现方式进行了优化，如果链表的长度大于阀值，就将链表改成红黑树，get 的时间复杂度为 O(logn) , 如图：
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/hashmap_02.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/hashmap_02.png)
 
 好了，说了这么多，简单总结一下吧。通常情况下，如果两个对象的 key 的 hashCode() 相同，那么他们 bucket 的位置相同而发生碰撞，Map.Entry 对象存储在链表中。当 get 时，通过 hashCode() 找到 bucket 的位置，然后遍历链表，通过 key.equals() 找到指定的值。
 
@@ -58,7 +58,7 @@ HashMap 还有一个知识点会作为问题提出： HashMap 的容量是固定
 HashMap 有两个重要的参数，DEFAULT_INITIAL_CAPACITY 和 DEFAULT_LOAD_FACTOR 。在初始化时默认容量为16，当 bucket 的使用数量超过 DEFAULT_INITIAL_CAPACITY 和 DEFAULT_LOAD_FACTOR 的乘积时，HashMap 会将容量扩充为原来的两倍（就是将上图中的数组大小变成原来的两倍），同时重新按照 hash(key) 来存放对象到新的数组中，这个过程叫做 rehashing 。
 在 JDK 1.8 之前，每次 resize 需要从新计算 hash(key) 的值，在 JDK 1.8 中对这里也做了优化。1.8 的 resize 使用的是2次幂扩展，所以在 resize 的过程中，元素要么在原索引位置，要么在2倍索引位置。如下图所示：
 
-![](http://7xqgix.com1.z0.glb.clouddn.com/hashmap_03.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/hashmap_03.png)
 
 
 看一下源码会更清楚
@@ -94,7 +94,7 @@ if (hiTail != null) {
 }
 ```
 先遍历链表算出 hiTail 和 loTail ，然后根据 hiTail 和 loTail 得到元素在新数组中的位置。说简单点，由于扩容是向左移一位，那么不用每次都重新计算 hash(key) ，只要看左边新扩展的一位是0还是1, 0就留在原位置，1就将原位置索引加上原容量得到新位置的索引。计算结果参考下图：
-![](http://7xqgix.com1.z0.glb.clouddn.com/hashmap_04.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/hashmap_04.png)
 
 最后 rehashing 有没有问题呢？ 在多线程环境下，rehashing 会出现条件竞争，导致程序死循环。这也是为什么要在多线程环境中对 HashMap 进行线程安全处理的原因了。
 ### concurrentHashMap 和 Hashtable 的区别

@@ -37,10 +37,10 @@ lede: "没有摘要"
 **由李霖Gary改编的吉他弹唱版本和原曲的吉他弹奏有了比较大的改变，前奏还能隐约听出原曲的旋律，但是间奏已和原曲完全不同，不过这个版本的弹唱是我听过的最好的版本。**
 
 
-![http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B41.jpg](http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B41.jpg)
+![https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B41.jpg](https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B41.jpg)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B42.jpg](http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B42.jpg)
+![https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B42.jpg](https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B42.jpg)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B43.jpg](http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B44.jpg)
+![https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B43.jpg](https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B44.jpg)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B44.jpg](http://7xqgix.com1.z0.glb.clouddn.com/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B44.jpg)
+![https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B44.jpg](https://raw.githubusercontent.com/bsyonline/pic/master/h%E5%BF%BD%E7%84%B6%E4%B9%8B%E9%97%B44.jpg)

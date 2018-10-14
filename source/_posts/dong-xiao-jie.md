@@ -44,8 +44,8 @@ lede: "没有摘要"
 躁起来吧 董小姐
 
 
-![http://7xqgix.com1.z0.glb.clouddn.com/d%E8%91%A3%E5%B0%8F%E5%A7%90_1.gif](http://7xqgix.com1.z0.glb.clouddn.com/d%E8%91%A3%E5%B0%8F%E5%A7%90_1.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/d%E8%91%A3%E5%B0%8F%E5%A7%90_1.gif](https://raw.githubusercontent.com/bsyonline/pic/master/d%E8%91%A3%E5%B0%8F%E5%A7%90_1.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/d%E8%91%A3%E5%B0%8F%E5%A7%90_2.gif](http://7xqgix.com1.z0.glb.clouddn.com/d%E8%91%A3%E5%B0%8F%E5%A7%90_2.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/d%E8%91%A3%E5%B0%8F%E5%A7%90_2.gif](https://raw.githubusercontent.com/bsyonline/pic/master/d%E8%91%A3%E5%B0%8F%E5%A7%90_2.gif)
 
-![http://7xqgix.com1.z0.glb.clouddn.com/d%E8%91%A3%E5%B0%8F%E5%A7%90_3.gif](http://7xqgix.com1.z0.glb.clouddn.com/d%E8%91%A3%E5%B0%8F%E5%A7%90_3.gif)
+![https://raw.githubusercontent.com/bsyonline/pic/master/d%E8%91%A3%E5%B0%8F%E5%A7%90_3.gif](https://raw.githubusercontent.com/bsyonline/pic/master/d%E8%91%A3%E5%B0%8F%E5%A7%90_3.gif)

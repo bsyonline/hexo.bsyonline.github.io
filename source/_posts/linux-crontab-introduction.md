@@ -26,7 +26,7 @@ crontab -l
 ```
 
 crontab 时间格式
-![](http://7xqgix.com1.z0.glb.clouddn.com/crontab.png)
+![](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/crontab.png)
 
 举例：
 ```
