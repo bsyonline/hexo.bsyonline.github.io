@@ -6,7 +6,7 @@ tags:
  - 数据结构
 category: 
  - 大数据
-thumbnail: http://7xqgix.com1.z0.glb.clouddn.com/3.png
+thumbnail: https://raw.githubusercontent.com/bsyonline/pic/master/20181014/3.png
 author: bsyonline
 lede: "没有摘要"
 ---
@@ -27,15 +27,15 @@ bloom filter是一种节省空间的数据结构。
 
 初始状态时，Bloom Filter是一个包含m位的位数组，每一位都置为0。
 
-![1](http://7xqgix.com1.z0.glb.clouddn.com/2.png)
+![1](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/2.png)
 
 对于任意元素x，bloom filter将其使用hash函数计算k个索引，存放在数组中，每个位置的值为1。
 
-![2](http://7xqgix.com1.z0.glb.clouddn.com/3.png)
+![2](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/3.png)
 
 判断一个元素y是否属于集合时，对y进行k次hash函数计算，如果所有索引位置在数组中的值都为1，则y属于这个集合。如果有任意个索引位置的值为0，则y不属于这个集合。
 
-![1](http://7xqgix.com1.z0.glb.clouddn.com/4.png)
+![1](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/4.png)
 
 增加元素到bloom filter中不会改变其大小，只会改变误报率。
 
