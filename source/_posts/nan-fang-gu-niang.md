@@ -42,8 +42,8 @@ lede: "没有摘要"
 南........方............
 
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_1.png](https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_1.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/guitar/nfgn_1.png](https://raw.githubusercontent.com/bsyonline/pic/master/guitar/nfgn_1.png)
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_2.png](https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_2.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/guitar/nfgn_2.png](https://raw.githubusercontent.com/bsyonline/pic/master/guitar/nfgn_2.png)
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_3.png](https://raw.githubusercontent.com/bsyonline/pic/master/n%E5%8D%97%E6%96%B9%E5%A7%91%E5%A8%98_3.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/guitar/nfgn_3.png](https://raw.githubusercontent.com/bsyonline/pic/master/guitar/nfgn_3.png)

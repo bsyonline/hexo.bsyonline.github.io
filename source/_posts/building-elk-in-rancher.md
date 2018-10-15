@@ -65,18 +65,18 @@ docker push reg.dockcloud.cn/riskbell/elasticsearch:2.3
 
 redis 需要向外暴露端口给应用程序。
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-42-34.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-42-34.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/20181014/2020170217164234.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/20170217164234.png)
 ##### elasticsearch
 
 elasticsearch 也不需要使用别的服务，为了能从浏览器查看数据，也向外暴露端口。
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-46-54.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-46-54.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/20170217164654.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/20170217164654.png)
 
 ##### kibana
 
 kibana 需要 link elasticsearch 的服务，也要向外暴露端口。
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-49-08.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-49-08.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/20170217164908.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/20170217164908.png)
 
 ##### logstash
 
@@ -118,11 +118,11 @@ output {
 
 应为使用 rancher ，所以这份配置文件的 host 位置没有写 ip ，而是 rancher 中的服务名字。由于 link 服务走的是 overlay 网络，所以，端口号也是内部的，配置文件在启动命令中指定。
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-58-18.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-58-18.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/20170217165818.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/20170217165818.png)
 
 这样就完成了 ELK 系统的搭建。
 
-![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-58-56.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/Screenshot%20from%202017-02-17%2016-58-56.png)
+![https://raw.githubusercontent.com/bsyonline/pic/master/Screenshot%20from%202017-02-17%2016-58-56.png](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/20170217165856.png)
 
 ### compose
 docker-compose.yml

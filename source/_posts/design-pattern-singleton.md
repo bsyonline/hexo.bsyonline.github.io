@@ -121,3 +121,4 @@ public class Singleton {
 如果要画出常用设计模式的类图，单例无疑是最简单的了。
 
 ![单例模式](https://raw.githubusercontent.com/bsyonline/pic/master/20181014/singleton.png)
+
