@@ -1,11 +1,10 @@
 ---
 title: Hadoop 2.6.2 安装
-toc: true
 date: 2015-10-20 15:45:55
 tags:
  - Hadoop
 category: 
- - 大数据
+ - Big Data
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

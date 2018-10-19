@@ -1,11 +1,10 @@
 ---
 title: shell:autobak.sh
-toc: false
 date: 2016-07-16 15:53:17
 tags:
- - untag
+ - Shell
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

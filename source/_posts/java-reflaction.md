@@ -1,11 +1,10 @@
 ---
 title: Java 反射
-toc: false
 date: 2016-08-19 15:20:47
 tags:
  - Java
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

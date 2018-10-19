@@ -1,9 +1,10 @@
 ---
 title: synchronization between eureka server nodes
 tags:
-  - untag
+  - Spring Cloud
+  - Microservices
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-08-29 17:06:05

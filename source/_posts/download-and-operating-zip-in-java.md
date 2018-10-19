@@ -1,11 +1,10 @@
 ---
 title: Java URL下载 zip
-toc: true
 date: 2015-12-16 15:52:35
 tags:
  - Java
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

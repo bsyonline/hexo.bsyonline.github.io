@@ -1,9 +1,10 @@
 ---
 title: Building and Running a Private Ethereum Blockchain
 tags:
-  - blockchain
+  - Blockchain
+  - Ethereum
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-07 11:21:16

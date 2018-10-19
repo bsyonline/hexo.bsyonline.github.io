@@ -1,11 +1,10 @@
 ---
 title: 枚举单例读取配置文件
-toc: false
 date: 2016-08-02 23:29:14
 tags:
- - 设计模式
+ - Design Patterns
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

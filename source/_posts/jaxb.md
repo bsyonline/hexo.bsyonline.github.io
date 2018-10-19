@@ -1,11 +1,10 @@
 ---
 title: JAXB 操作 xml
-toc: true
 date: 2016-02-20 15:49:59
 tags:
- - untag
+ - JAXB
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

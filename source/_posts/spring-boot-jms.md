@@ -1,12 +1,11 @@
 ---
 title: 一个简单的 Spring Boot + JMS Sample
-toc: true
 date: 2016-10-26 15:40:04
 tags:
  - Spring Boot
  - JMS
 category: 
- - 编程
+ - Java
 thumbnail: https://raw.githubusercontent.com/bsyonline/pic/master/jms_2.png
 author: bsyonline
 lede: "没有摘要"

@@ -1,11 +1,10 @@
 ---
 title: Blackberry 开发：向服务器发请求
-toc: false
 date: 2012-04-22 15:53:17
 tags:
- - untag
+ - BlackBerry
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

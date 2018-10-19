@@ -1,11 +1,10 @@
 ---
 title: Git 使用
-toc: true
 date: 2016-03-16 15:45:17
 tags:
  - Git
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

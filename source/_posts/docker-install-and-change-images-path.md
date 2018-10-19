@@ -1,11 +1,10 @@
 ---
 title: Docker 安装及修改 image 存储路径
-toc: true
 date: 2017-07-15 22:25:09
 tags:
  - Docker
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -1,11 +1,10 @@
 ---
 title: BlackBerry 开发：黑莓错误代码及解决方法大全
-toc: true
 date: 2012-03-30 15:53:17
 tags:
  - BlackBerry
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

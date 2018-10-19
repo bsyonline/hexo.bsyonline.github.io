@@ -1,11 +1,10 @@
 ---
 title: BlackBerry 开发：文件操作
-toc: false
 date: 2012-04-12 15:53:17
 tags:
  - BlackBerry
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

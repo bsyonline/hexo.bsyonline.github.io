@@ -2,9 +2,9 @@
 title: 机器学习基本概念
 date: 2017-05-30 10:22:41
 tags:
- - untag
+ - Machine Learning
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

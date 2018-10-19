@@ -1,9 +1,9 @@
 ---
 title: about rpc
 tags:
-  - untag
+  - RPC
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-05-18 11:18:00

@@ -1,18 +1,17 @@
 ---
 title: 完全平方数
-toc: false
 date: 2015-04-02 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
-<!--more-->
-```java
+
+```
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;

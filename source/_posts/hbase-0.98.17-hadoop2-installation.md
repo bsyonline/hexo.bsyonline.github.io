@@ -1,11 +1,10 @@
 ---
 title: Hbase-0.98.17-hadoop2 安装
-toc: true
 date: 2015-11-01 15:45:50
 tags:
  - Hbase
 category: 
- - 大数据
+ - Big Data
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

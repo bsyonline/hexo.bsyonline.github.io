@@ -4,7 +4,7 @@ date: 2016-05-27 11:50:28
 tags:
  - Spark
 category: 
- - 大数据
+ - Big Data
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

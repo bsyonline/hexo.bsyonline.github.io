@@ -1,11 +1,10 @@
 ---
-title: 字符界面安装 vmware tools
-toc: true
+title: 字符界面安装 VMware Tools
 date: 2015-08-04 15:53:17
 tags:
- - untag
+ - VMware
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

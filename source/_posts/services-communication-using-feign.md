@@ -5,7 +5,7 @@ tags:
   - Feign
   - Spring Cloud
 category:
-  - Microservices
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-06-20 16:22:09

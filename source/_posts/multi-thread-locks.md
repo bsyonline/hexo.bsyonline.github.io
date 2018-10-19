@@ -1,9 +1,9 @@
 ---
 title: 多线程的锁
 tags:
-  - untag
+  - Multithreading
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2017-12-13 20:04:38

@@ -1,11 +1,10 @@
 ---
 title: 排序算法
-toc: false
 date: 2015-11-11 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

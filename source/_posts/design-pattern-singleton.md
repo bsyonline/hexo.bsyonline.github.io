@@ -1,11 +1,10 @@
 ---
 title: 单例模式
-toc: true
 date: 2016-08-02 00:00:47
 tags:
- - untag
+ - Design Patterns
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

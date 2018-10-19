@@ -4,7 +4,7 @@ date: 2012-04-04 15:53:17
 tags:
  - BlackBerry
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

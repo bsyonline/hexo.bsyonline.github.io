@@ -1,11 +1,10 @@
 ---
 title: HTTP 上传文件原理
-toc: true
 date: 2015-08-30 15:49:49
 tags:
  - Http
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

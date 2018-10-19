@@ -1,18 +1,17 @@
 ---
 title: 字符串处理1
-toc: false
 date: 2015-04-09 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
 一个5位数，判断它是不是回文数。即12321是回文数，个位与万位相同，十位与千位相同。
-```java
+```
 public class Prog0409 {
 
     public static void main(String[] args) {

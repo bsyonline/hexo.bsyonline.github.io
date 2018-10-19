@@ -1,11 +1,10 @@
 ---
 title: Nexus 私服搭建
-toc: true
 date: 2016-02-22 15:53:46
 tags:
  - Git
 category: 
- - Wiki
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

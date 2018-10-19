@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（22）： du
 date: 2017-03-01 10:10:45
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

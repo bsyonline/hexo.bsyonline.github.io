@@ -1,11 +1,10 @@
 ---
 title: 多线程同步
-toc: true
 date: 2016-09-14 18:25:28
 tags:
- - 多线程
+ - Multithreading
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -1,12 +1,10 @@
 ---
 title: Java Stream 详解
-toc: true
 date: 2016-08-20 15:20:47
 tags:
- - Java Stream
- - Java
+ - Java8
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -1,9 +1,9 @@
 ---
 title: how to build riskbell on blockchain
 tags:
-  - blockchain
+  - Blockchain
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-11 13:09:44

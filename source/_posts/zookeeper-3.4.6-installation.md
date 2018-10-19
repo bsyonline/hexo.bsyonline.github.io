@@ -4,7 +4,7 @@ date: 2015-07-14 16:00:38
 tags:
  - Zookeeper
 category: 
- - 大数据
+ - Big Data
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

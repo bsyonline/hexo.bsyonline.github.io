@@ -1,18 +1,17 @@
 ---
 title: 字符串2
-toc: false
 date: 2015-03-30 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
 输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数
-```java
+```
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

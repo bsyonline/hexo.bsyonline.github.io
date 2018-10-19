@@ -1,11 +1,10 @@
 ---
 title: 单机搭建 elk + logback 环境
-toc: true
 date: 2016-08-16 15:53:17
 tags:
- - Elasticsearch
+ - Elastic
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

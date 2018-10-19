@@ -1,9 +1,10 @@
 ---
 title: Adding a New Node to Ethereum Private Blockchain
 tags:
-  - blockchain
+  - Blockchain
+  - Ethereum
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-11 11:07:12

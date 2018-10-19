@@ -1,18 +1,16 @@
 ---
 title: 全排列
-toc: false
 date: 2014-10-16 15:53:17
 tags:
- - 算法
+ - Algorithm
 category: 
- - 编程
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
-<!--more-->
-```java
+```
 public void perm(int[] arr,int start,int end){
      if(start==end){
           for(int i=0;i<arr.length;i++){

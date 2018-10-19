@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（1）： useradd
 date: 2017-02-08 11:46:53
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

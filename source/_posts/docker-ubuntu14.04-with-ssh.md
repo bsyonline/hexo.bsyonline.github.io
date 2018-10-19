@@ -1,11 +1,11 @@
 ---
-title: Docker ： ubuntu14.04 + ssh 镜像
-toc: true
+title: Ubuntu14.04 + ssh 镜像
 date: 2016-07-15 22:25:09
 tags:
  - Docker
+ - Ubuntu
 category: 
- - 编程
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

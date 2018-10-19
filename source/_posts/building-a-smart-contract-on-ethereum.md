@@ -1,9 +1,10 @@
 ---
 title: Building a Smart Contract on Ethereum
 tags:
-  - blockchain
+  - Blockchain
+  - Ethereum
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-08 13:54:23

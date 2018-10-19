@@ -1,11 +1,10 @@
 ---
-title: jQuery常用操作操作
-toc: true
+title: jQuery 常用操作操作
 date: 2016-04-16 16:00:33
 tags:
  - jQuery
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

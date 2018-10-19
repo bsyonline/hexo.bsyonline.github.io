@@ -1,9 +1,10 @@
 ---
 title: circuit breaker using spring cloud hystrix
 tags:
-  - untag
+  - Microservices
+  - Spring Cloud
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-06-30 19:45:41

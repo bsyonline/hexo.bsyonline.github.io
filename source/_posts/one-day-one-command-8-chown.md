@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（8）： chown
 date: 2017-02-15 10:10:26
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

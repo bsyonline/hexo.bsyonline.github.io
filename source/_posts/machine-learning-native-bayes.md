@@ -2,9 +2,10 @@
 title: 朴素贝叶斯算法
 date: 2017-05-18 15:27:15
 tags:
- - untag
+ - Algorithm
+ - Machine Learning
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

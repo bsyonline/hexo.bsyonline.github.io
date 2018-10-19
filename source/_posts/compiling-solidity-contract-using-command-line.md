@@ -1,9 +1,10 @@
 ---
 title: Compiling Colidity Contract using Command Line
 tags:
-  - blockchain
+  - Blockchain
+  - Ethereum
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-08 15:38:03

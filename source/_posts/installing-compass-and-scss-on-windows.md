@@ -1,12 +1,11 @@
 ---
 title: Windows 安装 compass and scss
-toc: true
 date: 2016-07-15 22:25:09
 tags:
- - compass
- - scss
+ - Compass
+ - Scss
 category: 
- - Wiki
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

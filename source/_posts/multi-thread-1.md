@@ -1,11 +1,10 @@
 ---
 title: 多线程
-toc: false
 date: 2015-03-13 15:53:17
 tags:
- - untag
+ - Multithreading
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

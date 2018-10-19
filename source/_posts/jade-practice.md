@@ -1,12 +1,11 @@
 ---
 title: Jade 语法实践
-toc: true
 date: 2016-07-18 14:29:39
 tags:
  - Jade
  - Hexo
 category: 
- - 编程
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -1,9 +1,10 @@
 ---
 title: learning solidity
 tags:
-  - untag
+  - Blockchain
+  - Ethereum
 category:
-  - uncategory
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-05-05 17:08:17

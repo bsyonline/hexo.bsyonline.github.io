@@ -1,11 +1,10 @@
 ---
 title: Gulp 环境安装
-toc: true
 date: 2016-07-20 11:13:51
 tags:
  - Gulp
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

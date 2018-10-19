@@ -1,11 +1,10 @@
 ---
 title: 线程的状态
-toc: false
 date: 2016-07-23 21:50:03
 tags:
- - untag
+ - Multithreading
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

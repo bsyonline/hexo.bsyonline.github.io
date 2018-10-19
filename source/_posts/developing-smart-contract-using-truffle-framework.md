@@ -1,9 +1,10 @@
 ---
 title: Developing Smart Contract using Truffle Framework
 tags:
-  - blockchain
+  - Blockchain
+  - Ethereum
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-08 19:40:18

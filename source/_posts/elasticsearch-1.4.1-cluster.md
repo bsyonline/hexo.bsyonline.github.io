@@ -2,9 +2,9 @@
 title: Elasticsearch-1.4.1 集群环境搭建
 date: 2016-07-14 19:20:12
 tags:
- - Elasticsearch
+ - Elastic
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

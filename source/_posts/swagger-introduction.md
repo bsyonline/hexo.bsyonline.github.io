@@ -1,12 +1,11 @@
 ---
 title: 'Swagger : API 设计工具介绍'
-toc: true
 date: 2016-10-14 22:15:37
 tags:
  - RESTful
  - Swagger
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

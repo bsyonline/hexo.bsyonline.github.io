@@ -1,9 +1,9 @@
 ---
-title: interpretation of blockchain terms
+title: Interpretation of Blockchain Terms
 tags:
-  - blockchain
+  - Blockchain
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-16 10:11:34

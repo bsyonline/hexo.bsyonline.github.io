@@ -1,6 +1,5 @@
 ---
 title: CentOS 6.5 minimal安装ftp
-toc: true
 date: 2015-07-20 15:53:35
 tags:
  - CentOS

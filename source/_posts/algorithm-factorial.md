@@ -3,9 +3,9 @@ title: 阶乘
 toc: false
 date: 2015-04-08 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -1,11 +1,10 @@
 ---
 title: 二分查找
-toc: false
 date: 2014-04-17 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

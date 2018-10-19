@@ -1,11 +1,10 @@
 ---
-title: Docker ： 创建 tomcat 镜像
-toc: true
+title: 创建 tomcat 镜像
 date: 2016-07-15 22:25:09
 tags:
  - Docker
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
@@ -14,7 +13,7 @@ lede: "没有摘要"
 
 ### 1. 准备工作
 
-#### 1.1 创建制作docker镜像的工作目录和文件
+1.1 创建制作 docker 镜像的工作目录和文件
 
 ```
 mkdir dorckerfiles
@@ -59,7 +58,7 @@ exec ${CATALINA_HOME}/bin/catalina.sh run
 
 ```
 
-#### 1.2 下载tomcat和jdk
+1.2 下载 tomcat 和 jdk
 
 ### 2. 制作镜像
 

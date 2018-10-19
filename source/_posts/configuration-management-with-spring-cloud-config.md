@@ -2,9 +2,9 @@
 title: Configuration Management with Spring Cloud Config
 tags:
   - Microservices
-  - Spring CLoud
+  - Spring Cloud
 category:
-  - Microservices
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-06-26 10:11:01

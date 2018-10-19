@@ -1,11 +1,10 @@
 ---
 title: MySQL 备份与还原
-toc: false
 date: 2016-09-08 14:34:13
 tags:
  - MySQL
 category: 
- - 数据库
+ - Databases
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

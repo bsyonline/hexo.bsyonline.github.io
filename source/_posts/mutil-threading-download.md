@@ -1,11 +1,10 @@
 ---
 title: 多线程下载
-toc: fasle
 date: 2015-12-18 15:49:57
 tags:
- - untag
+ - Multithreading
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

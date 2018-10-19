@@ -1,11 +1,11 @@
 ---
 title: 使用 docker + redis 学习 redis-cli
-toc: true
 date: 2016-07-15 22:25:09
 tags:
- - untag
+ - Redis
+ - Docker
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

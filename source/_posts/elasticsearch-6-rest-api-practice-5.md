@@ -2,9 +2,9 @@
 title: Elasticsearch 6 REST API Practice V - Query DSL
 date: 2018-01-01 13:58:36
 tags:
- - Elasticsearch
+ - Elastic
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

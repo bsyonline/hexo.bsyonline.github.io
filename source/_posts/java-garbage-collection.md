@@ -1,9 +1,9 @@
 ---
-title: java-garbage-collection
+title: Java Garbage Collection
 tags:
-  - untag
+  - JVM
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-08-27 22:20:06

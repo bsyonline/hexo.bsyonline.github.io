@@ -1,11 +1,10 @@
 ---
 title: Oracle 分页 sql 模板
-toc: false
 date: 2016-05-05 15:53:54
 tags:
  - Oracle
 category: 
- - 数据库
+ - Databases
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

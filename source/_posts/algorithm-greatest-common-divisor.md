@@ -1,18 +1,16 @@
 ---
 title: 最大公约数
-toc: false
 date: 2015-03-27 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
-<!--more-->
-```java
+```
 public class Algo0327 {
 
     public static void main(String[] args) {

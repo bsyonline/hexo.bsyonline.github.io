@@ -2,8 +2,9 @@
 title: Spring Cloud Fundamental
 tags:
   - Microservices
+  - Spring Cloud
 category:
-  - Microservices
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2099-08-29 16:38:23

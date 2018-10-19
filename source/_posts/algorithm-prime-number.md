@@ -1,11 +1,10 @@
 ---
 title: 分解质因数
-toc: false
 date: 2015-03-26 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
@@ -17,7 +16,7 @@ lede: "没有摘要"
 2.如果n不是素数，用第一个质数2开始除，能整除则商继续用从2开始除。  
 3.如果不能整除，换下一个质数，直到商等于质数。
 
-```java
+```
 import java.util.ArrayList;
 import java.util.List;
 

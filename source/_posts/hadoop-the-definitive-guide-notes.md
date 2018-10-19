@@ -1,11 +1,10 @@
 ---
-title: 读书笔记：hadoop权威指南（Hadoop The Definitive Guide）
-toc: true
+title: 读书笔记：hadoop 权威指南（Hadoop The Definitive Guide）
 date: 2015-11-19 15:45:44
 tags:
- - untag
+ - Hadoop
 category: 
- - uncategory
+ - Big Data
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

@@ -4,7 +4,7 @@ date: 2017-11-01 15:20:53
 tags:
  - MySQL
 category: 
- - 数据库
+ - Databases
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

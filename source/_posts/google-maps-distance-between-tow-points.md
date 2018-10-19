@@ -1,11 +1,10 @@
 ---
-title: Google地图求两点之间距离
-toc: true
+title: Google 地图求两点之间距离
 date: 2014-12-16 15:45:38
 tags:
  - GIS
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

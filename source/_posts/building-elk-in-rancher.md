@@ -2,9 +2,9 @@
 title: Rancher 搭建 ELK 日志收集系统小记
 date: 2017-02-17 16:05:40
 tags:
- - ELK
+ - Elastic
 category: 
- - Wiki
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

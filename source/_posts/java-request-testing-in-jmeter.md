@@ -1,12 +1,10 @@
 ---
-title: 'Jmeter : Java Request 的测试方法'
-toc: true
+title: Java Request 的测试方法
 date: 2016-10-17 14:28:17
 tags:
  - Jmeter
- - 自动化测试
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

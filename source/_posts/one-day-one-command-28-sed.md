@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（28）： sed
 date: 2017-03-07 10:10:45
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

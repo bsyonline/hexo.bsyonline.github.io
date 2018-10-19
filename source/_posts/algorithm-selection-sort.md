@@ -1,11 +1,10 @@
 ---
 title: 选择排序
-toc: false
 date: 2014-04-29 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
@@ -15,7 +14,7 @@ lede: "没有摘要"
 
 选择排序的时间复杂度为O(n*n)
 
-```java
+```
 public class SelectSort {
     public int[] sort(int[] arr) {
         if (arr == null || arr.length == 0) {

@@ -1,9 +1,9 @@
 ---
 title: About Consistency
 tags:
-  - untag
+  - Distributed Computing
 category:
-  - uncategory
+  - Distributed Computing
 author: bsyonline
 lede: 没有摘要
 date: 2018-05-31 23:20:09

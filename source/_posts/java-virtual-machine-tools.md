@@ -1,9 +1,9 @@
 ---
 title: Java Virtual Machine Tools
 tags:
-  - untag
+  - JVM
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-09-12 10:14:48

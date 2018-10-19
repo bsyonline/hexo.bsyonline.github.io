@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（3）： scp
 date: 2017-02-11 10:06:17
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

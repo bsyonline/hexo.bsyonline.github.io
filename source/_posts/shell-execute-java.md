@@ -1,11 +1,10 @@
 ---
 title: 一个shell脚本示例
-toc: false
 date: 2016-07-16 16:00:19
 tags:
- - untag
+ - Shell
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

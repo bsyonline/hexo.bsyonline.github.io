@@ -1,18 +1,18 @@
 ---
 title: 完数
-toc: false
 date: 2015-03-28 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
 完数，所有的真因子（即除了自身以外的约数）的和（即因子函数），恰好等于它本身
-```java
+
+```
 import java.util.ArrayList;
 import java.util.List;
 

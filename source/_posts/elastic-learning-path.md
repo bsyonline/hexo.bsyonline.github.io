@@ -3,7 +3,7 @@ title: Elastic Learning Path
 tags:
   - Elastic
 category:
-  - Elastic
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-05-03 17:43:26

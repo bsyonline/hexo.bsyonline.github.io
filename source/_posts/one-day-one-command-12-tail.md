@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（12）： tail
 date: 2017-02-19 10:07:32
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

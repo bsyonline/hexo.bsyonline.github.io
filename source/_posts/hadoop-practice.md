@@ -1,11 +1,10 @@
 ---
 title: Hadoop 练习
-toc: true
 date: 2015-10-22 15:45:26
 tags:
  - Hadoop
 category: 
- - 大数据
+ - Big Data
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

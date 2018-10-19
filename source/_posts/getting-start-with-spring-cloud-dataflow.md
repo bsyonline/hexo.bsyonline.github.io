@@ -1,9 +1,10 @@
 ---
 title: Getting Start with Spring Cloud Dataflow
 tags:
-  - Srping Cloud
+  - Spring Cloud
+  - Microservices
 category:
-  - Srping Cloud
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-10-19 11:58:49

@@ -1,11 +1,10 @@
 ---
 title: Fabric安装
-toc: true
 date: 2016-05-17 15:45:09
 tags:
  - Fabric
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

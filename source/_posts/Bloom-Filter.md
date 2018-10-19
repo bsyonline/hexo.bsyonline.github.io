@@ -3,9 +3,9 @@ title: Bloom Filter
 toc: false
 date: 2015-11-24 15:45:57
 tags:
- - 数据结构
+ - Data Structures
 category: 
- - 大数据
+ - Big Data
 thumbnail: https://raw.githubusercontent.com/bsyonline/pic/master/20181014/3.png
 author: bsyonline
 lede: "没有摘要"

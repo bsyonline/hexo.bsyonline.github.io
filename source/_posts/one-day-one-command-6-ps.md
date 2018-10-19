@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（6）： ps
 date: 2017-02-13 10:08:57
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

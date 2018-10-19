@@ -1,11 +1,10 @@
 ---
 title: spring boot cache （redis）使用
-toc: true
 date: 2016-05-26 16:00:24
 tags:
  - Spring Boot
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

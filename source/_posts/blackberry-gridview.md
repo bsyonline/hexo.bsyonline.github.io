@@ -1,11 +1,10 @@
 ---
 title: BlackBerry 开发：九宫格
-toc: fasle
 date: 2012-05-21 15:53:17
 tags:
  - BlackBerry
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

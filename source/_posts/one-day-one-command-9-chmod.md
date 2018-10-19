@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（9）： chmod
 date: 2017-02-16 10:10:38
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

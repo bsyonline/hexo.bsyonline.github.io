@@ -1,11 +1,10 @@
 ---
 title: Node.js 环境安装
-toc: false
 date: 2016-06-18 15:53:39
 tags:
  - Nodejs
 category: 
- - Wiki
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

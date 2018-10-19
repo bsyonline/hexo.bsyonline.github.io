@@ -2,8 +2,9 @@
 title: Eureka Architecture
 tags:
   - Microservices
+  - Spring Cloud
 category:
-  - Microservices
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-08-29 17:07:02

@@ -1,6 +1,5 @@
 ---
 title: CentOS 7 环境升级
-toc: true
 date: 2016-10-21 10:51:34
 tags:
  - CentOS

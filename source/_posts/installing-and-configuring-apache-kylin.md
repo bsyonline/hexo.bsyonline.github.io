@@ -3,7 +3,7 @@ title: Installing and Configuring Apache Kylin
 tags:
   - Apache Kylin
 category:
-  - 大数据
+  - Big Data
 author: bsyonline
 lede: 没有摘要
 date: 2018-04-10 21:02:11

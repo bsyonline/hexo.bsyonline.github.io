@@ -1,11 +1,10 @@
 ---
-title: 添加sudo权限
-toc: false
+title: 添加 sudo 权限
 date: 2015-08-09 15:53:17
 tags:
- - untag
+ - Linux
 category: 
- - uncategory
+ - Linux
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

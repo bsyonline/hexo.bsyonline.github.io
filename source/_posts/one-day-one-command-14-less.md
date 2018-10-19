@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（14）： less
 date: 2017-02-21 10:07:49
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

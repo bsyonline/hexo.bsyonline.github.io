@@ -1,18 +1,18 @@
 ---
 title: 素数
-toc: false
 date: 2015-03-24 15:53:17
 tags:
- - untag
+ - Algorithm
 category: 
- - uncategory
+ - Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
 素数：除了1和它本身以外不再有其他的因数。
-```java
+
+```
 public class Algo0324 {
 
     public static void main(String[] args) {

@@ -2,9 +2,9 @@
 title: 斑马斑马
 date: 2017-02-03 16:43:52
 tags:
- - untag
+ - Guitar
 category: 
- - uncategory
+ - Guitar
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

@@ -1,11 +1,10 @@
 ---
 title: BlackBerry 开发：读系统参数
-toc: true
 date: 2012-02-16 15:53:17
 tags:
  - BlackBerry
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

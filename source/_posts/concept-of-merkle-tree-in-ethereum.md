@@ -1,9 +1,10 @@
 ---
 title: concept of merkle tree in ethereum
 tags:
-  - blockchain
+  - Blockchain
+  - Ethereum
 category:
-  - blockchain
+  - Blockchain
 author: bsyonline
 lede: 没有摘要
 date: 2018-03-16 10:15:05

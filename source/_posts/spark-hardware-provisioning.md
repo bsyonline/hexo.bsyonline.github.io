@@ -1,9 +1,9 @@
 ---
 title: spark-hardware-provisioning
 tags:
-  - untag
+  - Spark
 category:
-  - uncategory
+  - Big Data
 author: bsyonline
 lede: 没有摘要
 date: 2017-12-26 10:59:07

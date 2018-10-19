@@ -1,11 +1,10 @@
 ---
 title: 二叉树
-toc: true
 date: 2014-04-16 15:53:17
 tags:
- - untag
+ - Data Structures
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

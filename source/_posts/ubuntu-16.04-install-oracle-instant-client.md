@@ -1,12 +1,11 @@
 ---
 title: Ubuntu 16.04 安装 oracle instant client
-toc: true
 date: 2016-04-19 15:53:12
 tags:
  - Ubuntu
  - Oracle
 category: 
- - 数据库
+ - Databases
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

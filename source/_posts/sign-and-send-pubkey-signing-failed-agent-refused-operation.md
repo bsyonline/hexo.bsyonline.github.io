@@ -3,7 +3,7 @@ title: 'sign_and_send_pubkey: signing failed: agent refused operation 错误的�
 tags:
   - Git
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-01-04 17:04:47

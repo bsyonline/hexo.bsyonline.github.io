@@ -1,11 +1,10 @@
 ---
 title: 生产者消费者（BlockingQueue）
-toc: false
 date: 2015-02-16 15:53:17
 tags:
- - untag
+ - Java
 category: 
- - uncategory
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

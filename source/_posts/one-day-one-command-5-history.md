@@ -2,7 +2,7 @@
 title: 每天一个 Linux 命令（5）： history
 date: 2017-02-12 10:07:55
 tags:
- - Linux 命令
+ - Linux
 category: 
  - Linux
 thumbnail: 

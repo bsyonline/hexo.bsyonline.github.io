@@ -1,6 +1,5 @@
 ---
 title: Firewalld 试用
-toc: true
 date: 2016-10-21 15:04:59
 tags:
  - CentOS

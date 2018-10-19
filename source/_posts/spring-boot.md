@@ -1,11 +1,10 @@
 ---
-title: spring boot 使用
-toc: true
+title: Spring Boot 使用
 date: 2016-01-11 16:00:27
 tags:
  - Spring Boot
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

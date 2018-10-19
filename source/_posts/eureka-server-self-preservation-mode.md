@@ -1,9 +1,10 @@
 ---
 title: eureka server self preservation mode
 tags:
-  - untag
+  - Microservices
+  - Spring Cloud
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2018-08-29 17:05:53

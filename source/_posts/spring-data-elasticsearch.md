@@ -1,12 +1,11 @@
 ---
 title: spring-data-elasticsearch 示例说明
-toc: true
 date: 2016-07-15 22:25:09
 tags:
  - Spring Data
- - Elasticsearch
+ - Elastic
 category: 
- - 编程
+ - Java
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

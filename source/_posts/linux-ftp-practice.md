@@ -1,6 +1,5 @@
 ---
 title: Linux ftp 问题汇总
-toc: true
 date: 2014-07-16 15:49:44
 tags:
  - Linux

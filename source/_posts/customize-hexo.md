@@ -1,11 +1,10 @@
 ---
 title: 我的 hexo 我做主
-toc: true
 date: 2016-07-19 14:27:28
 tags:
- - untag
+ - Hexo
 category: 
- - uncategory
+ - Wiki
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
