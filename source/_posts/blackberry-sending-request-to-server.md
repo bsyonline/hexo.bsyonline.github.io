@@ -1,5 +1,5 @@
 ---
-title: Blackberry 开发：向服务器发请求
+title: BlackBerry 开发：向服务器发请求
 date: 2012-04-22 15:53:17
 tags:
  - BlackBerry
