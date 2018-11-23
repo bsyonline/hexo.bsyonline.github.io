@@ -10,9 +10,10 @@ date: 2018-08-13 19:12:30
 thumbnail:
 ---
 
-![](https://linksredirect.com/?pub_id=29254CL26369&source=js&url=http%3A//javainterviewpoint-7ac9.kxcdn.com/wp-content/uploads/2016/01/JVM-Architecture.png)
 
 Java Virtual Mechine （JVM）包含三部分，分别是：类加载器子系统、运行时数据区和执行引擎。
+
+<img src="https://linksredirect.com/?pub_id=29254CL26369&source=js&url=http%3A//javainterviewpoint-7ac9.kxcdn.com/wp-content/uploads/2016/01/JVM-Architecture.png" style="width:669px;height:558px">
 
 #### **类加载子系统**
 类加载是将 ```.class``` 文件加载到虚拟机内存并创建对象的整个过程。类加载子系统提供 Java 的类动态加载功能，它有三个主要阶段：加载、链接和初始化。  

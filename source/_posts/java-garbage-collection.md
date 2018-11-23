@@ -20,13 +20,14 @@ thumbnail:
 
 标记清楚算法缺点：1. 效率不高；2. 清除后会产生大量不连续的内存碎片，碎片太多，会导致在创建大对象时没有足够的连续内存，会再次出发垃圾回收。
 
-![](https://raw.githubusercontent.com/bsyonline/pic/master/20180827/223040708.png)
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20180827/223040708.png" style="width:600px;">
+
 
 #### 复制算法
 
 复制算法是为了解决标记清除算法的效率问题提出的。复制算法将内存分为大小相等的两份，每次使用其中一份。当其中一块用完了，就将对象复制到另一块上，然后再把原来的内存一次清除。这样每次都对一整块内存进行操作，不会出现内存碎片的问题，简单高效，但是缺点也很明显，就是每次只有一半的内存可以使用。
 
-![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20180827/223717986.png)
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20180827/223717986.png" style="width:600px;">
 
 复制算法在新生代的垃圾回收中被大量采用，新生代被分为 Eden 和 Survivor 。当进行垃圾回收时， Eden 和其中一个 Survivor 的对象会被复制到另一个 Survivor 中。如果 Survivor 空间不够，对象会进行 Old 区，这被称为分配担保（Handle Promotion）。
 
@@ -34,7 +35,7 @@ thumbnail:
 
 由于复制算法的特点，一般不会在 Old 区使用。根据 Old 区的特点，提出了另一种标记-整理算法。首先对对象进行标记，然后将对象向一端移动，然后清理掉边界以外的内存空间。
 
-![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20180827/224854936.png)
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20180827/224854936.png" style="width:600px;">
 
 #### 分代收集算法
 
@@ -44,7 +45,7 @@ thumbnail:
 
 垃圾收集器是对垃圾收集算法的实现。垃圾收集器可以搭配使用。
 
-![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20180827/225509617.png)
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20180827/225509617.png" style="width:600px;">
 
 #### Serial 收集器
 

@@ -22,7 +22,7 @@ private final ConcurrentHashMap<String, Map<String, Lease<InstanceInfo>>> regist
 
 第一层 Map 的 Key 是 Eureka Client 的 ``spring.application.name`` ，Value 是 ConcurrentHashMap 。第二层 Map 的 Key 是 Client 的 instanceId ，Value 是一个 Lease 对象，对象存放 InstanceInfo 和 Client 的注册时间，剔除时间，续约时间，持续时长等信息。InstanceInfo 包含的信息如图：
 
-![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20180902/112829711.png)
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20180902/112829711.png" style="width:496px;height:1116px"/>
 
 详情可参考 ``com.netflix.eureka.registry.AbstractInstanceRegistry`` 中的 ```register()``` 方法。
 
