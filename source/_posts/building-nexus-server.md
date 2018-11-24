@@ -14,7 +14,10 @@ lede: "没有摘要"
 ### 下载
 
 下载最新的Nexus OSS
-[http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz](http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz)
+
+```
+wget http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz
+```
 
 ### 解压
 ```
@@ -26,19 +29,31 @@ chown -R sonatype-work
 ```
 ### 启动
 ```
+cd nexus2
 ./bin/nexus start
 ```
 ### 安装服务
+
+修改 ```bin/nexus``` 的 ```RUN_AS_USER=root```
+
+创建服务
+
 ```
-vi ./bin/nexus
+ln -s /usr/nexus2/bin/nexus /etc/init.d/nexus
+source /etc/profile
+```
 
-PIDDIR="/home/rolex/piddir"
+启动服务
 
-sudo ln -s /home/soft/nexus/nexus-2.11.2-06/bin/nexus /etc/init.d/nexus  
+```
+service nexus start
+```
+
+开机启动
+
+```
 chkconfig --add nexus  
 chkconfig --levels 345 nexus on  
-
-service nexus start
 ```
 ### 访问
 
@@ -60,41 +75,85 @@ service nexus start
 
 修改maven的**settings.xml**文件
 ```
-<mirrors>
-<mirror>
-  <id>nexus</id>
-  <mirrorOf>*</mirrorOf>     
-  <url>http://192.168.1.201:8081/nexus/content/groups/public/</url>
-</mirror>
-</mirrors>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<profiles>
-<profile>
-    <id>nexus</id>
-    <repositories>
-      <repository>
-        <id>nexus</id>
-        <name>Nexus</name>
-        <url>http://192.168.1.201:8081/nexus/content/groups/public/</url>
-        <releases><enabled>true</enabled></releases>
-        <snapshots><enabled>true</enabled></snapshots>
-      </repository>
-    </repositories>
-    <pluginRepositories>
-      <pluginRepository>
-        <id>nexus</id>
-          <name>Nexus</name>
-          <url>http://192.168.1.201:8081/nexus/content/groups/public/</url>
-          <releases><enabled>true</enabled></releases>
-          <snapshots><enabled>true</enabled></snapshots>
-      </pluginRepository>
-    </pluginRepositories>
-  </profile>
-</profiles>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>D:\Dev\mvn\repository</localRepository>
+    <pluginGroups>
+        <pluginGroup>org.mortbay.jetty</pluginGroup>
+    </pluginGroups>
+    <proxies>
+    </proxies>
 
-<activeProfiles>
-	<activeProfile>nexus</activeProfile>
-</activeProfiles>
+    <!--设置 Nexus 认证信息-->
+    <servers>
+        <server>
+            <id>nexus-releases</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server>
+        <server>
+            <id>nexus-snapshots</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server>
+    </servers>
+    <!--设置 Nexus 镜像，后面只要本地没对应的以来，则到 Nexus 去找-->
+    <mirrors>
+        <mirror>
+            <id>nexus-releases</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://192.168.0.201:8081/nexus/content/groups/public</url>
+        </mirror>
+        <mirror>
+            <id>nexus-snapshots</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://192.168.0.201:8081/nexus/content/groups/public-snapshots</url>
+        </mirror>
+    </mirrors>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <downloadSources>true</downloadSources>
+                <downloadJavadocs>true</downloadJavadocs>
+            </properties>
+            <repositories>
+                <repository>
+                    <id>local</id>
+                    <url>http://192.168.0.201:8081/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>local</id>
+                    <url>http://192.168.0.201:8081/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>daily</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>local</activeProfile>
+    </activeProfiles>
+</settings>
 ```
 
 第一次安装后，nexus私服仓库是空的，通过maven下载jar包显示从私服仓库下载，实际还是从公网下载，然后保存到本地,以后再下载相同的jar包就直接从本地下载了。
