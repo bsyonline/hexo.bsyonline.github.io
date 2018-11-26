@@ -90,12 +90,12 @@ chkconfig --levels 345 nexus on
     <!--设置 Nexus 认证信息-->
     <servers>
         <server>
-            <id>nexus-releases</id>
+            <id>local-repo</id>
             <username>admin</username>
             <password>admin123</password>
         </server>
         <server>
-            <id>nexus-snapshots</id>
+            <id>local-repo</id>
             <username>admin</username>
             <password>admin123</password>
         </server>
@@ -103,19 +103,19 @@ chkconfig --levels 345 nexus on
     <!--设置 Nexus 镜像，后面只要本地没对应的以来，则到 Nexus 去找-->
     <mirrors>
         <mirror>
-            <id>nexus-releases</id>
+            <id>local-repo</id>
             <mirrorOf>*</mirrorOf>
             <url>http://192.168.0.201:8081/nexus/content/groups/public</url>
         </mirror>
         <mirror>
-            <id>nexus-snapshots</id>
+            <id>local-repo</id>
             <mirrorOf>*</mirrorOf>
             <url>http://192.168.0.201:8081/nexus/content/groups/public-snapshots</url>
         </mirror>
     </mirrors>
     <profiles>
         <profile>
-            <id>local</id>
+            <id>local-repo</id>
             <properties>
                 <downloadSources>true</downloadSources>
                 <downloadJavadocs>true</downloadJavadocs>
@@ -136,7 +136,7 @@ chkconfig --levels 345 nexus on
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>local</id>
+                    <id>local-repo</id>
                     <url>http://192.168.0.201:8081/nexus/content/groups/public</url>
                     <releases>
                         <enabled>true</enabled>
@@ -151,7 +151,7 @@ chkconfig --levels 345 nexus on
         </profile>
     </profiles>
     <activeProfiles>
-        <activeProfile>local</activeProfile>
+        <activeProfile>local-repo</activeProfile>
     </activeProfiles>
 </settings>
 ```
