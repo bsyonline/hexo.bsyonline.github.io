@@ -68,11 +68,14 @@ Misc tools
 .article-entry p, .article-entry li{
    font-size: 14px !important;
 }
+pre code{
+	color: #c6c6c6 !important;
+}
 .article-entry pre, .article-entry .highlight{
-	border: 1px solid #ededed !important;
+	border: 1px solid #666 !important;
 	font-family: Consolas, Monaco, Lucida Console, monospace !important;
 color: #666 !important;
-background: #fff !important;
+background: #2d2d2d !important;
 padding: 24px  !important;
 font-size: 12px !important;
 margin: 24px 0 !important;
@@ -2523,7 +2526,7 @@ Demo Utils
   margin-bottom: 0;
 }
 .blog-posts hr.blog-post-sep {
-  margin: 10px 0;
+  margin: 0px 0;
 }
 .blog-info {
   list-style: none;
@@ -2674,6 +2677,9 @@ Demo Utils
 /* Blog Sidebar categories END */
 
 /* Blog Item */
+.blog-item{
+	margin-bottom: 10px;
+}
 .blog-item .blog-item-img {
   margin: 6px 0 25px;
 }
