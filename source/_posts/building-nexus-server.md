@@ -107,11 +107,6 @@ chkconfig --levels 345 nexus on
             <mirrorOf>*</mirrorOf>
             <url>http://192.168.0.201:8081/nexus/content/groups/public</url>
         </mirror>
-        <mirror>
-            <id>local-repo</id>
-            <mirrorOf>*</mirrorOf>
-            <url>http://192.168.0.201:8081/nexus/content/groups/public-snapshots</url>
-        </mirror>
     </mirrors>
     <profiles>
         <profile>
@@ -132,6 +127,30 @@ chkconfig --levels 345 nexus on
                         <enabled>true</enabled>
                         <updatePolicy>always</updatePolicy>
                     </snapshots>
+                </repository>
+                <repository>
+                    <id>spring-milestone</id>
+                    <name>Spring Milestone Repository</name>
+                    <url>http://192.168.11.20:8081/nexus/content/repositories/spring-milestone/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <layout>default</layout>
+                </repository>
+                <repository>
+                    <id>spring-snapshot</id>
+                    <name>Spring Snapshot Repository</name>
+                    <url>http://192.168.11.20:8081/nexus/content/repositories/spring-snapshot/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <layout>default</layout>
                 </repository>
             </repositories>
             <pluginRepositories>
