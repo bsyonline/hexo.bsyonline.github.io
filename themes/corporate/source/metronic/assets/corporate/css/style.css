@@ -2675,7 +2675,9 @@ Demo Utils
     top: -1px;
 }
 /* Blog Sidebar categories END */
-
+#page-nav{
+	margin: 20px 0px 0px 60px !important;
+}
 /* Blog Item */
 .blog-item{
 	margin-bottom: 10px;
