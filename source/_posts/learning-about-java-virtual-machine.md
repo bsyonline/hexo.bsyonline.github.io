@@ -1,5 +1,5 @@
 ---
-title: Learning about Java Virtual Machine(JVM)
+title: Learning about Java Virtual Machine (JVM)
 tags:
   - JVM
 category:
@@ -12,11 +12,11 @@ thumbnail:
 
 
 
-**[JVM Architecture](../../../..//2018/08/13/jvm-architecture/)**
+[JVM Architecture](../../../..//2018/08/13/jvm-architecture/)
 
-**[Java Garbage Collection](../../../..//2018/08/27/java-garbage-collection/)**
+[Java Garbage Collection](../../../..//2018/08/27/java-garbage-collection/)
 
-**[Java Virtual Machine Tools](../../../..//2018/09/12/java-virtual-machine-tools/)**
+[Java Virtual Machine Tools](../../../..//2018/09/12/java-virtual-machine-tools/)
 
 
 
