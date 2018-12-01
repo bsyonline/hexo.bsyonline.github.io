@@ -78,18 +78,17 @@ Options:
 		gcmetacapacity: metaspace 大小监视，metaspace 就是原来的持久代，从 jdk8 开始使用
 		gcutil: 垃圾回收监视汇总
 		printcompilation: 显示被 JIT 编译的方法
-       -h n
-           Displays a column header every n samples (output rows), where n is a positive integer. Default value is 0, which displays the column header the first row of data.
-       -t
-           Displays a timestamp column as the first column of output. The time stamp is the time since the start time of the target JVM.
-       -JjavaOption
-           Passes javaOption to the Java application launcher. For example, -J-Xms48m sets the startup memory to 48 MB. For a complete list of options, see java(1).
 ```
 
-Stat Options and Output
+示例：每 250 毫秒查询一次 GC 的情况一共查看 20 次
+```
+$ jstat -gc 28511 250 20
+```
+
+Stat Options 说明
 
 
-1.  class 选项
+*  class 选项
    * Loaded: 加载的类的数量
    * Bytes: 加载的类的大小（kBs）
    * Unloaded: 未加载的类的数量
@@ -102,7 +101,7 @@ Loaded  Bytes  Unloaded  Bytes     Time
  14547 26373.1        0     0.0      17.13
 ```
 
-2. compiler 选项
+* compiler 选项
    * Compiled: 执行 JIT 编译任务的数量
    * Failed: JIT 编译任务失败的数量
    * Invalid: JIT 编译任务不合法的数量
@@ -116,7 +115,7 @@ Compiled Failed Invalid   Time   FailedType FailedMethod
     7910      2       0    60.44          1 java/net/URLClassLoader$1 run
 ```
 
-3. gc 选项
+* gc 选项
    * S0C: Survivor 0 容量 (kB)
    * S1C: Survivor 1 容量 (kB)
    * S0U: Survivor 0 使用量 (kB)
@@ -141,7 +140,7 @@ $ jstat -gc 28511
 6144.0 17408.0  0.0   17393.6 997888.0 919208.4  226304.0   43056.4   75136.0 73724.1 9856.0 9576.9     21    0.279   3      0.451    0.731
 ```
 
-4. gccapacity 选项
+* gccapacity 选项
    * NGCMN: 新生代最小容量 (kB)
    * NGCMX: 新生代最大容量 (kB)
    * NGC: 新生代容量 (kB)
@@ -167,12 +166,10 @@ $ jstat -gccapacity 28511
  84480.0 1344000.0 1076736.0 6144.0 17408.0 997888.0   169472.0  2688512.0   226304.0   226304.0      0.0 1114112.0  75136.0      0.0 1048576.0   9856.0     21     3
 ```
 
-5. gccause 选项
-
+* gccause 选项
 和 gcutil 选项相同，但是多了下面两个选项
-
-* LGCC: 上一次 GC 原因
-* GCC: 当前 GC 原因
+  * LGCC: 上一次 GC 原因
+  * GCC: 当前 GC 原因
 
 ```
 $ jstat -gccause 28511 
@@ -180,7 +177,7 @@ $ jstat -gccause 28511
   0.00  99.92  92.12  19.03  98.12  97.17     21    0.279     3    0.451    0.731 Allocation Failure   No GC 
 ```
 
-6. gcnew 选项
+* gcnew 选项
    * S0C: Survivor 0 容量 (kB)
    * S1C: Survivor 1 容量 (kB)
    * S0U: Survivor 0 使用量 (kB)
@@ -199,7 +196,7 @@ $ jstat -gcnew 28511
 6144.0 17408.0    0.0 17393.6  4  15 20992.0 997888.0 919208.4     21    0.279
 ```
 
-7. gcnewcapacity 选项
+* gcnewcapacity 选项
    * NGCMN: 新生代最小容量 (kB)
    * NGCMX: 新生代最大容量 (kB)
    * NGC: 新生代容量 (kB)
@@ -218,7 +215,7 @@ $ jstat -gcnewcapacity 28511
    84480.0  1344000.0  1076736.0 448000.0   6144.0 448000.0  17408.0  1342976.0   997888.0    21     3
 ```
 
-9. gcold 选项
+* gcold 选项
    * MC: 元空间容量 (kB)
    * MU: 元空间使用量 (kB)
    * CCSC: 类压缩空间容量 (kB)
@@ -236,7 +233,7 @@ $ jstat -gcold 28511
  75136.0  73724.1   9856.0   9576.9    226304.0     43056.4     21     3    0.451    0.731
 ```
 
-10. gcoldcapacity 选项
+* gcoldcapacity 选项
    * OGCMN: 老年代最小容量 (kB)
    * OGCMX: 老年代最大容量 (kB)
    * OGC: 老年代容量 (kB)
@@ -252,7 +249,7 @@ $ jstat -gcoldcapacity 28511
    169472.0   2688512.0    226304.0    226304.0    21     3    0.451    0.731
 ```
 
-11. gcmetacapacity 选项
+* gcmetacapacity 选项
     * MCMN: 元空间最小容量 (kB)
     * MCMX: 元空间最大容量 (kB)
     * MC: 元空间容量 (kB)
@@ -269,7 +266,7 @@ $ jstat -gcmetacapacity 28511
        0.0  1114112.0    75136.0        0.0  1048576.0     9856.0    21     3    0.451    0.731
 ```
 
-12. gcutil 选项
+* gcutil 选项
     * S0: Survivor 0 使用量对空间容量占比
     * S1: Survivor 1 使用量对空间容量占比
     * E: Eden 区使用量对空间容量占比
@@ -290,9 +287,9 @@ $ jstat -gcutil 28511
 
 13. printcompilation 选项
     * Compiled: 最近编译的方法中 JIT 编译任务数量
-    * Size: Number of bytes of byte code of the most recently compiled method.
-    * Type: Compilation type of the most recently compiled method.
-    * Method: Class name and method name identifying the most recently compiled method. Class name uses slash (/) instead of dot (.) as a name space separator. Method name is the method within the specified class. The format for these two fields is consistent with the HotSpot -XX:+PrintCompilation option.
+    * Size: 最近编译方法字节码的字节数
+    * Type: 最近编译的方法的编译类型
+    * Method: 标识最近编译的方法的类名和方法名，类名使用 ``/`` 代替 ``.`` ，类名和方法名的格式和 HotSpot -XX:+PrintCompilation 选项一致
 
 ```
 $ jstat -printcompilation 28511 

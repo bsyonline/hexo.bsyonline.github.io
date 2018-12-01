@@ -1,7 +1,9 @@
 /*   
 Template Name: Metronic - Responsive Website Template build with Twitter Bootstrap 3.1.1
 */
-
+.sidebar-categories li a ,.tag-list-item a {
+	font-size: 12px !important;
+}
 /* General body settings */
 body { 
 	color: #3e4d5c; 

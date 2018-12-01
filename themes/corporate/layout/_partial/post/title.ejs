@@ -1,7 +1,7 @@
 <div style="padding-left: 30px;margin:5px 0;font-size: 15px">
 	<span style='margin-right:10px'>
 	<% if (moment(post.date).format("YYYY") == '2099'){ %>
-        <span style="color: #ff4e00e6"><a class="<%= class_name %>" href="<%- url_for(post.path) %>" style="color: #ff4e00e6"><%= post.title %></a></span>
+        <span style="color: #31393e"><a class="<%= class_name %>" href="<%- url_for(post.path) %>" style="color: #31393e"><%= post.title %></a></span>
     <%  } else { %>
         <%= moment(post.date).format("YYYY/MM/DD") %>
         <a class="<%= class_name %>" href="<%- url_for(post.path) %>"><%= post.title %></a>
