@@ -447,6 +447,7 @@ Header and header elements
 	margin-bottom: 23px;
 	z-index: 999;
 	position: relative;
+	height: 60px;
 }
 
 /* FIX styles BEGIN */
@@ -519,7 +520,7 @@ body.page-header-fixed {
 .header-navigation > ul > li > a {
 	color: #333;
 	display: block;	
-	padding: 29px 12px 30px;
+	padding: 19px 12px 20px;
 }
 .header-navigation ul > li.active > a,
 .header-navigation ul > li > a:hover,
@@ -710,7 +711,7 @@ body.page-header-fixed {
 /* Top Search */
 .header-navigation li.menu-search {
 	position: relative;
-	top: 26px;
+	top: 16px;
 }
 .header-navigation li.menu-search span.sep {
 	top: 0;

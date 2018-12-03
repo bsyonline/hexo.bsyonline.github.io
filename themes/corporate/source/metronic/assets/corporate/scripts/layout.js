@@ -318,7 +318,7 @@ var Layout = function () {
             handleSidebarMenu();
             handleAccordions();
             handleMenu();
-            handleScrollers();
+            //handleScrollers();
             handleSubMenuExt();
             handleMobiToggler();
         },
@@ -351,33 +351,33 @@ var Layout = function () {
             $(".quantity-up").html("<i class='fa fa-angle-up'></i>");
         },
 
-        initFixHeaderWithPreHeader: function () {
-            jQuery(window).scroll(function() {                
-                if (jQuery(window).scrollTop()>37){
-                    jQuery("body").addClass("page-header-fixed");
-                }
-                else {
-                    jQuery("body").removeClass("page-header-fixed");
-                }
-            });
-        },
+        // initFixHeaderWithPreHeader: function () {
+        //     jQuery(window).scroll(function() {                
+        //         if (jQuery(window).scrollTop()>37){
+        //             jQuery("body").addClass("page-header-fixed");
+        //         }
+        //         else {
+        //             jQuery("body").removeClass("page-header-fixed");
+        //         }
+        //     });
+        // },
 
-        initNavScrolling: function () {
-            function NavScrolling () {
-                if (jQuery(window).scrollTop()>60){
-                    jQuery(".header").addClass("reduce-header");
-                }
-                else {
-                    jQuery(".header").removeClass("reduce-header");
-                }
-            }
+        // initNavScrolling: function () {
+            // function NavScrolling () {
+            //     if (jQuery(window).scrollTop()>60){
+            //         jQuery(".header").addClass("reduce-header");
+            //     }
+            //     else {
+            //         jQuery(".header").removeClass("reduce-header");
+            //     }
+            // }
             
-            NavScrolling();
+            // NavScrolling();
             
-            jQuery(window).scroll(function() {
-                NavScrolling ();
-            });
-        },
+            // jQuery(window).scroll(function() {
+            //     NavScrolling ();
+            // });
+        // },
 
         initOWL: function () {
             $(".owl-carousel6-brands").owlCarousel({
@@ -479,19 +479,19 @@ var Layout = function () {
         },
 
         // wrapper function to scroll(focus) to an element
-        scrollTo: function (el, offeset) {
-            var pos = (el && el.size() > 0) ? el.offset().top : 0;
-            if (el) {
-                if ($('body').hasClass('page-header-fixed')) {
-                    pos = pos - $('.header').height(); 
-                }            
-                pos = pos + (offeset ? offeset : -1 * el.height());
-            }
+        // scrollTo: function (el, offeset) {
+        //     var pos = (el && el.size() > 0) ? el.offset().top : 0;
+        //     if (el) {
+        //         if ($('body').hasClass('page-header-fixed')) {
+        //             pos = pos - $('.header').height(); 
+        //         }            
+        //         pos = pos + (offeset ? offeset : -1 * el.height());
+        //     }
 
-            jQuery('html,body').animate({
-                scrollTop: pos
-            }, 'slow');
-        },
+        //     jQuery('html,body').animate({
+        //         scrollTop: pos
+        //     }, 'slow');
+        // },
 
         //public function to add callback a function which will be called on window resize
         addResponsiveHandler: function (func) {
