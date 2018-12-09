@@ -17,7 +17,7 @@ thumbnail:
 
 方便起见，我们将通过 http 发送一个字符串，然后将字符串拆分并输出到文件。我们可以写一个 transform 来完成字符串拆分。
 
-1. transform 首先是一个 spring boot 程序，并引入 spring-cloud-stream 的依赖
+1. 首先创建一个 spring boot 程序并引入 spring-cloud-stream 的依赖
 
    ```
    <dependencies>
@@ -139,7 +139,7 @@ thumbnail:
    > 202 ACCEPTED
    ```
 
-   然后查看 /tmp/split.txt 就可以看到 ```spring cloud dataflow``` 的信息了。
+   然后查看 /tmp/split.txt 就可以看到 spring cloud dataflow 的信息了。
 
 
 
