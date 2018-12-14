@@ -59,7 +59,7 @@ Shadowsocks 一种基于 Socks5 代理方式的加密传输协议，也可以指
 "server": "0.0.0.0",
 "server_port": 8388,
 "password": "your ss password",
-"timeout": 30,
+"timeout": 300,
 "method": "aes-256-cfb"
 }
 ```
@@ -91,10 +91,16 @@ WantedBy=multi-user.target
 # systemctl status ssserver -l
 ● ssserver.service - ssserver
    Loaded: loaded (/etc/systemd/system/ssserver.service; enabled; vendor preset: disabled)
-   Active: active (running) since Thu 2018-12-13 11:55:36 CST; 7h ago
- Main PID: 1444 (ssserver)
+   Active: active (running) since Fri 2018-12-14 16:07:34 CST; 8s ago
+ Main PID: 1338 (ssserver)
    CGroup: /system.slice/ssserver.service
-           └─1444 /usr/bin/python2 /usr/bin/ssserver -c /etc/shadowsocks.json
+           └─1338 /usr/bin/python2 /usr/bin/ssserver -c /etc/shadowsocks.json
+
+Dec 14 16:07:34 izj6cgrp5ibxaav9i9x2t6z systemd[1]: Started ssserver.
+Dec 14 16:07:34 izj6cgrp5ibxaav9i9x2t6z systemd[1]: Starting ssserver...
+Dec 14 16:07:34 izj6cgrp5ibxaav9i9x2t6z ssserver[1338]: INFO: loading config from /etc/shadowsocks.json
+Dec 14 16:07:34 izj6cgrp5ibxaav9i9x2t6z ssserver[1338]: 2018-12-14 16:07:34 INFO     loading libcrypto from libcrypto.so.10
+Dec 14 16:07:34 izj6cgrp5ibxaav9i9x2t6z ssserver[1338]: 2018-12-14 16:07:34 INFO     starting server at 0.0.0.0:8388
 ```
 
 ```
@@ -119,11 +125,20 @@ not running
 # systemctl restart iptables.service
 # systemctl enable iptables.service
 ```
+
 添加配置
 ```
 # iptables -A INPUT -p tcp --dport 8388 -j ACCEPT
 # iptables -A OUTPUT -p tcp --sport 8388 -j ACCEPT
 ```
+
+保存配置
+
+```
+# service iptables save
+iptables: Saving firewall rules to /etc/sysconfig/iptables:[  OK  ]
+```
+
 查看配置
 ```
 # iptables -L -n
@@ -146,13 +161,6 @@ target     prot opt source               destination
 ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp spt:8388
 ```
 
-保存配置
-
-```
-# service iptables save
-iptables: Saving firewall rules to /etc/sysconfig/iptables:[  OK  ]
-```
-
 如果防火墙已经关闭，端口也已经开放还是无法访问，就需要开启阿里云端口限制。
 
 ![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20181213/233904777.png)
@@ -161,12 +169,12 @@ iptables: Saving firewall rules to /etc/sysconfig/iptables:[  OK  ]
 
 <img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181213/233442475.png" style="width: 350px"/>
 
-出入方向的规则都设置好后就可以正常访问了。
+规则设置好后 telnet 一下，访问正常 Shadowsock Server 就配置好了。
 
 ### 客户端配置
 windows 上的配置比较简单，下载 Shadowsocks 客户端，配置服务器信息即可。
 <img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181213/235222900.png" style="width: 350px"/>
-ubuntu 上也有类似的客户端 shadowsock-qt5 。
+ubuntu 上也有类似的客户端 shadowsock-qt5 ，安装也很简单。
 ```
 # sudo add-apt-repository ppa:hzwhuang/ss-qt5
 # sudo apt-get update
