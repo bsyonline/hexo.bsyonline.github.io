@@ -3,7 +3,7 @@ title: Building ShadowSocks on VPS
 tags:
   - ShadowSocks
 category:
-  - uncategory
+  - Wiki
 author: bsyonline
 lede: 没有摘要
 date: 2018-12-13 18:36:06
@@ -155,17 +155,26 @@ iptables: Saving firewall rules to /etc/sysconfig/iptables:[  OK  ]
 
 如果防火墙已经关闭，端口也已经开放还是无法访问，就需要开启阿里云端口限制。
 
-![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20181209/233904777.png)
+![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20181213/233904777.png)
 
-![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20181209/233557059.png)
+![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20181213/233557059.png)
 
-<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181209/233442475.png" style="width: 350px"/>
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181213/233442475.png" style="width: 350px"/>
 
 出入方向的规则都设置好后就可以正常访问了。
 
 ### 客户端配置
 windows 上的配置比较简单，下载 Shadowsocks 客户端，配置服务器信息即可。
-<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181209/235222900.png" style="width: 350px"/>
-ubuntu 上下载 shadowsock-qt5 
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181213/235222900.png" style="width: 350px"/>
+ubuntu 上也有类似的客户端 shadowsock-qt5 。
+```
+# sudo add-apt-repository ppa:hzwhuang/ss-qt5
+# sudo apt-get update
+# sudo apt-get install shadowsocks-qt5
+``` 
 
+配置好客户端还需要配合浏览器插件，firefox 和 chrome 都可以使用 SwitchyOmega 。
+
+![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20181213/20181214135728.png)
+![mark](https://raw.githubusercontent.com/bsyonline/pic/master/20181213/20181214140036.png)
 
