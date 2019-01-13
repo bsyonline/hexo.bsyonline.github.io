@@ -11,216 +11,237 @@ lede: "没有摘要"
 ---
 
 Java 的多线程同步方法有很多，简单整理一下。
-### 1. synchronized
-最常见使用起来最简单的当属 synchronized 。synchronized 可以作用于方法和代码块。
-### 2. ReentrantLock
+
+1. synchronized 关键字
+2. ReentrantLock
+3. Condition
+4. Semaphore
+5. ReadWriteLock
+6. CountDownLatch
+7. CyclicBarrier
+8. LockSupport
+
+#### **synchronized**
+
+最常见使用起来最简单的当属 synchronized 。 synchronized 可以作用于方法和代码块。
+synchronized 方法
+```
+synchronized void method(){}
+```
+synchronized 代码块
+```
+synchronized (this) {
+
+}
+```
+
+synchronized 具有可重入和不可中断的特点：
+1. 可重入是指在如果一个线程获得了锁进入了 synchronized 方法，那么该方法内部调用的其他方法可以直接获得该对象的锁。
+1. 不可中断是指一旦一个线程获得了锁，那么其他线程只能等待，直到获得锁的线程释放锁之后其他线程才能获取锁。
+
+由于 synchronized 使用简单，所以建议要在需要自己控制同步的时候优先选择，但是在使用需要注意以下几点：
+1. synchronized 代码块的作用的对象不能为空。因为 synchronized 的信息是保存在对象的头信息中，所以作用的对象必须进行实例化。
+2. synchronized 虽然简单，但是效率不高，所以在使用是尽可能保证 synchronized 的作用域不能过大。
+3. 要注意避免死锁
+
+#### ReentrantLock
+
 ReentrantLock 基本用法如下：
-```java
+```
 public static ReentrantLock lock = new ReentrantLock();
 lock.lock();
-// dosomething
-lock.unlock();
-```
-ReentrantLock 和 synchronized 类似，但功能上更加丰富。
-1. 可重入
-   ReentrantLock 是重入锁，一个线程可以可以多次获得相同锁，每次或得锁计数器加 1 ，多次获得锁就需要多次释放锁。
-
-    ```java
-    lock.lock();
-    lock.lock();
+try{
     // dosomething
+} catch(Exception e) {
+
+} finally {
     lock.unlock();
-    lock.unlock();
-    ```
-
-    类似于 synchronized 嵌套。
-
-    ```java
-    public synchronized void method1() {
-        method2(); // 调用其他的synchronized方法
-    }
-
-    private synchronized void method2() {
-        // dosomething
-    }
-    ```
-
+}
+```
+ReentrantLock 和 synchronized 类似，但功能上更加丰富。 ReentrantLock 具有以下特性：
+1. 可重入
+这个和 synchronized 是相同的。
 2. 可中断
-   普通的 lock.lock() 是不能响应中断的，lock.lockInterruptibly() 能够响应中断。
-
+普通的 lock.lock() 是不能响应中断的，lock.lockInterruptibly() 能够响应中断。
 3. 可限时
-   超时不能获得锁，就返回 false ，不会永久等待构成死锁。
-
-    ```java
-    if (lock.tryLock(5, TimeUnit.SECONDS)) {
-        // dosomething
-    }
-    ```
-
+超时不能获得锁，就返回 false ，不会永久等待构成死锁。
+```java
+if (lock.tryLock(5, TimeUnit.SECONDS)) {
+    // dosomething
+}
+```
 4. 公平锁
-   公平锁的意思就是，这个锁能保证线程是先来的先得到锁。虽然公平锁不会产生饥饿现象，但是公平锁的性能会比非公平锁差很多。
-    ```java
-    public static ReentrantLock fairLock = new ReentrantLock(true);
-    ```
-### 3. Condition
+公平锁的意思就是，这个锁能保证线程是先来的先得到锁。虽然公平锁不会产生饥饿现象，但是公平锁的性能会比非公平锁差很多。
+```java
+public static ReentrantLock fairLock = new ReentrantLock(true);
+```
+
+
+#### Condition
+
 Codition 的 await() / signal() 和 Object 的 wait() / notify() 类似。
-    ```java
-    ReentrantLock lock = new ReentrantLock();
-    Condition c = lock.newCondition();
-    try {
-        lock.lock();
-        c.signalAll();
-    } finally {
-        lock.unlock();
-    }
-    ```
+```
+ReentrantLock lock = new ReentrantLock();
+Condition c = lock.newCondition();
+try {
+    lock.lock();
+    c.signalAll();
+} finally {
+    lock.unlock();
+}
+```
 condition.await() / signal() 只能在得到锁以后使用。
-### 4. Semaphore
+
+
+
+#### Semaphore
+
 Semaphore 允许多个线程同时进入临界区。可以认为它是一个共享锁，但是共享的额度是有限制的，额度用完了，其他没有拿到额度的线程还是要阻塞在临界区外。当额度为 1 时，就相等于 lock 。
-    ```java
-    final Semaphore semaphore = new Semaphore(5);
-    try {
-        semaphore.acquire();
-        // dosomething 可以有 5 个线程同时到达
-    finally {
-        semaphore.release();
-    }
-    ```
+```
+final Semaphore semaphore = new Semaphore(5);
+try {
+    semaphore.acquire();
+    // dosomething 可以有 5 个线程同时到达
+finally {
+    semaphore.release();
+}
+```
 ### 5. ReadWriteLock
 ReadWriteLock 是区分功能的锁。读和写是两种不同的功能，读-读不互斥，读-写互斥，写-写互斥。优点是并发量提高了，又保证了数据安全。
-    ```java
-    ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
-    Lock readLock = readWriteLock.readLock();
-    Lock writeLock = readWriteLock.writeLock();
-    ```
-### 6. CountDownLatch
+```
+ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+Lock readLock = readWriteLock.readLock();
+Lock writeLock = readWriteLock.writeLock();
+```
+#### CountDownLatch
 CountDownLatch 类位于 java.util.concurrent 包下，利用它可以实现类似倒计时的功能。比如有一个任务 A ，它要等待其他 4 个任务执行完毕之后才能执行，此时就可以利用 CountDownLatch 来实现这种功能了。
-    ```java
-    /**
-     * 查询多个数据集，所有数据集返回之后才向客户端返回查询结果
-     *
-     * @param newMask
-     * @param param
-     * @return
-     * @throws InterruptedException
-     */
-    private Map<String, Future> getFutureMap(Set<String> newMask, Param param) throws InterruptedException {
-        Map<String, Future> futureMap = Maps.newHashMap();
-        ExecutorService executor = Executors.newFixedThreadPool(newMask.size() - 1);
-        long start1 = System.currentTimeMillis();
-        newMask.forEach(m -> futureMap.put(m, null));
-        for (String m : newMask) {
-            if (m.equals("basic")) continue;
-            try {
-                Callable callable = (Callable) BeanUtils.newInstance(m);
-                BeanUtils.setProperty(callable, "param", param);
-                futureMap.put(m, executor.submit(callable));
-            } catch (Exception e) {
-                logger.error("组装查询类 {} - {} 异常", m, BeanUtils.classMap.get(m), e);
-            }
-        }
-        param.getCountDownLatch().await(3, TimeUnit.SECONDS);
-        executor.shutdown();
+```
+/**
+ * 查询多个数据集，所有数据集返回之后才向客户端返回查询结果
+ *
+ * @param newMask
+ * @param param
+ * @return
+ * @throws InterruptedException
+ */
+private Map<String, Future> getFutureMap(Set<String> newMask, Param param) throws InterruptedException {
+    Map<String, Future> futureMap = Maps.newHashMap();
+    ExecutorService executor = Executors.newFixedThreadPool(newMask.size() - 1);
+    long start1 = System.currentTimeMillis();
+    newMask.forEach(m -> futureMap.put(m, null));
+    for (String m : newMask) {
+        if (m.equals("basic")) continue;
         try {
-            executor.awaitTermination(3, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            logger.error("等待线程池结束时被中断", e);
-        }
-        //executor.awaitTermination(1, TimeUnit.MINUTES);
-        long end1 = System.currentTimeMillis();
-        logger.info("所有查询完成, 耗时 {} ms", end1 - start1);
-        return futureMap;
-    }
-    class XXXCallable {
-        @Override
-        public List call() throws Exception {
-            long start = System.currentTimeMillis();
-            List list = doQuery(); // 查询
-            long end = System.currentTimeMillis();
-            logger.info("xxx查询耗时 {} ms", end - start);
-            countDownLatch.countDown();
-            return list;
+            Callable callable = (Callable) BeanUtils.newInstance(m);
+            BeanUtils.setProperty(callable, "param", param);
+            futureMap.put(m, executor.submit(callable));
+        } catch (Exception e) {
+            logger.error("组装查询类 {} - {} 异常", m, BeanUtils.classMap.get(m), e);
         }
     }
-    ```
-### 7. CyclicBarrier
+    param.getCountDownLatch().await(3, TimeUnit.SECONDS);
+    executor.shutdown();
+    try {
+        executor.awaitTermination(3, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+        logger.error("等待线程池结束时被中断", e);
+    }
+    //executor.awaitTermination(1, TimeUnit.MINUTES);
+    long end1 = System.currentTimeMillis();
+    logger.info("所有查询完成, 耗时 {} ms", end1 - start1);
+    return futureMap;
+}
+class XXXCallable {
+    @Override
+    public List call() throws Exception {
+        long start = System.currentTimeMillis();
+        List list = doQuery(); // 查询
+        long end = System.currentTimeMillis();
+        logger.info("xxx查询耗时 {} ms", end - start);
+        countDownLatch.countDown();
+        return list;
+    }
+}
+```
+
+#### CyclicBarrier
 CyclicBarrier 可以实现让一组线程等待至某个状态之后再全部同时执行，这和 CountDownLatch 是一样的，不同的是当所有等待线程都被释放以后，CyclicBarrier 可以被重用。
-    ```java
-    public class Test {
-        public static void main(String[] args) {
-            int N = 4;
-            CyclicBarrier barrier  = new CyclicBarrier(N);
-            for(int i=0;i<N;i++)
-                new Writer(barrier).start();
+```
+public class Test {
+    public static void main(String[] args) {
+        int N = 4;
+        CyclicBarrier barrier  = new CyclicBarrier(N);
+        for(int i=0;i<N;i++)
+            new Writer(barrier).start();
+    }
+    static class Writer extends Thread{
+        private CyclicBarrier cyclicBarrier;
+        public Writer(CyclicBarrier cyclicBarrier) {
+            this.cyclicBarrier = cyclicBarrier;
         }
-        static class Writer extends Thread{
-            private CyclicBarrier cyclicBarrier;
-            public Writer(CyclicBarrier cyclicBarrier) {
-                this.cyclicBarrier = cyclicBarrier;
+        @Override
+        public void run() {
+            System.out.println("线程"+Thread.currentThread().getName()+"正在写入数据...");
+            try {
+                Thread.sleep(5000);      //以睡眠来模拟写入数据操作
+                System.out.println("线程"+Thread.currentThread().getName()+"写入数据完毕，等待其他线程写入完毕");
+                cyclicBarrier.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }catch(BrokenBarrierException e){
+                e.printStackTrace();
             }
-            @Override
-            public void run() {
-                System.out.println("线程"+Thread.currentThread().getName()+"正在写入数据...");
-                try {
-                    Thread.sleep(5000);      //以睡眠来模拟写入数据操作
-                    System.out.println("线程"+Thread.currentThread().getName()+"写入数据完毕，等待其他线程写入完毕");
-                    cyclicBarrier.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }catch(BrokenBarrierException e){
-                    e.printStackTrace();
-                }
-                System.out.println("所有线程写入完毕，继续处理其他任务...");
-            }
+            System.out.println("所有线程写入完毕，继续处理其他任务...");
         }
     }
-    ```
+}
+```
 CyclicBarrier 有一些特殊的重载方法，不过一般不常用。
-    ```java
-    public CyclicBarrier(int parties, Runnable barrierAction) {
-    }
-    ```
+```
+public CyclicBarrier(int parties, Runnable barrierAction) {
+}
+```
 和上边的例子中的构造器相比多了一个参数 Runnable ，当 parties 个线程都完成了， barrierAction 的内容会被执行。
-    ```java
-    public int await(long timeout, TimeUnit unit) throws InterruptedException, BrokenBarrierException, TimeoutException { };
-    ```
+```
+public int await(long timeout, TimeUnit unit) throws InterruptedException, BrokenBarrierException, TimeoutException { };
+```
 await 可以指定超时时间，如果达到超时还有线程没有执行完，则抛出异常，其他完成的线程继续向下执行。
-### 8. LockSupport
+#### LockSupport
 LockSupport 和 Semaphore 有点相似，内部有一个许可，park 的时候拿掉这个许可，unpark 的时候申请这个许可。所以如果 unpark 在 park 之前，是不会发生线程冻结的。
 
-    ```java
-    import java.util.concurrent.locks.LockSupport;
+```
+import java.util.concurrent.locks.LockSupport;
 
-    public class Test {
-        static Object u = new Object();
-        static TestSuspendThread t1 = new TestSuspendThread("t1");
-        static TestSuspendThread t2 = new TestSuspendThread("t2");
+public class Test {
+    static Object u = new Object();
+    static TestSuspendThread t1 = new TestSuspendThread("t1");
+    static TestSuspendThread t2 = new TestSuspendThread("t2");
 
-        public static class TestSuspendThread extends Thread {
-            public TestSuspendThread(String name) {
-                setName(name);
-            }
-
-            @Override
-            public void run() {
-                synchronized (u) {
-                    System.out.println("in " + getName());
-                    //Thread.currentThread().suspend();
-                    LockSupport.park();
-                }
-            }
+    public static class TestSuspendThread extends Thread {
+        public TestSuspendThread(String name) {
+            setName(name);
         }
 
-        public static void main(String[] args) throws InterruptedException {
-            t1.start();
-            Thread.sleep(100);
-            t2.start();
-            //t1.resume();
-            //t2.resume();
-            LockSupport.unpark(t1);
-            LockSupport.unpark(t2);
-            t1.join();
-            t2.join();
+        @Override
+        public void run() {
+            synchronized (u) {
+                System.out.println("in " + getName());
+                //Thread.currentThread().suspend();
+                LockSupport.park();
+            }
         }
     }
-    ```
+
+    public static void main(String[] args) throws InterruptedException {
+        t1.start();
+        Thread.sleep(100);
+        t2.start();
+        //t1.resume();
+        //t2.resume();
+        LockSupport.unpark(t1);
+        LockSupport.unpark(t2);
+        t1.join();
+        t2.join();
+    }
+}
+```
