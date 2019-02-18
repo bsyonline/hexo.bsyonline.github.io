@@ -32,8 +32,6 @@ volatile 变量比使用 synchronized 代码要简单一些，在这种只有一
 
 **volatile 和 synchronized 简单比较**
 
-|volatile|synchronized
--|-|-
-作用位置|变量|方法，代码块
-同步对象|主内存和线程内存之间某个变量的值|主内存和线程内存之间所有变量的值
-消耗资源|少|多
+<table style="font-size:12px;color:#333333;border-width: 1px;border-color: #666666;border-collapse: collapse;width:100%"><tr><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;"></th><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;">volatile</th><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;">synchronized</th></tr><tr><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">作用位置</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">变量</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">方法，代码块</td></tr><tr><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">同步对象</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">主内存和线程内存之间某个变量的值</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">主内存和线程内存之间所有变量的值</td></tr><tr><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">消耗资源</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">少</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">多</td></tr></table>
+
+
