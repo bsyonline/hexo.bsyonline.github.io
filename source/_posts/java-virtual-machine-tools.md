@@ -410,7 +410,7 @@ by appending "#<number>" to the file name, i.e. "foo.hprof#3".
 
 All boolean options default to "true"
 ```
-jmap 提供了一个服务可以通过浏览器查看 dump 文件信息
+jmap 提供了一个 http 服务，可以通过浏览器查看 dump 文件信息
 ```
 $ jhat 14801.dump 
 Reading from 14801.dump...
@@ -424,7 +424,7 @@ Started HTTP server on port 7000
 Server is ready.
 ```
 
-不过并不常用。
+访问 http://localhost:7000 可以查看 dump 信息，不过并不常用。
 
 ### HSDIS
 
