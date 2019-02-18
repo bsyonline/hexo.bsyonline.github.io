@@ -1,4 +1,7 @@
 <% if (post.prev || post.next){ %>
+<div style='border-top:solid 1px #ECEBEB;height:2px;margin-top:40px'>
+<br>
+</div>
 <nav id="article-nav">
   <% if (post.prev){ %>
     <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap" style="float: left">
