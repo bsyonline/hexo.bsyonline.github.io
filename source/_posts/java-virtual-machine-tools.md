@@ -302,14 +302,135 @@ Compiled  Size  Type Method
 
 
 ### jstack
+jstack (Stack Trace for Java) 用于生成 JVM 当前时刻的线程快照（threaddump 或 javacore）。线程快照是当前 JVM 每个线程正在执行的方法的堆栈集合，生成线程快照的目的是定位线程出现长时间停顿的原因，比如死锁。用法如下：
+```
+$ jstack -help
+Usage:
+    jstack [-l] <pid>
+        (to connect to running process)
+    jstack -F [-m] [-l] <pid>
+        (to connect to a hung process)
+    jstack [-m] [-l] <executable> <core>
+        (to connect to a core file)
+    jstack [-m] [-l] [server_id@]<remote server IP or hostname>
+        (to connect to a remote debug server)
+
+Options:
+    -F  强制，线程无响应时使用
+    -m  输出 java 和 native 堆栈信息
+    -l  显示锁信息
+    -h or -help to print this help message
+```
+
+
+
 
 ### jinfo
+jinfo (Configuration Info for Java) 的作用是查看调整 JVM 参数。用法如下：
+```
+$ jinfo -help
+Usage:
+    jinfo [option] <pid>
+
+where <option> is one of:
+    -flag <name>         打印指定名称的参数
+    -flag [+|-]<name>    打开或关闭参数
+    -flag <name>=<value> 设置参数
+    -flags               打印所有参数
+    -sysprops            打印 Java system properties
+    <no option>          打印 flags 和 sysprops
+```
+如果我们想查看某进程的 GC 日志信息，可以使用命令
+```
+$ jinfo -flag GCLogFileSize 14801
+-XX:GCLogFileSize=8192
+```
+
 
 ### jmap
 
+jmap (Memory Map for Java) 用于生成堆的存储快照（dump 文件），查询 finalize 执行队列， Java 堆和永久代信息。用法如下：
+```
+$ jmap -help
+Usage:
+    jmap [option] <pid>
+
+where <option> is one of:
+    <none>               to print same info as Solaris pmap
+    -heap                显示堆的详细信息
+    -histo[:live]        显示堆的统计信息
+    -clstats             信息 classloader 的统计信息
+    -finalizerinfo       显示等待执行 finalize 方法的对象
+    -dump:<dump-options> 生成堆的存储快照
+                         dump-options:
+                           live         dump only live objects; if not specified,
+                                        all objects in the heap are dumped.
+                           format=b     binary format
+                           file=<file>  dump heap to <file>
+                         Example: jmap -dump:live,format=b,file=heap.bin <pid>
+    -F                   强制生成 dump
+    -h | -help           to print this help message
+    -J<flag>             to pass <flag> directly to the runtime system
+```
+
+如果我们想生成进程的 dump 文件，可以使用
+```
+$ jmap -dump:file=14801.dump 14801 
+Dumping heap to /home/root/14801.dump ...
+Heap dump file created
+```
+
+### jhat
+jhat （JVM Heap Analysis Tool） 是用来分析 dump 文件的，通常和 jmap 搭配使用。
+```
+$ jhat -help
+Usage:  jhat [-stack <bool>] [-refs <bool>] [-port <port>] [-baseline <file>] [-debug <int>] [-version] [-h|-help] <file>
+
+  -J<flag>          Pass <flag> directly to the runtime system. For
+        example, -J-mx512m to use a maximum heap size of 512MB
+  -stack false:     Turn off tracking object allocation call stack.
+  -refs false:      Turn off tracking of references to objects
+  -port <port>:     Set the port for the HTTP server.  Defaults to 7000
+  -exclude <file>:  Specify a file that lists data members that should
+        be excluded from the reachableFrom query.
+  -baseline <file>: Specify a baseline object dump.  Objects in
+        both heap dumps with the same ID and same class will
+        be marked as not being "new".
+  -debug <int>:     Set debug level.
+          0:  No debug output
+          1:  Debug hprof file parsing
+          2:  Debug hprof file parsing, no server
+  -version          Report version number
+  -h|-help          Print this help and exit
+  <file>            The file to read
+
+For a dump file that contains multiple heap dumps,
+you may specify which dump in the file
+by appending "#<number>" to the file name, i.e. "foo.hprof#3".
+
+All boolean options default to "true"
+```
+jmap 提供了一个服务可以通过浏览器查看 dump 文件信息
+```
+$ jhat 14801.dump 
+Reading from 14801.dump...
+Dump file created Mon Feb 18 17:10:37 CST 2019
+Snapshot read, resolving...
+Resolving 2366175 objects...
+Chasing references, expect 473 dots.............
+Eliminating duplicate references................
+Snapshot resolved.
+Started HTTP server on port 7000
+Server is ready.
+```
+
+不过并不常用。
+
 ### HSDIS
 
+
 ### JConsole
+JConsole (Java Monitoring and Management Console) 是一种基于 JMX 的可视化工具，主要针对 JMX MBean 进行管理。使用 jconsole 可以启动。
 
 ### VirtualVM
 
