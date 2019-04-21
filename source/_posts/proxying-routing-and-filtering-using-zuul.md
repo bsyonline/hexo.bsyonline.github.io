@@ -35,8 +35,10 @@ public class Service1Controller {
     }
 }
 ```
-访问 [http://localhost:9900/api/hello?name=tom](http://localhost:9900/api/hello?name=tom) 可以看到返回结果。这是直接将服务入口暴露给客户，只需要在 API 网关进行简单的配置就可以实现代理功能。
-1. 创建一个工程，加入 maven 配置
+访问 [http://localhost:9900/api/hello?name=tom](http://localhost:9900/api/hello?name=tom) 可以看到返回结果。通常不会直接将服务入口暴露出来，而是在服务前加一层网关来进行代理，比如 nginx，zuul 也可以实现类似功能。
+
+1.创建一个工程，加入 maven 配置
+
 ```
 <dependency>
     <groupId>org.springframework.cloud</groupId>
@@ -47,7 +49,9 @@ public class Service1Controller {
     <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 </dependency>
 ```
-2. 在启动类添加注解```@EnableZuulProxy```
+
+2.在启动类添加注解```@EnableZuulProxy```
+
 ```
 @EnableZuulProxy
 @EnableDiscoveryClient
@@ -58,7 +62,9 @@ public class ApiGatewayApplication {
     }
 }
 ```
-3. 添加配置文件
+
+3.添加配置文件
+
 ```
 spring:
   application:
@@ -76,8 +82,33 @@ zuul:
     hello: # 访问的 uri
       url: http://localhost:9900/api/hello
   prefix: /api
-```  
+```
+
 完成以上配置，访问 [http://localhost:9000/api/hello?name=bob](http://localhost:9000/api/hello?name=bob) 会跳转到 service1 服务。
+
+zuul 的路由规则可以指定 url 也可以通过 path 来匹配，比如:
+
+```
+zuul:
+  routes:
+    service1:
+      path: /hello
+      serviceId: service1
+```
+
+这个规则会匹配 service1 服务的 "/hello" 接口。
+
+还可以支持通配符，比如： 
+
+```
+zuul:
+  routes:
+    service4:
+      path: /hello/*/world
+      serviceId: service1
+```
+
+如果 service1 服务有2个接口分别是 "/hello/{id}/world" 和 "/{id}/world" ，这个规则会将请求路由到 "/{id}/world" 这个接口。"\*" 号表示匹配一级，如果有多级可以用 "**" 。
 
 #### 实现负载均衡
 在上一个例子中， zuul 已经实现了负载均衡的功能，只不过我们只有一个实例，为了显示直观，我们重新创建一个 service2 并加入一些返回信息。
@@ -113,12 +144,14 @@ zuul:
 * error 发生错误时执行。
 
 除了以上 4 种，zuul 还支持自定义过滤器。
-**pre filter**
+##### Pre Filter
+
 我们先来看看 pre filter 。我们编写一个简单的 pre filter 来打印访问日志信息。
+
 ```
 @Component
+@Slf4j
 public class PreFilter extends ZuulFilter {
-    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     public String filterType() {
@@ -139,7 +172,7 @@ public class PreFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        logger.info(String.format("send %s request to %s", request.getMethod(), request.getRequestURL().toString()));
+        log.info(String.format("send %s request to %s", request.getMethod(), request.getRequestURL().toString()));
         return null;
     }
 }
@@ -153,12 +186,13 @@ zuul:
       disable: true
 ```
 这样我们刚才加入的 PreFilter 就不起作用了，可以重启服务试试看。同理，对于其他的过滤器，我们也可以使用 ```zuul.{filterName}.{filterType}.disable``` 的方式来进行配置。
-**route filter**
+##### Route Filter
 route filter 的作用就是把请求路由到其他服务。我们在本文的开始通过配置，实现了路由功能，现在我们通过自己写一个过滤器来实现路由功能。
+
 ```
 @Component
+@Slf4j
 public class RouteFilter extends ZuulFilter {
-    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     public String filterType() {
@@ -181,7 +215,7 @@ public class RouteFilter extends ZuulFilter {
         HttpServletResponse response = ctx.getResponse();
         String url = "http://cn.bing.com";
         try {
-            logger.info(String.format("redirect to %s", url));
+            log.info(String.format("redirect to %s", url));
             response.sendRedirect(url);
         } catch (IOException e) {
             e.printStackTrace();
@@ -190,12 +224,13 @@ public class RouteFilter extends ZuulFilter {
     }
 }
 ```
-**post filter**
+##### Post Filter
 Post Filter 用来处理服务对响应后要进行的操作，比如添加 http header 。
+
 ```
 @Component
+@Slf4j
 public class PostFilter extends ZuulFilter {
-    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     public String filterType() {
@@ -214,7 +249,7 @@ public class PostFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
-        logger.info("post");
+        log.info("post");
         RequestContext ctx = RequestContext.getCurrentContext();
         List<Pair<String, String>> headers = ctx.getZuulResponseHeaders();
         headers.add(1, new Pair<String, String>("X-RateLimit-Remaining", "30"));
@@ -222,12 +257,13 @@ public class PostFilter extends ZuulFilter {
     }
 }
 ```
-**error filter**
-在过滤器中出现的任何错误都会进入 error filter 处理，所以，在 error filter 中统一处理异常比在每一处代码都使用 try-catch 要简单很多。
+##### Error Filter
+在过滤器中出现的任何错误都会进入 error filter 处理，所以在 error filter 中统一处理异常比在每一处代码都使用 try-catch 要简单很多。
+
 ```
 @Component
+@Slf4j
 public class ErrorFilter extends ZuulFilter {
-    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     public String filterType() {
@@ -248,7 +284,7 @@ public class ErrorFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
         Throwable throwable = ctx.getThrowable();
-        logger.info(String.format("take exception %s", throwable.getCause().getMessage()));
+        log.info(String.format("take exception %s", throwable.getCause().getMessage()));
         return null;
     }
 }
@@ -264,7 +300,7 @@ public class ErrorHandlerController implements ErrorController {
 
     @RequestMapping("/error")
     public String error() {
-        return "server sleeping...";
+        return "{\"code\": 500, \"msg\":\"internal server error\"}";
     }
 }
 ```

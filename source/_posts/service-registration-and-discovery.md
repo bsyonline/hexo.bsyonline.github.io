@@ -31,15 +31,19 @@ thumbnail:
 
 综上看来，实现一个服务注册和发现的程序还是比较复杂的。不过，有很多优秀的框架已经实现了这些功能，比如 Spring Cloud Eureka。
 #### **Spring Cloud Eureka**
-Eureka 是 netflix 开源的产品，通过和 Spring Cloud 集成，通过 Java 注解声明式的注册和调用服务变得非常简单。
-1. 加入 maven 配置
+Eureka 是 netflix 开源的产品，通过和 Spring Cloud 集成，通过 Java 注解声明式的注册和调用服务变得非常简单，以下以 Greenwich.SR1 为例说明。
+
+1.加入 maven 配置
+
 ```
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 </dependency>
 ```
-2. 在 springboot 启动类上添加注解 ```@EnableEurekaServer```
+
+2.在 springboot 启动类上添加注解 ```@EnableEurekaServer```
+
 ```
 @EnableEurekaServer
 @SpringBootApplication
@@ -49,36 +53,38 @@ public class RegisterCenterApplication {
 	}
 }
 ```
-3. 配置文件
+3.修改配置文件
+
 ```
 spring:
-  application:
-    name: register-center
+  application: eureka-server
 server:
   port: 8761
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-server
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    wait-time-in-ms-when-sync-empty: 0
 ```
 简单三步即可实现一个注册发现服务。启动服务访问 [http://localhost:8761/](http://localhost:8761/) 即可看到界面。
 此时还没有任何服务注册到 Eureka ，我们接下来就来看看如何将服务注册到 Eureka 。
 
-我们再创建一个 springboot 服务 service1 。
-1. 添加 maven 配置
+我们再创建另一个应用 eureka-client 注册到 eureka server 上。
+1.添加 maven 配置
+
 ```
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 </dependency>
 ```
-2. 在启动类上添加注解 ```@EnableDiscoveryClient```
+2.在启动类上添加注解 ```@EnableDiscoveryClient```，从 Edgware.RELEASE 版本之后这个注解可以省略。
+
 ```
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @SpringBootApplication
 public class Service1Application {
     public static void main(String[] args) {
@@ -86,7 +92,8 @@ public class Service1Application {
     }
 }
 ```
-3. 添加配置文件
+3.添加配置文件。
+
 ```
 spring:
   application:
@@ -95,9 +102,9 @@ server:
   port: 9900
 eureka:
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    prefer-ip-address: true
 ```
-完成以上三步，启动服务，即可在 Eureka 中看到注册的服务 service1 。
+完成以上三步，启动服务，即可在 Eureka 中看到注册的服务 eureka-client 。

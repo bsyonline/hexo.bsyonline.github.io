@@ -20,9 +20,8 @@ thumbnail:
 ##### [About RPC](../../../../2018/05/18/about-rpc/)
 ##### [Getting Started with gRPC](../../../../2018/06/09/getting-started-with-grpc/)
 ##### [Spring Cloud with gRPC](../../../../2018/06/09/spring-cloud-with-grpc/)
-##### [Spring Cloud with gRPC](../../../../2018/06/26/configuration-management-with-spring-cloud-config/)
-##### [Spring Cloud with gRPC](../../../../2018/06/27/dynamic-configuration-management-with-spring-cloud-bus/)
-
+##### [Configuration Management with Spring Cloud Config](../../../../2018/06/26/configuration-management-with-spring-cloud-config/)
+##### [Dynamic Configuration Management with Spring Cloud Bus](../../../../2018/06/27/dynamic-configuration-management-with-spring-cloud-bus/)
 
 []()
 []()
