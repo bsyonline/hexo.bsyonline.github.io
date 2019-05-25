@@ -18,7 +18,10 @@ thumbnail:
 
 标记清除算法是最基本的垃圾收集算法。算法分为标记和清除两个阶段。首先，标记出所有需要回收的对象，在标记完后统一回收所有被标记的对象。
 
-标记清楚算法缺点：1. 效率不高；2. 清除后会产生大量不连续的内存碎片，碎片太多，会导致在创建大对象时没有足够的连续内存，会再次出发垃圾回收。
+标记清楚算法缺点：
+
+1. 效率不高；
+2. 清除后会产生大量不连续的内存碎片，碎片太多，会导致在创建大对象时没有足够的连续内存，会再次触发垃圾回收。
 
 <img src="https://raw.githubusercontent.com/bsyonline/pic/master/20180827/223040708.png" style="width:600px;">
 
@@ -29,7 +32,7 @@ thumbnail:
 
 <img src="https://raw.githubusercontent.com/bsyonline/pic/master/20180827/223717986.png" style="width:600px;">
 
-复制算法在新生代的垃圾回收中被大量采用，新生代被分为 Eden 和 Survivor 。当进行垃圾回收时， Eden 和其中一个 Survivor 的对象会被复制到另一个 Survivor 中。如果 Survivor 空间不够，对象会进行 Old 区，这被称为分配担保（Handle Promotion）。
+复制算法在新生代的垃圾回收中被大量采用，新生代被分为 Eden 和 Survivor 。当进行垃圾回收时， Eden 和其中一个 Survivor 的对象会被复制到另一个 Survivor 中。如果 Survivor 空间不够，对象会进入 Old 区，这被称为分配担保（Handle Promotion）。
 
 #### 标记-整理算法
 

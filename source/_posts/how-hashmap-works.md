@@ -76,7 +76,7 @@ if (hiTail != null) {
 }
 ```
 先遍历链表算出 hiTail 和 loTail ，然后根据 hiTail 和 loTail 得到元素在新数组中的位置。说简单点，由于扩容是向左移一位，那么不用每次都重新计算 hash(key) ，只要看左边新扩展的一位是 0 还是 1 , 0 就留在原位置，1 就将原位置索引加上原容量得到新位置的索引。计算结果参考下图：
-<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181014/hashmap_04.png" style="width: 700px">
+<img src="https://raw.githubusercontent.com/bsyonline/pic/master/20181014/hashmap_04.png" style="width: 850px">
 最后 rehashing 有没有问题呢？ 在 jdk 1.8 之前，在多线程环境下，rehashing 会出现条件竞争，导致程序死循环。简单的描述出现死循环的原因是 Map 在扩容时，多个线程会在移动元素的过程出现环形链表，这样使用 ```get()``` 时就会出现死循环，最终导致 cpu 100% ，细节可以看这篇 [https://juejin.im/post/5a66a08d5188253dc3321da0](https://juejin.im/post/5a66a08d5188253dc3321da0)。 不过在 jdk 1.8 以后代码重写，1.8 之前 的 ```resize()``` 方法使用 ```transfer()``` 来移动元素，1.8 以后 ```resize()``` 使用了两组 table 来移动元素，就是上边的那段代码，所以在 1.8 以后这个死循环的问题已经不会出现了，但是还是有可能会出现元素丢失，所以在多线程环境中还是要对 HashMap 进行线程安全处理。
 #### concurrentHashMap 和 Hashtable 的区别
 HashMap 是线程不安全的，所以为了保证线程安全，我们有多种替代方案： Hashtable 、 Collections.sychroniziedMap() 和 concurrentHashMap 等。我们可以简单的将 Hashtable 理解为 HashMap 的线程安全版本，但是 Hashtable （包括 Collections.sychroniziedMap() ）的性能却不尽如人意，实际使用更多的是 concurrentHashMap 。Hashtable 和 concurrentHashMap 的性能差异的关键是写锁的数量。Hashtable 简单粗暴地使用了整个 Map 范围的锁，插入、删除及检索，甚至遍历等操作都要保持锁，所以极大的限制了并发。concurrentHashMap 则是将锁分散到每个 bucket 。bucket 的锁的数量是 32 ，也就意味着可以有 32 个线程同时操作 Map ，其性能自然比 Hashtable 要好很多。

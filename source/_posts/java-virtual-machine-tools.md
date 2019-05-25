@@ -285,11 +285,11 @@ $ jstat -gcutil 28511
   0.00  99.92  94.69  19.03  98.12  97.17     21    0.279     3    0.451    0.731
 ```
 
-13. printcompilation 选项
-    * Compiled: 最近编译的方法中 JIT 编译任务数量
-    * Size: 最近编译方法字节码的字节数
-    * Type: 最近编译的方法的编译类型
-    * Method: 标识最近编译的方法的类名和方法名，类名使用 ``/`` 代替 ``.`` ，类名和方法名的格式和 HotSpot -XX:+PrintCompilation 选项一致
+* printcompilation 选项
+  * Compiled: 最近编译的方法中 JIT 编译任务数量
+  * Size: 最近编译方法字节码的字节数
+  * Type: 最近编译的方法的编译类型
+  * Method: 标识最近编译的方法的类名和方法名，类名使用 ``/`` 代替 ``.`` ，类名和方法名的格式和 HotSpot -XX:+PrintCompilation 选项一致
 
 ```
 $ jstat -printcompilation 28511 
