@@ -291,4 +291,4 @@ MongoCursor<Document> cursor = col.find(gt("_id", new ObjectId(head)))
                 .batchSize(batchSize).limit(limit).iterator();
 ```
 
-效率高，但是必须回传当前页的最后一条记录的 id，同理上一页，需要回传当前页的第一条记录id，find 条件需要改成 lt 。还有一个缺点是不能跳页。
+效率高，但是必须回传当前页的最后一条记录的 id，同理上一页，需要回传当前页的第一条记录id，find 条件需要改成 lt() 。还有一个缺点是不能跳页。
