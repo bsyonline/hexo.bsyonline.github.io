@@ -1,5 +1,5 @@
 ---
-title: about rpc
+title: Understanding Remote Procedure Call
 tags:
   - RPC
 category:
@@ -14,16 +14,16 @@ thumbnail:
 
 本地过程调用 RPC 就是要像调用本地的函数一样去调远程函数。在研究 RPC 前，我们先看看本地调用是怎么调的。假设我们要调用函数 Multiply 来计算 lvalue * rvalue 的结果:
 ```
-int Multiply(int l, int r) {
-   int y = l * r;
-   return y;
-}
- 
-int lvalue = 10;
-int rvalue = 20;
-int l_times_r = Multiply(lvalue, rvalue);
+1. int Multiply(int l, int r) {
+2.   int y = l * r;
+3.   return y;
+4.}
+5. 
+6. int lvalue = 10;
+7. int rvalue = 20;
+8. int l_times_r = Multiply(lvalue, rvalue);
 ```
-那么在第8行时，我们实际上执行了以下操作：将 lvalue 和 rvalue 的值压栈进入Multiply函数，取出栈中的值10 和 20，将其赋予 l 和 r执行第2行代码，计算 l * r ，并将结果存在 y将 y 的值压栈，然后从Multiply返回第8行，从栈中取出返回值 200 ，并赋值给 l_times_r以上5步就是执行本地调用的过程。
+那么在第 8 行时，我们实际上执行了以下操作：将 lvalue 和 rvalue 的值压栈进入 Multiply 函数，取出栈中的值10 和 20，将其赋予 l 和 r 执行第 2 行代码，计算 l * r ，并将结果存在 y 将 y 的值压栈，然后从 Multiply 返回第 8 行，从栈中取出返回值 200 ，并赋值给 l_times_r 以上 5 步就是执行本地调用的过程。
 
 在远程调用时，我们需要执行的函数体是在远程的机器上的，也就是说，Multiply 是在另一个进程中执行的。这就带来了几个新问题：
 * Call ID映射
