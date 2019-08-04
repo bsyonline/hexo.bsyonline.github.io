@@ -1,5 +1,5 @@
 ---
-title: one question one answer
+title: One Question One Answer for DB Index
 tags:
   - untag
 category:
