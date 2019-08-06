@@ -75,7 +75,9 @@ saga 执行过程如下：
 <table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>timestamp</td></tr><tr><td>1</td><td>0</td><td>1514736000</td></tr></table>
 2.AP 按顺序调用下单-减库存-支付操作，每调用一个操作之前向事务调用表插一条记录。
 
-<table class="table table-bordered" style="width: 100px"><tr><td>tx_id</td><td>action_id</td><td>method</td><td>param_type</td><td>param_value</td></tr><tr><td>1</td><td>1</td><td>/orders</td><td>kv</td><td>orderid=12345</td></tr><tr><td>1</td><td>2</td><td>/stocks</td><td>kv</td><td>stock=-1</td></tr><tr><td>1</td><td>3</td><td>/payment</td><td>kv</td><td>pay=1000</td></tr></table>
+<table class="table table-bordered" style="width: 100px"><tr><td>tx_id</td><td>action_id</td><td>recover_method</td><td>param_type</td><td>param_value</td></tr><tr><td>1</td><td>1</td><td>/recover_order</td><td>kv</td><td>orderid=12345</td></tr><tr><td>1</td><td>2</td><td>/recover_stock</td><td>kv</td><td>stock=1</td></tr><tr><td>1</td><td>3</td><td>/recover_payment</td><td>kv</td><td>pay=1000</td></tr></table>
+
+这些信息如何获取到呢，又是怎么写到表里的呢？ 假如我们有个方法 ```reduceStock()``` ，我们在调用方法的时候可以利用 AOP 或者动态代理，就可以获取到方法的参数类型和参数值。recoverMethod 的信息可以通过注解写在被调用的方法上，这样通过反射就可以获取到 recoverMethod 的信息了。得到这些信息之后，按位置插到事务调用表中就可以了。
 
 3.如果下单-减库存-支付都执行成功，TM 将事务状态表中的记录更新成成功，事务结束。
 
@@ -88,9 +90,9 @@ saga 执行过程如下：
 补偿是异步的，所以不用等补偿执行完成再通知客户端。
 5.TM 定时扫描事务状态表，如果有失败状态的记录，就按照事务调用表中对应的除最后一步调用记录之外的其他记录调补偿接口进行补偿。
 
-<table class="table table-bordered" style="width: 100px"><tr><td>tx_id</td><td>action_id</td><td>method</td><td>param_type</td><td>param_value</td></tr><tr><td>1</td><td>1</td><td>/orders</td><td>kv</td><td>orderid=12345</td></tr><tr><td>1</td><td>2</td><td>/stocks</td><td>kv</td><td>stock=-1</td></tr><tr><td>1</td><td>3</td><td>/payment</td><td>kv</td><td>pay=1000</td></tr></table>
+<table class="table table-bordered" style="width: 100px"><tr><td>tx_id</td><td>action_id</td><td>recover_method</td><td>param_type</td><td>param_value</td></tr><tr><td>1</td><td>1</td><td>/recover_order</td><td>kv</td><td>orderid=12345</td></tr><tr><td>1</td><td>2</td><td>/recover_stock</td><td>kv</td><td>stock=1</td></tr><tr><td>1</td><td>3</td><td>/recover_payment</td><td>kv</td><td>pay=1000</td></tr></table>
 
-如果表中有 3 条记录，说明前两条是执行成功的，第 3 条执行失败了。那么只需要执行前两步的补偿，第 3 步是不需要补偿的。那么接下来就按照事务调用表中记录的补偿接口的信息调用 ```/orders?orderid=12345&state=2``` 和 ```/stocks?reduce_stock=1``` 进行补偿就可以了。
+如果表中有 3 条记录，说明前两条是执行成功的，第 3 条执行失败了。那么只需要执行前两步的补偿，第 3 步是不需要补偿的。那么接下来就按照事务调用表中记录的补偿接口的信息调用 ```/recover_order?orderid=12345&state=2``` 和 ```/recover_stock?stock=1``` 进行补偿就可以了。
 
 6.补偿完成后将事务状态表的状态更新成补偿完成。
 
@@ -99,8 +101,26 @@ saga 执行过程如下：
 
 **异步消息**
 
+Saga 是一种同步串行的方式，接下来我们介绍异步消息的分布式事务实现。说到异步消息，自然少不了消息中间件。通过 MQ 进行消息传递，就需要有一套机制来保证消息可靠。
+第一种方式是通过异步消息方式来实现：
+
+1.先发送一个 prepare 消息给 MQ Server 。 
+2.MQ Server 收到消息返回一个 ack 。
+3.执行本地事务。
+4.本地事务成功向 MQ Server 发送一个 commit 消息。本地事务失败则向 MQ Server 发送一个 cancel 消息。
+5.如果长时间没有收到 prepare 消息的确认，MQ Server 则需要向 Client 申请回查。
+6.Client 收到回查申请后，调用本地服务的回查接口查看本地事务是否成功，如果成功，发送 commit 消息，如果本地消息失败，则发送 cancel 消息。
+
+以上就是异步消息的操作步骤，这种方式其实也是 2PC 的变形。这种方式实现起来对 MQ 的要求较高，并且需要业务方提供回查接口，对业务入侵较大。
+
+另一种方式是通过本地消息表来实现：
+1.执行本地事务同时将消息先写到本地消息表中，由于执行本地操作和写消息在同一个事务中，所以可以保证同时成功或失败。
+2.将消息从表中读出来，写到 MQ 。
+3.MQ 收到消息，返回 ack 。
+4.收到 ack 后删除本地消息。
+
+这种方式对业务没有入侵并且实现简单，但是其中有一些细节需要注意。如果从消息表读出消息的服务部署了多个，那么都从消息表去读，就会产生大量的重复消息，所以可以使用分布式锁进行控制，获得锁的服务才能从消息表读，这样就可以避免重复消息。由于消息可能会产生重复，所以在消费端需要处理幂等。
 
 
-
-
+通过上边的讲解，我们对分布式事务的几种实现方式有了简单的认识。在实际使用中，我们其实应该避免出现分布式事务，如果实在无法避免，那么可以通过柔性分布式事务来处理，同步场景下使用 Saga 异步场景使用本地消息表。
 
