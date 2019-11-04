@@ -63,40 +63,46 @@ Saga 是另一种著名分布式事务模型。1987 年论文 sagas 讲述了一
 我们还是以下单-减库存-支付这一场景来进行说明。首先我们需要定义两张事务表，事务状态表和事务调用表，这两张表和业务 DB 是独立的。
 
 事务状态表
-<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>timestamp</td></tr></table>
+<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>recover_step</td><td>timestamp</td></tr></table>
 
 事务调用表
 <table class="table table-bordered" style="width: 100px"><tr><td>tx_id</td><td>action_id</td><td>method</td><td>param_type</td><td>param_value</td></tr></table>
-
 saga 执行过程如下：
 
 1.AP 发起事务后 TM 生成 txId， 向事务状态表存一条记录，状态是执行中 。
 
-<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>timestamp</td></tr><tr><td>1</td><td>0</td><td>1514736000</td></tr></table>
+<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>recover_step</td><td>timestamp</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1514736000</td></tr></table>
+
 2.AP 按顺序调用下单-减库存-支付操作，每调用一个操作之前向事务调用表插一条记录。
 
 <table class="table table-bordered" style="width: 100px"><tr><td>tx_id</td><td>action_id</td><td>recover_method</td><td>param_type</td><td>param_value</td></tr><tr><td>1</td><td>1</td><td>/recover_order</td><td>kv</td><td>orderid=12345</td></tr><tr><td>1</td><td>2</td><td>/recover_stock</td><td>kv</td><td>stock=1</td></tr><tr><td>1</td><td>3</td><td>/recover_payment</td><td>kv</td><td>pay=1000</td></tr></table>
-
 这些信息如何获取到呢，又是怎么写到表里的呢？ 假如我们有个方法 ```reduceStock()``` ，我们在调用方法的时候可以利用 AOP 或者动态代理，就可以获取到方法的参数类型和参数值。recoverMethod 的信息可以通过注解写在被调用的方法上，这样通过反射就可以获取到 recoverMethod 的信息了。得到这些信息之后，按位置插到事务调用表中就可以了。
 
 3.如果下单-减库存-支付都执行成功，TM 将事务状态表中的记录更新成成功，事务结束。
 
-<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>timestamp</td></tr><tr><td>1</td><td>1</td><td>1514737000</td></tr></table>
+<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>recover_step</td><td>timestamp</td></tr><tr><td>1</td><td>1</td><td>0</td><td>1514737000</td></tr></table>
 
 4.如果有一步执行失败，则将事务状态更新成失败，同时立刻通知客户端执行失败。
 
-<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>timestamp</td></tr><tr><td>1</td><td>2</td><td>1514737000</td></tr></table>
+<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>recover_step</td><td>timestamp</td></tr><tr><td>1</td><td>2</td><td>0</td><td>1514737000</td></tr></table>
 
 补偿是异步的，所以不用等补偿执行完成再通知客户端。
 5.TM 定时扫描事务状态表，如果有失败状态的记录，就按照事务调用表中对应的除最后一步调用记录之外的其他记录调补偿接口进行补偿。
 
 <table class="table table-bordered" style="width: 100px"><tr><td>tx_id</td><td>action_id</td><td>recover_method</td><td>param_type</td><td>param_value</td></tr><tr><td>1</td><td>1</td><td>/recover_order</td><td>kv</td><td>orderid=12345</td></tr><tr><td>1</td><td>2</td><td>/recover_stock</td><td>kv</td><td>stock=1</td></tr><tr><td>1</td><td>3</td><td>/recover_payment</td><td>kv</td><td>pay=1000</td></tr></table>
+如果表中有 3 条记录，说明前两条是执行成功的，第 3 条执行失败了。那么只需要执行前两步的补偿，第 3 步是不需要补偿的。那么接下来就按照事务调用表中记录的补偿接口的信息进行补偿。
 
-如果表中有 3 条记录，说明前两条是执行成功的，第 3 条执行失败了。那么只需要执行前两步的补偿，第 3 步是不需要补偿的。那么接下来就按照事务调用表中记录的补偿接口的信息调用 ```/recover_order?orderid=12345&state=2``` 和 ```/recover_stock?stock=1``` 进行补偿就可以了。
+1. 首先将事务状态置为 3 。
+2. 第二步调用 ```/recover_stock?stock=1``` 补偿库存，然后将 recover_step 改为 2，表示第二步补偿完成。
+3. 第三步调用 ```/recover_order?orderid=12345&state=2``` 补偿订单，成功后将 recover_step 置为 1。
+
+补偿接口应该设计成幂等的，这样可以保证多次重试也不会产生垃圾数据。
 
 6.补偿完成后将事务状态表的状态更新成补偿完成。
 
-<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>timestamp</td></tr><tr><td>1</td><td>3</td><td>1514739000</td></tr></table>
+<table class="table table-bordered" style="width: 60px"><tr><td>tx_id</td><td>state</td><td>timestamp</td></tr><tr><td>1</td><td>4</td><td>1514739000</td></tr></table>
+
+如果补偿接口出现问题，怎么办呢，我们需不需要再给补偿接口加一个分布式事务呢？一般情况下，经过测试并且有重试机制，补偿是可以成功。我们完全没有必要再加一个分布式事务来保证补偿，因为我们一旦给补偿加上分布式事务，那我们是不是也要对保证补偿的逻辑再加一个分布式事务来保证一致性呢，这样就无穷无尽了。所以简单的做法就是一旦真的补偿接口出错了，那么记录错误日志，告警，然后人工处理就好了。
 
 
 **异步消息**
@@ -122,5 +128,5 @@ Saga 是一种同步串行的方式，接下来我们介绍异步消息的分布
 这种方式对业务没有入侵并且实现简单，但是其中有一些细节需要注意。如果从消息表读出消息的服务部署了多个，那么都从消息表去读，就会产生大量的重复消息，所以可以使用分布式锁进行控制，获得锁的服务才能从消息表读，这样就可以避免重复消息。由于消息可能会产生重复，所以在消费端需要处理幂等。
 
 
-通过上边的讲解，我们对分布式事务的几种实现方式有了简单的认识。在实际使用中，我们其实应该避免出现分布式事务，如果实在无法避免，那么可以通过柔性分布式事务来处理，同步场景下使用 Saga 异步场景使用本地消息表。
+通过上边的讲解，我们对分布式事务的几种实现方式有了简单的认识。在实际使用中，我们其实应该避免出现分布式事务，尽量让核心步骤先执行，不重要的步骤异步执行。如果实在无法避免，那么可以通过柔性分布式事务来处理，同步场景下使用 Saga ，异步场景下使用本地消息表。
 

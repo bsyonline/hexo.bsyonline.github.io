@@ -24,8 +24,8 @@ thumbnail:
 
 虽然 Create 操作不是幂等操作，但是在下面一些情况下是可以做到幂等的：
 
-		1. 业务主键
-		2. 逻辑主键+唯一索引
+1. 使用业务主键
+2. 使用逻辑主键+唯一索引
 
 业务主键不是在数据库中生成的，在插入记录的时候，业务主键已经生成了，所以只要业务主键不变，由于主键约束，执行多次结果是相同的。逻辑主键虽然是数据库生成的，但是由于有其他的业务字段做唯一约束，所以也是可以做到幂等的。
 
@@ -33,7 +33,7 @@ thumbnail:
 
 Update 操作可分为绝对值更新和相对值更新。```update t1 set age=20 where id=1``` 对于这类的更新叫做绝对值的更新，可以看到，不论执行多少次结果都是一样的，这样是可以保证幂等的。```update t1 set age++ where id=1``` 同样是更新操作，相对值的更新多次执行结果是不同的，所以不是幂等的。因此，对于相对值的更新，我们可以把它转化成绝对值的修改。有如下几种方式：
 
-1. 使用乐观锁。可以引入 version 字段，先获得 version，然后在更新 ```update t1 set age++ where id=1 and version=1``` 。当然 version 并不是必须的，使用业务字段代替 version 可以达到相同的效果 ```update t1 set age++ where id=1 and age=20``` 。
+1. 使用乐观锁。可以引入 version 字段，先获得 version，然后在更新 ```update t1 set age++, version++ where id=1 and version=1``` 。当然 version 并不是必须的，使用业务字段代替 version 可以达到相同的效果 ```update t1 set age++ where id=1 and age=20``` 。
 2. 先查到 id=1 的 age，然后在上层将相对值修改成绝对值。
 
 **Delete**
