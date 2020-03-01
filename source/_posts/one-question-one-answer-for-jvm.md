@@ -1,9 +1,9 @@
 ---
 title: one question one answer for jvm
 tags:
-  - untag
+  - JVM
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-11-04 22:52:39

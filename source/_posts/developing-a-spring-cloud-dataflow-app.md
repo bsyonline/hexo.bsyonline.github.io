@@ -2,9 +2,8 @@
 title: Developing a Spring Cloud Dataflow App
 tags:
   - Spring Cloud
-  - Stream Processing
 category:
-  - Java
+  - Spring Cloud
 author: bsyonline
 lede: 没有摘要
 date: 2018-10-19 15:47:40

@@ -1,9 +1,9 @@
 ---
 title: A Guide to MongoDB API and Java Driver
 tags:
-  - untag
+  - MongoDB
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-05-25 12:01:20

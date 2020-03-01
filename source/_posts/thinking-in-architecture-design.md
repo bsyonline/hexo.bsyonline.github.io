@@ -1,9 +1,9 @@
 ---
 title: Thinking in Architecture Design
 tags:
-  - untag
+  - Architecture
 category:
-  - uncategory
+  - Architecture
 author: bsyonline
 lede: 没有摘要
 date: 2099-08-11 22:21:42

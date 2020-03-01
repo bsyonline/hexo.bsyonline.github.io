@@ -2,10 +2,10 @@
 title: spring-data-elasticsearch 示例说明
 date: 2016-07-15 22:25:09
 tags:
- - Spring Data
+ - Spring
  - Elastic
 category: 
- - Java
+ - Spring
 thumbnail: 
 author: bsyonline
 lede: "没有留下前言"

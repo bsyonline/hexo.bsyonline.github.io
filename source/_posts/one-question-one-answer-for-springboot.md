@@ -1,9 +1,9 @@
 ---
 title: one question one answer for springboot
 tags:
-  - untag
+  - Spring Boot
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-08-16 16:06:17

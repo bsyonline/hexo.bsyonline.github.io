@@ -4,16 +4,22 @@ date: 2016-09-21 11:12:01
 tags:
  - NIO
 category: 
- - Java
+ - Netty
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---
 
-Java NIO 库是在JDK 1.4中引入的。Java NIO 弥补了原来的 I/O 的不足，它在标准 Java 代码中提供了高速的、面向块的 I/O。Java I/O 库与 Java NIO 最重要的区别是数据打包和传输的方式的不同，Java I/O 以**流**的方式处理数据，而 Java NIO 以**块**的方式处理数据。
-<!--more-->
+Java BIO 我们已经很熟悉了，它实现起来比较简单，一个线程只能维护一个连接。但是弊端也很明显，即服务器开销大，资源浪费严重。
+Java NIO 是在JDK 1.4中引入的。Java NIO 弥补了原来的 I/O 的不足，它在标准 Java 代码中提供了高速的、面向块的 I/O。Java I/O 库与 Java NIO 最重要的区别是数据打包和传输的方式的不同，Java I/O 以**流**的方式处理数据，而 Java NIO 以**块**的方式处理数据。
 
-通过代码可以对 Java I/O 和 Java NIO 有直观的认识。
+先通过两张图对比一下。
+
+<img src="https://github.com/bsyonline/pic/blob/master/20191203/20191209205325.png?raw=true" style="width:800px">
+
+Java NIO 加入了 selector，channel，buffer 三个组件。一个 client 有对应的 buffer ，buffer 有对应的 channel。一个线程维护一个 selector ，一个 selector 可以维护多个 channel。selector 通过事件机制，在多个 channel 间切换，有 IO 操作时，线程可以切换到对应的 channel 进行操作，如果没有 IO 操作，线程还可以做其他工作而不会阻塞，这样就大量的节省了服务器的资源。
+
+下面我们通过代码对 Java I/O 和 Java NIO 进行说明。
 ```java
 /**
  * 使用IO读取指定文件的前1024个字节的内容。

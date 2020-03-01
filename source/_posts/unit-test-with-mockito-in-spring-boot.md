@@ -2,8 +2,9 @@
 title: Unit Test with Mockito in Spring Boot
 tags:
   - Spring Boot
+  - Mock
 category:
-  - Java
+  - Spring Boot
 author: bsyonline
 lede: 没有摘要
 date: 2018-01-15 10:35:30

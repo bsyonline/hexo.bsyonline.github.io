@@ -1,9 +1,9 @@
 ---
 title: mysql
 tags:
-  - untag
+  - MySQL
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-08-11 23:17:11

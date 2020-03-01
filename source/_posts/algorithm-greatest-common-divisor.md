@@ -4,7 +4,7 @@ date: 2015-03-27 15:53:17
 tags:
  - Algorithm
 category: 
- - Algorithm
+ - Data Structure and Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

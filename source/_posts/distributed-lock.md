@@ -1,9 +1,9 @@
 ---
 title: distributed lock
 tags:
-  - untag
+  - Java
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-05-19 22:58:50

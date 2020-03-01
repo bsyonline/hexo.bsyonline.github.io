@@ -2,9 +2,9 @@
 title: 二叉树
 date: 2014-04-16 15:53:17
 tags:
- - Data Structures
+ - Tree
 category: 
- - Java
+ - Data Structure and Algorithm
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

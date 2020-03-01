@@ -1,9 +1,9 @@
 ---
 title: One Question One Answer for DB Index
 tags:
-  - untag
+  - MySQL
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-07-28 11:26:51

@@ -1,9 +1,9 @@
 ---
 title: install gitlab using docker
 tags:
-  - untag
+  - Docker
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-04-28 00:08:33

@@ -3,9 +3,8 @@ title: Client Side Loadbalancing with Spring Cloud Ribbon
 tags:
   - Microservices
   - Spring Cloud
-  - Ribbon
 category:
-  - Java
+  - Spring Cloud
 author: bsyonline
 lede: 没有摘要
 date: 2018-06-30 19:47:19

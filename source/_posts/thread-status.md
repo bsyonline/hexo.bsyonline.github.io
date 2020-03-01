@@ -2,7 +2,7 @@
 title: 线程的状态
 date: 2016-07-23 21:50:03
 tags:
- - Multithreading
+ - Concurrent
 category: 
  - Java
 thumbnail: 

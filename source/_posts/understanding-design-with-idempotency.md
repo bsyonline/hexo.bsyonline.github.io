@@ -1,9 +1,9 @@
 ---
 title: Understanding Design with Idempotency
 tags:
-  - untag
+  - Architecture
 category:
-  - uncategory
+  - Architecture
 author: bsyonline
 lede: 没有摘要
 date: 2019-07-31 21:21:40

@@ -2,7 +2,7 @@
 title: shell:autobak.sh
 date: 2016-07-16 15:53:17
 tags:
- - Shell
+ - Linux
 category: 
  - Linux
 thumbnail: 

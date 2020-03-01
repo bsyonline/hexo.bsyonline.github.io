@@ -2,7 +2,7 @@
 title: 多线程下载
 date: 2015-12-18 15:49:57
 tags:
- - Multithreading
+ - Concurrent
 category: 
  - Java
 thumbnail: 

@@ -4,7 +4,7 @@ date: 2016-05-04 16:00:22
 tags:
  - Spark
 category: 
- - Big Data
+ - Spark
 thumbnail: 
 author: bsyonline
 lede: "spark standalone 即伪分布式部署,即在单节点部署 spark 。"

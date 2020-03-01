@@ -5,8 +5,8 @@ date: 2015-11-24 15:45:57
 tags:
  - Data Structures
 category: 
- - Big Data
-thumbnail: https://raw.githubusercontent.com/bsyonline/pic/master/20181014/3.png
+ - Data Structure and Algorithm
+thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---

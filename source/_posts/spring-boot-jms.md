@@ -5,8 +5,8 @@ tags:
  - Spring Boot
  - JMS
 category: 
- - Java
-thumbnail: https://raw.githubusercontent.com/bsyonline/pic/master/jms_2.png
+ - Spring Boot
+thumbnail: 
 author: bsyonline
 lede: "没有摘要"
 ---

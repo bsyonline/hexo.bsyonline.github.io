@@ -3,7 +3,7 @@ title: spark-properties
 tags:
 - Spark
 category:
-- Big Data
+- Spark
 author: bsyonline
 lede: 没有摘要
 date: 2017-12-26 15:16:56

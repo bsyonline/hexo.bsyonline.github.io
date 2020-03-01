@@ -1,9 +1,9 @@
 ---
 title: GC
 tags:
-  - untag
+  - GC
 category:
-  - uncategory
+  - JVM
 author: bsyonline
 lede: 没有摘要
 date: 2019-11-04 14:30:42
@@ -41,7 +41,7 @@ java -jar GCTest -Xms30m -Xmx30m -Xmn10m -XX:+UseParallelGC -XX:+PrintGCDetails
 
 每次放3M
 1、在YGC执行前，min(目前 eden 已使用的大小,之前平均晋升到old的大小中的较小值) > old剩余空间大小 ? 不执行YGC，直接执行Full GC : 执行YGC；
-2、在YGC执行后，平均晋升到old的大小 > 旧生代剩余空间大小 ? 触发Full GC ： 什么都不做。
+2、在YGC执行后，平均晋升到old的大小 > old剩余空间大小 ? 触发Full GC ： 什么都不做。
 
 <table style="font-size:12px;color:#333333;border-width: 1px;border-color: #666666;border-collapse: collapse;"><tr><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;width: 50px;"></th><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;">eden</th><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;">old</th><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;">YGC</th><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;">FGC</th><th style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #dedede;">说明</th></tr>
 <tr><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">第1次</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">3</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">0</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">0</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;">0</td><td style="border-width: 1px;padding: 8px;border-style: solid;border-color: #666666;background-color: #ffffff;"></td></tr>

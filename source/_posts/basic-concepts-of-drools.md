@@ -1,9 +1,9 @@
 ---
 title: basic concepts of drools
 tags:
-  - untag
+  - Drools
 category:
-  - uncategory
+  - Java
 author: bsyonline
 lede: 没有摘要
 date: 2019-06-02 23:29:18
