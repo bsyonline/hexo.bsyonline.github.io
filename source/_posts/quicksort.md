@@ -1,5 +1,5 @@
 ---
-title: 快速排序
+title: Quicksort
 date: 2014-04-22 15:53:17
 tags:
  - Interview

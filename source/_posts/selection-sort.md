@@ -1,5 +1,5 @@
 ---
-title: selection-sort
+title: Selection Sort
 tags:
   - Interview
 category:

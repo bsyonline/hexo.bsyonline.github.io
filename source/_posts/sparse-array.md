@@ -1,5 +1,5 @@
 ---
-title: sparse array
+title: Sparse Array
 tags:
   - Interview
 category:

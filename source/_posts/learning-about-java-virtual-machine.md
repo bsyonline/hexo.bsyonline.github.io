@@ -1,7 +1,7 @@
 ---
 title: Learning about Java Virtual Machine (JVM)
 tags:
-  - Inteview
+  - Interview
 category:
   - JVM
 author: bsyonline

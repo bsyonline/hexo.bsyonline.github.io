@@ -1,5 +1,5 @@
 ---
-title: 二分查找
+title: Binary Search
 date: 2014-04-17 15:53:17
 tags:
  - Interview

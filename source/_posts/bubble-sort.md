@@ -1,5 +1,5 @@
 ---
-title: 冒泡排序
+title: Bubble Sort
 toc: false
 date: 2014-04-26 15:53:17
 tags:
