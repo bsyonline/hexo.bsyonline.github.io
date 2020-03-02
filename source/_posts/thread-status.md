@@ -2,9 +2,9 @@
 title: 线程的状态
 date: 2016-07-23 21:50:03
 tags:
- - Concurrent
-category: 
- - Java
+  - Interview
+category:
+  - Concurrent
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

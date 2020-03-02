@@ -1,7 +1,7 @@
 ---
 title: JVM Architecture
 tags:
-  - JVM
+  - Interview
 category:
   - JVM
 author: bsyonline

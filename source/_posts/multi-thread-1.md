@@ -2,9 +2,9 @@
 title: 多线程
 date: 2015-03-13 15:53:17
 tags:
- - Multithreading
+ - Interview
 category: 
- - Java
+ - Concurrent
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

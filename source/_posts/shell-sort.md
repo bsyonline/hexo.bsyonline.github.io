@@ -1,7 +1,7 @@
 ---
-title: shell sort
+title: Shell Sort
 tags:
-  - Algorithm
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

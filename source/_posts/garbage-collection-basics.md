@@ -1,7 +1,7 @@
 ---
 title: Garbage Collection Basics
 tags:
-  - JVM
+  - Interview
 category:
   - JVM
 author: bsyonline

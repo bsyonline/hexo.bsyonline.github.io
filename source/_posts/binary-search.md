@@ -2,7 +2,7 @@
 title: 二分查找
 date: 2014-04-17 15:53:17
 tags:
- - Algorithm
+ - Interview
 category: 
  - Data Structure and Algorithm
 thumbnail: 

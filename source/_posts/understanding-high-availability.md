@@ -1,7 +1,7 @@
 ---
 title: Understanding High Availability
 tags:
-  - Architecture
+  - Interview
 category:
   - Architecture
 author: bsyonline

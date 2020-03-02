@@ -1,7 +1,7 @@
 ---
 title: 面试问题
 tags:
-  - Java
+  - Interview
 category:
   - Java
 author: bsyonline

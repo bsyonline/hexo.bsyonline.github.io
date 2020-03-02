@@ -1,9 +1,9 @@
 ---
 title: Facade Pattern
 tags:
-  - Design Pattern
+  - Interview
 category:
-  - Java
+  - Design Pattern
 author: bsyonline
 lede: 没有摘要
 date: 2019-03-12 22:11:08

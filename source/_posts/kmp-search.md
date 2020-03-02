@@ -1,7 +1,7 @@
 ---
-title: kmp search
+title: KMP Search
 tags:
-  - Data Structure
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

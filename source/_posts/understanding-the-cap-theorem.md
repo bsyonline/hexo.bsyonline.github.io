@@ -1,7 +1,7 @@
 ---
 title: Understanding the CAP Theorem
 tags:
-  - Blockchain
+  - Interview
 category:
   - Blockchain
 author: bsyonline

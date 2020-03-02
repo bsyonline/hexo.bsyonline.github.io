@@ -2,9 +2,9 @@
 title: 死锁
 date: 2016-09-14 17:37:05
 tags:
- - Multithreading
+ - Interview
 category: 
- - Java
+ - Concurrent
 thumbnail: 
 author: bsyonline
 lede: "死锁是2个以上的线程由于竞争同一资源形成阻塞。"

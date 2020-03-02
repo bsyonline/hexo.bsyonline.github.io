@@ -2,7 +2,7 @@
 title: 二叉树
 date: 2014-04-16 15:53:17
 tags:
- - Tree
+ - Interview
 category: 
  - Data Structure and Algorithm
 thumbnail: 

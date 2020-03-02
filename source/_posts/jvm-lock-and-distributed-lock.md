@@ -1,7 +1,7 @@
 ---
 title: JVM Lock and Distributed Lock
 tags:
-  - Java
+  - Interview
 category:
   - Java
 author: bsyonline

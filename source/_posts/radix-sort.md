@@ -1,7 +1,7 @@
 ---
 title: radix sort
 tags:
-  - Algorithm
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

@@ -2,7 +2,7 @@
 title: 快速排序
 date: 2014-04-22 15:53:17
 tags:
- - Algorithm
+ - Interview
 category: 
  - Data Structure and Algorithm
 thumbnail: 

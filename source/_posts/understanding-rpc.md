@@ -1,7 +1,7 @@
 ---
 title: Understanding Remote Procedure Call
 tags:
-  - RPC
+  - Interview
 category:
   - Java
 author: bsyonline

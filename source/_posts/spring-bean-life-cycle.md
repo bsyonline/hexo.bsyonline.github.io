@@ -1,7 +1,7 @@
 ---
 title: spring bean life cycle
 tags:
-  - Spring
+  - Interview
 category:
   - Spring
 author: bsyonline

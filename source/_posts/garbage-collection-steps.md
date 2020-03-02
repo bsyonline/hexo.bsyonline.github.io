@@ -1,7 +1,7 @@
 ---
 title: Garbage Collection Steps
 tags:
-  - GC
+  - Interview
 category:
   - JVM
 author: bsyonline

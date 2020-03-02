@@ -2,6 +2,7 @@
 title: CMS Garbage Collector
 tags:
   - GC
+  - Interview
 category:
   - JVM
 author: bsyonline

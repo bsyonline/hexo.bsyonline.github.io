@@ -2,9 +2,9 @@
 title: 单例模式
 date: 2016-08-02 00:00:47
 tags:
- - Design Patterns
+ - Interview
 category: 
- - Java
+ - Design Pattern
 thumbnail: 
 author: bsyonline
 lede: "没有摘要"

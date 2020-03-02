@@ -1,7 +1,7 @@
 ---
 title: Thinking in Architecture Design
 tags:
-  - Architecture
+  - Interview
 category:
   - Architecture
 author: bsyonline

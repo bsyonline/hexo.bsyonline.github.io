@@ -1,7 +1,7 @@
 ---
 title: Default JVM Options
 tags:
-  - JVM
+  - Interview
 category:
   - JVM
 author: bsyonline

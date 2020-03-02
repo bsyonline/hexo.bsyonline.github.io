@@ -1,7 +1,7 @@
 ---
 title: sparse array
 tags:
-  - Data Structure
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

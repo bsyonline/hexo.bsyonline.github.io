@@ -1,7 +1,7 @@
 ---
 title: Destributed Transations
 tags:
-  - Java
+  - Interview
 category:
   - Java
 author: bsyonline

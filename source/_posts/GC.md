@@ -1,7 +1,7 @@
 ---
 title: GC
 tags:
-  - GC
+  - Interview
 category:
   - JVM
 author: bsyonline

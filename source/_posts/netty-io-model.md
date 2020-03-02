@@ -1,7 +1,7 @@
 ---
 title: Netty IO Model
 tags:
-  - Netty
+  - Interview
 category:
   - Netty
 author: bsyonline

@@ -1,7 +1,7 @@
 ---
 title: spring boot life cycle
 tags:
-  - Spring Boot
+  - Interview
 category:
   - Spring Boot
 author: bsyonline

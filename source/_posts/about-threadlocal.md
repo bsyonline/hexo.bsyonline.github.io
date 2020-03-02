@@ -1,9 +1,9 @@
 ---
 title: about threadlocal
 tags:
-  - Concurrent
+  - Interview
 category:
-  - Java
+  - Concurrent
 author: bsyonline
 lede: 没有摘要
 date: 2019-11-25 08:58:49

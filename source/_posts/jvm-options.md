@@ -1,7 +1,7 @@
 ---
 title: JVM Options
 tags:
-  - JVM
+  - Interview
 category:
   - JVM
 author: bsyonline

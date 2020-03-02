@@ -1,7 +1,7 @@
 ---
 title: Data Structure and Algorithm
 tags:
-  - Data Structure
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

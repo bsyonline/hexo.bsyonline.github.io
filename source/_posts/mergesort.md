@@ -1,7 +1,7 @@
 ---
-title: mergesort
+title: Mergesort
 tags:
-  - Data Structure
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

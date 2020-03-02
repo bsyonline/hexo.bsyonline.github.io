@@ -1,9 +1,9 @@
 ---
 title: Thread Pool
 tags:
-  - Concurrent
+  - Interview
 category:
-  - Java
+  - Concurrent
 author: bsyonline
 lede: 没有摘要
 date: 2019-11-07 16:10:44

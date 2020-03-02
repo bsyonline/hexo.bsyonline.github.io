@@ -1,7 +1,7 @@
 ---
-title: heapsort
+title: Heapsort
 tags:
-  - Data Structure
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

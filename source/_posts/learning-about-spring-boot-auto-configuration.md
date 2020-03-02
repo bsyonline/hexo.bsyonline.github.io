@@ -1,7 +1,7 @@
 ---
 title: Learning About Spring Boot Auto Configuration
 tags:
-  - Spring Boot
+  - Interview
 category:
   - Spring Boot
 author: bsyonline

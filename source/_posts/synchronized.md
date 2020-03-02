@@ -1,9 +1,9 @@
 ---
 title: synchronized
 tags:
-  - Concurrent
+  - Interview
 category:
-  - Java
+  - Concurrent
 author: bsyonline
 lede: 没有摘要
 date: 2020-02-20 09:36:42

@@ -1,7 +1,7 @@
 ---
 title: selection-sort
 tags:
-  - Algorithm
+  - Interview
 category:
   - Data Structure and Algorithm
 author: bsyonline

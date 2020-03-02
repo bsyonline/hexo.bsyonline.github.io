@@ -1,7 +1,7 @@
 ---
 title: Understanding Design with Idempotency
 tags:
-  - Architecture
+  - Interview
 category:
   - Architecture
 author: bsyonline

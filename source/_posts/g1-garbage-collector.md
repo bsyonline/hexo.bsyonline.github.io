@@ -1,8 +1,7 @@
 ---
 title: G1 Garbage Collector
 tags:
-  - JVM
-  - GC
+  - Interview
 category:
   - JVM
 author: bsyonline
