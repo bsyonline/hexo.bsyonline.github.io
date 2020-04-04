@@ -1,5 +1,5 @@
 ---
-title: Proxying Routing and Filtering using Zuul
+title: Routing and Filtering with Zuul
 tags:
   - Microservices
   - Spring Cloud

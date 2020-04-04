@@ -10,7 +10,7 @@ date: 2020-03-02 08:35:53
 thumbnail:
 ---
 
-在 Java 并发编程中，为了保证并发安全，一种方式是使用锁，另一种方式是使用 CAS（compare and swap） 。CAS 类似数据库的乐观锁，有 3 个参数，内存地址 V ，旧的预期值 A ，要修改的新值 B ，更新一个变量的时候，只有当变量的预期值 A 和内存地址 V 当中的实际值相同时，才会将内存地址 V 对应的值修改为 B ，如果和预期不相等则更新失败。
+在 Java 并发编程中，为了保证并发安全，一种方式是使用锁，另一种方式是使用 CAS（compare and swap） 。CAS 有 3 个参数，内存地址 V ，旧的预期值 A ，要修改的新值 B ，更新一个变量的时候，只有当变量的预期值 A 和内存地址 V 当中的实际值相同时，才会将内存地址 V 对应的值修改为 B ，如果和预期不相等则更新失败。
 #### CAS 是如何实现的？
 Unsafe 类中有 3 个 cas 方法：
 ```
@@ -20,7 +20,7 @@ public final native boolean compareAndSwapInt(Object var1, long var2, int var4, 
 
 public final native boolean compareAndSwapLong(Object var1, long var2, long var4, long var6);
 ```
-它们都是本地方法，在 x86 架构的系统中，是 Unsafe 类通过来调用 **copxchg** 指令来完成 CAS 操作的。
+它们都是本地方法，在 x86 架构的系统中，是 Unsafe 类通过来调用 **cmpxchg** 指令来完成 CAS 操作的。
 
 >compareAndSwapInt() 方法 4 个参数含义：
 Object var1 需要操作的对象。

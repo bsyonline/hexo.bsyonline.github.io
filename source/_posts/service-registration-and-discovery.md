@@ -29,8 +29,8 @@ thumbnail:
 4. 注册中心维护着所有服务的访问信息，服务之间要通信，首先要访问注册中心，那么注册中心就会成为瓶颈，所以如果采用主从模式在每个客户端维护一份副本，那么服务就不用每次都去访问注册中心了。这样虽然解决了注册中心的瓶颈问题，但是需要主从之间进行同步；
 5. 作为主节点，如果注册服务关闭，那么其他副本也就无法同步，所以主节点还要解决单点问题，比如使用分布式机器来提供服务。
 
-综上看来，实现一个服务注册和发现的程序还是比较复杂的。不过，有很多优秀的框架已经实现了这些功能，比如 Spring Cloud Eureka。
-#### **Spring Cloud Eureka**
+综上看来，实现一个服务注册和发现的程序还是比较复杂的。不过，有很多优秀的框架已经实现了这些功能，比如 Eureka。
+#### **Eureka**
 Eureka 是 netflix 开源的产品，通过和 Spring Cloud 集成，通过 Java 注解声明式的注册和调用服务变得非常简单，以下以 Greenwich.SR1 为例说明。
 
 1.加入 maven 配置
@@ -56,18 +56,16 @@ public class RegisterCenterApplication {
 3.修改配置文件
 
 ```
-spring:
-  application: eureka-server
 server:
   port: 8761
 eureka:
   instance:
-    hostname: eureka-server
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
-  server:
-    wait-time-in-ms-when-sync-empty: 0
+    registerWithEureka: false #不对外提供服务调用
+    fetchRegistry: false #不拉取注册信息
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 ```
 简单三步即可实现一个注册发现服务。启动服务访问 [http://localhost:8761/](http://localhost:8761/) 即可看到界面。
 此时还没有任何服务注册到 Eureka ，我们接下来就来看看如何将服务注册到 Eureka 。

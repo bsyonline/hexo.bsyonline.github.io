@@ -38,11 +38,11 @@ thumbnail:
 3. 乐观锁
 在进行更新和删除操作时比较常用。可以利用 version 字段，如
 ```
-update t1 set age++, version++ where id=1 and version=1
+update t1 set age=age+1, version=version+1 where id=1 and version=1
 ```
 也可以使用业务字段，如
 ```
-update t1 set age++ where id=1 and age=19
+update t1 set age=age+1 where id=1 and age=19
 ```
 >在进行更新和删除操作时，最好使用绝对值，不要使用相对值。
 4. 使用全局唯一 ID

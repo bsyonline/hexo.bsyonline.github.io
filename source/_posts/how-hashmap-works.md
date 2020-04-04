@@ -85,4 +85,4 @@ Map map = Maps.newHashMapWithExpectedSize(1000);
 **几种同步的 HashMap 的区别**
 Hashtable 对方法加 synchronized 。
 Collections.synchronizedMap(new HashMap<>()); 使用 synchronized 代码块。
-ConcurrentHashMap 利用分段锁，java8 之前是先根据 hash 定位到 segment 然后在 segment 内部使用 lock 加锁。Java8 是对 Node<K,V>[] 的元素（链表的第一个元素）加 synchronized 。
+ConcurrentHashMap 利用分段锁，java8 之前是先根据 hash 定位到 segment 然后在 segment 内部使用 lock 加锁。Java8 是对 Node<K,V>[] 的元素（链表的第一个元素）用 CAS 加锁，在链表内部使用 synchronized 进行同步。

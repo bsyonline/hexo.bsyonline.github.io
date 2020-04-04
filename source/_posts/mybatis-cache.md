@@ -32,7 +32,7 @@ public void testCache(){
 [User(id=3, name=alice, age=29, gender=Female, skill=Java), User(id=4, name=jim, age=29, gender=Male, skill=CPP), User(id=5, name=alice, age=19, gender=Female, skill=Java), User(id=6, name=jim, age=20, gender=Male, skill=CPP)]
 ```
 很显然一级缓存失效了。
-我们来分析一下缓存失效的原因。我们在使用 springboot 集成 mybatis 时，从始至终都没有发现 mybatis 的一个重要的对象 SqlSession 。原因是因为 spring 在集成 mybatis 时，将 SqlSession 进行了封装，而在使用时通过代理对象创建。所以我们没有办法直接操作 SqlSession 。正是因为 SqlSession 完全由 spring 容器管理，所以 spring 在 SqlSessionTemplate.SqlSessionInterceptor.invoke() 方法中每次执行完 invoke() 方法后，都在 finally 中将 SqlSession 关闭了，所以一级缓存就失效了。
+我们来分析一下缓存失效的原因。我们在使用 springboot 集成 mybatis 时，从始至终都没有发现 mybatis 的一个重要的对象 SqlSession 。原因是因为 spring 在集成 mybatis 时，将 SqlSession 进行了封装，而在使用时通过代理对象创建。所以我们没有办法直接操作 SqlSession 。**正是因为 SqlSession 完全由 spring 容器管理，所以 spring 在 SqlSessionTemplate.SqlSessionInterceptor.invoke() 方法中每次执行完 invoke() 方法后，都在 finally 中将 SqlSession 关闭了，所以一级缓存就失效了。**
 
 不过我们还可以通过配置使用二级缓存。在 UserMapper.xml 中加入 <cache/> 配置，我们会发现第二次查询使用了缓存。
 ```

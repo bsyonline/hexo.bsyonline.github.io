@@ -14,15 +14,15 @@ thumbnail:
 1. **top**，监控 CPU 。
 <img src="https://s2.ax1x.com/2020/02/27/3wTtfg.png" alt="3wTtfg.png" border="0" style="width:550px" />
 这里我们主要关注两个地方：
- 1. 是右上角的 load average ，load average 有 3 个值，分别表示系统 1m ，5m ，15m 的平均负载值，`(1m+5m+15m)/3*100%` 可以作为衡量系统负载的指标，一般不要超过 60% 。
- 2. 是 %CPU 。可以可以看出 CPU 占用情况和对应的的进程 id 。
+1) 是右上角的 load average ，load average 有 3 个值，分别表示系统 1m ，5m ，15m 的平均负载值，`(1m+5m+15m)/3*100%` 可以作为衡量系统负载的指标，一般不要超过 60% 。
+2) 是 %CPU 。可以看出 CPU 占用情况和对应的的进程 id 。
 2. **vmstat**，也可以用来监控 CPU 资源。
 <img src="https://s2.ax1x.com/2020/02/27/3wqi9O.png" alt="3wqi9O.png" border="0" style="width:550px" />
 也是关注两块：
- 1. procs，如果 r 的平均值大于系统 CPU 核数的 2 倍说明负载过高。
+1) procs，如果 r 的平均值大于系统 CPU 核数的 2 倍说明负载过高。
 	r 表示进行 CPU 处理的进程数。
 	b 表示进行 I/O 处理的进程数。
- 2. cpu，如果 us + sy 大于 80% 说明 CPU 资源不足。
+2) cpu，如果 us + sy 大于 80% 说明 CPU 资源不足。
 	us 表示用户进程消耗 CPU 时间百分比。
 	sy 表示内核进程消耗 CPU 时间百分比。
 3. **pidstat**，可以监控具体进程的 CPU 资源。

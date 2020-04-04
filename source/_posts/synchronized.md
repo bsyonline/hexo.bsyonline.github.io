@@ -23,6 +23,7 @@ synchronized (this) {
 
 }
 ```
+不论是同步方法还是同步代码块，在 JVM 中都是通过管程 (Monitor) 来支持的。同步方法是隐式的，通过 ACC_SYNCHRONIZED 访问标识来声明。同步代码则是在 javac 编译器在字节码中添加 monitorenter 和 monitorexit 指令来实现的。无论正常退出还是异常结束， monitorenter 都必须有 monitorexit 与之对应。
 synchronized 具有以下特点：
 1. **非公平锁**
 2. **可重入**：是指在如果一个线程获得了锁进入了 synchronized 方法，那么该方法内部调用的其他方法可以直接获得该对象的锁。

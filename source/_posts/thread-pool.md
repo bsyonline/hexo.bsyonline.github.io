@@ -10,42 +10,26 @@ date: 2019-11-07 16:10:44
 thumbnail:
 ---
 
-线程创建销毁耗费资源，所以使用线程池来重用。
-本质上是维护两个队列，一个存放预先创建的线程，一个存放提交给线程的任务，工作线程不断从队列中获取任务来执行。
-JDK 提供了 ThreadPoolExecutor 来创建线程池。
+线程池可以重用线程资源，减少线程创建销毁的资源耗费。JDK 提供了 ThreadPoolExecutor 来创建线程池。
 
 
 ```
-public ThreadPoolExecutor(int corePoolSize,
-                              int maximumPoolSize,
-                              long keepAliveTime,
-                              TimeUnit unit,
-                              BlockingQueue<Runnable> workQueue,
-                              RejectedExecutionHandler handler) {
+public ThreadPoolExecutor(int corePoolSize,                  // 线程池初始大小
+						  int maximumPoolSize,               // 线程池最大线程数
+						  long keepAliveTime,                // 线程存活的时间
+						  TimeUnit unit,                     // 时间单位
+						  BlockingQueue<Runnable> workQueue, // 任务等待队列
+						  ThreadFactory threadFactory,       // 线程工厂用来创建线程
+						  RejectedExecutionHandler handler   // 线程数量超过线程池大小后的处理策略
+						  ) {}
 ```
-
-
-
-
-
-corePoolSize 是线程池大小
-
-maximumPoolSize 是线程池最大线程数
-
-keepAliveTime 是线程存活的时间
-
-workQueue 任务等待队列
-
-handler 线程数量超过线程池大小后的处理策略
-
-我们通过一个例子来说明上述参数和线程池运行的关系。
-
+#### 线程池参数效果
+我们要创建一个核心线程数 5 ，最大线程数 20 ，队列大小是 10 的一个线程池。
 ```
 ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 20,
-            5, TimeUnit.SECONDS, new LinkedBlockingQueue<>(5));
+            5, TimeUnit.SECONDS, new LinkedBlockingQueue<>(5), Executors.defaultThreadFactory(), defaultHandler);
 ```
 
-首先我们创建了一个核心线程数 5 ，最大线程数 20 ，队列大小是 10 的一个线程池。
 
 如果我们提交 10 个任务，那么首先会将前 5 个任务交给 5 个线程执行，同时 5 个线程进入队列等待。这时队列有 5 个线程工作，5 个任务等待。
 
@@ -53,6 +37,7 @@ ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 20,
 
 如果我们提交 50 个任务，那么首先会将前 5 个任务交给 5 个线程执行，同时 5 个线程进入队列等待，再新创建 15 个线程来执行任务，剩下的 25 个任务会丢弃掉。这时队列有 20 个线程工作，5 个任务等待，等任务执行完，超过线程存活时间，线程会被销毁，剩下 5 个线程。
 
+#### jdk 提供的线程池
 除了使用 new ThreadPoolExecutor ，Executors 提供了一些静态方法用来创建线程池，如：
 
 ```

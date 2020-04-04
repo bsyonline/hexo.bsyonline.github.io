@@ -21,4 +21,5 @@ thumbnail:
 [CMS Garbage Collector](../../../..//2020/02/23/cms-garbage-collector/)
 [G1 Garbage Collector](../../../..//2020/02/23/g1-garbage-collector/)
 [GC Details](../../../..//2020/02/21/gc-details/)
-
+[JIT at a Glance](../../../..//2020/03/26/jit-at-a-glance/)
+[Escape Analysis](../../../../2020/03/27/escape-analysis/)
