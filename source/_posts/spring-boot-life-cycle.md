@@ -1,5 +1,5 @@
 ---
-title: spring boot life cycle
+title: Spring Boot Life Cycle
 tags:
   - Interview
 category:
@@ -17,7 +17,7 @@ spring boot 启动流程
 2. 执行 SpringApplication.run() 方法
 	2.1 创建并启动 stopwatch
 	2.2 扫描 SpringApplicationRunListener 并将实例化后的 EventPublishingRunListener 加入到 RunListener 集合
-	2.3 遍历 RunListener 集合，启动 runListener ，创建一个 SpringBootStartingEvent 加入到事件广播  
+	2.3 遍历 RunListener 集合，启动 runListener ，创建一个 **SpringBootStartingEvent** 加入到事件广播  
 	2.4 包装命令行的参数
 	2.5 配置环境变量  
 	&ensp;&ensp;&ensp;&ensp;2.5.1 根据 applicationType 获取环境变量  
@@ -29,9 +29,9 @@ spring boot 启动流程
 	&ensp;&ensp;&ensp;&ensp;2.9.1 set 环境变量
 	&ensp;&ensp;&ensp;&ensp;2.9.2 做一些后置处理  
 	&ensp;&ensp;&ensp;&ensp;2.9.3 遍历 Initializer 集合执行每个 initializer 的 initialize() 方法  
-	&ensp;&ensp;&ensp;&ensp;2.9.4 创建一个 ApplicationContextInitializedEvent 加入到事件广播  
+	&ensp;&ensp;&ensp;&ensp;2.9.4 创建一个 **ApplicationContextInitializedEvent** 加入到事件广播  
 	&ensp;&ensp;&ensp;&ensp;2.9.5 创建 beanDefinitionLoader
-	&ensp;&ensp;&ensp;&ensp;2.9.6 ApplicationListener 和 Context 互相 set，然后创建一个 ApplicationPreparedEvent 加入到事件广播  
+	&ensp;&ensp;&ensp;&ensp;2.9.6 ApplicationListener 和 Context 互相 set，然后创建一个 **ApplicationPreparedEvent** 加入到事件广播  
 	2.10 refreshContext
 	&ensp;&ensp;&ensp;&ensp;2.10.1 调用 super.refresh()
 	&ensp;&ensp;&ensp;&ensp;2.10.1.1 prepareRefresh
@@ -45,11 +45,11 @@ spring boot 启动流程
 	&ensp;&ensp;&ensp;&ensp;2.10.1.9 finishBeanFactoryInitialization
 	&ensp;&ensp;&ensp;&ensp;2.10.1.10 finishRefresh  
 	&ensp;&ensp;&ensp;&ensp;2.10.1.10.1 启动 webserver
-	&ensp;&ensp;&ensp;&ensp;2.10.1.10.2 创建一个 ServletWebServerInitializedEvent 加入到事件广播  
+	&ensp;&ensp;&ensp;&ensp;2.10.1.10.2 创建一个 **ServletWebServerInitializedEvent** 加入到事件广播  
 	&ensp;&ensp;&ensp;&ensp;2.10.2 registerShutdownHook
 	2.11 afterRefresh 什么都没有做
-	2.12 创建一个 ApplicationStartedEvent 加入到事件广播  
-	2.13 创建一个 ApplicationReadyEvent 加入到事件广播  
+	2.12 创建一个 **ApplicationStartedEvent** 加入到事件广播  
+	2.13 创建一个 **ApplicationReadyEvent** 加入到事件广播  
 
 
 

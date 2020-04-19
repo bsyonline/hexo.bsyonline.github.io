@@ -50,7 +50,7 @@ A: 通过哨兵模式，只少 3 个节点，如果 master 挂了，slave 会被
 
 
 Q: Redis 主从之间是如何进行数据同步的？
-A: 如果新加一个 salve 节点到集群，master 会生成一个 RDB 的镜像快照，将 RDB 发给 slave ，salve 将 RDB 保存到本地，然后加载到内存。如果在数据同步期间有增量数据，等 salve 通过 RDB 恢复了再把增量的部分发给 salve 。如果网络断了，会自动重连，网络恢复之后会重发。
+A: 如果新加一个 slave 节点到集群，master 会生成一个 RDB 的镜像快照，将 RDB 发给 slave ，slave 将 RDB 保存到本地，然后加载到内存。如果在数据同步期间有增量数据，等 slave 通过 RDB 恢复了再把增量的部分发给 slave 。如果网络断了，会自动重连，网络恢复之后会重发。
 
 
 Q: 哨兵模式 master 挂了如何进行选主？
@@ -68,11 +68,6 @@ Q: 内存淘汰策略是怎样的？
 A: noeviction，allkeys-LRU，volatile-LRU，allkeys-Random，volatile-Random，volatile-ttl 。
 
 
-Q: 
-A: 
-Q: 
-A: 
-Q: 
-A: 
-Q: 
-A: 
+Q: 主从模式，哨兵模式，集群模式的区别。
+A: 主从是备份关系，如果主挂了，从可以接替主继续工作，但是切换需要人工。哨兵是在主挂了之后由程序自动将从提成主，保证高可用，哨兵最少 3 台。集群是将数据自动分配到 hash slot 中，多台机器同时工作，提高并发，集群最少 6 台，3 主 3 从。
+
