@@ -12,13 +12,115 @@ thumbnail:
 
 Q: Redis 有哪些数据类型，及应用场景。
 A: 数据类型有 8 种：
-1. string，简单的 KV 缓存。
-2. list，list 使用场景很多，可以存储列表类型的数据，比如好友列表，查询历史等。可以用来分页，比如 ```lrange list 0 9```。可以用来实现队列，如 lpush 和 rpop
-3. set，应用场景需要没有重复的元素。
-4. zset，无重复且有序。
-5. hash，可以用来存储简单对象。
+1. string，简单的 KV 缓存，比如单值缓存，再比如文章的阅读量。
+```
+127.0.0.1:6379> incr article:view:19 
+127.0.0.1:6379> incr article:view:19 
+127.0.0.1:6379> incr article:view:19
+127.0.0.1:6379> get article:view:19 
+"3"
+```
+
+2. list，list 使用场景很多，可以存储列表类型的数据，比如消息列表。
+```
+127.0.0.1:6379> lpush 12:msg 101
+127.0.0.1:6379> lpush 12:msg 104
+127.0.0.1:6379> lrange 12:msg 0 5
+1) "104"
+2) "101"
+```
+再比如查询历史。
+```
+127.0.0.1:6379> lpush history "select * from user where id=1"
+127.0.0.1:6379> lpush history "select * from dept where dept_name='sales'"
+127.0.0.1:6379> lrange history 0 5
+1) "select * from dept where dept_name='sales'"
+2) "select * from user where id=1"
+```
+可以用来分页。
+```
+127.0.0.1:6379> lrange list 0 9
+```
+可以用来实现队列： lpush + rpop 。实现栈：lpush + lpop 。
+
+3. set，应用场景需要没有重复的元素，比如将歌曲从歌曲库加到我喜欢的歌曲列表。
+```
+127.0.0.1:6379> smove songs my_favourite "yestoday once more"
+(integer) 1
+```
+再比如抽奖
+```
+127.0.0.1:6379> srandmember lottery_draw 1	#不移除
+or
+127.0.0.1:6379> spop lottery_draw 1		   #移除
+```
+再比如点赞
+```
+127.0.0.1:6379> sadd like:123 19		 #点赞
+127.0.0.1:6379> srem like:123 19		 #取消点赞
+127.0.0.1:6379> sismember like:123 19    #是否点过赞
+127.0.0.1:6379> smembers like:123		#点赞用户列表
+127.0.0.1:6379> scard like:123 		  #点赞数
+```
+再比如关注
+```
+127.0.0.1:6379> sadd tom:follow 101 102 199 
+127.0.0.1:6379> sadd alice:follow 102 103 199 
+127.0.0.1:6379> sinter tom:follow alice:follow 	  #tom和alice共同关注
+1) "102"
+2) "199"
+127.0.0.1:6379> sdiff alice:follow tom:follow		#alice还关注了哪些人
+1) "103"
+```
+4. zset，无重复且有序。比如排行榜。
+```
+127.0.0.1:6379> zincrby music:month:1:week:1 1 "yestoday once more"
+127.0.0.1:6379> zincrby music:month:1:week:1 1 "yestoday once more"
+127.0.0.1:6379> zincrby music:month:1:week:1 1 "hotel california"
+127.0.0.1:6379> zrevrange music:month:1:week:1 0 9 withscores 	#周排行
+1) "yestoday once more"
+2) "2"
+3) "hotel california"
+4) "1"
+127.0.0.1:6379> zincrby music:month:1:week:2 1 "yestoday once more"
+127.0.0.1:6379> zincrby music:month:1:week:3 1 "hotel california"
+127.0.0.1:6379> zincrby music:month:1:week:4 1 "hotel california"
+127.0.0.1:6379> zunionstore music:month:1 4 music:month:1:week:1 music:month:1:week:2 music:month:1:week:3 music:month:1:week:4 
+127.0.0.1:6379> zrevrange music:month:1 0 9 withscores	#月排行
+1) "yestoday once more"
+2) "8"
+3) "hotel california"
+4) "5"
+```
+
+5. hash，可以用来存储简单对象。比如数据库表 user 是这样的：
+| id   | name  | age  |
+| ---- | ----- | ---- |
+| 1    | Tom   | 20   |
+| 2    | Alice | 19   |
+用 redis hash 可以这样表示：
+```shell
+127.0.0.1:6379> hmset user 1:name Tome 1:age 20
+127.0.0.1:6379> hmset user 2:name Alice 2:age 19
+127.0.0.1:6379> hmget user 1:name 1:age
+1) "Tome"
+2) "20"
+```
+如果表记录很多，可以进行分段，防止 big value 导致执行缓慢。 
+再比如购物车，
+```
+# 用户 id 为 12 商品 id 为 1099
+127.0.0.1:6379> hset cart:12 1099 1		 #添加商品
+127.0.0.1:6379> hincrby cart:12 1099 1	  #增加数量
+127.0.0.1:6379> hlen cart:12				#购物车中商品种类数量
+127.0.0.1:6379> hdel cart:12 1099		   #删除商品
+127.0.0.1:6379> hgetall cart:12 			#购物车中全部商品
+```
+
 6. bitmap，可以用来实现 bloomfilter 。
+
 7. hyperloglog，可以用来进行大数据量统计，比如 UV 。但是不精确。
+
 8. geo，可以用来进行地理信息计算。
 
 还有一些功能也列一下：
@@ -61,7 +163,7 @@ Q: Redis key 的过期的 key 是怎么删除的？
 A: 如果 redis 中的 key 过期了，就会返回 nil 。但是这个 key 并没有被立刻删除。Redis 的失效的 key 的删除策略有 2 种：
 1. 被动删除(passive)：当再次访问这个 key 时发现它已经过期，则删除。
 2. 主动删除(active)：有些 key 失效之后可能再也不会被访问，所以无法被动删除，只能主动删除。Redis 会从过期的集合中随机挑一些 key 删除，如果失效 key 大于 25% ，主动删除会一直进行。如果还删不掉，就只能等 LRU 了。
- 
+
 
 
 Q: 内存淘汰策略是怎样的？

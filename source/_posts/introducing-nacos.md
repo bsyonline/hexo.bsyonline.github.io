@@ -123,3 +123,50 @@ db.url.0=jdbc:mysql://localhost:3306/nacos_config?characterEncoding=utf8&connect
 db.user=root
 db.password=123456
 ```
+
+#### 管理多环境配置文件
+通常会有 3 个环境 dev 、test 、prod ，三个环境的配置文件在 nacos 中进行管理。在项目中只存放 nacos config 相关的配置。通过 profiles 来区分不同环境的配置。
+```
+# dev 配置
+spring:
+  profiles: dev
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    namespace: af40020e-9c75-4174-be5b-796622544bae
+
+---
+#test 配置
+spring:
+  profiles: test
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    namespace: 33d746ec-529e-472c-a6d1-302ee741e6cf
+
+---
+# prod 配置
+spring:
+  profiles: prod
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    namespace: d8038098-05b5-4a9a-9d55-a274eecf1e3a
+---
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+spring:
+  application:
+    name: spring-boot-nacos-example
+
+```
+启动时通过 ```java -jar xxx.jar --spring.profiles.active=dev``` 来指定运行环境。
